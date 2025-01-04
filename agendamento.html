@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Serviço</title>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Agendar Serviço</h1>
+        <form id="agendamentoForm">
+            <input type="text" id="nome" placeholder="Seu nome" required>
+            <input type="text" id="servico" placeholder="Serviço desejado" required>
+            <input type="datetime-local" id="data" required>
+            <button type="submit">Agendar</button>
+        </form>
+
+        <h3>Serviços Agendados:</h3>
+        <ul id="listaAgendamentos"></ul>
+    </div>
+
+    <script>
+        // Configuração do Firebase
+        const firebaseConfig = {
+            apiKey: "SUA_API_KEY",
+            authDomain: "SEU_DOMINIO.firebaseapp.com",
+            projectId: "SEU_PROJECT_ID",
+            storageBucket: "SEU_STORAGE_BUCKET.appspot.com",
+            messagingSenderId: "SEU_SENDER_ID",
+            appId: "SEU_APP_ID"
+        };
+
+        // Inicializa o Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Referência ao formulário
+        const form = document.getElementById('agendamentoForm');
+        const nomeInput = document.getElementById('nome');
+        const servicoInput = document.getElementById('servico');
+        const dataInput = document.getElementById('data');
+        const listaAgendamentos = document.getElementById('listaAgendamentos');
+
+        // Função para agendar um serviço
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const nome = nomeInput.value;
+            const servico = servicoInput.value;
+            const data = dataInput.value;
+
+            // Adiciona o agendamento ao Firestore
+            await db.collection('agendamentos').add({
+                nome: nome,
+                servico: servico,
+                data: new Date(data)
+            });
+
+            // Limpa o formulário
+            nomeInput.value = '';
+            servicoInput.value = '';
+            dataInput.value = '';
+
+            // Atualiza a lista de agendamentos
+            carregarAgendamentos();
+        });
+
+        // Função para carregar os agendamentos
+        const carregarAgendamentos = async () => {
+            listaAgendamentos.innerHTML = '';
+            const querySnapshot = await db.collection('agendamentos').get();
+            querySnapshot.forEach(doc => {
+                const agendamento = doc.data();
+                const li = document.createElement('li');
+                li.textContent = `${agendamento.nome} - ${agendamento.servico} - ${agendamento.data.toDate().toLocaleString()}`;
+                listaAgendamentos.appendChild(li);
+            });
+        };
+
+        // Carrega os agendamentos ao inicializar
+        carregarAgendamentos();
+    </script>
+
+</body>
+</html>
