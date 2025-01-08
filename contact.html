@@ -221,19 +221,19 @@
                         <div class="col-lg-6 wow fadeIn" data-wow-delay=".5s">
                             <div class="p-5 rounded contact-form">
                                 <div class="mb-4">
-                                    <input type="text" class="form-control border-0 py-3" placeholder="Seu Nome">
+                                    <input type="text" class="form-control border-0 py-3" id="seunome" placeholder="Seu Nome">
                                 </div>
                                 <div class="mb-4">
-                                    <input type="email" class="form-control border-0 py-3" placeholder="Seu E-mail">
+                                    <input type="email" class="form-control border-0 py-3" id="seuemail" placeholder="Seu E-mail">
                                 </div>
                                 <div class="mb-4">
-                                    <input type="text" class="form-control border-0 py-3" placeholder="Projeto">
+                                    <input type="text" class="form-control border-0 py-3" id="projeto" placeholder="Projeto">
                                 </div>
                                 <div class="mb-4">
-                                    <textarea class="w-100 form-control border-0 py-3" rows="6" cols="10" placeholder="Mensagem"></textarea>
+                                    <textarea class="w-100 form-control border-0 py-3" id="mensagem" rows="6" cols="10" placeholder="Mensagem"></textarea>
                                 </div>
                                 <div class="text-start">
-                                    <button class="btn bg-primary text-white py-3 px-5" type="button">Enviar mensagem </button>
+                                    <button class="btn bg-primary text-white py-3 px-5" type="button" onclick="SendEmail(); return false;">Enviar mensagem </button>
                                 </div>
                             </div>
                         </div>
