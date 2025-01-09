@@ -117,7 +117,7 @@ function SendEmail() {
     var mensagem = $('#mensagem').val();
 
     var mensagemcompleta = '<b>Projeto:</b>' + projeto + '<br /><b>Mensagem</b>' + mensagem;
-    var msg = '{"Messages": [{"From": {"Email": "jbdesenvolvedor@gmail.com","Name": "Site Orçamento"},"To": [{"Email": "' + email + '","Name": "Cliente"}],"Subject": "Contato via site!","TextPart": "' + mensagemcompleta + '","HTMLPart": "' + mensagemcompleta + '"}]}';
+    var msg = '{"Messages": [{"From": {"Email": "jbdesenvolvedor@gmail.com","Name": "Site OrÃ§amento"},"To": [{"Email": "' + email + '","Name": "Cliente"}],"Subject": "Contato via site!","TextPart": "' + mensagemcompleta + '","HTMLPart": "' + mensagemcompleta + '"}]}';
 
     $.ajax({
         url: 'https://api.mailjet.com/v3.1/send',
@@ -132,8 +132,8 @@ function SendEmail() {
         success: function (data) {
             console.log('succes: ' + data);
         },
-        error: function (data) {
-            console.log('erro: ' + data);
+        error: function (xhr, status, error) {
+            console.log('erro: ' + error);
         }
     });
 }
