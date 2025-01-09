@@ -127,6 +127,17 @@ function SendEmail() {
       url: 'https://req-tequalyqas.portaldecompras.co/Api/WebHook/EnviarEmail',
       data: JSON.stringify(obj),
       dataType: 'json',
-      contentType: "application/json;charset=utf-8"
+      contentType: "application/json;charset=utf-8",
+        success: function(data) {
+            alert('Seu contato foi encaminhado com sucesso, em breve entraremos em contato!');
+            location.href = location.href;
+        },
+        error: function(data) {
+            alert('Não foi possível enviar seu contato!');
+            location.href = location.href;
+        },
     });
+
+
+    
 }
