@@ -122,11 +122,11 @@ function SendEmail() {
     obj.projeto = projeto;
     obj.mensagem = mensagemcompleta;
 
-
-    $.post('https://req-tequalyqas.portaldecompras.co/Api/WebHook/EnviarEmail', { dados: obj }, function (data) {
-        alert('Contato enviado');
-        location.href = location.href;
-    }).fail(function (obj) {
-        alert('Houve um erro ao enviar sua solicitação');
+    $.ajax({
+      type: "POST",
+      url: 'https://req-tequalyqas.portaldecompras.co/Api/WebHook/EnviarEmail',
+      data: JSON.stringify(obj),
+      dataType: 'json',
+      contentType: "application/json;charset=utf-8"
     });
 }
