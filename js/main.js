@@ -116,24 +116,17 @@ function SendEmail() {
     var projeto = $('#projeto').val();
     var mensagem = $('#mensagem').val();
 
-    var mensagemcompleta = '<b>Projeto:</b>' + projeto + '<br /><b>Mensagem</b>' + mensagem;
-    var msg = '{"Messages": [{"From": {"Email": "jbdesenvolvedor@gmail.com","Name": "Site Orçamento"},"To": [{"Email": "' + email + '","Name": "Cliente"}],"Subject": "Contato via site!","TextPart": "' + mensagemcompleta + '","HTMLPart": "' + mensagemcompleta + '"}]}';
+    var mensagemcompleta = '<b>Nome:</b>' + nome + '<br /><b>Email:</b>' + email + '<br /><b>Mensagem:</b>' + mensagem;
 
-    $.ajax({
-        url: 'https://api.mailjet.com/v3.1/send',
-        headers: {
-            'Authorization': 'Basic ODIwOTgzZGE1NWM5NjQ5MDQwNzI0NDUwNTIyYmQxYzI6MWZmNDgwN2IxMDVjY2IxZTM3YWZjYTU3ZjE2NjhlYjA=',
-            'Access-Control-Allow-Origin': '*',
-            'Content-Type': 'application/json'
-        },
-        method: 'POST',
-        dataType: 'json',
-        data: msg,
-        success: function (data) {
-            console.log('succes: ' + data);
-        },
-        error: function (xhr, status, error) {
-            console.log('erro: ' + error);
-        }
+    var obj = {};
+    obj.projeto = projeto;
+    obj.mensagem = mensagemcompleta;
+
+
+    $.post('https://req-tequalyqas.portaldecompras.co/Api/WebHook/EnviarEmail', { dados: obj }, function (data) {
+        alert('Contato enviado');
+        location.href = location.href;
+    }).fail(function () {
+        alert('Houve um erro ao enviar sua solicitação');
     });
 }
