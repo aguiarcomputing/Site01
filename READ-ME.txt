@@ -7,5 +7,6 @@
   =>  Template Author  : HTML Codex
 
   =>  Author Website   : https://htmlcodex.com
+  .
 
 2025-01-08 - Atualização
