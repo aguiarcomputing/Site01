@@ -35,43 +35,9 @@
 		<link rel="icon" sizes="192x192" href="favicon-192x192.png">
 		<link rel="icon" sizes="32x32" href="favicon-32x32.png">
 		<link rel="icon" sizes="16x16" href="favicon-16x16.png">
-        /* Estilo do botão flutuante */
-        .whatsapp-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
-            color: white;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            z-index: 1000;
-            text-decoration: none;
-        }
-
-        .whatsapp-button:hover {
-            background-color: #1ebc57;
-        }
-
-        .whatsapp-button img {
-            width: 30px;
-            height: 30px;
-        }
-		</style>
 	</head>
 
     <body>
-	
-    <!-- Botão Flutuante do WhatsApp -->
-    <a href="https://wa.me/5548991890567" class="whatsapp-button" target="_blank" title="Fale conosco no WhatsApp">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </a>
-
         <!-- Spinner Start -->
         <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-grow text-primary" role="status"></div>
