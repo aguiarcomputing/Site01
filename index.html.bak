@@ -5,12 +5,7 @@
         <meta charset="utf-8">
         <title>Aguiar Informática - TI Soluções completas em TI</title>
 		<title> Uma Assistência Técnica No Condomínio. </title>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Botão de WhatsApp no Cabeçalho</title>
+		<title>Botão de WhatsApp no Cabeçalho</title>
     <style>
         /* Estilo do botão no cabeçalho */
         .whatsapp-button {
