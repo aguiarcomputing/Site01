@@ -7,7 +7,92 @@
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="notícias, hardware, tecnologia, inovações, equipamentos" name="keywords">
         <meta content="AQUI VOCÊ CONSULTA DISPONIBILIDADE DOS NOSSOS SERVIÇOS COM CALENDÁRIO 2025" name="description">
-	
+
+<!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+		
+		<!-- Favicon padrão -->
+		<link rel="icon" href="flaticon.ico" type="image/x-icon">
+    
+		<!-- Favicon para dispositivos móveis -->
+		<link rel="icon" sizes="192x192" href="favicon-192x192.png">
+		<link rel="icon" sizes="32x32" href="favicon-32x32.png">
+		<link rel="icon" sizes="16x16" href="favicon-16x16.png">		
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+		<!-- Botão de WhatsApp no Cabeçalho -->
+    <title>Botão de WhatsApp no Cabeçalho</title>
+    <style>
+        /* Estilo do botão no cabeçalho */
+        .whatsapp-button {
+            position: fixed;
+            top: 20px; /* Mantém o botão no topo */
+            right: 20px; /* Posiciona o botão à direita */
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            z-index: 1000;
+            text-decoration: none;
+            animation: heartbeat 2.5s infinite;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #1ebc57;
+        }
+
+        .whatsapp-button img {
+            width: 30px;
+            height: 30px;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.1);
+            }
+            50% {
+                transform: scale(1);
+            }
+            75% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+    </style>
+	</head>
+
+<body>
+    <!-- Botão de WhatsApp no Cabeçalho -->
+    <a href="https://wa.me/5548991890567" class="whatsapp-button" target="_blank" title="WhatsApp Online">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
     <title>Calendário 2025</title>
     <style>
         body {
