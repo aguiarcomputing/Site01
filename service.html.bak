@@ -130,7 +130,7 @@
                     <div class="col-lg-3 wow fadeIn" data-wow-delay=".1s">
                         <div class="d-flex counter">
                             <h1 class="me-3 text-primary counter-value"> 648 </h1>
-                            <h5 class="text-white mt-1"> Já realizamos algumas formatações. </h5>
+                            <h5 class="text-white mt-1"> Formatações de Notebook e Desktop, realizada desde 2007. </h5>
                         </div>
                     </div>
                     <div class="col-lg-3 wow fadeIn" data-wow-delay=".3s">
@@ -142,7 +142,7 @@
                     <div class="col-lg-3 wow fadeIn" data-wow-delay=".5s">
                         <div class="d-flex counter">
                             <h1 class="me-3 text-primary counter-value"> 885 </h1>
-                            <h5 class="text-white mt-1"> Total de clientes que amam Aguiar Informática </h5>
+                            <h5 class="text-white mt-1"> Avaliações no Google 5 Estrelas </h5>
                         </div>
                     </div>
                     <div class="col-lg-3 wow fadeIn" data-wow-delay=".7s">
@@ -283,9 +283,9 @@
                     <div class="col-lg-3 col-md-6">
                         <a href="#" class="h3 text-secondary">Contate-nos</a>
                         <div class="text-white mt-4 d-flex flex-column contact-link">
-                            <a href="#" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i> R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835</a>
-                            <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i> (48) 9 9189-0567</a>
-                            <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-secondary me-2"></i> suporte@aguiarinformatica.com.br</a>
+                            <a href="https://www.google.com/search?sa=X&sca_esv=e9478340c7b0063d&hl=pt-BR&authuser=0&biw=1366&bih=613&sxsrf=ADLYWIL0FlLnFbC2IcZ0yLKHAq4gN-Dr6g:1737226520807&q=aguiar+inform%C3%A1tica+-+assist%C3%AAncia+t%C3%A9cnica+no+condom%C3%ADnio.+s%C3%A3o+jos%C3%A9+endere%C3%A7o&ludocid=12774581206029809323&ved=2ahUKEwjI6KqN-f-KAxVVtJUCHbyxBWMQ6BN6BAhHEAI" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i> R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835</a>
+                            <a href="https://wa.me/554899189567" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i> (48) 9 9189-0567</a>
+                            <a href="mailto:suporte@aguiarinformatica.com.br" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-secondary me-2"></i> suporte@aguiarinformatica.com.br</a>
                         </div>
                     </div>
                 </div>
