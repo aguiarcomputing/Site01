@@ -40,8 +40,8 @@
         <div class="container">
             <div class="d-flex justify-content-between topbar">
                 <div class="top-info">
-                    <small class="me-3 text-white-50"><a href="#"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835</small>
-                    <small class="me-3 text-white-50"><a href="#"><i class="fas fa-envelope me-2 text-secondary"></i></a>suporte@aguiarinformatica.com.br</small>
+                    <small class="me-3 text-white-50"><a href="https://www.google.com/search?sa=X&sca_esv=e9478340c7b0063d&hl=pt-BR&authuser=0&biw=1366&bih=613&sxsrf=ADLYWIL0FlLnFbC2IcZ0yLKHAq4gN-Dr6g:1737226520807&q=aguiar+inform%C3%A1tica+-+assist%C3%AAncia+t%C3%A9cnica+no+condom%C3%ADnio.+s%C3%A3o+jos%C3%A9+endere%C3%A7o&ludocid=12774581206029809323&ved=2ahUKEwjI6KqN-f-KAxVVtJUCHbyxBWMQ6BN6BAhHEAI"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835</small>
+                    <small class="me-3 text-white-50"><a href="mailto:suporte@aguiarinformatica.com.br"><i class="fas fa-envelope me-2 text-secondary"></i></a>suporte@aguiarinformatica.com.br</small>
                 </div>
                 <div id="note" class="text-secondary d-none d-xl-flex"><small>Nota: Nós ajudamos você a expandir seu negócio</small></div>
                 <div class="top-link">
