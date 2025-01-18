@@ -44,7 +44,7 @@
                         <small class="me-3 text-white-50"><a href="#"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835</small>
                         <small class="me-3 text-white-50"><a href="#"><i class="fas fa-envelope me-2 text-secondary"></i></a>suporte@aguiarinformatica.com.br</small>
                     </div>
-                    <div id="note" class="text-secondary d-none d-xl-flex"><small>Note : Nós ajudamos você a expandir seu negócio</small></div>
+                    <div id="note" class="text-secondary d-none d-xl-flex"><small>Note : Nós ajudamos você a fazer seu negócio crescer</small></div>
                     <div class="top-link">
                         <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-facebook-f text-primary"></i></a>
                         <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-twitter text-primary"></i></a>
@@ -61,7 +61,7 @@
             <div class="container">
                 <nav class="navbar navbar-dark navbar-expand-lg py-0">
                     <a href="index.html" class="navbar-brand">
-                        <h3 class="text-white fw-bold d-block">Aguiar<span class="text-secondary">Informática</span> </h3>
+                        <h2 class="text-white fw-bold d-block">Aguiar<span class="text-secondary">Informática</span> </h2>
                     </a>
                     <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
@@ -70,13 +70,13 @@
                         <div class="navbar-nav ms-auto mx-xl-auto p-0">
                             <a href="index.html" class="nav-item nav-link">Home</a>
                             <a href="about.html" class="nav-item nav-link">Sobre</a>
-                            <a href="service.html" class="nav-item nav-link">Serviços</a>
-                            <a href="project.html" class="nav-item nav-link active">Projetos</a>
+                            <a href="service.html" class="nav-item nav-link active">Serviços</a>
+                            <a href="project.html" class="nav-item nav-link">Projetos</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Páginas</a>
                                 <div class="dropdown-menu rounded">
-                                    <a href="blog.html" class="dropdown-item">Nosso blog</a>
-                                    <a href="team.html" class="dropdown-item">Nossa equipe</a>
+                                    <a href="blog.html" class="dropdown-item">Our Blog</a>
+                                    <a href="team.html" class="dropdown-item">Our Team</a>
                                     <a href="testimonial.html" class="dropdown-item">Depoimento</a>
                                     <a href="hardware.html" class="dropdown-item">Hardware</a>
                                 </div>
@@ -94,11 +94,11 @@
                             </a>
                         </div>
                         <div class="d-flex flex-column pe-4 border-end">
-                            <span class="text-white-50"> Tem alguma dúvida? </span>
-                            <span class="text-secondary"> Chamar: (48) 9 9189-0567 </span>
+                            <span class="text-white-50">Tem alguma dúvida?</span>
+                            <span class="text-secondary">Chamar: (48) 9 9189-0567</span>
                         </div>
                         <div class="d-flex align-items-center justify-content-center ms-4 ">
-                            <a href="https://wa.me/554899189567"><i class="bi bi-search text-white fa-2x"></i> </a>
+                            <a href="#"><i class="bi bi-search text-white fa-2x"></i> </a>
                         </div>
                     </div>
                 </nav>
@@ -110,12 +110,12 @@
         <!-- Page Header Start -->
         <div class="container-fluid page-header py-5">
             <div class="container text-center py-5">
-                <h1 class="display-2 text-white mb-4 animated slideInDown">Projetos</h1>
+                <h1 class="display-2 text-white mb-4 animated slideInDown">Serviços</h1>
                 <nav aria-label="breadcrumb animated slideInDown">
                     <ol class="breadcrumb justify-content-center mb-0">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                         <li class="breadcrumb-item"><a href="#">Páginas</a></li>
-                        <li class="breadcrumb-item" aria-current="page">Projetos</li>
+                        <li class="breadcrumb-item" aria-current="page">Serviços</li>
                     </ol>
                 </nav>
             </div>
@@ -129,7 +129,7 @@
                 <div class="row">
                     <div class="col-lg-3 wow fadeIn" data-wow-delay=".1s">
                         <div class="d-flex counter">
-                            <h1 class="me-3 text-primary counter-value">  648  </h1>
+                            <h1 class="me-3 text-primary counter-value"> 648 </h1>
                             <h5 class="text-white mt-1"> Já realizamos algumas formatações. </h5>
                         </div>
                     </div>
@@ -157,88 +157,83 @@
         <!-- Fact End -->
 
 
-        <!-- Project Start -->
-        <div class="container-fluid project py-5 my-5">
+        <!-- Services Start -->
+        <div class="container-fluid services py-5 my-5">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-                    <h5 class="text-primary">Nosso Projeto</h5>
-                    <h1>Nossos projetos concluídos recentemente</h1>
+                    <h5 class="text-primary">Nossos serviços</h5>
+                    <h1>Serviços criados especificamente para o seu negócio</h1>
                 </div>
-                <div class="row g-5">
+                <div class="row g-5 services-inner">
                     <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                        <div class="project-item">
-                            <div class="project-img">
-                                <img src="img/project-1.jpg" class="img-fluid w-100 rounded" alt="">
-                                <div class="project-content">
-                                    <a href="#" class="text-center">
-                                        <h4 class="text-secondary">Web design</h4>
-                                        <p class="m-0 text-white">Análise da Web</p>
-                                    </a>
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon">
+                                    <i class="fa fa-code fa-7x mb-4 text-primary"></i>
+                                    <h4 class="mb-3">Web Design</h4>
+                                    <p class="mb-4">O Web Design é responsável pela criação e manutenção de sites, focando na experiência do usuário (UX) e na interface (UI). Ele combina estética, funcionalidade e usabilidade, criando páginas visualmente atrativas, intuitivas e responsivas, adaptando-se a diferentes dispositivos como computadores, tablets e smartphones.<p Steve Jobs </p>
+                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Leia mais</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
-                        <div class="project-item">
-                            <div class="project-img">
-                                <img src="img/project-2.jpg" class="img-fluid w-100 rounded" alt="">
-                                <div class="project-content">
-                                    <a href="#" class="text-center">
-                                        <h4 class="text-secondary">Segurança Cibernética</h4>
-                                        <p class="m-0 text-white">Núcleo de Segurança Cibernética</p>
-                                    </a>
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon">
+                                    <i class="fa fa-file-code fa-7x mb-4 text-primary"></i>
+                                    <h4 class="mb-3">Web Development</h4>
+                                    <p class="mb-4">Desenvolvimento Web é o processo de criação de sites e aplicativos para a internet. Ele envolve programação e codificação para construir funcionalidades e garantir que o site ou aplicativo seja funcional, seguro e responsivo, ou seja, que se adapte a diferentes dispositivos. O desenvolvimento web pode incluir tanto o lado do servidor (backend) quanto o lado do cliente (frontend).</p>
+                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Leia mais</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
-                        <div class="project-item">
-                            <div class="project-img">
-                                <img src="img/project-3.jpg" class="img-fluid w-100 rounded" alt="">
-                                <div class="project-content">
-                                    <a href="#" class="text-center">
-                                        <h4 class="text-secondary">Informações móveis</h4>
-                                        <p class="m-0 text-white">Próximo telefone</p>
-                                    </a>
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon">
+                                    <i class="fa fa-external-link-alt fa-7x mb-4 text-primary"></i>
+                                    <h4 class="mb-3">UI/UX Design</h4>
+                                    <p class="mb-4">Design de UI/UX envolve criar interfaces visuais (UI) atraentes e funcionais e otimizar a experiência do usuário (UX) para garantir que a interação seja intuitiva e eficiente. Juntos, garantem um produto agradável e fácil de usar.</p>
+                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Leia mais</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
-                        <div class="project-item">
-                            <div class="project-img">
-                                <img src="img/project-4.jpg" class="img-fluid w-100 rounded" alt="">
-                                <div class="project-content">
-                                    <a href="#" class="text-center">
-                                        <h4 class="text-secondary">Desenvolvimento Web</h4>
-                                        <p class="m-0 text-white">Análise da Web</p>
-                                    </a>
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon">
+                                    <i class="fas fa-user-secret fa-7x mb-4 text-primary"></i>
+                                    <h4 class="mb-3">Web Cecurity</h4>
+                                    <p class="mb-4">Segurança na Web refere-se à proteção de sites, aplicativos e dados online contra ameaças, como hackers, vírus e roubo de informações. Isso inclui práticas como criptografia, autenticação, firewalls e monitoramento contínuo para garantir a integridade, confidencialidade e disponibilidade das informações na internet.</p>
+                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Leia mais</a>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
-                        <div class="project-item">
-                            <div class="project-img">
-                                <img src="img/project-5.jpg" class="img-fluid w-100 rounded" alt="">
-                                <div class="project-content">
-                                    <a href="#" class="text-center">
-                                        <h4 class="text-secondary">Marketing Digital</h4>
-                                        <p class="m-0 text-white">Análise de Mercado</p>
-                                    </a>
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon">
+                                    <i class="fa fa-envelope-open fa-7x mb-4 text-primary"></i>
+                                    <h4 class="mb-3">Digital Marketing</h4>
+                                    <p class="mb-4">Marketing Digital é o uso de estratégias e ferramentas online para promover produtos, serviços ou marcas. Ele inclui ações como SEO, redes sociais, e-mail marketing, anúncios pagos e marketing de conteúdo, com o objetivo de alcançar e engajar o público-alvo, gerar leads e aumentar as vendas.</p>
+                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Leia mais</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".7s">
-                        <div class="project-item">
-                            <div class="project-img">
-                                <img src="img/project-6.jpg" class="img-fluid w-100 rounded" alt="">
-                                <div class="project-content">
-                                    <a href="#" class="text-center">
-                                        <h4 class="text-secondary">Pesquisa de palavras-chave</h4>
-                                        <p class="m-0 text-white">Análise de palavras-chave</p>
-                                    </a>
+                        <div class="services-item bg-light">
+                            <div class="p-4 text-center services-content">
+                                <div class="services-content-icon">
+                                    <i class="fas fa-laptop fa-7x mb-4 text-primary"></i>
+                                    <h4 class="mb-3">Programação</h4>
+                                    <p class="mb-4">O cliente é o próprio cliente. Mas fica claro que às vezes. Algumas pessoas precisam de um pote de tinciduns.</p>
+                                    <a href="" class="btn btn-secondary text-white px-5 py-3 rounded-pill">Leia mais</a>
                                 </div>
                             </div>
                         </div>
@@ -246,7 +241,7 @@
                 </div>
             </div>
         </div>
-        <!-- Project End -->
+        <!-- Services End -->
 
 
         <!-- Footer Start -->
@@ -255,9 +250,9 @@
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-6">
                         <a href="index.html">
-                            <h1 class="text-white fw-bold d-block"> AGUIAR <span class="text-secondary"> INFORMÁTICA </span> </h1>
+                            <h3 class="text-white fw-bold d-block"> AGUIAR <span class="text-secondary"> INFORMÁTICA </span> </h3>
                         </a>
-                        <p class="mt-4 text-light">Concentre-se naquilo que você é bom, delegue todo o resto.Steve Jobs </p>
+                        <p class="mt-4 text-light"> Concentre-se naquilo que você é bom, delegue todo o resto. Steve Jobs </p>
                         <div class="d-flex hightech-link">
                             <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-facebook-f text-primary"></i></a>
                             <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-twitter text-primary"></i></a>
@@ -276,7 +271,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <a href="#" class="h3 text-secondary">Link de ajuda</a>
+                        <a href="#" class="h3 text-secondary">Link curto</a>
                         <div class="mt-4 d-flex flex-column help-link">
                             <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Termos de uso</a>
                             <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Política de Privacidade</a>
@@ -288,7 +283,7 @@
                     <div class="col-lg-3 col-md-6">
                         <a href="#" class="h3 text-secondary">Contate-nos</a>
                         <div class="text-white mt-4 d-flex flex-column contact-link">
-                            <a href="#" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i>R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835</a>
+                            <a href="#" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i> R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835</a>
                             <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i> (48) 9 9189-0567</a>
                             <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-secondary me-2"></i> suporte@aguiarinformatica.com.br</a>
                         </div>
@@ -297,11 +292,11 @@
                 <hr class="text-light mt-5 mb-4">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start">
-                        <span class="text-light"><a href="#" class="text-secondary"><i class="fas fa-copyright text-secondary me-2"></i>aguiarinformática</a>, Todos os direitos reservados.</span>
+                        <span class="text-light"><a href="#" class="text-secondary"><i class="fas fa-copyright text-secondary me-2"></i>Aguiar Informática</a>, Todos os direitos reservados.</span>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        <span class="text-light">Projetado por<a href="https://htmlcodex.com" class="text-secondary"> Código HTML </a> Distributed By <a href="https://aguiarinformatica.com.br">AguiarInformática</a></span>
+                        <span class="text-light"> Projetado por <a href="https://htmlcodex.com" class="text-secondary">Código HTML</a> Distribuído por <a href="https://themewagon.com">Aguiar Informática</a></span>
                     </div>
                 </div>
             </div>
