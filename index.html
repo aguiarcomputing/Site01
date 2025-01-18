@@ -6,6 +6,7 @@
         <title>Aguiar Informática - TI Soluções completas em TI</title>
 		<title> Uma Assistência Técnica No Condomínio. </title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="" name="keywords">
         <meta content="" name="description">
 
@@ -37,6 +38,71 @@
 		<link rel="icon" sizes="16x16" href="favicon-16x16.png">
 	</head>
 
+    <title>Botão de WhatsApp no Cabeçalho</title>
+    <style>
+        /* Estilo do botão no cabeçalho */
+        .whatsapp-button {
+            position: fixed;
+            top: 20px; /* Mantém o botão no topo */
+            right: 20px; /* Posiciona o botão à direita */
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            z-index: 1000;
+            text-decoration: none;
+            animation: heartbeat 2.5s infinite;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #1ebc57;
+        }
+
+        .whatsapp-button img {
+            width: 30px;
+            height: 30px;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.1);
+            }
+            50% {
+                transform: scale(1);
+            }
+            75% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Botão de WhatsApp no Cabeçalho -->
+    <a href="https://wa.me/5548991890567" class="whatsapp-button" target="_blank" title="WhatsApp Online">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+</body>
+</html>
+
+    <!-- Botão de WhatsApp no Cabeçalho -->
+    <a href="https://wa.me/5548991890567" class="whatsapp-button" target="_blank" title="WhatsApp Online">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
     <body>
         <!-- Spinner Start -->
         <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
