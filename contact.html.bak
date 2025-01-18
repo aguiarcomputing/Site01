@@ -238,7 +238,7 @@
                         <input type="email" class="form-control border-0 py-3" id="seuemail" placeholder="SEU.EMAIL@DOMINIO.COM.BR">
                     </div>
                     <div class="mb-4">
-                        <input type="text" class="form-control border-0 py-3" id="projeto" placeholder="(XX) 9 0000-0000">
+                        <input type="text" class="form-control border-0 py-3" id="projeto" placeholder="(00) 9 0000-0000">
                     </div>
                     <div class="mb-4">
                         <textarea class="w-100 form-control border-0 py-3" id="mensagem" rows="6" cols="10" placeholder="FALE SOBRE SEU PROBLEMA"></textarea>
