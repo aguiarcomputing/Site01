@@ -1,327 +1,352 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="utf-8">
-    <title>Aguiar Informática - TI Soluções completas em TI</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-    <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
-        
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap" rel="stylesheet"> 
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-			
-	<!-- Favicon padrão -->
-	<link rel="icon" href="flaticon.ico" type="image/x-icon">
-   
-	<!-- Favicon para dispositivos móveis -->
-	<link rel="icon" sizes="192x192" href="favicon-192x192.png">
-	<link rel="icon" sizes="32x32" href="favicon-32x32.png">
-	<link rel="icon" sizes="16x16" href="favicon-16x16.png">
+	<head>
+		<meta charset="utf-8">
+			<title>Aguiar Informática - TI Soluções completas em TI</title>
+			<meta content="width=device-width, initial-scale=1.0" name="viewport">
+				<meta content="" name="keywords">
+					<meta content="" name="description">
+						<meta http-equiv="Access-Control-Allow-Origin" content="*"/>
+						<!-- Google Web Fonts -->
+						<link rel="preconnect" href="https://fonts.googleapis.com">
+							<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+							<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap" rel="stylesheet">
+								<!-- Icon Font Stylesheet -->
+								<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+									<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+										<!-- Libraries Stylesheet -->
+										<link href="lib/animate/animate.min.css" rel="stylesheet">
+											<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+												<!-- Customized Bootstrap Stylesheet -->
+												<link href="css/bootstrap.min.css" rel="stylesheet">
+													<!-- Template Stylesheet -->
+													<link href="css/style.css" rel="stylesheet">
+														<!-- Favicon padrão -->
+														<link rel="icon" href="flaticon.ico" type="image/x-icon">
+															<!-- Favicon para dispositivos móveis -->
+															<link rel="icon" sizes="192x192" href="favicon-192x192.png">
+																<link rel="icon" sizes="32x32" href="favicon-32x32.png">
+																	<link rel="icon" sizes="16x16" href="favicon-16x16.png">
 </head>
-
-<body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" role="status"></div>
-    </div>
-    <!-- Spinner End -->
-
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-dark py-2 d-none d-md-flex">
-        <div class="container">
-            <div class="d-flex justify-content-between topbar">
-                <div class="top-info">
-                    <small class="me-3 text-white-50"><a href="https://www.google.com/search?sa=X&sca_esv=e9478340c7b0063d&hl=pt-BR&authuser=0&biw=1366&bih=613&sxsrf=ADLYWIL0FlLnFbC2IcZ0yLKHAq4gN-Dr6g:1737226520807&q=aguiar+inform%C3%A1tica+-+assist%C3%AAncia+t%C3%A9cnica+no+condom%C3%ADnio.+s%C3%A3o+jos%C3%A9+endere%C3%A7o&ludocid=12774581206029809323&ved=2ahUKEwjI6KqN-f-KAxVVtJUCHbyxBWMQ6BN6BAhHEAI"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835</small>
-                    <small class="me-3 text-white-50"><a href="mailto:suporte@aguiarinformatica.com.br"><i class="fas fa-envelope me-2 text-secondary"></i></a>suporte@aguiarinformatica.com.br</small>
-                </div>
-                <div id="note" class="text-secondary d-none d-xl-flex"><small>Nota: Nós ajudamos você a expandir seu negócio</small></div>
-                <div class="top-link">
-                    <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-facebook-f text-primary"></i></a>
-                    <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-twitter text-primary"></i></a>
-                    <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-instagram text-primary"></i></a>
-                    <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Topbar End -->
-
-    <!-- Navbar Start -->
-    <div class="container-fluid bg-primary">
-        <div class="container">
-            <nav class="navbar navbar-dark navbar-expand-lg py-0">
-                <a href="index.html" class="navbar-brand">
-                    <h3 class="text-white fw-bold d-block">Aguiar<span class="text-secondary">Informática</span> </h3>
-                </a>
-                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto mx-xl-auto p-0">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">Sobre</a>
-                        <a href="service.html" class="nav-item nav-link">Serviços</a>
-                        <a href="project.html" class="nav-item nav-link">Projetos</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Páginas</a>
-                            <div class="dropdown-menu rounded">
-                                <a href="blog.html" class="dropdown-item">Nosso blog</a>
-                                <a href="team.html" class="dropdown-item">Nossa equipe</a>
-                                <a href="testimonial.html" class="dropdown-item">Depoimento</a>
-                                <a href="hardware.html" class="dropdown-item">Hardware</a>
-                            </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link active">Contato</a>
-                    </div>
-                </div>
-                <div class="d-none d-xl-flex flex-shirink-0">
-                    <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
-                        <a href="" class="position-relative animated tada infinite">
-                            <i class="fa fa-phone-alt text-white fa-2x"></i>
-                            <div class="position-absolute" style="top: -7px; left: 20px;">
-                                <span><i class="fa fa-comment-dots text-secondary"></i></span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="d-flex flex-column pe-4 border-end">
-                        <span class="text-white-50"> Tem alguma dúvida? </span>
-                        <span class="text-secondary"> Chamar: (48) 9 9189-0567 </span>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-center ms-4 ">
-                        <a href="https://wa.me/554899189567"><i class="bi bi-search text-white fa-2x"></i> </a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
-    <!-- Navbar End -->
-
-    <!-- Page Header Start -->
-    <div class="container-fluid page-header py-5">
-        <div class="container text-center py-5">
-            <h1 class="display-2 text-white mb-4 animated slideInDown">Entre em contato</h1>
-            <nav aria-label="breadcrumb animated slideInDown">
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Páginas</a></li>
-                    <li class="breadcrumb-item" aria-current="page">Contato</li>
-                </ol>
-            </nav>
-        </div>
-    </div>
-    <!-- Page Header End -->
-
-    <!-- Fact Start -->
-    <div class="container-fluid bg-secondary py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 wow fadeIn" data-wow-delay=".1s">
-                    <div class="d-flex counter">
-                        <h1 class="me-3 text-primary counter-value"> 648 </h1>
-                        <h5 class="text-white mt-1"> Computadores formatados desde 2007 </h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 wow fadeIn" data-wow-delay=".3s">
-                    <div class="d-flex counter">
-                        <h1 class="me-3 text-primary counter-value"> 25 </h1>
-                        <h5 class="text-white mt-1"> Empresas atendidas </h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 wow fadeIn" data-wow-delay=".5s">
-                    <div class="d-flex counter">
-                        <h1 class="me-3 text-primary counter-value">885</h1>
-                        <h5 class="text-white mt-1"> Avaliações no Google 5 Estrelas </h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 wow fadeIn" data-wow-delay=".7s">
-                    <div class="d-flex counter">
-                        <h1 class="me-3 text-primary counter-value"> 14 </h1>
-                        <h5 class="text-white mt-1"> Avaliações de estrelas dadas por clientes satisfeitos </h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Fact End -->
-
-    <!-- Contact Start -->
-    <div class="container-fluid py-5 mt-5">
-        <div class="container py-5">
-            <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-                <h1 class="mb-3">CONTATO PARA ESCLARECER QUALQUER DÚVIDA</h1>
-                <p class="mb-4">
+																	<body>
+																		<!-- Spinner Start -->
+																		<div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+																			<div class="spinner-grow text-primary" role="status"/>
+																		</div>
+																		<!-- Spinner End -->
+																		<!-- Topbar Start -->
+																		<div class="container-fluid bg-dark py-2 d-none d-md-flex">
+																			<div class="container">
+																				<div class="d-flex justify-content-between topbar">
+																					<div class="top-info">
+																						<small class="me-3 text-white-50">
+																							<a href="https://www.google.com/search?sa=X&sca_esv=e9478340c7b0063d&hl=pt-BR&authuser=0&biw=1366&bih=613&sxsrf=ADLYWIL0FlLnFbC2IcZ0yLKHAq4gN-Dr6g:1737226520807&q=aguiar+inform%C3%A1tica+-+assist%C3%AAncia+t%C3%A9cnica+no+condom%C3%ADnio.+s%C3%A3o+jos%C3%A9+endere%C3%A7o&ludocid=12774581206029809323&ved=2ahUKEwjI6KqN-f-KAxVVtJUCHbyxBWMQ6BN6BAhHEAI">
+																								<i class="fas fa-map-marker-alt me-2 text-secondary"/>
+																							</a>R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835</small>
+																						<small class="me-3 text-white-50">
+																							<a href="mailto:suporte@aguiarinformatica.com.br">
+																								<i class="fas fa-envelope me-2 text-secondary"/>
+																							</a>suporte@aguiarinformatica.com.br</small>
+																					</div>
+																					<div id="note" class="text-secondary d-none d-xl-flex">
+																						<small>Nota: Nós ajudamos você a expandir seu negócio</small>
+																					</div>
+																					<div class="top-link">
+																						<a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle">
+																							<i class="fab fa-facebook-f text-primary"/>
+																						</a>
+																						<a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle">
+																							<i class="fab fa-twitter text-primary"/>
+																						</a>
+																						<a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle">
+																							<i class="fab fa-instagram text-primary"/>
+																						</a>
+																						<a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle me-0">
+																							<i class="fab fa-linkedin-in text-primary"/>
+																						</a>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<!-- Topbar End -->
+																		<!-- Navbar Start -->
+																		<div class="container-fluid bg-primary">
+																			<div class="container">
+																				<nav class="navbar navbar-dark navbar-expand-lg py-0">
+																					<a href="index.html" class="navbar-brand">
+																						<h3 class="text-white fw-bold d-block">Aguiar<span class="text-secondary">Informática</span>
+																						</h3>
+																					</a>
+																					<button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+																						<span class="navbar-toggler-icon"/>
+																					</button>
+																					<div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
+																						<div class="navbar-nav ms-auto mx-xl-auto p-0">
+																							<a href="index.html" class="nav-item nav-link">Home</a>
+																							<a href="about.html" class="nav-item nav-link">Sobre</a>
+																							<a href="service.html" class="nav-item nav-link">Serviços</a>
+																							<a href="project.html" class="nav-item nav-link">Projetos</a>
+																							<div class="nav-item dropdown">
+																								<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Páginas</a>
+																								<div class="dropdown-menu rounded">
+																									<a href="blog.html" class="dropdown-item">Nosso blog</a>
+																									<a href="team.html" class="dropdown-item">Nossa equipe</a>
+																									<a href="testimonial.html" class="dropdown-item">Depoimento</a>
+																									<a href="hardware.html" class="dropdown-item">Hardware</a>
+																								</div>
+																							</div>
+																							<a href="contact.html" class="nav-item nav-link active">Contato</a>
+																						</div>
+																					</div>
+																					<div class="d-none d-xl-flex flex-shirink-0">
+																						<div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
+																							<a href="" class="position-relative animated tada infinite">
+																								<i class="fa fa-phone-alt text-white fa-2x"/>
+																								<div class="position-absolute" style="top: -7px; left: 20px;">
+																									<span>
+																										<i class="fa fa-comment-dots text-secondary"/>
+																									</span>
+																								</div>
+																							</a>
+																						</div>
+																						<div class="d-flex flex-column pe-4 border-end">
+																							<span class="text-white-50"> Tem alguma dúvida? </span>
+																							<span class="text-secondary"> Chamar: (48) 9 9189-0567 </span>
+																						</div>
+																						<div class="d-flex align-items-center justify-content-center ms-4 ">
+																							<a href="https://wa.me/554899189567">
+																								<i class="bi bi-search text-white fa-2x"/>
+																							</a>
+																						</div>
+																					</div>
+																				</nav>
+																			</div>
+																		</div>
+																		<!-- Navbar End -->
+																		<!-- Page Header Start -->
+																		<div class="container-fluid page-header py-5">
+																			<div class="container text-center py-5">
+																				<h1 class="display-2 text-white mb-4 animated slideInDown">Entre em contato</h1>
+																				<nav aria-label="breadcrumb animated slideInDown">
+																					<ol class="breadcrumb justify-content-center mb-0">
+																						<li class="breadcrumb-item">
+																							<a href="#">Home</a>
+																						</li>
+																						<li class="breadcrumb-item">
+																							<a href="#">Páginas</a>
+																						</li>
+																						<li class="breadcrumb-item" aria-current="page">Contato</li>
+																					</ol>
+																				</nav>
+																			</div>
+																		</div>
+																		<!-- Page Header End -->
+																		<!-- Fact Start -->
+																		<div class="container-fluid bg-secondary py-5">
+																			<div class="container">
+																				<div class="row">
+																					<div class="col-lg-3 wow fadeIn" data-wow-delay=".1s">
+																						<div class="d-flex counter">
+																							<h1 class="me-3 text-primary counter-value"> 648 </h1>
+																							<h5 class="text-white mt-1"> Computadores formatados desde 2007 </h5>
+																						</div>
+																					</div>
+																					<div class="col-lg-3 wow fadeIn" data-wow-delay=".3s">
+																						<div class="d-flex counter">
+																							<h1 class="me-3 text-primary counter-value"> 25 </h1>
+																							<h5 class="text-white mt-1"> Empresas atendidas </h5>
+																						</div>
+																					</div>
+																					<div class="col-lg-3 wow fadeIn" data-wow-delay=".5s">
+																						<div class="d-flex counter">
+																							<h1 class="me-3 text-primary counter-value">885</h1>
+																							<h5 class="text-white mt-1"> Avaliações no Google 5 Estrelas </h5>
+																						</div>
+																					</div>
+																					<div class="col-lg-3 wow fadeIn" data-wow-delay=".7s">
+																						<div class="d-flex counter">
+																							<h1 class="me-3 text-primary counter-value"> 14 </h1>
+																							<h5 class="text-white mt-1"> Avaliações de estrelas dadas por clientes satisfeitos </h5>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<!-- Fact End -->
+																		<!-- Contact Start -->
+																		<div class="container-fluid py-5 mt-5">
+																			<div class="container py-5">
+																				<div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
+																					<h1 class="mb-3">CONTATO PARA ESCLARECER QUALQUER DÚVIDA</h1>
+																					<p class="mb-4">
                     Sabemos o quanto a tecnologia é importante no seu dia a dia, e entendemos a frustração quando algo não funciona como deveria. Se seu notebook, desktop ou celular está apresentando problemas, nós da Aguiar Informática estamos prontos para ajudar!
                 </p>
-                <p class="mb-4">
+																					<p class="mb-4">
                     Oferecemos manutenção de confiança, com cuidado e atenção para garantir que seus dispositivos voltem a funcionar como novos.
                 </p>
-            </div>
-        </div>
-    </div>
-
-    <div class="contact-detail position-relative p-5">
-        <div class="row g-5 mb-5 justify-content-center">
-            <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".3s">
-                <div class="d-flex bg-light p-3 rounded">
-                    <div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width: 64px; height: 64px;">
-                        <i class="fas fa-map-marker-alt text-white"></i>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="contact-detail position-relative p-5">
+																			<div class="row g-5 mb-5 justify-content-center">
+																				<div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".3s">
+																					<div class="d-flex bg-light p-3 rounded">
+																						<div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width: 64px; height: 64px;">
+																							<i class="fas fa-map-marker-alt text-white"/>
+																						</div>
+																						<div class="ms-3">
+																							<h4 class="text-primary">Endereço</h4>
+																							<a href="https://www.google.com/maps/place/Aguiar+Inform%C3%A1tica+-+Assist%C3%AAncia+T%C3%A9cnica+No+Condom%C3%ADnio./@-27.5560938,-48.6426788,17z/data=!3m1!4b1!4m6!3m5!1s0x9527490546727c57:0xb1486dec9bc9b6ab!8m2!3d-27.5560938!4d-48.6401039!16s%2Fg%2F11g_ys05_s?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="h5">R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835</a>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".5s">
+																					<div class="d-flex bg-light p-3 rounded">
+																						<div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width: 64px; height: 64px;">
+																							<i class="fa fa-phone text-white"/>
+																						</div>
+																						<div class="ms-3">
+																							<h4 class="text-primary">Envie mensagens com privacidade</h4>
+																							<a class="h5" href="Tel:(48) 9 9189-0567" target="_blank">(48) 9 9189-0567</a>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".7s">
+																					<div class="d-flex bg-light p-3 rounded">
+																						<div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width: 64px; height: 64px;">
+																							<i class="fa fa-envelope text-white"/>
+																						</div>
+																						<div class="ms-3">
+																							<h4 class="text-primary">Envie-nos um e-mail</h4>
+																							<a class="h5" href="mailto:suporte@aguiarinformatica.com.br" target="_blank">suporte@aguiarinformatica.com.br</a>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="row g-5">
+																				<div class="col-lg-6 wow fadeIn" data-wow-delay=".3s">
+																					<div class="p-5 h-100 rounded contact-map">
+																						<iframe class="rounded w-100 h-100" src="https://maps.app.goo.gl/chWSfno8GXRqUVUp9" style="border:0;" title="Mapa de Localização" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Localização no mapa"/>
+																					</div>
+																				</div>
+																				<div class="col-lg-6 wow fadeIn" data-wow-delay=".5s">
+																					<div class="p-5 rounded contact-form">
+																						<div class="mb-4">
+																							<input type="text" class="form-control border-0 py-3" id="seunome" placeholder="SEU NOME">
                     </div>
-                    <div class="ms-3">
-                        <h4 class="text-primary">Endereço</h4>
-                        <a href="https://www.google.com/maps/place/Aguiar+Inform%C3%A1tica+-+Assist%C3%AAncia+T%C3%A9cnica+No+Condom%C3%ADnio./@-27.5560938,-48.6426788,17z/data=!3m1!4b1!4m6!3m5!1s0x9527490546727c57:0xb1486dec9bc9b6ab!8m2!3d-27.5560938!4d-48.6401039!16s%2Fg%2F11g_ys05_s?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="h5">R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835</a>
+																							<div class="mb-4">
+																								<input type="email" class="form-control border-0 py-3" id="seuemail" placeholder="SEU.EMAIL@DOMINIO.COM.BR">
                     </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".5s">
-                <div class="d-flex bg-light p-3 rounded">
-                    <div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width: 64px; height: 64px;">
-                        <i class="fa fa-phone text-white"></i>
+																								<div class="mb-4">
+																									<input type="text" class="form-control border-0 py-3" id="projeto" placeholder="SERVIÇO">
                     </div>
-                    <div class="ms-3">
-                        <h4 class="text-primary">Envie mensagens com privacidade</h4>
-                        <a class="h5" href="Tel:(48) 9 9189-0567" target="_blank">(48) 9 9189-0567</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".7s">
-                <div class="d-flex bg-light p-3 rounded">
-                    <div class="flex-shrink-0 btn-square bg-secondary rounded-circle" style="width: 64px; height: 64px;">
-                        <i class="fa fa-envelope text-white"></i>
-                    </div>
-                    <div class="ms-3">
-                        <h4 class="text-primary">Envie-nos um e-mail</h4>
-                        <a class="h5" href="mailto:suporte@aguiarinformatica.com.br" target="_blank">suporte@aguiarinformatica.com.br</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row g-5">
-            <div class="col-lg-6 wow fadeIn" data-wow-delay=".3s">
-                <div class="p-5 h-100 rounded contact-map">
-                    <iframe 
-                        class="rounded w-100 h-100" 
-                        src="https://maps.app.goo.gl/chWSfno8GXRqUVUp9" 
-                        style="border:0;" 
-                        title="Mapa de Localização" 
-                        allowfullscreen 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        aria-label="Localização no mapa"
-                    ></iframe>
-                </div>
-            </div>
-            <div class="col-lg-6 wow fadeIn" data-wow-delay=".5s">
-                <div class="p-5 rounded contact-form">
-                    <div class="mb-4">
-                        <input type="text" class="form-control border-0 py-3" id="seunome" placeholder="SEU NOME">
-                    </div>
-                    <div class="mb-4">
-                        <input type="email" class="form-control border-0 py-3" id="seuemail" placeholder="SEU.EMAIL@DOMINIO.COM.BR">
-                    </div>
-                    <div class="mb-4">
-                        <input type="text" class="form-control border-0 py-3" id="projeto" placeholder="SERVIÇO">
-                    </div>
-                    <div class="mb-4">
-                        <textarea class="w-100 form-control border-0 py-3" id="mensagem" rows="6" cols="10" placeholder="MENSAGEM"></textarea>
-                    </div>
-                    <div class="text-start">
-                        <button class="btn bg-primary text-white py-3 px-5" type="button" onclick="SendEmail(); return false;">Enviar mensagem </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Contact End -->
-
-    <!-- Footer Start -->
-    <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
-        <div class="container pt-5 pb-4">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <a href="index.html">
-                        <h3 class="text-white fw-bold d-block">Aguiar <span class="text-secondary">Informática</span></h3>
-                    </a>
-                    <p class="mt-4 text-light">Concentre-se naquilo que você é bom, delegue todo o resto.</p>
-                    <div class="d-flex hightech-link">
-                        <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-facebook-f text-primary"></i></a>
-                        <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-twitter text-primary"></i></a>
-                        <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-instagram text-primary"></i></a>
-                        <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <a href="#" class="h3 text-secondary">Link curto</a>
-                    <div class="mt-4 d-flex flex-column short-link">
-                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Sobre nós</a>
-                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Entre em contato</a>
-                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Entre em contato</a>
-                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Nossos serviços</a>
-                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Nossos Projetos</a>
-                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Blog mais recente</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <a href="#" class="h3 text-secondary">Link de ajuda</a>
-                    <div class="mt-4 d-flex flex-column help-link">
-                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Termos de uso</a>
-                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Política de Privacidade</a>
-                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Helps</a>
-                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>FQAs</a>
-                        <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Contato</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <a href="#" class="h3 text-secondary">Entre em contato</a>
-                    <div class="text-white mt-4 d-flex flex-column contact-link">
-                        <a href="https://www.google.com/search?sa=X&sca_esv=e9478340c7b0063d&hl=pt-BR&authuser=0&biw=1366&bih=613&sxsrf=ADLYWIL0FlLnFbC2IcZ0yLKHAq4gN-Dr6g:1737226520807&q=aguiar+inform%C3%A1tica+-+assist%C3%AAncia+t%C3%A9cnica+no+condom%C3%ADnio.+s%C3%A3o+jos%C3%A9+endere%C3%A7o&ludocid=12774581206029809323&ved=2ahUKEwjI6KqN-f-KAxVVtJUCHbyxBWMQ6BN6BAhHEAI" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i>R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835</a>
-                        <a href="https://wa.me/554899189567" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i>(48) 9 9189-0567</a>
-                        <a href="mailto:suporte@aguiarinformatica.com.br" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-secondary me-2"></i>suporte@aguiarinformatica.com.br</a>
-                    </div>
-                </div>
-            </div>
-            <hr class="text-light mt-5 mb-4">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start">
-                    <span class="text-light"><a href="#" class="text-secondary"><i class="fas fa-copyright text-secondary me-2"></i>Aguiar Informática</a>, Todos os direitos reservados.</span>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <span class="text-light"> Projetado por <a href="https://htmlcodex.com" class="text-secondary">Código HTML</a> Distribuído por <a href="https://aguiarinformatica.com.br">AguiarComputing</a></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"><i class="fa fa-arrow-up text-white"></i></a>
-
-    <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-</body>
-</html>
+																									<div class="mb-4">
+																										<textarea class="w-100 form-control border-0 py-3" id="mensagem" rows="6" cols="10" placeholder="MENSAGEM"/>
+																									</div>
+																									<div class="text-start">
+																										<button class="btn bg-primary text-white py-3 px-5" type="button" onclick="SendEmail(); return false;">Enviar mensagem </button>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																					<!-- Contact End -->
+																					<!-- Footer Start -->
+																					<div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
+																						<div class="container pt-5 pb-4">
+																							<div class="row g-5">
+																								<div class="col-lg-3 col-md-6">
+																									<a href="index.html">
+																										<h3 class="text-white fw-bold d-block">Aguiar <span class="text-secondary">Informática</span>
+																										</h3>
+																									</a>
+																									<p class="mt-4 text-light">Concentre-se naquilo que você é bom, delegue todo o resto.</p>
+																									<div class="d-flex hightech-link">
+																										<a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2">
+																											<i class="fab fa-facebook-f text-primary"/>
+																										</a>
+																										<a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2">
+																											<i class="fab fa-twitter text-primary"/>
+																										</a>
+																										<a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2">
+																											<i class="fab fa-instagram text-primary"/>
+																										</a>
+																										<a href="" class="btn-light nav-fill btn btn-square rounded-circle me-0">
+																											<i class="fab fa-linkedin-in text-primary"/>
+																										</a>
+																									</div>
+																								</div>
+																								<div class="col-lg-3 col-md-6">
+																									<a href="#" class="h3 text-secondary">Link curto</a>
+																									<div class="mt-4 d-flex flex-column short-link">
+																										<a href="" class="mb-2 text-white">
+																											<i class="fas fa-angle-right text-secondary me-2"/>Sobre nós</a>
+																										<a href="" class="mb-2 text-white">
+																											<i class="fas fa-angle-right text-secondary me-2"/>Entre em contato</a>
+																										<a href="" class="mb-2 text-white">
+																											<i class="fas fa-angle-right text-secondary me-2"/>Entre em contato</a>
+																										<a href="" class="mb-2 text-white">
+																											<i class="fas fa-angle-right text-secondary me-2"/>Nossos serviços</a>
+																										<a href="" class="mb-2 text-white">
+																											<i class="fas fa-angle-right text-secondary me-2"/>Nossos Projetos</a>
+																										<a href="" class="mb-2 text-white">
+																											<i class="fas fa-angle-right text-secondary me-2"/>Blog mais recente</a>
+																									</div>
+																								</div>
+																								<div class="col-lg-3 col-md-6">
+																									<a href="#" class="h3 text-secondary">Link de ajuda</a>
+																									<div class="mt-4 d-flex flex-column help-link">
+																										<a href="" class="mb-2 text-white">
+																											<i class="fas fa-angle-right text-secondary me-2"/>Termos de uso</a>
+																										<a href="" class="mb-2 text-white">
+																											<i class="fas fa-angle-right text-secondary me-2"/>Política de Privacidade</a>
+																										<a href="" class="mb-2 text-white">
+																											<i class="fas fa-angle-right text-secondary me-2"/>Helps</a>
+																										<a href="" class="mb-2 text-white">
+																											<i class="fas fa-angle-right text-secondary me-2"/>FQAs</a>
+																										<a href="" class="mb-2 text-white">
+																											<i class="fas fa-angle-right text-secondary me-2"/>Contato</a>
+																									</div>
+																								</div>
+																								<div class="col-lg-3 col-md-6">
+																									<a href="#" class="h3 text-secondary">Entre em contato</a>
+																									<div class="text-white mt-4 d-flex flex-column contact-link">
+																										<a href="https://www.google.com/search?sa=X&sca_esv=e9478340c7b0063d&hl=pt-BR&authuser=0&biw=1366&bih=613&sxsrf=ADLYWIL0FlLnFbC2IcZ0yLKHAq4gN-Dr6g:1737226520807&q=aguiar+inform%C3%A1tica+-+assist%C3%AAncia+t%C3%A9cnica+no+condom%C3%ADnio.+s%C3%A3o+jos%C3%A9+endere%C3%A7o&ludocid=12774581206029809323&ved=2ahUKEwjI6KqN-f-KAxVVtJUCHbyxBWMQ6BN6BAhHEAI" class="pb-3 text-light border-bottom border-primary">
+																											<i class="fas fa-map-marker-alt text-secondary me-2"/>R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835</a>
+																										<a href="https://wa.me/554899189567" class="py-3 text-light border-bottom border-primary">
+																											<i class="fas fa-phone-alt text-secondary me-2"/>(48) 9 9189-0567</a>
+																										<a href="mailto:suporte@aguiarinformatica.com.br" class="py-3 text-light border-bottom border-primary">
+																											<i class="fas fa-envelope text-secondary me-2"/>suporte@aguiarinformatica.com.br</a>
+																									</div>
+																								</div>
+																							</div>
+																							<hr class="text-light mt-5 mb-4">
+																								<div class="row">
+																									<div class="col-md-6 text-center text-md-start">
+																										<span class="text-light">
+																											<a href="#" class="text-secondary">
+																												<i class="fas fa-copyright text-secondary me-2"/>Aguiar Informática</a>, Todos os direitos reservados.</span>
+																									</div>
+																									<div class="col-md-6 text-center text-md-end">
+																										<span class="text-light"> Projetado por <a href="https://htmlcodex.com" class="text-secondary">Código HTML</a> Distribuído por <a href="https://aguiarinformatica.com.br">AguiarComputing</a>
+																										</span>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																						<!-- Footer End -->
+																						<!-- Back to Top -->
+																						<a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top">
+																							<i class="fa fa-arrow-up text-white"/>
+																						</a>
+																						<!-- JavaScript Libraries -->
+																						<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"/>
+																						<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"/>
+																						<script src="lib/wow/wow.min.js"/>
+																						<script src="lib/easing/easing.min.js"/>
+																						<script src="lib/waypoints/waypoints.min.js"/>
+																						<script src="lib/owlcarousel/owl.carousel.min.js"/>
+																						<!-- Template Javascript -->
+																						<script src="js/main.js"/>
+																					</body>
+																				</html>
