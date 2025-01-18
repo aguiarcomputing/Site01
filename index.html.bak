@@ -740,7 +740,7 @@
                                     <i class="fa fa-envelope text-white"></i>
                                 </div>
                                 <div class="ms-3">
-                                    <h4 class="text-primary"> Envie-nos um e-mail </h4>
+                                    <h5 class="text-primary"> Envie-nos um e-mail </h5>
                                     <a class="h5" href="mailto:suporte@aguiarinformatica.com.br" target="_blank"> suporte@aguiarinformatica.com.br </a>
                                 </div>
                             </div>
