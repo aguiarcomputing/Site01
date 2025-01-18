@@ -78,7 +78,7 @@
                     <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
                         <div class="navbar-nav ms-auto mx-xl-auto p-0">
                             <a href="index.html" class="nav-item nav-link">Home</a>
-                            <a href="about.html" class="nav-item nav-link active">Sobre</a>
+                            <a href="about.html" class="nav-item nav-link active">Sobre nós</a>
                             <a href="service.html" class="nav-item nav-link">Serviços</a>
                             <a href="project.html" class="nav-item nav-link">Projetos</a>
                             <div class="nav-item dropdown">
@@ -124,7 +124,7 @@
                     <ol class="breadcrumb justify-content-center mb-0">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                         <li class="breadcrumb-item"><a href="#">Páginas</a></li>
-                        <li class="breadcrumb-item" aria-current="page">Sobre</li>
+                        <li class="breadcrumb-item" aria-current="page">Sobre nós</li>
                     </ol>
                 </nav>
             </div>

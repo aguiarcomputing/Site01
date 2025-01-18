@@ -755,7 +755,7 @@
                         <div class="col-lg-6 wow fadeIn" data-wow-delay=".5s">
                             <div class="p-5 rounded contact-form">
                                 <div class="mb-4">
-                                    <input type="text" class="form-control border-0 py-3" placeholder="NOME E SOBRE">
+                                    <input type="text" class="form-control border-0 py-3" placeholder="NOME">
                                 </div>
                                 <div class="mb-4">
                                     <input type="email" class="form-control border-0 py-3" placeholder="SEU.EMAIL@DOMINIO.COM.BR">
