@@ -3,199 +3,143 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Agenda Online - Aguiar Informática</title>
+    <title>Agenda - Aguiar Informática</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="agenda, manutenção, informática, computador, notebook" name="keywords">
-    <meta content="Agende seu serviço de manutenção de computador e notebook online." name="description">
+    <meta content="notícias, hardware, tecnologia, inovações, equipamentos" name="keywords">
+    <meta content="Fique por dentro das últimas novidades sobre hardware e tecnologia no mundo dos computadores." name="description">
     
-    <!-- Incluindo a fonte do Google -->
+    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Estilos para o calendário e layout -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* Estilo para o calendário */
         .calendar {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
             margin: 20px 0;
         }
 
-        .calendar .day {
-            width: 13%;
+        .calendar-header,
+        .calendar-day {
             text-align: center;
-            margin: 5px;
             padding: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .calendar .day:hover {
-            background-color: #f0f0f0;
-        }
-
-        .calendar .day.selected {
-            background-color: #007bff;
-            color: white;
-        }
-
-        .form-section {
-            margin-top: 30px;
-        }
-
-        .form-section label {
             font-weight: bold;
+            background-color: #f1f1f1;
+            border-radius: 5px;
         }
 
-        .whatsapp-button {
-            position: fixed;
-            top: 20px;
-            right: 20px;
+        .calendar-day {
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        .calendar-day:hover {
+            background-color: #ddd;
+        }
+
+        .today {
             background-color: #25d366;
             color: white;
             border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            z-index: 1000;
         }
 
-        .whatsapp-button:hover {
-            background-color: #1ebc57;
+        .calendar-day.disabled {
+            color: #bbb;
+            cursor: not-allowed;
         }
+
     </style>
 </head>
 
 <body>
-
     <!-- Botão de WhatsApp no Cabeçalho -->
     <a href="https://wa.me/5548991890567" class="whatsapp-button" target="_blank" title="WhatsApp Online">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30" height="30">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>
 
-    <!-- Título da Página -->
-    <div class="container text-center my-5">
-        <h1>Agenda Online - Aguiar Informática</h1>
-        <p>Agende o seu serviço de manutenção para computador ou notebook.</p>
+    <!-- Início da Página -->
+    <div class="container py-5">
+        <h1 class="text-center mb-5">Calendário de Janeiro 2025</h1>
+        
+        <div class="calendar">
+            <!-- Cabeçalhos dos dias da semana -->
+            <div class="calendar-header">Dom</div>
+            <div class="calendar-header">Seg</div>
+            <div class="calendar-header">Ter</div>
+            <div class="calendar-header">Qua</div>
+            <div class="calendar-header">Qui</div>
+            <div class="calendar-header">Sex</div>
+            <div class="calendar-header">Sáb</div>
+
+            <!-- Dias do mês de Janeiro -->
+            <div class="calendar-day disabled"></div> <!-- Espaço para o início da semana -->
+            <div class="calendar-day disabled"></div> <!-- Espaço para o início da semana -->
+            <div class="calendar-day disabled"></div> <!-- Espaço para o início da semana -->
+            <div class="calendar-day disabled"></div> <!-- Espaço para o início da semana -->
+            <div class="calendar-day disabled"></div> <!-- Espaço para o início da semana -->
+            <div class="calendar-day disabled"></div> <!-- Espaço para o início da semana -->
+            <div class="calendar-day today">1</div>
+            <div class="calendar-day">2</div>
+            <div class="calendar-day">3</div>
+            <div class="calendar-day">4</div>
+            <div class="calendar-day">5</div>
+            <div class="calendar-day">6</div>
+            <div class="calendar-day">7</div>
+            <div class="calendar-day">8</div>
+            <div class="calendar-day">9</div>
+            <div class="calendar-day">10</div>
+            <div class="calendar-day">11</div>
+            <div class="calendar-day">12</div>
+            <div class="calendar-day">13</div>
+            <div class="calendar-day">14</div>
+            <div class="calendar-day">15</div>
+            <div class="calendar-day">16</div>
+            <div class="calendar-day">17</div>
+            <div class="calendar-day">18</div>
+            <div class="calendar-day">19</div>
+            <div class="calendar-day">20</div>
+            <div class="calendar-day">21</div>
+            <div class="calendar-day">22</div>
+            <div class="calendar-day">23</div>
+            <div class="calendar-day">24</div>
+            <div class="calendar-day">25</div>
+            <div class="calendar-day">26</div>
+            <div class="calendar-day">27</div>
+            <div class="calendar-day">28</div>
+            <div class="calendar-day">29</div>
+            <div class="calendar-day">30</div>
+            <div class="calendar-day">31</div>
+        </div>
     </div>
 
-    <!-- Calendário -->
-    <div class="container">
-        <div class="calendar" id="calendar"></div>
-    </div>
-
-    <!-- Formulário de Agendamento -->
-    <div class="container form-section">
-        <h2>Agende Seu Serviço</h2>
-        <form id="agendamento-form">
-            <div class="mb-3">
-                <label for="name" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="name" required>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">E-mail</label>
-                <input type="email" class="form-control" id="email" required>
-            </div>
-            <div class="mb-3">
-                <label for="service" class="form-label">Tipo de Serviço</label>
-                <select class="form-control" id="service" required>
-                    <option value="manutencao-computador">Manutenção de Computador</option>
-                    <option value="manutencao-notebook">Manutenção de Notebook</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="date" class="form-label">Data Selecionada</label>
-                <input type="text" class="form-control" id="date" readonly required>
-            </div>
-            <button type="submit" class="btn btn-primary">Agendar</button>
-        </form>
-    </div>
-
+    <!-- JavaScript para destacar o dia atual -->
     <script>
-        // Função para gerar o calendário do mês atual
-        function gerarCalendario() {
-            const diasDaSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
-            const dataAtual = new Date();
-            const mesAtual = dataAtual.getMonth();
-            const anoAtual = dataAtual.getFullYear();
-            const primeiroDiaDoMes = new Date(anoAtual, mesAtual, 1);
-            const ultimoDiaDoMes = new Date(anoAtual, mesAtual + 1, 0);
-            const diasNoMes = ultimoDiaDoMes.getDate();
-            const primeiroDiaSemana = primeiroDiaDoMes.getDay();
+        // Função que destaca o dia atual no calendário
+        window.onload = function() {
+            const today = new Date();
+            const currentDay = today.getDate();
+            const days = document.querySelectorAll('.calendar-day');
 
-            // Montar o calendário
-            let calendarioHTML = '';
-
-            // Adiciona os dias da semana
-            diasDaSemana.forEach(dia => {
-                calendarioHTML += `<div class="day">${dia}</div>`;
-            });
-
-            // Adiciona os dias do mês
-            let diaContador = 1;
-
-            // Preencher os dias vazios antes do primeiro dia do mês
-            for (let i = 0; i < primeiroDiaSemana; i++) {
-                calendarioHTML += `<div class="day"></div>`;
-            }
-
-            // Adicionar os dias do mês
-            for (let i = primeiroDiaSemana; i < 7 && diaContador <= diasNoMes; i++) {
-                calendarioHTML += `<div class="day" data-day="${diaContador}">${diaContador}</div>`;
-                diaContador++;
-            }
-
-            // Adicionar as linhas restantes do mês
-            while (diaContador <= diasNoMes) {
-                calendarioHTML += `<div class="day" data-day="${diaContador}">${diaContador}</div>`;
-                diaContador++;
-                if (diaContador % 7 === 1) {
-                    calendarioHTML += '</div><div class="calendar">';
+            days.forEach(day => {
+                if (parseInt(day.textContent) === currentDay) {
+                    day.classList.add('today');
                 }
-            }
-
-            document.getElementById('calendar').innerHTML = calendarioHTML;
-
-            // Função para selecionar uma data
-            const dias = document.querySelectorAll('.calendar .day');
-            dias.forEach(dia => {
-                dia.addEventListener('click', function () {
-                    dias.forEach(d => d.classList.remove('selected'));
-                    this.classList.add('selected');
-                    const dataSelecionada = `${this.textContent}/${mesAtual + 1}/${anoAtual}`;
-                    document.getElementById('date').value = dataSelecionada;
-                });
             });
         }
-
-        // Inicializa o calendário
-        gerarCalendario();
-
-        // Função para enviar o formulário de agendamento
-        document.getElementById('agendamento-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const nome = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const servico = document.getElementById('service').value;
-            const data = document.getElementById('date').value;
-            
-            alert(`Agendamento Confirmado!\nNome: ${nome}\nE-mail: ${email}\nServiço: ${servico}\nData: ${data}`);
-        });
     </script>
-
-    <!-- Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
