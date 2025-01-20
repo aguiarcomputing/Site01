@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Agenda - Aguiar Informática</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="notícias, hardware, tecnologia, inovações, equipamentos" name="keywords">
+    <meta content="Fique por dentro das últimas novidades sobre hardware e tecnologia no mundo dos computadores." name="description">
+    
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* Estilo para o calendário */
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            margin: 20px 0;
+        }
+
+        .calendar-header,
+        .calendar-day {
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+        }
+
+        .calendar-day {
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        .calendar-day:hover {
+            background-color: #ddd;
+        }
+
+        .today {
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+        }
+
+        .calendar-day.disabled {
+            color: #bbb;
+            cursor: not-allowed;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Botão de WhatsApp no Cabeçalho -->
+    <a href="https://wa.me/5548991890567" class="whatsapp-button" target="_blank" title="WhatsApp Online">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <!-- Início da Página -->
+    <div class="container py-5">
+        <h1 class="text-center mb-5">Calendário de Janeiro 2025</h1>
+        
+        <div class="calendar">
+            <!-- Cabeçalhos dos dias da semana -->
+            <div class="calendar-header">Dom</div>
+            <div class="calendar-header">Seg</div>
+            <div class="calendar-header">Ter</div>
+            <div class="calendar-header">Qua</div>
+            <div class="calendar-header">Qui</div>
+            <div class="calendar-header">Sex</div>
+            <div class="calendar-header">Sáb</div>
+
+            <!-- Dias do mês de Janeiro -->
+            <div class="calendar-day disabled"></div> <!-- Espaço para o início da semana -->
+            <div class="calendar-day disabled"></div> <!-- Espaço para o início da semana -->
+            <div class="calendar-day disabled"></div> <!-- Espaço para o início da semana -->
+            <div class="calendar-day disabled"></div> <!-- Espaço para o início da semana -->
+            <div class="calendar-day disabled"></div> <!-- Espaço para o início da semana -->
+            <div class="calendar-day disabled"></div> <!-- Espaço para o início da semana -->
+            <div class="calendar-day today">1</div>
+            <div class="calendar-day">2</div>
+            <div class="calendar-day">3</div>
+            <div class="calendar-day">4</div>
+            <div class="calendar-day">5</div>
+            <div class="calendar-day">6</div>
+            <div class="calendar-day">7</div>
+            <div class="calendar-day">8</div>
+            <div class="calendar-day">9</div>
+            <div class="calendar-day">10</div>
+            <div class="calendar-day">11</div>
+            <div class="calendar-day">12</div>
+            <div class="calendar-day">13</div>
+            <div class="calendar-day">14</div>
+            <div class="calendar-day">15</div>
+            <div class="calendar-day">16</div>
+            <div class="calendar-day">17</div>
+            <div class="calendar-day">18</div>
+            <div class="calendar-day">19</div>
+            <div class="calendar-day">20</div>
+            <div class="calendar-day">21</div>
+            <div class="calendar-day">22</div>
+            <div class="calendar-day">23</div>
+            <div class="calendar-day">24</div>
+            <div class="calendar-day">25</div>
+            <div class="calendar-day">26</div>
+            <div class="calendar-day">27</div>
+            <div class="calendar-day">28</div>
+            <div class="calendar-day">29</div>
+            <div class="calendar-day">30</div>
+            <div class="calendar-day">31</div>
+        </div>
+    </div>
+
+    <!-- JavaScript para destacar o dia atual -->
+    <script>
+        // Função que destaca o dia atual no calendário
+        window.onload = function() {
+            const today = new Date();
+            const currentDay = today.getDate();
+            const days = document.querySelectorAll('.calendar-day');
+
+            days.forEach(day => {
+                if (parseInt(day.textContent) === currentDay) {
+                    day.classList.add('today');
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

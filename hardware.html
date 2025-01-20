@@ -25,8 +25,74 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Template Stylesheet -->
+		
+		<!-- Favicon padrão -->
+		<link rel="icon" href="flaticon.ico" type="image/x-icon">
+    
+		<!-- Favicon para dispositivos móveis -->
+		<link rel="icon" sizes="192x192" href="favicon-192x192.png">
+		<link rel="icon" sizes="32x32" href="favicon-32x32.png">
+		<link rel="icon" sizes="16x16" href="favicon-16x16.png">		
         <link href="css/style.css" rel="stylesheet">
     </head>
+		<!-- Botão de WhatsApp no Cabeçalho -->
+    <title>Botão de WhatsApp no Cabeçalho</title>
+    <style>
+        /* Estilo do botão no cabeçalho */
+        .whatsapp-button {
+            position: fixed;
+            top: 20px; /* Mantém o botão no topo */
+            right: 20px; /* Posiciona o botão à direita */
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            z-index: 1000;
+            text-decoration: none;
+            animation: heartbeat 2.5s infinite;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #1ebc57;
+        }
+
+        .whatsapp-button img {
+            width: 30px;
+            height: 30px;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.1);
+            }
+            50% {
+                transform: scale(1);
+            }
+            75% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+    </style>
+	</head>
+
+<body>
+    <!-- Botão de WhatsApp no Cabeçalho -->
+    <a href="https://wa.me/5548991890567" class="whatsapp-button" target="_blank" title="WhatsApp Online">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
 
     <body>
         <!-- Spinner Start -->
@@ -40,8 +106,8 @@
             <div class="container">
                 <div class="d-flex justify-content-between topbar">
                     <div class="top-info">
-                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835</small>
-                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-envelope me-2 text-secondary"></i></a>suporte@aguiarinformatica.com.br</small>
+                        <small class="me-3 text-white-50"><a href="https://www.google.com/search?sa=X&sca_esv=e9478340c7b0063d&hl=pt-BR&authuser=0&biw=1366&bih=613&sxsrf=ADLYWIL0FlLnFbC2IcZ0yLKHAq4gN-Dr6g:1737226520807&q=aguiar+inform%C3%A1tica+-+assist%C3%AAncia+t%C3%A9cnica+no+condom%C3%ADnio.+s%C3%A3o+jos%C3%A9+endere%C3%A7o&ludocid=12774581206029809323&ved=2ahUKEwjI6KqN-f-KAxVVtJUCHbyxBWMQ6BN6BAhHEAI"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835</small>
+                        <small class="me-3 text-white-50"><a href="mailto:suporte@aguiarinformatica.com.br"><i class="fas fa-envelope me-2 text-secondary"></i></a>suporte@aguiarinformatica.com.br</small>
                     </div>
                     <div id="note" class="text-secondary d-none d-xl-flex"><small>Nota: Fique por dentro das últimas notícias de hardware e tecnologia.</small></div>
                     <div class="top-link">
@@ -93,11 +159,11 @@
                             </a>
                         </div>
                         <div class="d-flex flex-column pe-4 border-end">
-                            <span class="text-white-50">Tem alguma dúvida?</span>
-                            <span class="text-secondary">Chamar: (48) 9 9189-0567</span>
+                            <span class="text-white-50"> Tem alguma dúvida? </span>
+                            <span class="text-secondary"> Chamar: (48) 9 9189-0567 </span>
                         </div>
                         <div class="d-flex align-items-center justify-content-center ms-4 ">
-                            <a href="#"><i class="bi bi-search text-white fa-2x"></i> </a>
+                            <a href="https://wa.me/554899189567"><i class="bi bi-search text-white fa-2x"></i> </a>
                         </div>
                     </div>
                 </nav>
@@ -187,9 +253,9 @@
                     <div class="col-lg-3 col-md-6">
                         <a href="#" class="h3 text-secondary">Contate-nos</a>
                         <div class="text-white mt-4 d-flex flex-column contact-link">
-                            <a href="#" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i>R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835</a>
-                            <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i>(48) 9 9189-0567</a>
-                            <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-secondary me-2"></i>suporte@aguiarinformatica.com.br</a>
+                            <a href="https://www.google.com/search?sa=X&sca_esv=e9478340c7b0063d&hl=pt-BR&authuser=0&biw=1366&bih=613&sxsrf=ADLYWIL0FlLnFbC2IcZ0yLKHAq4gN-Dr6g:1737226520807&q=aguiar+inform%C3%A1tica+-+assist%C3%AAncia+t%C3%A9cnica+no+condom%C3%ADnio.+s%C3%A3o+jos%C3%A9+endere%C3%A7o&ludocid=12774581206029809323&ved=2ahUKEwjI6KqN-f-KAxVVtJUCHbyxBWMQ6BN6BAhHEAI" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i>R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835</a>
+                            <a href="https://wa.me/554899189567" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i>(48) 9 9189-0567</a>
+                            <a href="mailto:suporte@aguiarinformatica.com.br" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-secondary me-2"></i>suporte@aguiarinformatica.com.br</a>
                         </div>
                     </div>
                 </div>

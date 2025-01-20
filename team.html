@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
     <head>
         <meta charset="utf-8">
@@ -27,7 +27,73 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+		
+		<!-- Favicon padrão -->
+		<link rel="icon" href="flaticon.ico" type="image/x-icon">
+    
+		<!-- Favicon para dispositivos móveis -->
+		<link rel="icon" sizes="192x192" href="favicon-192x192.png">
+		<link rel="icon" sizes="32x32" href="favicon-32x32.png">
+		<link rel="icon" sizes="16x16" href="favicon-16x16.png">		
     </head>
+		<!-- Botão de WhatsApp no Cabeçalho -->
+    <title>Botão de WhatsApp no Cabeçalho</title>
+    <style>
+        /* Estilo do botão no cabeçalho */
+        .whatsapp-button {
+            position: fixed;
+            top: 20px; /* Mantém o botão no topo */
+            right: 20px; /* Posiciona o botão à direita */
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            z-index: 1000;
+            text-decoration: none;
+            animation: heartbeat 2.5s infinite;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #1ebc57;
+        }
+
+        .whatsapp-button img {
+            width: 30px;
+            height: 30px;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.1);
+            }
+            50% {
+                transform: scale(1);
+            }
+            75% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+    </style>
+	</head>
+
+<body>
+    <!-- Botão de WhatsApp no Cabeçalho -->
+    <a href="https://wa.me/5548991890567" class="whatsapp-button" target="_blank" title="WhatsApp Online">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
 
     <body>
         <!-- Spinner Start -->
@@ -94,11 +160,11 @@
                             </a>
                         </div>
                         <div class="d-flex flex-column pe-4 border-end">
-                            <span class="text-white-50">Tem alguma dúvida?</span>
-                            <span class="text-secondary">Chamar: (48) 9 9189-0567</span>
+                            <span class="text-white-50"> Tem alguma dúvida? </span>
+                            <span class="text-secondary"> Chamar: (48) 9 9189-0567 </span>
                         </div>
                         <div class="d-flex align-items-center justify-content-center ms-4 ">
-                            <a href="#"><i class="bi bi-search text-white fa-2x"></i> </a>
+                            <a href="https://wa.me/554899189567"><i class="bi bi-search text-white fa-2x"></i> </a>
                         </div>
                     </div>
                 </nav>
@@ -129,8 +195,8 @@
                 <div class="row">
                     <div class="col-lg-3 wow fadeIn" data-wow-delay=".1s">
                         <div class="d-flex counter">
-                            <h1 class="me-3 text-primary counter-value"> 648 </h1>
-                            <h5 class="text-white mt-1"> Já realizamos algumas formatações. </h5>
+                            <h1 class="me-3 text-primary counter-value"> 18 </h1>
+                            <h5 class="text-white mt-1"> Anos de excelência em Serviços de TI </h5>
                         </div>
                     </div>
                     <div class="col-lg-3 wow fadeIn" data-wow-delay=".3s">
@@ -142,13 +208,13 @@
                     <div class="col-lg-3 wow fadeIn" data-wow-delay=".5s">
                         <div class="d-flex counter">
                             <h1 class="me-3 text-primary counter-value"> 885 </h1>
-                            <h5 class="text-white mt-1"> Total de clientes que amam Aguiar Informática </h5>
+                            <h5 class="text-white mt-1"> Seguidores no Instagram </h5>
                         </div>
                     </div>
                     <div class="col-lg-3 wow fadeIn" data-wow-delay=".7s">
                         <div class="d-flex counter">
                             <h1 class="me-3 text-primary counter-value"> 14 </h1>
-                            <h5 class="text-white mt-1"> Avaliações de estrelas dadas por clientes satisfeitos </h5>
+                            <h5 class="text-white mt-1"> Avaliações no Google 5 Estrelas </h5>
                         </div>
                     </div>
                 </div>
@@ -286,9 +352,9 @@
                     <div class="col-lg-3 col-md-6">
                         <a href="#" class="h3 text-secondary">Contate-nos</a>
                         <div class="text-white mt-4 d-flex flex-column contact-link">
-                            <a href="#" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i> R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835 </a>
-                            <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i> (48) 9 9189-0567</a>
-                            <a href="#" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-secondary me-2"></i> suporte@aguiarinformatica.com.br</a>
+                            <a href="https://www.google.com/search?sa=X&sca_esv=e9478340c7b0063d&hl=pt-BR&authuser=0&biw=1366&bih=613&sxsrf=ADLYWIL0FlLnFbC2IcZ0yLKHAq4gN-Dr6g:1737226520807&q=aguiar+inform%C3%A1tica+-+assist%C3%AAncia+t%C3%A9cnica+no+condom%C3%ADnio.+s%C3%A3o+jos%C3%A9+endere%C3%A7o&ludocid=12774581206029809323&ved=2ahUKEwjI6KqN-f-KAxVVtJUCHbyxBWMQ6BN6BAhHEAI" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i> R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835 </a>
+                            <a href="https://wa.me/554899189567" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i> (48) 9 9189-0567</a>
+                            <a href="mailto:suporte@aguiarinformatica.com.br" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-secondary me-2"></i> suporte@aguiarinformatica.com.br</a>
                         </div>
                     </div>
                 </div>
