@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Recriar Repositório WMI - N-sight RMM</title>
+    <title> Recriar Repositório WMI - N-sight RMM </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="notícias, hardware, tecnologia, inovações, equipamentos" name="keywords">
     <meta content="Fique por dentro das últimas novidades sobre hardware e tecnologia no mundo dos computadores." name="description">
@@ -25,33 +25,37 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-	<link href="css/style.css" rel="stylesheet">
-
-    <!-- Favicon -->
-    <link rel="icon" href="flaticon.ico" type="image/x-icon">
-    <link rel="icon" sizes="192x192" href="favicon-192x192.png">
-    <link rel="icon" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" sizes="16x16" href="favicon-16x16.png"> 
-
-    <style>
-        /* Estilo do botão do WhatsApp */
-        .whatsapp-button {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #25d366;
-            color: white;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            z-index: 1000;
-            text-decoration: none;
-            animation: heartbeat 2.5s infinite;
+		
+	<!-- Favicon padrão -->
+	<link rel="icon" href="flaticon.ico" type="image/x-icon">
+    
+	<!-- Favicon para dispositivos móveis -->
+	<link rel="icon" sizes="192x192" href="favicon-192x192.png">
+	<link rel="icon" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" sizes="16x16" href="favicon-16x16.png">		
+    <link href="css/style.css" rel="stylesheet">
+ </head>
+	<!-- Botão de WhatsApp no Cabeçalho -->
+<title> Botão de WhatsApp no Cabeçalho </title>
+<style>
+     /* Estilo do botão no cabeçalho */
+    .whatsapp-button {
+        position: fixed;
+        top: 20px; /* Mantém o botão no topo */
+        right: 20px; /* Posiciona o botão à direita */
+        background-color: #25d366;
+        color: white;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        z-index: 1000;
+        text-decoration: none;
+        animation: heartbeat 2.5s infinite;
         }
 
         .whatsapp-button:hover {
@@ -64,86 +68,190 @@
         }
 
         @keyframes heartbeat {
-            0%, 50%, 100% {
+            0% {
                 transform: scale(1);
             }
-            25%, 75% {
+            25% {
                 transform: scale(1.1);
             }
+            50% {
+                transform: scale(1);
+            }
+            75% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
-    </style>
+
+ </style>
 </head>
 
 <body>
-    <!-- Botão de WhatsApp no Cabeçalho -->
-    <a href="https://wa.me/5548991890567" class="whatsapp-button" target="_blank" title="WhatsApp Online">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </a>
+<!-- Botão de WhatsApp no Cabeçalho -->
+  <a href="https://wa.me/5548991890567" class="whatsapp-button" target="_blank" title="WhatsApp Online">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
 
-    <!-- Spinner Start -->
-    <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+<body>
+<!-- Spinner Start -->
+<div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" role="status"></div>
-    </div>
-    <!-- Spinner End -->
+        </div>
+<!-- Spinner End -->
 
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-dark py-2 d-none d-md-flex">
-        <div class="container">
-            <div class="d-flex justify-content-between topbar">
-                <div class="top-info">
-                    <small class="me-3 text-white-50"><a href="#"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835</small>
-                    <small class="me-3 text-white-50"><a href="mailto:suporte@aguiarinformatica.com.br"><i class="fas fa-envelope me-2 text-secondary"></i></a>suporte@aguiarinformatica.com.br</small>
-                </div>
-                <div id="note" class="text-secondary d-none d-xl-flex"><small>Nota: Fique por dentro das últimas notícias de hardware e tecnologia.</small></div>
-                <div class="top-link">
-                    <a href="#" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-facebook-f text-primary"></i></a>
-                    <a href="#" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-twitter text-primary"></i></a>
-                    <a href="#" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-instagram text-primary"></i></a>
-                    <a href="#" class="bg-light nav-fill btn btn-sm-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
+<!-- Topbar Start -->
+
+        <div class="container-fluid bg-dark py-2 d-none d-md-flex">
+            <div class="container">
+                <div class="d-flex justify-content-between topbar">
+                    <div class="top-info">
+                        <small class="me-3 text-white-50"><a href="https://www.google.com/search?sa=X&sca_esv=e9478340c7b0063d&hl=pt-BR&authuser=0&biw=1366&bih=613&sxsrf=ADLYWIL0FlLnFbC2IcZ0yLKHAq4gN-Dr6g:1737226520807&q=aguiar+inform%C3%A1tica+-+assist%C3%AAncia+t%C3%A9cnica+no+condom%C3%ADnio.+s%C3%A3o+jos%C3%A9+endere%C3%A7o&ludocid=12774581206029809323&ved=2ahUKEwjI6KqN-f-KAxVVtJUCHbyxBWMQ6BN6BAhHEAI"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835</small>
+                        <small class="me-3 text-white-50"><a href="mailto:suporte@aguiarinformatica.com.br"><i class="fas fa-envelope me-2 text-secondary"></i></a>suporte@aguiarinformatica.com.br</small>
+                    </div>
+                    <div id="note" class="text-secondary d-none d-xl-flex"><small> Nota: Fique por dentro das últimas notícias de hardware e tecnologia. </small></div>
+                    <div class="top-link">
+                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-facebook-f text-primary"></i></a>
+                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-twitter text-primary"></i></a>
+                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-instagram text-primary"></i></a>
+                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Topbar End -->
+<!-- Topbar End -->
 
-    <!-- Navbar Start -->
-    <div class="container-fluid bg-primary">
-        <div class="container">
-            <nav class="navbar navbar-dark navbar-expand-lg py-0">
-                <a href="index.html" class="navbar-brand">
-                    <h1 class="text-white fw-bold d-block">Aguiar<span class="text-secondary">Informática</span></h1>
-                </a>
-                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto mx-xl-auto p-0">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">Sobre</a>
-                        <a href="service.html" class="nav-item nav-link">Serviços</a>
-                        <a href="project.html" class="nav-item nav-link">Projetos</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Páginas</a>
-                            <div class="dropdown-menu rounded">
-                                <a href="blog.html" class="dropdown-item active">Últimas Notícias</a>
-                                <a href="team.html" class="dropdown-item">Nossa Equipe</a>
-                                <a href="testimonial.html" class="dropdown-item">Avaliações</a>
-                                <a href="hardware.html" class="dropdown-item">Hardware</a>
+<!-- Navbar Start -->
+        <div class="container-fluid bg-primary">
+            <div class="container">
+                <nav class="navbar navbar-dark navbar-expand-lg py-0">
+                    <a href="index.html" class="navbar-brand">
+                        <h1 class="text-white fw-bold d-block">Aguiar<span class="text-secondary">Informática</span> </h1>
+                    </a>
+                    <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto mx-xl-auto p-0">
+                            <a href="index.html" class="nav-item nav-link">Home</a>
+                            <a href="about.html" class="nav-item nav-link">Sobre</a>
+                            <a href="service.html" class="nav-item nav-link">Serviços</a>
+                            <a href="project.html" class="nav-item nav-link">Projetos</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Páginas</a>
+                                <div class="dropdown-menu rounded">
+                                    <a href="blog.html" class="dropdown-item active">Últimas Notícias</a>
+                                    <a href="team.html" class="dropdown-item">Nossa Equipe</a>
+                                    <a href="testimonial.html" class="dropdown-item">Avaliações</a>
+                                    <a href="hardware.html" class="dropdown-item">Hardware</a>
+                                </div>
                             </div>
+                            <a href="contact.html" class="nav-item nav-link">Contato</a>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contato</a>
                     </div>
-                </div>
-                <div class="d-none d-xl-flex flex-shrink-0">
-                    <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
-                        <a href="#" class="position-relative animated tada infinite">
-                            <i class="fa fa-phone-alt text-white fa-2x"></i>
-                            <div class="position-absolute" style="top: -7px; left: 20px;">
-                                <span><i class="fa fa-comment-dots text-secondary"></i></span>
-                            </div>
-                        </a>
+                    <div class="d-none d-xl-flex flex-shirink-0">
+                        <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
+                            <a href="" class="position-relative animated tada infinite">
+                                <i class="fa fa-phone-alt text-white fa-2x"></i>
+                                <div class="position-absolute" style="top: -7px; left: 20px;">
+                                    <span><i class="fa fa-comment-dots text-secondary"></i></span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="d-flex flex-column pe-4 border-end">
+                            <span class="text-white-50"> Tem alguma dúvida? </span>
+                            <span class="text-secondary"> Chamar: (48) 9 9189-0567 </span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center ms-4 ">
+                            <a href="https://wa.me/554899189567"><i class="bi bi-search text-white fa-2x"></i> </a>
+                        </div>
                     </div>
-                    <div class="d-flex flex-column pe-4 border-end">
-                        <span class="text-white-50">Tem alguma dúvida?</span>
-                        <span class="text-secondary">Chamar: (48) 9 9189-0567</span>
-                    </
+                </nav>
+            </div>
+        </div>
+<!-- Navbar End -->
+
+        
+<!-- Page Header Start -->
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const updateDate = new Date('2025-01-23'); // Data da última atualização
+            const now = new Date();
+            const diffTime = Math.abs(now - updateDate);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+            const lastUpdateElement = document.getElementById('last-update');
+            lastUpdateElement.textContent = `Última atualização há ${diffDays} dias.`;
+        });
+</script>
+</head>
+
+<body>
+    <div class="header">
+        <h1> Recriar Repositório WMI </h1>
+        <p> N-sight RMM - Guia de Solução de Problemas </p>
+        <p><strong> Editado por: Leandro Aguiar </strong></p>
+        <p id="last-update" class="last-update"> Carregando... </p>
+    </div>
+
+    <div class="container">
+        <h2>Dúvida</h2>
+        <p><strong> Como faço para recriar o repositório do WMI em um dispositivo Windows? </strong></p>
+
+        <h3> Contexto </h3>
+        <p>
+            A falha ou corrupção do repositório do WMI em um dispositivo pode impactar o funcionamento do agente do N-sight RMM.
+            Isso afeta a coleta de informações críticas, como dados sobre discos, memória, hardware, sistema operacional e outros.
+        </p>
+        <p>
+            Muitos serviços e verificações dependem do repositório WMI. Caso ele esteja corrompido, podem ocorrer falhas e
+            inconsistências no painel do N-sight RMM.
+        </p>
+
+        <h3> Solução </h3>
+        <p> Para recriar o repositório WMI, siga as etapas abaixo: </p>
+
+        <h4> 1. Via comandos automáticos:</h4>
+        <ol>
+            <li> Abra o prompt de comando (CMD) como administrador.</li>
+            <li> Pare o serviço WMI com o comando:
+                <pre> net stop winmgmt </pre>
+            </li>
+            <li> Reinicie o repositório WMI com o comando:
+                <pre>winmgmt /resetrepository</pre>
+            </li>
+            <li> Inicie o serviço WMI novamente com o comando:
+                <pre> net start winmgmt </pre>
+            </li>
+        </ol>
+
+        <h4> 2. Processo manual (se o método acima não funcionar): </h4>
+        <ol>
+            <li> Abra o prompt de comando como administrador.</li>
+            <li> Pare o serviço WMI com o comando:
+                <pre> net stop winmgmt </pre>
+            </li>
+            <li> Renomeie a pasta do repositório WMI:
+                <pre>ren %windir%\System32\Wbem\Repository Repository.old</pre>
+            </li>
+            <li> Inicie o serviço WMI novamente:
+                <pre> net start winmgmt </pre>
+            </li>
+        </ol>
+
+        <p> Se os problemas persistirem, entre em contato com o suporte. </p>
+
+        <h3> Última Atualização </h3>
+        <p>23/01/2025</p>
+
+        <footer>
+            <p>
+                Dúvidas? Entre em contato: <a href="mailto:suporte@aguiarinformatica.com.br"> suporte@aguiarinformatica.com.br </a>
+            </p>
+            <p> Autor: Leandro Aguiar </p>
+        </footer>
+    </div>
+</body>
+
+</html>
