@@ -1,86 +1,109 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="N-sight RMM, WMI, repositório, suporte técnico">
-    <meta name="description" content="Guia para recriar o repositório WMI em dispositivos Windows com N-sight RMM.">
+    <head>
+        <meta charset="utf-8">
+        <title> Recriar Repositório WMI - N-sight RMM </title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="notícias, hardware, tecnologia, inovações, equipamentos" name="keywords">
+        <meta content="Fique por dentro das últimas novidades sobre hardware e tecnologia no mundo dos computadores." name="description">
 
-    <title>Recriar Repositório WMI - N-sight RMM</title>
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap" rel="stylesheet"> 
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+        <!-- Icon Font Stylesheet -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-    <!-- Custom Styles -->
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+		
+		<!-- Favicon padrão -->
+		<link rel="icon" href="flaticon.ico" type="image/x-icon">
+    
+		<!-- Favicon para dispositivos móveis -->
+		<link rel="icon" sizes="192x192" href="favicon-192x192.png">
+		<link rel="icon" sizes="32x32" href="favicon-32x32.png">
+		<link rel="icon" sizes="16x16" href="favicon-16x16.png">		
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+		<!-- Botão de WhatsApp no Cabeçalho -->
+    <title>Botão de WhatsApp no Cabeçalho</title>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #121212;
-            color: #e0e0e0;
-            line-height: 1.6;
-        }
-
-        .container {
-            margin-top: 50px;
-        }
-
-        .header {
-            background-color: #1f1f1f;
-            color: #e0e0e0;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid #333;
-        }
-
-        .btn-primary {
-            background-color: #4CAF50;
-            border-color: #4CAF50;
-        }
-
-        .btn-primary:hover {
-            background-color: #45a049;
-            border-color: #45a049;
-        }
-
-        pre {
-            background: #1e1e1e;
-            padding: 10px;
-            border: 1px solid #333;
-            border-radius: 5px;
-            overflow-x: auto;
-            color: #cfcfcf;
-        }
-
-        footer {
-            margin-top: 50px;
-            padding: 20px 0;
-            background-color: #1f1f1f;
-            text-align: center;
-            border-top: 1px solid #333;
-        }
-
-        a {
-            color: #4CAF50;
+        /* Estilo do botão no cabeçalho */
+        .whatsapp-button {
+            position: fixed;
+            top: 20px; /* Mantém o botão no topo */
+            right: 20px; /* Posiciona o botão à direita */
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            z-index: 1000;
             text-decoration: none;
+            animation: heartbeat 2.5s infinite;
         }
 
-        a:hover {
-            color: #45a049;
+        .whatsapp-button:hover {
+            background-color: #1ebc57;
         }
 
-        .last-update {
-            font-size: 0.9em;
-            color: #b0b0b0;
+        .whatsapp-button img {
+            width: 30px;
+            height: 30px;
         }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.1);
+            }
+            50% {
+                transform: scale(1);
+            }
+            75% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
     </style>
+	</head>
 
-    <script>
+<body>
+    <!-- Botão de WhatsApp no Cabeçalho -->
+    <a href="https://wa.me/5548991890567" class="whatsapp-button" target="_blank" title="WhatsApp Online">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <body>
+        <!-- Spinner Start -->
+        <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" role="status"></div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Topbar Start -->
         document.addEventListener('DOMContentLoaded', () => {
-            const updateDate = new Date('2023-12-18'); // Data da última atualização
+            const updateDate = new Date('2025-01-23'); // Data da última atualização
             const now = new Date();
             const diffTime = Math.abs(now - updateDate);
             const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
