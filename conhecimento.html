@@ -92,7 +92,7 @@
 <!-- Botão de WhatsApp no Cabeçalho -->
   <a href="https://wa.me/5548991890567" class="whatsapp-button" target="_blank" title="WhatsApp Online">
    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </a>
+  </a>
 
 <body>
 <!-- Spinner Start -->
@@ -170,10 +170,11 @@
                 </nav>
             </div>
         </div>
-        <!-- Navbar End -->
+<!-- Navbar End -->
 
         
-        <!-- Page Header Start -->
+<!-- Page Header Start -->
+
         document.addEventListener('DOMContentLoaded', () => {
             const updateDate = new Date('2025-01-23'); // Data da última atualização
             const now = new Date();
@@ -183,22 +184,22 @@
             const lastUpdateElement = document.getElementById('last-update');
             lastUpdateElement.textContent = `Última atualização há ${diffDays} dias.`;
         });
-    </script>
+</script>
 </head>
 
 <body>
     <div class="header">
-        <h1>Recriar Repositório WMI</h1>
-        <p>N-sight RMM - Guia de Solução de Problemas</p>
-        <p><strong>Editado por: Leandro Aguiar</strong></p>
-        <p id="last-update" class="last-update">Carregando...</p>
+        <h1> Recriar Repositório WMI </h1>
+        <p> N-sight RMM - Guia de Solução de Problemas </p>
+        <p><strong> Editado por: Leandro Aguiar </strong></p>
+        <p id="last-update" class="last-update"> Carregando... </p>
     </div>
 
     <div class="container">
         <h2>Dúvida</h2>
-        <p><strong>Como faço para recriar o repositório do WMI em um dispositivo Windows?</strong></p>
+        <p><strong> Como faço para recriar o repositório do WMI em um dispositivo Windows? </strong></p>
 
-        <h3>Contexto</h3>
+        <h3> Contexto </h3>
         <p>
             A falha ou corrupção do repositório do WMI em um dispositivo pode impactar o funcionamento do agente do N-sight RMM.
             Isso afeta a coleta de informações críticas, como dados sobre discos, memória, hardware, sistema operacional e outros.
@@ -208,47 +209,47 @@
             inconsistências no painel do N-sight RMM.
         </p>
 
-        <h3>Solução</h3>
-        <p>Para recriar o repositório WMI, siga as etapas abaixo:</p>
+        <h3> Solução </h3>
+        <p> Para recriar o repositório WMI, siga as etapas abaixo: </p>
 
-        <h4>1. Via comandos automáticos:</h4>
+        <h4> 1. Via comandos automáticos:</h4>
         <ol>
-            <li>Abra o prompt de comando (CMD) como administrador.</li>
-            <li>Pare o serviço WMI com o comando:
-                <pre>net stop winmgmt</pre>
+            <li> Abra o prompt de comando (CMD) como administrador.</li>
+            <li> Pare o serviço WMI com o comando:
+                <pre> net stop winmgmt </pre>
             </li>
-            <li>Reinicie o repositório WMI com o comando:
+            <li> Reinicie o repositório WMI com o comando:
                 <pre>winmgmt /resetrepository</pre>
             </li>
-            <li>Inicie o serviço WMI novamente com o comando:
-                <pre>net start winmgmt</pre>
+            <li> Inicie o serviço WMI novamente com o comando:
+                <pre> net start winmgmt </pre>
             </li>
         </ol>
 
-        <h4>2. Processo manual (se o método acima não funcionar):</h4>
+        <h4> 2. Processo manual (se o método acima não funcionar): </h4>
         <ol>
-            <li>Abra o prompt de comando como administrador.</li>
-            <li>Pare o serviço WMI com o comando:
-                <pre>net stop winmgmt</pre>
+            <li> Abra o prompt de comando como administrador.</li>
+            <li> Pare o serviço WMI com o comando:
+                <pre> net stop winmgmt </pre>
             </li>
-            <li>Renomeie a pasta do repositório WMI:
+            <li> Renomeie a pasta do repositório WMI:
                 <pre>ren %windir%\System32\Wbem\Repository Repository.old</pre>
             </li>
-            <li>Inicie o serviço WMI novamente:
-                <pre>net start winmgmt</pre>
+            <li> Inicie o serviço WMI novamente:
+                <pre> net start winmgmt </pre>
             </li>
         </ol>
 
-        <p>Se os problemas persistirem, entre em contato com o suporte.</p>
+        <p> Se os problemas persistirem, entre em contato com o suporte. </p>
 
-        <h3>Última Atualização</h3>
+        <h3> Última Atualização </h3>
         <p>23/01/2025</p>
 
         <footer>
             <p>
-                Dúvidas? Entre em contato: <a href="mailto:suporte@aguiarinformatica.com.br">suporte@aguiarinformatica.com.br</a>
+                Dúvidas? Entre em contato: <a href="mailto:suporte@aguiarinformatica.com.br"> suporte@aguiarinformatica.com.br </a>
             </p>
-            <p>Autor: Leandro Aguiar</p>
+            <p> Autor: Leandro Aguiar </p>
         </footer>
     </div>
 </body>
