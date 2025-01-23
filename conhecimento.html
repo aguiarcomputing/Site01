@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="N-sight RMM, WMI, repositório, suporte técnico">
+    <meta name="description" content="Guia para recriar o repositório WMI em dispositivos Windows com N-sight RMM.">
+
+    <title>Recriar Repositório WMI - N-sight RMM</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .header {
+            background-color: #1f1f1f;
+            color: #e0e0e0;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+
+        .btn-primary {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+        }
+
+        .btn-primary:hover {
+            background-color: #45a049;
+            border-color: #45a049;
+        }
+
+        pre {
+            background: #1e1e1e;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: #cfcfcf;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px 0;
+            background-color: #1f1f1f;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #45a049;
+        }
+
+        .last-update {
+            font-size: 0.9em;
+            color: #b0b0b0;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const updateDate = new Date('2023-12-18'); // Data da última atualização
+            const now = new Date();
+            const diffTime = Math.abs(now - updateDate);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+            const lastUpdateElement = document.getElementById('last-update');
+            lastUpdateElement.textContent = `Última atualização há ${diffDays} dias.`;
+        });
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Recriar Repositório WMI</h1>
+        <p>N-sight RMM - Guia de Solução de Problemas</p>
+        <p><strong>Editado por: Leandro Aguiar</strong></p>
+        <p id="last-update" class="last-update">Carregando...</p>
+    </div>
+
+    <div class="container">
+        <h2>Dúvida</h2>
+        <p><strong>Como faço para recriar o repositório do WMI em um dispositivo Windows?</strong></p>
+
+        <h3>Contexto</h3>
+        <p>
+            A falha ou corrupção do repositório do WMI em um dispositivo pode impactar o funcionamento do agente do N-sight RMM.
+            Isso afeta a coleta de informações críticas, como dados sobre discos, memória, hardware, sistema operacional e outros.
+        </p>
+        <p>
+            Muitos serviços e verificações dependem do repositório WMI. Caso ele esteja corrompido, podem ocorrer falhas e
+            inconsistências no painel do N-sight RMM.
+        </p>
+
+        <h3>Solução</h3>
+        <p>Para recriar o repositório WMI, siga as etapas abaixo:</p>
+
+        <h4>1. Via comandos automáticos:</h4>
+        <ol>
+            <li>Abra o prompt de comando (CMD) como administrador.</li>
+            <li>Pare o serviço WMI com o comando:
+                <pre>net stop winmgmt</pre>
+            </li>
+            <li>Reinicie o repositório WMI com o comando:
+                <pre>winmgmt /resetrepository</pre>
+            </li>
+            <li>Inicie o serviço WMI novamente com o comando:
+                <pre>net start winmgmt</pre>
+            </li>
+        </ol>
+
+        <h4>2. Processo manual (se o método acima não funcionar):</h4>
+        <ol>
+            <li>Abra o prompt de comando como administrador.</li>
+            <li>Pare o serviço WMI com o comando:
+                <pre>net stop winmgmt</pre>
+            </li>
+            <li>Renomeie a pasta do repositório WMI:
+                <pre>ren %windir%\System32\Wbem\Repository Repository.old</pre>
+            </li>
+            <li>Inicie o serviço WMI novamente:
+                <pre>net start winmgmt</pre>
+            </li>
+        </ol>
+
+        <p>Se os problemas persistirem, entre em contato com o suporte.</p>
+
+        <h3>Última Atualização</h3>
+        <p>23/01/2025</p>
+
+        <footer>
+            <p>
+                Dúvidas? Entre em contato: <a href="mailto:suporte@aguiarinformatica.com.br">suporte@aguiarinformatica.com.br</a>
+            </p>
+            <p>Autor: Leandro Aguiar</p>
+        </footer>
+    </div>
+</body>
+
+</html>
