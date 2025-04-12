@@ -7,11 +7,11 @@ if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 }
 
 # Variáveis
-$NewServerName = "srv-dc-01"
-$IPAddress = "192.168.2.107"
+$NewServerName = "SRV-DC-01"
+$IPAddress = "192.168.2.254"
 $SubnetMask = "255.255.255.0"  # /24
 $Gateway = "192.168.2.1"
-$DNS = "192.168.2.107"  # O próprio servidor será DNS após configuração
+$DNS = "192.168.2.254"  # O próprio servidor será DNS após configuração
 $AdminPassword = "bz07fx$#oela14"
 
 # Renomeia o servidor

@@ -7,8 +7,8 @@ if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 }
 
 # Variáveis
-$IPAddress = "192.168.2.107"  # Endereço IP do servidor
-$DomainName = "aguiar.local"  # Nome do domínio (ajuste conforme necessário)
+$IPAddress = "192.168.2.254"  # Endereço IP do servidor
+$DomainName = "AGUIAR.LOCAL"  # Nome do domínio (ajuste conforme necessário)
 
 # Instala o recurso DNS
 Write-Host "Instalando o serviço DNS..."

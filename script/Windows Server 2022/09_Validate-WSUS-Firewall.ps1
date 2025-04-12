@@ -7,7 +7,7 @@
 
 # Variáveis
 $WsusPort = 8530              # Porta padrão do WSUS
-$ServerIP = "192.168.2.107"   # IP do servidor WSUS
+$ServerIP = "192.168.2.254"   # IP do servidor WSUS
 $RuleName = "WSUS Inbound TCP 8530"  # Nome da regra do firewall
 
 try {
