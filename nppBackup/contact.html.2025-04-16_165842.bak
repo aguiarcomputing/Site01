@@ -392,7 +392,7 @@
 <!-- Script do formulário de contato com EmailJS -->
 <script>
   (function(){
-    emailjs.init("E-gjituFHGe2eRBPX"); // Substitua aqui
+    emailjs.init("SEU_PUBLIC_KEY"); // Substitua aqui
   })();
 </script>
 <script>
