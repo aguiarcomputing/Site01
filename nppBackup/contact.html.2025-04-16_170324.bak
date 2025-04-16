@@ -399,7 +399,7 @@
   document.getElementById('form-contato').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    emailjs.sendForm('service_bp538yu', 'SEU_TEMPLATE_ID', this)
+    emailjs.sendForm('SEU_SERVICE_ID', 'SEU_TEMPLATE_ID', this)
       .then(function(response) {
         console.log('SUCCESS!', response.status, response.text);
         document.getElementById("form-status").innerHTML = "<span class='text-success'>Mensagem enviada com sucesso!</span>";
