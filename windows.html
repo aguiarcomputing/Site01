@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ativando Windows 11 sem Programas</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .code-block {
+            background-color: #1f2937;
+            color: #e5e7eb;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            position: relative;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background-color: #3b82f6;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .copy-btn:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-600 text-white py-6">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl font-bold">Ativando o Windows 11 sem Programas</h1>
+            <p class="mt-2">Um guia simples e objetivo para ativar o Windows 11 usando apenas o Prompt de Comando</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <section class="bg-white shadow-md rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-semibold mb-4">Passo a Passo: Ativar o Windows 11 (Versão PRO)</h2>
+            <p class="mb-4">Siga estas etapas para ativar seu Windows 11 sem precisar instalar nenhum programa:</p>
+            <ol class="list-decimal list-inside mb-4">
+                <li>Abra o <strong>Prompt de Comando (CMD)</strong> como Administrador:
+                    <ul class="list-disc list-inside ml-6">
+                        <li>Clique no <strong>Menu Iniciar</strong> e digite <strong>CMD</strong>.</li>
+                        <li>Clique com o botão direito no Prompt de Comando e selecione <strong>Executar como Administrador</strong>.</li>
+                    </ul>
+                </li>
+                <li>Execute os seguintes comandos no Prompt de Comando, pressionando <strong>Enter</strong> após cada um:</li>
+            </ol>
+            <div class="code-block">
+                <code id="code1">slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX</code>
+                <button class="copy-btn" onclick="copyCode('code1')">Copiar</button>
+            </div>
+            <div class="code-block mt-4">
+                <code id="code2">slmgr /skms kms10.tiremoto.com.br</code>
+                <button class="copy-btn" onclick="copyCode('code2')">Copiar</button>
+            </div>
+            <div class="code-block mt-4">
+                <code id="code3">slmgr /ato</code>
+                <button class="copy-btn" onclick="copyCode('code3')">Copiar</button>
+            </div>
+            <p class="mt-4">Seu Windows 11 estará ativado na versão <strong>PRO</strong>. Feche o Prompt de Comando e aproveite!</p>
+            <p class="mt-4 italic text-yellow-600">Se deu certo pra você e quiser fazer um PIX, agradecemos a parceria! 😊</p>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2025 Guia de Ativação do Windows 11. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function copyCode(codeId) {
+            const codeElement = document.getElementById(codeId);
+            const text = codeElement.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Comando copiado com sucesso!');
+            }).catch(err => {
+                console.error('Erro ao copiar: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
