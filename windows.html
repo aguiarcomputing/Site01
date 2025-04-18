@@ -8,6 +8,18 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            /* понятна Windows 11 wallpaper */
+            background-image: url('https://www.microsoft.com/en-us/windows/r/images/wallpaper/Windows11_Bloom_Dark.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            /* Fallback background color */
+            background-color: #f3f4f6;
+        }
+        /* Add a semi-transparent overlay to improve text readability */
+        main, header, footer {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
         }
         .code-block {
             background-color: #1f2937;
@@ -18,9 +30,6 @@
             position: relative;
         }
         .copy-btn {
-            position: absolute;
-            top: 0.5rem;
-            right: 0.5rem;
             background-color: #3b82f6;
             color: white;
             padding: 0.25rem 0.5rem;
@@ -28,14 +37,60 @@
             font-size: 0.75rem;
             cursor: pointer;
             transition: background-color 0.2s;
+            border: none;
         }
         .copy-btn:hover {
             background-color: #2563eb;
         }
+        .cnpj-container {
+            position: relative;
+            display: inline-block;
+        }
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-item {
+            min-width: 100%;
+            text-align: center;
+            padding: 1rem;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .carousel-btn.prev {
+            left: 10px;
+        }
+        .carousel-btn.next {
+            right: 10px;
+        }
+        .carousel-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        footer .windows-logo {
+            max-width: 50px;
+            height: auto;
+            margin-right: 1rem;
+        }
     </style>
 </head>
-<body class="bg-gray-100">
-    <header class="bg-blue-600 text-white py-6">
+<body>
+    <header class="bg-gray-800 text-white py-6">
         <div class="container mx-auto px-4">
             <h1 class="text-3xl font-bold">Ativando o Windows 11 sem Programas</h1>
             <p class="mt-2">Um guia simples e objetivo para ativar o Windows 11 usando apenas o Prompt de Comando</p>
@@ -68,13 +123,42 @@
                 <button class="copy-btn" onclick="copyCode('code3')">Copiar</button>
             </div>
             <p class="mt-4">Seu Windows 11 estará ativado na versão <strong>PRO</strong>. Feche o Prompt de Comando e aproveite!</p>
-            <p class="mt-4 italic text-yellow-600">Se deu certo pra você e quiser fazer um PIX, agradecemos a parceria! 😊</p>
+        </section>
+
+        <section class="bg-white shadow-md rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-semibold mb-4">Apoie o Projeto!</h2>
+            <div class="carousel">
+                <div class="carousel-inner" id="carouselInner">
+                    <div class="carousel-item">
+                        <p class="mb-4">Faça uma doação de <strong>R$ 5,00</strong> via PIX.</p>
+                        <p class="mb-4">Chave PIX (CNPJ): <span class="cnpj-container"><strong id="cnpj1">36.167.729/0001-02</strong> <button class="copy-btn" onclick="copyCNPJ('cnpj1')">Copiar</button></span></p>
+                        <p class="mb-4 text-sm">Sua doação é segura, realizada diretamente via PIX para nossa empresa registrada.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="mb-4">Ajude a manter este projeto! Use a chave PIX CNPJ: <span class="cnpj-container"><strong id="cnpj2">36.167.729/0001-02</strong> <button class="copy-btn" onclick="copyCNPJ('cnpj2')">Copiar</button></span></p>
+                        <p class="mb-4 text-sm">Transação segura com CNPJ oficial, garantindo confiabilidade.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <p class="mb-4">Contribua com <strong>R$ 5,00</strong> via PIX para apoiar nosso trabalho!</p>
+                        <p class="mb-4">Chave PIX: <span class="cnpj-container"><strong id="cnpj3">36.167.729/0001-02</strong> <button class="copy-btn" onclick="copyCNPJ('cnpj3')">Copiar</button></span></p>
+                    </div>
+                </div>
+                <button class="carousel-btn prev" onclick="moveCarousel(-1)">❮</button>
+                <button class="carousel-btn next" onclick="moveCarousel(1)">❯</button>
+            </div>
         </section>
     </main>
 
-    <footer class="bg-gray-800 text-white py-4">
+    <footer class="bg-gray-800 text-white py-6">
         <div class="container mx-auto px-4 text-center">
-            <p>© 2025 Guia de Ativação do Windows 11. Todos os direitos reservados.</p>
+            <div class="flex items-center justify-center mb-4">
+                <img src="https://www.microsoft.com/favicon.ico" alt="Windows 11 Logo" class="windows-logo">
+                <div>
+                    <p>Bem-vindo ao Windows 11!</p>
+                    <p>© 2025 Guia de Ativação do Windows 11. Todos os direitos reservados.</p>
+                </div>
+            </div>
+            <p class="text-2xl font-semibold italic text-yellow-600">Agradecemos sua parceria! 😊</p>
         </div>
     </footer>
 
@@ -88,6 +172,17 @@
                 console.error('Erro ao copiar: ', err);
             });
         }
-    </script>
-</body>
-</html>
+
+        function copyCNPJ(cnpjId) {
+            const cnpjElement = document.getElementById(cnpjId);
+            const text = cnpjElement.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('CNPJ copiado com sucesso!');
+            }).catch(err => {
+                console.error('Erro ao copiar: ', err);
+            });
+        }
+
+        let currentIndex = 0;
+        const carouselInner = document.getElementById('carouselInner');
+        const totalItems = document.query
