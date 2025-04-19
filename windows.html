@@ -8,15 +8,12 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            /* понятна Windows 11 wallpaper */
             background-image: url('https://www.microsoft.com/en-us/windows/r/images/wallpaper/Windows11_Bloom_Dark.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            /* Fallback background color */
             background-color: #f3f4f6;
         }
-        /* Add a semi-transparent overlay to improve text readability */
         main, header, footer {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(5px);
@@ -36,11 +33,43 @@
             border-radius: 0.25rem;
             font-size: 0.75rem;
             cursor: pointer;
-            transition: background-color 0.2s;
+            transition: background-color 0.2s, transform 0.1s;
             border: none;
+            position: relative;
         }
         .copy-btn:hover {
             background-color: #2563eb;
+            transform: scale(1.05);
+        }
+        .copy-btn:active {
+            transform: scale(0.95);
+        }
+        .copy-btn.copied {
+            background-color: #10b981;
+        }
+        .copy-btn:focus {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
+        }
+        .copy-btn .tooltip {
+            visibility: hidden;
+            background-color: #1f2937;
+            color: #fff;
+            text-align: center;
+            border-radius: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            position: absolute;
+            z-index: 10;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .copy-btn:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
         }
         .cnpj-container {
             position: relative;
@@ -112,39 +141,48 @@
             </ol>
             <div class="code-block">
                 <code id="code1">slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX</code>
-                <button class="copy-btn" onclick="copyCode('code1')">Copiar</button>
+                <button class="copy-btn" onclick="copyText('code1', this)" aria-label="Copiar comando 1">
+                    Copiar
+                    <span class="tooltip">Copiar comando</span>
+                </button>
             </div>
             <div class="code-block mt-4">
                 <code id="code2">slmgr /skms kms10.tiremoto.com.br</code>
-                <button class="copy-btn" onclick="copyCode('code2')">Copiar</button>
+                <button class="copy-btn" onclick="copyText('code2', this)" aria-label="Copiar comando 2">
+                    Copiar
+                    <span class="tooltip">Copiar comando</span>
+                </button>
             </div>
             <div class="code-block mt-4">
                 <code id="code3">slmgr /ato</code>
-                <button class="copy-btn" onclick="copyCode('code3')">Copiar</button>
+                <button class="copy-btn" onclick="copyText('code3', this)" aria-label="Copiar comando 3">
+                    Copiar
+                    <span class="tooltip">Copiar comando</span>
+                </button>
             </div>
             <p class="mt-4">Seu Windows 11 estará ativado na versão <strong>PRO</strong>. Feche o Prompt de Comando e aproveite!</p>
         </section>
 
         <section class="bg-white shadow-md rounded-lg p-6 mb-6">
             <h2 class="text-2xl font-semibold mb-4">Apoie o Projeto!</h2>
-            <div class="carousel">
+            <div class="carousel" role="region" aria-label="Carrossel de opções de doação">
                 <div class="carousel-inner" id="carouselInner">
-                    <div class="carousel-item">
+                    <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="Slide 1 de 3">
                         <p class="mb-4">Faça uma doação de <strong>R$ 5,00</strong> via PIX.</p>
-                        <p class="mb-4">Chave PIX (CNPJ): <span class="cnpj-container"><strong id="cnpj1">36.167.729/0001-02</strong> <button class="copy-btn" onclick="copyCNPJ('cnpj1')">Copiar</button></span></p>
+                        <p class="mb-4">Chave PIX (CNPJ): <span class="cnpj-container"><strong id="cnpj1">36.167.729/0001-02</strong> <button class="copy-btn" onclick="copyText('cnpj1', this)" aria-label="Copiar chave PIX CNPJ">Copiar <span class="tooltip">Copiar CNPJ</span></button></span></p>
                         <p class="mb-4 text-sm">Sua doação é segura, realizada diretamente via PIX para nossa empresa registrada.</p>
                     </div>
-                    <div class="carousel-item">
-                        <p class="mb-4">Ajude a manter este projeto! Use a chave PIX CNPJ: <span class="cnpj-container"><strong id="cnpj2">36.167.729/0001-02</strong> <button class="copy-btn" onclick="copyCNPJ('cnpj2')">Copiar</button></span></p>
+                    <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="Slide 2 de 3">
+                        <p class="mb-4">Ajude a manter este projeto! Use a chave PIX CNPJ: <span class="cnpj-container"><strong id="cnpj2">36.167.729/0001-02</strong> <button class="copy-btn" onclick="copyText('cnpj2', this)" aria-label="Copiar chave PIX CNPJ">Copiar <span class="tooltip">Copiar CNPJ</span></button></span></p>
                         <p class="mb-4 text-sm">Transação segura com CNPJ oficial, garantindo confiabilidade.</p>
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="Slide 3 de 3">
                         <p class="mb-4">Contribua com <strong>R$ 5,00</strong> via PIX para apoiar nosso trabalho!</p>
-                        <p class="mb-4">Chave PIX: <span class="cnpj-container"><strong id="cnpj3">36.167.729/0001-02</strong> <button class="copy-btn" onclick="copyCNPJ('cnpj3')">Copiar</button></span></p>
+                        <p class="mb-4">Chave PIX: <span class="cnpj-container"><strong id="cnpj3">36.167.729/0001-02</strong> <button class="copy-btn" onclick="copyText('cnpj3', this)" aria-label="Copiar chave PIX CNPJ">Copiar <span class="tooltip">Copiar CNPJ</span></button></span></p>
                     </div>
                 </div>
-                <button class="carousel-btn prev" onclick="moveCarousel(-1)">❮</button>
-                <button class="carousel-btn next" onclick="moveCarousel(1)">❯</button>
+                <button class="carousel-btn prev" onclick="moveCarousel(-1)" aria-label="Slide anterior">❮</button>
+                <button class="carousel-btn next" onclick="moveCarousel(1)" aria-label="Próximo slide">❯</button>
             </div>
         </section>
     </main>
@@ -163,26 +201,44 @@
     </footer>
 
     <script>
-        function copyCode(codeId) {
-            const codeElement = document.getElementById(codeId);
-            const text = codeElement.innerText;
+        function copyText(elementId, button) {
+            const element = document.getElementById(elementId);
+            const text = element.innerText;
             navigator.clipboard.writeText(text).then(() => {
-                alert('Comando copiado com sucesso!');
+                button.innerText = 'Copiado!';
+                button.classList.add('copied');
+                button.setAttribute('aria-label', 'Texto copiado');
+                setTimeout(() => {
+                    button.innerText = 'Copiar';
+                    button.classList.remove('copied');
+                    button.setAttribute('aria-label', elementId.startsWith('cnpj') ? 'Copiar chave PIX CNPJ' : `Copiar comando ${elementId.slice(-1)}`);
+                }, 2000);
             }).catch(err => {
                 console.error('Erro ao copiar: ', err);
-            });
-        }
-
-        function copyCNPJ(cnpjId) {
-            const cnpjElement = document.getElementById(cnpjId);
-            const text = cnpjElement.innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                alert('CNPJ copiado com sucesso!');
-            }).catch(err => {
-                console.error('Erro ao copiar: ', err);
+                alert('Falha ao copiar o texto. Tente novamente.');
             });
         }
 
         let currentIndex = 0;
         const carouselInner = document.getElementById('carouselInner');
-        const totalItems = document.query
+        const totalItems = document.querySelectorAll('.carousel-item').length;
+
+        function moveCarousel(direction) {
+            currentIndex += direction;
+            if (currentIndex >= totalItems) {
+                currentIndex = 0;
+            } else if (currentIndex < 0) {
+                currentIndex = totalItems - 1;
+            }
+            const offset = -currentIndex * 100;
+            carouselInner.style.transform = `translateX(${offset}%)`;
+            document.querySelectorAll('.carousel-item').forEach((item, index) => {
+                item.setAttribute('aria-hidden', index === currentIndex ? 'false' : 'true');
+            });
+        }
+
+        document.querySelectorAll('.carousel-item').forEach((item, index) => {
+            item.setAttribute('aria-hidden', index === 0 ? 'false' : 'true');
+            item.setAttribute('aria-label', `Slide ${index + 1} de ${totalItems}`);
+        });
+    </script>
