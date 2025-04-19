@@ -35,6 +35,8 @@
             cursor: pointer;
             transition: background-color 0.2s;
             border: none;
+        }
+        .code-block .copy-btn {
             position: absolute;
             top: 1rem;
             right: 1rem;
@@ -51,12 +53,26 @@
             font-size: 0.75rem;
             opacity: 0;
             transition: opacity 0.3s ease-in-out;
+            pointer-events: none;
+        }
+        .code-block .tooltip {
             top: 0.5rem;
             right: 4rem;
-            pointer-events: none;
+        }
+        .cnpj-container .copy-btn {
+            margin-left: 0.5rem;
+        }
+        .cnpj-container .tooltip {
+            top: -1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
         }
         .tooltip.show {
             opacity: 1;
+        }
+        .cnpj-container {
+            position: relative;
+            display: inline-block;
         }
         footer .windows-logo {
             max-width: 50px;
@@ -111,6 +127,13 @@ cscript ospp.vbs /act
             </div>
             <p class="mt-4">Seguindo esses passos, seu Office 2019 será ativado sem a necessidade de programas de crack. Caso ocorra alguma variação, verifique se todos os comandos foram inseridos corretamente.</p>
         </section>
+
+        <section class="bg-white shadow-md rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-semibold mb-4">Apoie o Projeto!</h2>
+            <p class="mb-4">Faça uma doação de <strong>R$ 5,00</strong> via PIX.</p>
+            <p class="mb-4">Chave PIX (CNPJ): <span class="cnpj-container"><strong id="cnpj">36.167.729/0001-02</strong> <button class="copy-btn" onclick="copyCode('cnpj')">Copiar</button><span class="tooltip" id="tooltip-cnpj" aria-live="polite"></span></span></p>
+            <p class="mb-4 text-sm">Sua doação é segura, realizada diretamente via PIX para nossa empresa registrada.</p>
+        </section>
     </main>
 
     <footer class="bg-gray-800 text-white py-6">
@@ -127,10 +150,10 @@ cscript ospp.vbs /act
     </footer>
 
     <script>
-        function copyCode(codeId) {
-            const codeElement = document.getElementById(codeId);
-            const tooltip = document.getElementById(`tooltip-${codeId}`);
-            const text = codeElement.innerText;
+        function copyCode(id) {
+            const element = document.getElementById(id);
+            const tooltip = document.getElementById(`tooltip-${id}`);
+            const text = element.innerText;
             navigator.clipboard.writeText(text).then(() => {
                 tooltip.innerText = 'Copiado!';
                 tooltip.classList.add('show');
