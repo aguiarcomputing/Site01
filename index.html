@@ -40,12 +40,15 @@
 
 </html>
 	
-	<!-- Botão de WhatsApp no Cabeçalho -->
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Botão de WhatsApp no Cabeçalho</title>
     <style>
         /* Estilo do botão no cabeçalho */
-        .whatsapp-button 
-		{
+        .whatsapp-button {
             position: fixed;
             top: 20px; /* Mantém o botão no topo */
             right: 20px; /* Posiciona o botão à direita */
@@ -64,19 +67,16 @@
             animation: heartbeat 2.5s infinite;
         }
 
-        .whatsapp-button:hover 
-		{
+        .whatsapp-button:hover {
             background-color: #1ebc57;
         }
 
-        .whatsapp-button img 
-		{
+        .whatsapp-button img {
             width: 30px;
             height: 30px;
         }
 
-        @keyframes heartbeat 
-		{
+        @keyframes heartbeat {
             0% {
                 transform: scale(1);
             }
@@ -94,7 +94,14 @@
             }
         }
     </style>
-	</head>
+</head>
+<body>
+    <!-- Botão de WhatsApp -->
+    <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+</body>
+</html>
 <body>
     <!-- Botão de WhatsApp no Cabeçalho -->
     <a href="https://wa.me/5548991890567" class="whatsapp-button" target="_blank" title="WhatsApp Online">
