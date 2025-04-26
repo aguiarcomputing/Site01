@@ -107,15 +107,16 @@
             <div class="container">
                 <div class="d-flex justify-content-between topbar">
                     <div class="top-info">
-                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835</small>
-                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-envelope me-2 text-secondary"></i></a>suporte@aguiarinformatica.com.br</small>
+                        <small class="me-3 text-white-50"><a href="https://www.google.com/search?sa=X&sca_esv=e9478340c7b0063d&hl=pt-BR&authuser=0&biw=1366&bih=613&sxsrf=ADLYWIL0FlLnFbC2IcZ0yLKHAq4gN-Dr6g:1737226520807&q=aguiar+inform%C3%A1tica+-+assist%C3%AAncia+t%C3%A9cnica+no+condom%C3%ADnio.+s%C3%A3o+jos%C3%A9+endere%C3%A7o&ludocid=12774581206029809323&ved=2ahUKEwjI6KqN-f-KAxVVtJUCHbyxBWMQ6BN6BAhHEAI"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835</small>
+                        <small class="me-3 text-white-50"><a href="mailto:suporte@aguiarinformatica.com.br
+"><i class="fas fa-envelope me-2 text-secondary"></i></a>suporte@aguiarinformatica.com.br</small>
                     </div>
-                    <div id="note" class="text-secondary d-none d-xl-flex"><small>Note : We help you to Grow your Business</small></div>
+                    <div id="note" class="text-secondary d-none d-xl-flex"><small>Nota: Nós ajudamos você a expandir seu negócio</small></div>
                     <div class="top-link">
-                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-facebook-f text-primary"></i></a>
+                        <a href="https://www.facebook.com/lojaaguiarcomputing/" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-facebook-f text-primary"></i></a>
                         <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-twitter text-primary"></i></a>
-                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-instagram text-primary"></i></a>
-                        <a href="" class="bg-light nav-fill btn btn-sm-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
+                        <a href="https://www.instagram.com/aguiarcomputing/" class="bg-light nav-fill btn btn-sm-square rounded-circle"><i class="fab fa-instagram text-primary"></i></a>
+                        <a href="https://www.linkedin.com/in/leandro-aguiar-18a28792/" class="bg-light nav-fill btn btn-sm-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
                     </div>
                 </div>
             </div>
@@ -141,8 +142,8 @@
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">SuporteTI</a>
                                 <div class="dropdown-menu rounded">
-                                    <a href="blog.html" class="dropdown-item">Nosso blog</a>
-                                    <a href="team.html" class="dropdown-item active">Nossa equipe</a>
+                                    <a href="blog.html" class="dropdown-item active">Nosso blog</a>
+                                    <a href="team.html" class="dropdown-item">Nossa equipe </a>
                                     <a href="testimonial.html" class="dropdown-item">Depoimento</a>
                                     <a href="hardware.html" class="dropdown-item">Hardware</a>
 									<a href="software.html" class="dropdown-item">Software</a>
@@ -177,12 +178,12 @@
         <!-- Page Header Start -->
         <div class="container-fluid page-header py-5">
             <div class="container text-center py-5">
-                <h1 class="display-2 text-white mb-4 animated slideInDown">Nossa equipe</h1>
+                <h1 class="display-2 text-white mb-4 animated slideInDown">Nosso blog</h1>
                 <nav aria-label="breadcrumb animated slideInDown">
                     <ol class="breadcrumb justify-content-center mb-0">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                         <li class="breadcrumb-item"><a href="#">Páginas</a></li>
-                        <li class="breadcrumb-item" aria-current="page">Nossa equipe</li>
+                        <li class="breadcrumb-item" aria-current="page">Blog</li>
                     </ol>
                 </nav>
             </div>
@@ -208,13 +209,13 @@
                     </div>
                     <div class="col-lg-3 wow fadeIn" data-wow-delay=".5s">
                         <div class="d-flex counter">
-                            <h1 class="me-3 text-primary counter-value"> 885 </h1>
+                            <h1 class="me-3 text-primary counter-value">885</h1>
                             <h5 class="text-white mt-1"> Seguidores no Instagram </h5>
                         </div>
                     </div>
                     <div class="col-lg-3 wow fadeIn" data-wow-delay=".7s">
                         <div class="d-flex counter">
-                            <h1 class="me-3 text-primary counter-value"> 14 </h1>
+                            <h1 class="me-3 text-primary counter-value">14</h1>
                             <h5 class="text-white mt-1"> Avaliações no Google 5 Estrelas </h5>
                         </div>
                     </div>
@@ -224,94 +225,111 @@
         <!-- Fact End -->
 
 
-        <!-- Team Start -->
-        <div class="container-fluid py-5 my-5 team">
+        <!-- Blog Start -->
+        <div class="container-fluid blog py-5 my-5">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
-                    <h5 class="text-primary">Nossa equipe</h5>
-                    <h1>Conheça nossa equipe de especialistas</h1>
+                    <h5 class="text-primary">Nosso blog </h5>
+                    <h1>Últimos blogs e notícias</h1>
                 </div>
-                <div class="owl-carousel team-carousel wow fadeIn" data-wow-delay=".5s">
-                    <div class="rounded team-item">
-                        <div class="team-content">
-                            <div class="team-img-icon">
-                                <div class="team-img rounded-circle">
-                                    <img src="img/team-5.jpg" class="img-fluid w-100 rounded-circle" alt="">
+                <div class="row g-5 justify-content-center">
+                    <div class="col-lg-6 col-xl-4 wow fadeIn" data-wow-delay=".3s">
+                        <div class="blog-item position-relative bg-light rounded">
+                            <img src="img/blog-1.jpg" class="img-fluid w-100 rounded-top" alt="">
+                            <span class="position-absolute px-4 py-3 bg-primary text-white rounded" style="top: -28px; right: 20px;">Web Design</span>
+                            <div class="blog-btn d-flex justify-content-between position-relative px-3" style="margin-top: -75px;">
+                                <div class="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
+                                    <a href="https://www.tomshardware.com/" class="btn text-white">Leia mais</a>
                                 </div>
-                                <div class="team-name text-center py-3">
-                                    <h4 class="">Leandro Aguiar</h4>
-                                    <p class="m-0">Fundador</p>
+                                <div class="blog-btn-icon btn btn-secondary px-4 py-3 rounded-pill ">
+                                    <div class="blog-icon-1">
+                                        <p class="text-white px-2">Compartilhar<i class="fa fa-arrow-right ms-3"></i></p>
+                                    </div>
+                                    <div class="blog-icon-2">
+                                        <a href="" class="btn me-1"><i class="fab fa-facebook-f text-white"></i></a>
+                                        <a href="" class="btn me-1"><i class="fab fa-twitter text-white"></i></a>
+                                        <a href="" class="btn me-1"><i class="fab fa-instagram text-white"></i></a>
+                                    </div>
                                 </div>
-                                <div class="team-icon d-flex justify-content-center pb-4">
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                </div>
+                            </div>
+                            <div class="blog-content text-center position-relative px-3" style="margin-top: -25px;">
+                                <img src="img/tomshardware.jpg" class="img-fluid rounded-circle border border-4 border-white mb-3" alt="">
+                                <h5 class="">Tomilits Hardware</h5>
+                                <span class="text-secondary">15 Janeiro 2025</span>
+                                <p class="py-2">Ajudando você a aproveitar ao máximo o hardware do computador desde 1996.</p>
+                            </div>
+                            <div class="blog-coment d-flex justify-content-between px-4 py-2 border bg-primary rounded-bottom">
+                                <a href="" class="text-white"><small><i class="fas fa-share me-2 text-secondary"></i>5324 Compartilhar</small></a>
+                                <a href="" class="text-white"><small><i class="fa fa-comments me-2 text-secondary"></i>5 Comentários</small></a>
                             </div>
                         </div>
                     </div>
-                    <div class="rounded team-item">
-                        <div class="team-content">
-                            <div class="team-img-icon">
-                                <div class="team-img rounded-circle">
-                                    <img src="img/team-3.jpg" class="img-fluid w-100 rounded-circle" alt="">
+                    <div class="col-lg-6 col-xl-4 wow fadeIn" data-wow-delay=".5s">
+                        <div class="blog-item position-relative bg-light rounded">
+                            <img src="img/blog-2.jpg" class="img-fluid w-100 rounded-top" alt="">
+                            <span class="position-absolute px-4 py-3 bg-primary text-white rounded" style="top: -28px; right: 20px;">Desenvolvimento</span>
+                            <div class="blog-btn d-flex justify-content-between position-relative px-3" style="margin-top: -75px;">
+                                <div class="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
+                                    <a href="https://www.construsitebrasil.com/" class="btn text-white ">Leia mais</a>
                                 </div>
-                                <div class="team-name text-center py-3">
-                                    <h4 class="">Andressa Santos</h4>
-                                    <p class="m-0">Comercial</p>
+                                <div class="blog-btn-icon btn btn-secondary px-4 py-3 rounded-pill ">
+                                    <div class="blog-icon-1">
+                                        <p class="text-white px-2">Compartilhar<i class="fa fa-arrow-right ms-3"></i></p>
+                                    </div>
+                                    <div class="blog-icon-2">
+                                        <a href="" class="btn me-1"><i class="fab fa-facebook-f text-white"></i></a>
+                                        <a href="" class="btn me-1"><i class="fab fa-twitter text-white"></i></a>
+                                        <a href="" class="btn me-1"><i class="fab fa-instagram text-white"></i></a>
+                                    </div>
                                 </div>
-                                <div class="team-icon d-flex justify-content-center pb-4">
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                </div>
+                            </div>
+                            <div class="blog-content text-center position-relative px-3" style="margin-top: -25px;">
+                                <img src="img/construsitebrasil1.jpg" class="img-fluid rounded-circle border border-4 border-white mb-3" alt="">
+                                <h5 class="">Por Márcio Antônio da Silva</h5>
+                                <span class="text-secondary">01 Janeiro 2025</span>
+                                <p class="py-2">A Construsite Brasil foi fundada quando Márcio Antônio da Silva convidou Marcos Paulo a apostar e acreditar em um novo empreendimento no segmento de serviços web.</p>
+                            </div>
+                            <div class="blog-coment d-flex justify-content-between px-4 py-2 border bg-primary rounded-bottom">
+                                <a href="" class="text-white"><small><i class="fas fa-share me-2 text-secondary"></i>1324 Compartilhar</small></a>
+                                <a href="" class="text-white"><small><i class="fa fa-comments me-2 text-secondary"></i>45 Comentários </small></a>
                             </div>
                         </div>
                     </div>
-                    <div class="rounded team-item">
-                        <div class="team-content">
-                            <div class="team-img-icon">
-                                <div class="team-img rounded-circle">
-                                    <img src="img/team-4.jpg" class="img-fluid w-100 rounded-circle" alt="">
+                    <div class="col-lg-6 col-xl-4 wow fadeIn" data-wow-delay=".7s">
+                        <div class="blog-item position-relative bg-light rounded">
+                            <img src="img/blog-3.jpg" class="img-fluid w-100 rounded-top" alt="">
+                            <span class="position-absolute px-4 py-3 bg-primary text-white rounded" style="top: -28px; right: 20px;"> Aplicativo móvel </span>
+                            <div class="blog-btn d-flex justify-content-between position-relative px-3" style="margin-top: -75px;">
+                                <div class="blog-icon btn btn-secondary px-3 rounded-pill my-auto">
+                                    <a href="https://pt-br.adalo.com/" class="btn text-white "> Leia mais </a>
                                 </div>
-                                <div class="team-name text-center py-3">
-                                    <h4 class="">Enzo Stack</h4>
-                                    <p class="m-0">Marketing</p>
-                                </div>
-                                <div class="team-icon d-flex justify-content-center pb-4">
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                                <div class="blog-btn-icon btn btn-secondary px-4 py-3 rounded-pill ">
+                                    <div class="blog-icon-1">
+                                        <p class="text-white px-2">Compartilhar<i class="fa fa-arrow-right ms-3"></i></p>
+                                    </div>
+                                    <div class="blog-icon-2">
+                                        <a href="" class="btn me-1"><i class="fab fa-facebook-f text-white"></i></a>
+                                        <a href="" class="btn me-1"><i class="fab fa-twitter text-white"></i></a>
+                                        <a href="" class="btn me-1"><i class="fab fa-instagram text-white"></i></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="rounded team-item">
-                        <div class="team-content">
-                            <div class="team-img-icon">
-                                <div class="team-img rounded-circle">
-                                    <img src="img/team-6.jpg" class="img-fluid w-100 rounded-circle" alt="">
-                                </div>
-                                <div class="team-name text-center py-3">
-                                    <h4 class="">João Guerino</h4>
-                                    <p class="m-0">Full Stack Enginner</p>
-                                </div>
-                                <div class="team-icon d-flex justify-content-center pb-4">
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-square btn-secondary text-white rounded-circle m-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                                </div>
+                            <div class="blog-content text-center position-relative px-3" style="margin-top: -25px;">
+                                <img src="img/adalo1.jpg" class="img-fluid rounded-circle border border-4 border-white mb-3" alt="">
+                                <h5 class="">Por Inside Adalo</h5>
+                                <span class="text-secondary">05 Janeiro 2025</span>
+                                <p class="py-2">Crie um aplicativo móvel para sua empresa — sem necessidade de codificação</p>
+                            </div>
+                            <div class="blog-coments d-flex justify-content-between px-4 py-2 border bg-primary rounded-bottom">
+                                <a href="" class="text-white"><small><i class="fas fa-share me-2 text-secondary"></i>5324 Compartilhar</small></a>
+                                <a href="" class="text-white"><small><i class="fa fa-comments me-2 text-secondary"></i>5 Comentários</small></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Team End -->
+        <!-- Blog End -->
 
 
         <!-- Footer Start -->
@@ -320,14 +338,14 @@
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-6">
                         <a href="index.html">
-                            <h1 class="text-white fw-bold d-block"> AGUIAR <span class="text-secondary"> INFORMÁTICA </span> </h1>
+                            <h3 class="text-white fw-bold d-block"> AGUIAR <span class="text-secondary"> INFORMÁTICA </span> </h3>
                         </a>
-                        <p class="mt-4 text-light">Concentre-se naquilo que você é bom, delegue todo o resto.</p>
+                        <p class="mt-4 text-light">Concentre-se naquilo que você é bom, delegue todo o resto.Steve Jobs </p>
                         <div class="d-flex hightech-link">
-                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-facebook-f text-primary"></i></a>
+                            <a href="https://www.facebook.com/lojaaguiarcomputing" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-facebook-f text-primary"></i></a>
                             <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-twitter text-primary"></i></a>
-                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-instagram text-primary"></i></a>
-                            <a href="" class="btn-light nav-fill btn btn-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
+                            <a href="https://www.instagram.com/aguiarcomputing/" class="btn-light nav-fill btn btn-square rounded-circle me-2"><i class="fab fa-instagram text-primary"></i></a>
+                            <a href="https://www.linkedin.com/in/leandro-aguiar-18a28792/" class="btn-light nav-fill btn btn-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
@@ -341,7 +359,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <a href="#" class="h3 text-secondary">Help Link</a>
+                        <a href="#" class="h3 text-secondary">Link de ajuda</a>
                         <div class="mt-4 d-flex flex-column help-link">
                             <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Termos de uso</a>
                             <a href="" class="mb-2 text-white"><i class="fas fa-angle-right text-secondary me-2"></i>Política de Privacidade</a>
@@ -354,19 +372,19 @@
                         <a href="#" class="h3 text-secondary">Contate-nos</a>
                         <div class="text-white mt-4 d-flex flex-column contact-link">
                             <a href="https://www.google.com/search?sa=X&sca_esv=e9478340c7b0063d&hl=pt-BR&authuser=0&biw=1366&bih=613&sxsrf=ADLYWIL0FlLnFbC2IcZ0yLKHAq4gN-Dr6g:1737226520807&q=aguiar+inform%C3%A1tica+-+assist%C3%AAncia+t%C3%A9cnica+no+condom%C3%ADnio.+s%C3%A3o+jos%C3%A9+endere%C3%A7o&ludocid=12774581206029809323&ved=2ahUKEwjI6KqN-f-KAxVVtJUCHbyxBWMQ6BN6BAhHEAI" class="pb-3 text-light border-bottom border-primary"><i class="fas fa-map-marker-alt text-secondary me-2"></i> R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835 </a>
-                            <a href="https://wa.me/554899189567" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i> (48) 9 9189-0567</a>
-                            <a href="mailto:suporte@aguiarinformatica.com.br" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-secondary me-2"></i> suporte@aguiarinformatica.com.br</a>
+                            <a href="https://wa.me/554899189567" class="py-3 text-light border-bottom border-primary"><i class="fas fa-phone-alt text-secondary me-2"></i> (48) 9 9189-0567 </a>
+                            <a href="mailto:suporte@aguiarinformatica.com.br" class="py-3 text-light border-bottom border-primary"><i class="fas fa-envelope text-secondary me-2"></i> suporte@aguiarinformatica.com.br </a>
                         </div>
                     </div>
                 </div>
                 <hr class="text-light mt-5 mb-4">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start">
-                        <span class="text-light"><a href="#" class="text-secondary"><i class="fas fa-copyright text-secondary me-2"></i> AguiarInformática </a>, Todos os direitos reservados.</span>
+                        <span class="text-light"><a href="#" class="text-secondary"><i class="fas fa-copyright text-secondary me-2"></i>AguiarInformática</a>, Todos os direitos reservados. </span>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        <span class="text-light"> Projetado por <a href="https://htmlcodex.com" class="text-secondary"> Código HTML </a> Distribuído por <a href="https://themewagon.com"> AguiarInformática </a></span>
+                        <span class="text-light"> Projetado por <a href="https://htmlcodex.com" class="text-secondary"> Código HTML </a> Distribuído por <a href="https://aguiarinformatica.com.br">AguiarInformática</a></span>
                     </div>
                 </div>
             </div>

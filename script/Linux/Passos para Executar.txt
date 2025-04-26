@@ -48,3 +48,7 @@ Requer privilégios de root
 Certifique-se de substituir "SEU_IP" pelo IP real do servidor
 Porta padrão: 10000
 Você pode copiar este texto e salvá-lo em um arquivo (como WEBMIN_UBUNTU.txt) para referência futura!
+
+
+Usuário: SupAdmin
+senha: AdminSup3031

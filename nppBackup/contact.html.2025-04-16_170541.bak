@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title> AguiarInformática - TI Soluções completas em TI </title>
+    <title>Aguiar Informática - TI Soluções completas em TI</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -119,6 +119,7 @@
         </div>
     </div>
     <!-- Topbar End -->
+
     <!-- Navbar Start -->
     <div class="container-fluid bg-primary">
         <div class="container">
@@ -169,6 +170,7 @@
         </div>
     </div>
     <!-- Navbar End -->
+
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-5">
         <div class="container text-center py-5">
@@ -183,6 +185,7 @@
         </div>
     </div>
     <!-- Page Header End -->
+
     <!-- Fact Start -->
     <div class="container-fluid bg-secondary py-5">
         <div class="container">
@@ -215,6 +218,7 @@
         </div>
     </div>
     <!-- Fact End -->
+
     <!-- Contact Start -->
     <div class="container-fluid py-5 mt-5">
         <div class="container py-5">
@@ -313,7 +317,7 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <a href="index.html">
-                        <h3 class="text-white fw-bold d-block"> AGUIAR <span class="text-secondary"> INFORMÁTICA </span> </h1>
+                        <h3 class="text-white fw-bold d-block">Aguiar <span class="text-secondary">Informática</span></h3>
                     </a>
                     <p class="mt-4 text-light">Concentre-se naquilo que você é bom, delegue todo o resto.</p>
                     <div class="d-flex hightech-link">
@@ -356,7 +360,7 @@
             <hr class="text-light mt-5 mb-4">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start">
-                    <span class="text-light"><a href="#" class="text-secondary"><i class="fas fa-copyright text-secondary me-2"></i> AguiarInformática </a>, Todos os direitos reservados.</span>
+                    <span class="text-light"><a href="#" class="text-secondary"><i class="fas fa-copyright text-secondary me-2"></i>Aguiar Informática</a>, Todos os direitos reservados.</span>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <span class="text-light"> Projetado por <a href="https://htmlcodex.com" class="text-secondary">Código HTML</a> Distribuído por <a href="https://aguiarinformatica.com.br">AguiarComputing</a></span>
@@ -395,7 +399,7 @@
   document.getElementById('form-contato').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    emailjs.sendForm('service_bp538yu', 'template_4v9csdp', this)
+    emailjs.sendForm('service_bp538yu', 'SEU_TEMPLATE_ID', this)
       .then(function(response) {
         console.log('SUCCESS!', response.status, response.text);
         document.getElementById("form-status").innerHTML = "<span class='text-success'>Mensagem enviada com sucesso!</span>";
