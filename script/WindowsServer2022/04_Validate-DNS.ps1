@@ -3,7 +3,7 @@
 
 # Parâmetros ajustáveis
 $DNSServer = "SRV-DC-01"
-$IPAddress = "192.168.2.254"
+$IPAddress = "192.168.2.252"
 $DomainName = "empresa.local"              # Ajuste para seu domínio
 $ReverseZoneName = "2.168.192.in-addr.arpa" # Zona inversa para 192.168.2.0/24
 $NetBIOSName = "EMPRESA"                  # Nome NetBIOS do domínio
@@ -162,15 +162,15 @@ if (-not $reverseZone) {
 
 # 8. Validar registro PTR
 Write-Log "Validando registro PTR para $IPAddress..." -Color Cyan
-$ptrRecord = Get-DnsServerResourceRecord -ComputerName $DNSServer -ZoneName $ReverseZoneName -Name "254" -RRType Ptr -ErrorAction SilentlyContinue
+$ptrRecord = Get-DnsServerResourceRecord -ComputerName $DNSServer -ZoneName $ReverseZoneName -Name "252" -RRType Ptr -ErrorAction SilentlyContinue
 if (-not $ptrRecord -or $ptrRecord.RecordData.PtrDomainName -ne "$DNSServer.$DomainName.") {
     Write-Log "Registro PTR para $IPAddress está ausente ou incorreto. Corrigindo..." -Color Yellow
     try {
-        if ($ptrRecord) { Remove-DnsServerResourceRecord -ComputerName $DNSServer -ZoneName $ReverseZoneName -RRType Ptr -Name "254" -Force }
+        if ($ptrRecord) { Remove-DnsServerResourceRecord -ComputerName $DNSServer -ZoneName $ReverseZoneName -RRType Ptr -Name "252" -Force }
         Add-DnsServerResourceRecordPtr `
             -ComputerName $DNSServer `
             -ZoneName $ReverseZoneName `
-            -Name "254" `
+            -Name "252" `
             -PtrDomainName "$DNSServer.$DomainName" `
             -ErrorAction Stop
         Write-Log "Registro PTR criado para $IPAddress -> $DNSServer.$DomainName." -Color Green
