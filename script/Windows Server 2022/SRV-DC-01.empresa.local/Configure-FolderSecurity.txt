@@ -2,7 +2,9 @@
 # Requisitos: Windows Server 2022, executado como administrador, Active Directory configurado
 
 # Verificar se o script está sendo executado como administrador
-$isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+$isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security
+
+System: .Principal.WindowsBuiltInRole]::Administrator)
 if (-not $isAdmin) {
     Write-Error "Este script deve ser executado como administrador."
     exit 1
@@ -21,6 +23,41 @@ function Write-Log {
 # Verificar se o módulo Active Directory está disponível
 if (-not (Get-Module -ListAvailable -Name ActiveDirectory)) {
     Write-Log "Módulo ActiveDirectory não encontrado. Instale o RSAT-AD-PowerShell."
+    exit 1
+}
+
+# Carregar o módulo Active Directory
+try {
+    Import-Module ActiveDirectory -ErrorAction Stop
+    Write-Log "Módulo ActiveDirectory carregado com sucesso."
+} catch {
+    Write-Log "Erro ao carregar o módulo ActiveDirectory: $_"
+    exit 1
+}
+
+# Verificar conectividade com o domínio
+$domain = "empresa.local"
+try {
+    $domainInfo = Get-ADDomain -Identity $domain -ErrorAction Stop
+    Write-Log "Conexão com o domínio ${domain} estabelecida."
+} catch {
+    Write-Log "Erro ao conectar ao domínio ${domain}: $_"
+    exit 1
+}
+
+# Unidade organizacional para grupos
+$ouPath = "OU=Groups,DC=empresa,DC=local"
+
+# Criar OU se não existir
+try {
+    if (-not (Get-ADOrganizationalUnit -Filter { DistinguishedName -eq $ouPath } -ErrorAction SilentlyContinue)) {
+        New-ADOrganizationalUnit -Name "Groups" -Path "DC=empresa,DC=local" -Description "OU para grupos de segurança" -ErrorAction Stop
+        Write-Log "OU ${ouPath} criada com sucesso."
+    } else {
+        Write-Log "OU ${ouPath} já existe."
+    }
+} catch {
+    Write-Log "Erro ao criar OU ${ouPath}: $_"
     exit 1
 }
 
@@ -63,9 +100,6 @@ $folderConfig = @(
     }
 )
 
-# Unidade organizacional para grupos
-$ouPath = "OU=Groups,DC=empresa,DC=local"
-
 # 1. Criar grupos de segurança
 Write-Log "Criando grupos de segurança no Active Directory..."
 foreach ($config in $folderConfig) {
@@ -74,6 +108,8 @@ foreach ($config in $folderConfig) {
         if (-not (Get-ADGroup -Filter { Name -eq $groupName } -ErrorAction SilentlyContinue)) {
             New-ADGroup -Name $groupName -SamAccountName $groupName -GroupScope Global -GroupCategory Security -Path $ouPath -Description "Grupo para acesso à pasta $($config.Path)" -ErrorAction Stop
             Write-Log "Grupo ${groupName} criado com sucesso."
+            # Aguardar replicação (5 segundos)
+            Start-Sleep -Seconds 5
         } else {
             Write-Log "Grupo ${groupName} já existe."
         }
@@ -89,10 +125,20 @@ foreach ($config in $folderConfig) {
     $shareName = $config.ShareName
     $ntfsRights = $config.NTFSRights
     $shareRights = $config.ShareRights
+    $domainGroup = "empresa\${groupName}"
 
     # Verificar se a pasta existe
     if (-not (Test-Path $folderPath)) {
         Write-Log "Pasta ${folderPath} não encontrada. Pulando configuração."
+        continue
+    }
+
+    # Verificar se o grupo existe e pode ser resolvido
+    try {
+        $group = Get-ADGroup -Identity $groupName -ErrorAction Stop
+        Write-Log "Grupo ${groupName} encontrado com SID $($group.SID)."
+    } catch {
+        Write-Log "Grupo ${groupName} não encontrado ou não pode ser resolvido: $_"
         continue
     }
 
@@ -105,8 +151,7 @@ foreach ($config in $folderConfig) {
         $acl.Access | ForEach-Object { $acl.RemoveAccessRule($_) }
 
         # Adicionar permissão para o grupo
-        $groupSid = (Get-ADGroup -Identity $groupName).SID
-        $accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule($groupSid, $ntfsRights, "ContainerInherit,ObjectInherit", "None", "Allow")
+        $accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule($domainGroup, $ntfsRights, "ContainerInherit,ObjectInherit", "None", "Allow")
         $acl.AddAccessRule($accessRule)
 
         # Adicionar permissão para administradores
@@ -130,7 +175,7 @@ foreach ($config in $folderConfig) {
         }
 
         # Criar novo compartilhamento
-        New-SmbShare -Name $shareName -Path $folderPath -Description "Compartilhamento para ${shareName}" -FullAccess "BUILTIN\Administrators" -ChangeAccess $groupName -ErrorAction Stop
+        New-SmbShare -Name $shareName -Path $folderPath -Description "Compartilhamento para ${shareName}" -FullAccess "BUILTIN\Administrators" -ChangeAccess $domainGroup -ErrorAction Stop
         Write-Log "Compartilhamento ${shareName} criado com sucesso."
     } catch {
         Write-Log "Erro ao configurar compartilhamento ${shareName}: $_"
