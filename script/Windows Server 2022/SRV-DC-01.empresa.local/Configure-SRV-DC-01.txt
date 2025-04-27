@@ -63,10 +63,10 @@ foreach ($service in $servicesToDisable) {
             Set-Service -Name $svc.Name -StartupType Disabled -ErrorAction Stop
             Write-Log "Serviço $($svc.Name) desativado."
         } else {
-            Write-Log "Serviço $service não encontrado."
+            Write-Log "Serviço ${service} não encontrado."
         }
     } catch {
-        Write-Log "Erro ao desativar serviço $service: $_"
+        Write-Log "Erro ao desativar serviço ${service}: $_"
     }
 }
 
@@ -98,9 +98,9 @@ $folders = @(
 foreach ($folder in $folders) {
     try {
         New-Item -Path $folder -ItemType Directory -Force -ErrorAction Stop
-        Write-Log "Pasta $folder criada."
+        Write-Log "Pasta ${folder} criada."
     } catch {
-        Write-Log "Erro ao criar pasta $folder: $_"
+        Write-Log "Erro ao criar pasta ${folder}: $_"
     }
 }
 
