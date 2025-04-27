@@ -2,9 +2,7 @@
 # Requisitos: Windows Server 2022, executado como administrador, Active Directory configurado
 
 # Verificar se o script está sendo executado como administrador
-$isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security
-
-System: .Principal.WindowsBuiltInRole]::Administrator)
+$isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 if (-not $isAdmin) {
     Write-Error "Este script deve ser executado como administrador."
     exit 1
