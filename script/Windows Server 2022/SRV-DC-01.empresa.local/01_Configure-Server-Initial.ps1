@@ -27,20 +27,7 @@ try {
     Write-Log "Erro ao instalar atualizações: $_"
 }
 
-# 2. Configurar hostname
-$hostname = "SRV-DC-01.empresa.local"
-if ($env:COMPUTERNAME -ne $hostname) {
-    try {
-        Rename-Computer -NewName $hostname -Force -ErrorAction Stop
-        Write-Log "Hostname alterado para $hostname. Reinicialização necessária para aplicar."
-    } catch {
-        Write-Log "Erro ao alterar hostname: $_"
-    }
-} else {
-    Write-Log "Hostname já configurado como $hostname."
-}
-
-# 3. Configurar IP estático
+# 2. Configurar IP estático
 $interface = Get-NetAdapter | Where-Object { $_.Status -eq "Up" } | Select-Object -First 1
 if ($interface) {
     try {
@@ -54,7 +41,7 @@ if ($interface) {
     Write-Log "Nenhuma interface de rede ativa encontrada."
 }
 
-# 4. Hardening: Desativar serviços desnecessários
+# 3. Hardening: Desativar serviços desnecessários
 $servicesToDisable = @("Telnet", "SNMP", "FTP", "Xbox*")
 foreach ($service in $servicesToDisable) {
     try {
@@ -63,14 +50,14 @@ foreach ($service in $servicesToDisable) {
             Set-Service -Name $svc.Name -StartupType Disabled -ErrorAction Stop
             Write-Log "Serviço $($svc.Name) desativado."
         } else {
-            Write-Log "Serviço $service não encontrado."
+            Write-Log "Serviço ${service} não encontrado."
         }
     } catch {
-        Write-Log "Erro ao desativar serviço $service: $_"
+        Write-Log "Erro ao desativar serviço ${service}: $_"
     }
 }
 
-# 5. Hardening: Configurar políticas de senha
+# 4. Hardening: Configurar políticas de senha
 Write-Log "Configurando políticas de senha..."
 try {
     net accounts /minpwlen:12 /maxpwage:90 /complexity:enable
@@ -79,7 +66,7 @@ try {
     Write-Log "Erro ao configurar políticas de senha: $_"
 }
 
-# 6. Hardening: Desativar conta Guest
+# 5. Hardening: Desativar conta Guest
 try {
     Disable-LocalUser -Name "Guest" -ErrorAction Stop
     Write-Log "Conta Guest desativada."
@@ -87,7 +74,7 @@ try {
     Write-Log "Erro ao desativar conta Guest: $_"
 }
 
-# 7. Criar estrutura de pastas em D:\ARQUIVOS
+# 6. Criar estrutura de pastas em D:\ARQUIVOS
 $folders = @(
     "D:\ARQUIVOS\Publico",
     "D:\ARQUIVOS\Confidencial",
@@ -98,13 +85,13 @@ $folders = @(
 foreach ($folder in $folders) {
     try {
         New-Item -Path $folder -ItemType Directory -Force -ErrorAction Stop
-        Write-Log "Pasta $folder criada."
+        Write-Log "Pasta ${folder} criada."
     } catch {
-        Write-Log "Erro ao criar pasta $folder: $_"
+        Write-Log "Erro ao criar pasta ${folder}: $_"
     }
 }
 
-# 8. Configurar firewall
+# 7. Configurar firewall
 Write-Log "Configurando firewall..."
 try {
     New-NetFirewallRule -Name "Allow-SMB-In" -DisplayName "Allow SMB Inbound" -Direction Inbound -Protocol TCP -LocalPort 445 -Action Allow -ErrorAction Stop
@@ -115,7 +102,7 @@ try {
     Write-Log "Erro ao configurar firewall: $_"
 }
 
-# 9. Ativar logs de eventos para auditoria
+# 8. Ativar logs de eventos para auditoria
 Write-Log "Configurando logs de auditoria..."
 try {
     auditpol /set /category:"Account Logon" /success:enable /failure:enable
@@ -126,5 +113,5 @@ try {
     Write-Log "Erro ao configurar logs de auditoria: $_"
 }
 
-# 10. Mensagem de conclusão
-Write-Log "Configuração inicial concluída. Algumas alterações (como hostname e atualizações) requerem reinicialização manual para serem aplicadas completamente. Log salvo em $logPath."
+# 9. Mensagem de conclusão
+Write-Log "Configuração inicial concluída. Algumas alterações (como atualizações) requerem reinicialização manual para serem aplicadas completamente. Log salvo em $logPath."
