@@ -2,24 +2,51 @@
 $DomainName = "empresa.local"
 $NetBIOSName = "EMPRESA"
 $SafeModeAdminPassword = ConvertTo-SecureString "bz07fx$#oela14" -AsPlainText -Force
-$ForestMode = "WinThreshold"  # Nível funcional (WinThreshold para 2016/2019/2022)
+$ForestMode = "WinThreshold"
 $DomainMode = "WinThreshold"
+$LogPath = "C:\Logs\ADDS_Install.log"
 
-# Instalar função AD DS e ferramentas
-Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools -IncludeAllSubFeature
+# Criar diretório de logs
+New-Item -Path "C:\Logs" -ItemType Directory -Force
 
-# Instalar função DNS (recomendado para DCs)
-Install-WindowsFeature -Name DNS -IncludeManagementTools
+# Iniciar logging
+Start-Transcript -Path $LogPath
 
-# Promover a controlador de domínio e criar nova floresta
-Install-ADDSForest `
-    -DomainName $DomainName `
-    -DomainNetBIOSName $NetBIOSName `
-    -ForestMode $ForestMode `
-    -DomainMode $DomainMode `
-    -SafeModeAdministratorPassword $SafeModeAdminPassword `
-    -InstallDNS:$true `
-    -NoRebootOnCompletion:$false `
-    -Force:$true
+try {
+    # Verificar endereço IP estático
+    $ipConfig = Get-NetIPAddress -AddressFamily IPv4 | Where-Object { $_.InterfaceAlias -notlike "Loopback" }
+    if (-not $ipConfig.IPAddress) {
+        throw "Endereço IP estático não configurado."
+    }
+    Write-Host "Endereço IP configurado: $($ipConfig.IPAddress)"
 
-# O servidor reiniciará automaticamente após a promoção
+    # Instalar função AD DS e ferramentas
+    Write-Host "Instalando AD DS..."
+    Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools -IncludeAllSubFeature -ErrorAction Stop
+
+    # Instalar função DNS
+    Write-Host "Instalando DNS..."
+    Install-WindowsFeature -Name DNS -IncludeManagementTools -ErrorAction Stop
+
+    # Promover a controlador de domínio
+    Write-Host "Promovendo a controlador de domínio..."
+    Install-ADDSForest `
+        -DomainName $DomainName `
+        -DomainNetBIOSName $NetBIOSName `
+        -ForestMode $ForestMode `
+        -DomainMode $DomainMode `
+        -SafeModeAdministratorPassword $SafeModeAdminPassword `
+        -InstallDNS:$true `
+        -NoRebootOnCompletion:$false `
+        -Force:$true `
+        -ErrorAction Stop
+
+    Write-Host "Configuração concluída com sucesso. O servidor será reiniciado."
+}
+catch {
+    Write-Host "Erro durante a execução: $_" -ForegroundColor Red
+    exit 1
+}
+finally {
+    Stop-Transcript
+}
