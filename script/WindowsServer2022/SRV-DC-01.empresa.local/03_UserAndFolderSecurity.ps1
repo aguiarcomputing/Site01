@@ -1,4 +1,4 @@
-# Script para adicionar usuário Administrador a grupos e configurar permissões em pastas ocultas no servidor SRV-DC-01.empresa.local
+# Script para configurar compartilhamentos ocultos de pastas com permissões de leitura/gravação e adicionar usuário Administrador a grupos
 # Requisitos: Windows Server 2022, executado como administrador, Active Directory configurado
 
 # Verificar se o script está sendo executado como administrador
@@ -102,8 +102,8 @@ foreach ($config in $folderConfig) {
         if (-not (Get-ADGroupMember -Identity $groupName | Where-Object { $_.SamAccountName -eq $adminUser })) {
             Add-ADGroupMember -Identity $groupName -Members $user -ErrorAction Stop
             Write-Log "Usuário ${adminUser} adicionado ao grupo ${groupName}."
-            # Aguardar replicação (10 segundos)
-            Start-Sleep -Seconds 10
+            # Aguardar replicação (15 segundos)
+            Start-Sleep -Seconds 15
         } else {
             Write-Log "Usuário ${adminUser} já é membro do grupo ${groupName}."
         }
@@ -127,13 +127,13 @@ foreach ($config in $folderConfig) {
         continue
     }
 
-    # Verificar se o grupo existe e pode ser resolvido
+    # Verificar se o grupo existe e obter SID
     try {
         $group = Get-ADGroup -Identity $groupName -ErrorAction Stop
         $groupSid = $group.SID
         Write-Log "Grupo ${groupName} encontrado com SID ${groupSid}."
 
-        # Tentar resolver a identidade do grupo
+        # Tentar resolver a identidade do grupo para compartilhamento
         $ntAccount = New-Object System.Security.Principal.NTAccount($domainGroup)
         $resolvedSid = $ntAccount.Translate([System.Security.Principal.SecurityIdentifier])
         Write-Log "Identidade ${domainGroup} resolvida com SID ${resolvedSid}."
@@ -150,7 +150,7 @@ foreach ($config in $folderConfig) {
         $acl.SetAccessRuleProtection($true, $false)
         $acl.Access | ForEach-Object { $acl.RemoveAccessRule($_) }
 
-        # Adicionar permissão para o grupo usando SID
+        # Adicionar permissão para o grupo usando SID (leitura, escrita, exclusão)
         $accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule($groupSid, $ntfsRights, "ContainerInherit,ObjectInherit", "None", "Allow")
         $acl.AddAccessRule($accessRule)
 
@@ -174,7 +174,7 @@ foreach ($config in $folderConfig) {
             Write-Log "Compartilhamento ${shareName} existente removido."
         }
 
-        # Criar novo compartilhamento oculto
+        # Criar novo compartilhamento oculto com permissões de leitura/escrita
         New-SmbShare -Name $shareName -Path $folderPath -Description "Compartilhamento oculto para ${shareName}" -FullAccess "BUILTIN\Administrators" -ChangeAccess $domainGroup -ErrorAction Stop
         Write-Log "Compartilhamento oculto ${shareName} criado com sucesso."
 
