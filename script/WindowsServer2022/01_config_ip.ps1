@@ -2,10 +2,10 @@
 
 # Define as variáveis
 $InterfaceAlias = "Ethernet"  # Nome da interface de rede (ajuste se necessário)
-$IPAddress = "192.168.2.254"  # Endereço IP desejado
+$IPAddress = "192.168.2.252"  # Endereço IP desejado
 $SubnetMask = "255.255.255.0" # Máscara de sub-rede
 $Gateway = "192.168.2.1"      # Gateway padrão
-$DNSServer = "192.168.2.254"  # Servidor DNS (Google DNS como exemplo, ajuste se necessário)
+$DNSServer = "192.168.2.252"  # Servidor DNS (Google DNS como exemplo, ajuste se necessário)
 
 # Verifica se o script está sendo executado como administrador
 if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
