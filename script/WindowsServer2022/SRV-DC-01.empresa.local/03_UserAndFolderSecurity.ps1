@@ -43,6 +43,15 @@ try {
     exit 1
 }
 
+# Verificar resolução DNS do domínio
+try {
+    $dnsTest = Resolve-DnsName -Name $domain -ErrorAction Stop
+    Write-Log "Resolução DNS para ${domain} bem-sucedida: $($dnsTest.NameHost)"
+} catch {
+    Write-Log "Erro ao resolver DNS para ${domain}: $_"
+    exit 1
+}
+
 # Definir grupos e pastas com compartilhamentos ocultos
 $folderConfig = @(
     @{
@@ -93,8 +102,8 @@ foreach ($config in $folderConfig) {
         if (-not (Get-ADGroupMember -Identity $groupName | Where-Object { $_.SamAccountName -eq $adminUser })) {
             Add-ADGroupMember -Identity $groupName -Members $user -ErrorAction Stop
             Write-Log "Usuário ${adminUser} adicionado ao grupo ${groupName}."
-            # Aguardar replicação (5 segundos)
-            Start-Sleep -Seconds 5
+            # Aguardar replicação (10 segundos)
+            Start-Sleep -Seconds 10
         } else {
             Write-Log "Usuário ${adminUser} já é membro do grupo ${groupName}."
         }
@@ -121,13 +130,19 @@ foreach ($config in $folderConfig) {
     # Verificar se o grupo existe e pode ser resolvido
     try {
         $group = Get-ADGroup -Identity $groupName -ErrorAction Stop
-        Write-Log "Grupo ${groupName} encontrado com SID $($group.SID)."
+        $groupSid = $group.SID
+        Write-Log "Grupo ${groupName} encontrado com SID ${groupSid}."
+
+        # Tentar resolver a identidade do grupo
+        $ntAccount = New-Object System.Security.Principal.NTAccount($domainGroup)
+        $resolvedSid = $ntAccount.Translate([System.Security.Principal.SecurityIdentifier])
+        Write-Log "Identidade ${domainGroup} resolvida com SID ${resolvedSid}."
     } catch {
         Write-Log "Grupo ${groupName} não encontrado ou não pode ser resolvido: $_"
         continue
     }
 
-    # 2.1. Configurar permissões NTFS
+    # 2.1. Configurar permissões NTFS usando SID diretamente
     Write-Log "Configurando permissões NTFS para ${folderPath}..."
     try {
         # Desativar herança e remover permissões existentes
@@ -135,8 +150,8 @@ foreach ($config in $folderConfig) {
         $acl.SetAccessRuleProtection($true, $false)
         $acl.Access | ForEach-Object { $acl.RemoveAccessRule($_) }
 
-        # Adicionar permissão para o grupo (leitura, escrita, exclusão)
-        $accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule($domainGroup, $ntfsRights, "ContainerInherit,ObjectInherit", "None", "Allow")
+        # Adicionar permissão para o grupo usando SID
+        $accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule($groupSid, $ntfsRights, "ContainerInherit,ObjectInherit", "None", "Allow")
         $acl.AddAccessRule($accessRule)
 
         # Adicionar permissão para administradores
