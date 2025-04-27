@@ -1,14 +1,16 @@
-# Script para configurar grupos de seguran√ßa e permiss√µes em pastas no servidor SRV-DC-01.empresa.local
+# Script para configurar grupos de seguranÁa e permissıes em pastas no servidor SRV-DC-01.empresa.local
 # Requisitos: Windows Server 2022, executado como administrador, Active Directory configurado
 
-# Verificar se o script est√° sendo executado como administrador
-$isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+# Verificar se o script est· sendo executado como administrador
+$isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security
+
+System: .Principal.WindowsBuiltInRole]::Administrator)
 if (-not $isAdmin) {
     Write-Error "Este script deve ser executado como administrador."
     exit 1
 }
 
-# Criar diret√≥rio tempor√°rio para logs
+# Criar diretÛrio tempor·rio para logs
 $logPath = "C:\Temp\FolderSecurityConfig.log"
 if (-not (Test-Path "C:\Temp")) { New-Item -Path "C:\Temp" -ItemType Directory -Force }
 function Write-Log {
@@ -18,13 +20,48 @@ function Write-Log {
     Add-Content -Path $logPath -Value $logMessage
 }
 
-# Verificar se o m√≥dulo Active Directory est√° dispon√≠vel
+# Verificar se o mÛdulo Active Directory est· disponÌvel
 if (-not (Get-Module -ListAvailable -Name ActiveDirectory)) {
-    Write-Log "M√≥dulo ActiveDirectory n√£o encontrado. Instale o RSAT-AD-PowerShell."
+    Write-Log "MÛdulo ActiveDirectory n„o encontrado. Instale o RSAT-AD-PowerShell."
     exit 1
 }
 
-# Definir pastas e configura√ß√µes de seguran√ßa
+# Carregar o mÛdulo Active Directory
+try {
+    Import-Module ActiveDirectory -ErrorAction Stop
+    Write-Log "MÛdulo ActiveDirectory carregado com sucesso."
+} catch {
+    Write-Log "Erro ao carregar o mÛdulo ActiveDirectory: $_"
+    exit 1
+}
+
+# Verificar conectividade com o domÌnio
+$domain = "empresa.local"
+try {
+    $domainInfo = Get-ADDomain -Identity $domain -ErrorAction Stop
+    Write-Log "Conex„o com o domÌnio ${domain} estabelecida."
+} catch {
+    Write-Log "Erro ao conectar ao domÌnio ${domain}: $_"
+    exit 1
+}
+
+# Unidade organizacional para grupos
+$ouPath = "OU=Groups,DC=empresa,DC=local"
+
+# Criar OU se n„o existir
+try {
+    if (-not (Get-ADOrganizationalUnit -Filter { DistinguishedName -eq $ouPath } -ErrorAction SilentlyContinue)) {
+        New-ADOrganizationalUnit -Name "Groups" -Path "DC=empresa,DC=local" -Description "OU para grupos de seguranÁa" -ErrorAction Stop
+        Write-Log "OU ${ouPath} criada com sucesso."
+    } else {
+        Write-Log "OU ${ouPath} j· existe."
+    }
+} catch {
+    Write-Log "Erro ao criar OU ${ouPath}: $_"
+    exit 1
+}
+
+# Definir pastas e configuraÁıes de seguranÁa
 $folderConfig = @(
     @{
         Path = "D:\ARQUIVOS\Publico"
@@ -63,61 +100,69 @@ $folderConfig = @(
     }
 )
 
-# Unidade organizacional para grupos
-$ouPath = "OU=Groups,DC=empresa,DC=local"
-
-# 1. Criar grupos de seguran√ßa
-Write-Log "Criando grupos de seguran√ßa no Active Directory..."
+# 1. Criar grupos de seguranÁa
+Write-Log "Criando grupos de seguranÁa no Active Directory..."
 foreach ($config in $folderConfig) {
     $groupName = $config.GroupName
     try {
         if (-not (Get-ADGroup -Filter { Name -eq $groupName } -ErrorAction SilentlyContinue)) {
-            New-ADGroup -Name $groupName -SamAccountName $groupName -GroupScope Global -GroupCategory Security -Path $ouPath -Description "Grupo para acesso √† pasta $($config.Path)" -ErrorAction Stop
+            New-ADGroup -Name $groupName -SamAccountName $groupName -GroupScope Global -GroupCategory Security -Path $ouPath -Description "Grupo para acesso ‡ pasta $($config.Path)" -ErrorAction Stop
             Write-Log "Grupo ${groupName} criado com sucesso."
+            # Aguardar replicaÁ„o (5 segundos)
+            Start-Sleep -Seconds 5
         } else {
-            Write-Log "Grupo ${groupName} j√° existe."
+            Write-Log "Grupo ${groupName} j· existe."
         }
     } catch {
         Write-Log "Erro ao criar grupo ${groupName}: $_"
     }
 }
 
-# 2. Configurar permiss√µes NTFS e compartilhamentos
+# 2. Configurar permissıes NTFS e compartilhamentos
 foreach ($config in $folderConfig) {
     $folderPath = $config.Path
     $groupName = $config.GroupName
     $shareName = $config.ShareName
     $ntfsRights = $config.NTFSRights
     $shareRights = $config.ShareRights
+    $domainGroup = "empresa\${groupName}"
 
     # Verificar se a pasta existe
     if (-not (Test-Path $folderPath)) {
-        Write-Log "Pasta ${folderPath} n√£o encontrada. Pulando configura√ß√£o."
+        Write-Log "Pasta ${folderPath} n„o encontrada. Pulando configuraÁ„o."
         continue
     }
 
-    # 2.1. Configurar permiss√µes NTFS
-    Write-Log "Configurando permiss√µes NTFS para ${folderPath}..."
+    # Verificar se o grupo existe e pode ser resolvido
     try {
-        # Desativar heran√ßa e remover permiss√µes existentes
+        $group = Get-ADGroup -Identity $groupName -ErrorAction Stop
+        Write-Log "Grupo ${groupName} encontrado com SID $($group.SID)."
+    } catch {
+        Write-Log "Grupo ${groupName} n„o encontrado ou n„o pode ser resolvido: $_"
+        continue
+    }
+
+    # 2.1. Configurar permissıes NTFS
+    Write-Log "Configurando permissıes NTFS para ${folderPath}..."
+    try {
+        # Desativar heranÁa e remover permissıes existentes
         $acl = Get-Acl -Path $folderPath
         $acl.SetAccessRuleProtection($true, $false)
         $acl.Access | ForEach-Object { $acl.RemoveAccessRule($_) }
 
-        # Adicionar permiss√£o para o grupo
-        $groupSid = (Get-ADGroup -Identity $groupName).SID
-        $accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule($groupSid, $ntfsRights, "ContainerInherit,ObjectInherit", "None", "Allow")
+        # Adicionar permiss„o para o grupo
+        $accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule($domainGroup, $ntfsRights, "ContainerInherit,ObjectInherit", "None", "Allow")
         $acl.AddAccessRule($accessRule)
 
-        # Adicionar permiss√£o para administradores
+        # Adicionar permiss„o para administradores
         $adminRule = New-Object System.Security.AccessControl.FileSystemAccessRule("BUILTIN\Administrators", "FullControl", "ContainerInherit,ObjectInherit", "None", "Allow")
         $acl.AddAccessRule($adminRule)
 
         # Aplicar ACL
         Set-Acl -Path $folderPath -AclObject $acl -ErrorAction Stop
-        Write-Log "Permiss√µes NTFS aplicadas em ${folderPath}."
+        Write-Log "Permissıes NTFS aplicadas em ${folderPath}."
     } catch {
-        Write-Log "Erro ao configurar permiss√µes NTFS em ${folderPath}: $_"
+        Write-Log "Erro ao configurar permissıes NTFS em ${folderPath}: $_"
     }
 
     # 2.2. Configurar compartilhamento
@@ -130,12 +175,12 @@ foreach ($config in $folderConfig) {
         }
 
         # Criar novo compartilhamento
-        New-SmbShare -Name $shareName -Path $folderPath -Description "Compartilhamento para ${shareName}" -FullAccess "BUILTIN\Administrators" -ChangeAccess $groupName -ErrorAction Stop
+        New-SmbShare -Name $shareName -Path $folderPath -Description "Compartilhamento para ${shareName}" -FullAccess "BUILTIN\Administrators" -ChangeAccess $domainGroup -ErrorAction Stop
         Write-Log "Compartilhamento ${shareName} criado com sucesso."
     } catch {
         Write-Log "Erro ao configurar compartilhamento ${shareName}: $_"
     }
 }
 
-# 3. Mensagem de conclus√£o
-Write-Log "Configura√ß√£o de grupos e permiss√µes conclu√≠da. Log salvo em ${logPath}."
+# 3. Mensagem de conclus„o
+Write-Log "ConfiguraÁ„o de grupos e permissıes concluÌda. Log salvo em ${logPath}."
