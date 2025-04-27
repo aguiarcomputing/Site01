@@ -43,13 +43,44 @@ try {
     exit 1
 }
 
-# Verificar resolução DNS do domínio
+# Verificar resolução DNS do domínio e do DC
 try {
     $dnsTest = Resolve-DnsName -Name $domain -ErrorAction Stop
     Write-Log "Resolução DNS para ${domain} bem-sucedida: $($dnsTest.NameHost)"
+    $dcTest = Resolve-DnsName -Name "SRV-DC-01.${domain}" -ErrorAction Stop
+    Write-Log "Resolução DNS para SRV-DC-01.${domain} bem-sucedida: $($dcTest.NameHost)"
 } catch {
-    Write-Log "Erro ao resolver DNS para ${domain}: $_"
+    Write-Log "Erro ao resolver DNS: $_"
     exit 1
+}
+
+# Forçar replicação do Active Directory
+Write-Log "Forçando replicação do Active Directory..."
+try {
+    $repadminResult = & repadmin /syncall /AdeP
+    Write-Log "Replicação forçada com sucesso: $repadminResult"
+    Start-Sleep -Seconds 30 # Aguardar replicação
+} catch {
+    Write-Log "Erro ao forçar replicação do Active Directory: $_"
+}
+
+# Limpar cache de credenciais locais
+Write-Log "Limpando cache de credenciais locais..."
+try {
+    & klist purge
+    Write-Log "Cache de credenciais limpo com sucesso."
+} catch {
+    Write-Log "Erro ao limpar cache de credenciais: $_"
+}
+
+# Reiniciar serviço Security Accounts Manager
+Write-Log "Reiniciando serviço Security Accounts Manager..."
+try {
+    Restart-Service SamSs -Force -ErrorAction Stop
+    Write-Log "Serviço SamSs reiniciado com sucesso."
+    Start-Sleep -Seconds 5 # Aguardar estabilização
+} catch {
+    Write-Log "Erro ao reiniciar serviço SamSs: $_"
 }
 
 # Definir grupos e pastas com compartilhamentos ocultos
@@ -102,8 +133,8 @@ foreach ($config in $folderConfig) {
         if (-not (Get-ADGroupMember -Identity $groupName | Where-Object { $_.SamAccountName -eq $adminUser })) {
             Add-ADGroupMember -Identity $groupName -Members $user -ErrorAction Stop
             Write-Log "Usuário ${adminUser} adicionado ao grupo ${groupName}."
-            # Aguardar replicação (15 segundos)
-            Start-Sleep -Seconds 15
+            # Aguardar replicação (30 segundos)
+            Start-Sleep -Seconds 30
         } else {
             Write-Log "Usuário ${adminUser} já é membro do grupo ${groupName}."
         }
