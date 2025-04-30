@@ -719,7 +719,7 @@
                                 </div>
                                 <div class="ms-3">
                                     <h4 class="text-primary">Ligue para nós</h4>
-                                    <a class="h5" href="tel:+0123456789" target="_blank">(48) 9 9189-0567</a>
+                                    <a class="h5" href="tel:(48) 9 9189-0567" target="_blank">+012 3456 7890</a>
                                 </div>
                             </div>
                         </div>
@@ -729,8 +729,8 @@
                                     <i class="fa fa-envelope text-white"></i>
                                 </div>
                                 <div class="ms-3">
-                                    <h4 class="text-primary">Envie-nos um e-mail</h4>
-                                    <a class="h5" href="mailto:suporte@aguiarinformática.com.br" target="_blank">suporte@aguiarinformática.com.br</a>
+                                    <h4 class="text-primary">Email Us</h4>
+                                    <a class="h5" href="mailto:info@example.com" target="_blank">info@example.com</a>
                                 </div>
                             </div>
                         </div>
