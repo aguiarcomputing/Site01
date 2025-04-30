@@ -40,7 +40,7 @@
             <div class="container">
                 <div class="d-flex justify-content-between topbar">
                     <div class="top-info">
-                        <small class="me-3 text-white-50"><a href="https://www.google.com.br/search?sa=X&sca_esv=5037f467212c212c&biw=1536&bih=730&sxsrf=AHTn8zq0GcLeGqV0pY-NW6KIMcNoIJn1iw:1746011378356&q=aguiar+inform%C3%A1tica+-+assist%C3%AAncia+t%C3%A9cnica+no+condom%C3%ADnio.+s%C3%A3o+jos%C3%A9+endere%C3%A7o&ludocid=12774581206029809323&ved=2ahUKEwjfguyfz_-MAxX5lpUCHdJrMZUQ6BN6BAhOEAI"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>São José SC</small>
+                        <small class="me-3 text-white-50"><a href="#"><i class="fas fa-map-marker-alt me-2 text-secondary"></i></a>São José SC</small>
                         <small class="me-3 text-white-50"><a href="#"><i class="fas fa-envelope me-2 text-secondary"></i></a>suporte@aguiarinformatica.com.br</small>
                     </div>
                     <div id="note" class="text-secondary d-none d-xl-flex"><small>Nós ajudamos você a expandir seus negócios</small></div>
