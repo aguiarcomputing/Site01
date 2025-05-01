@@ -23,7 +23,7 @@ network:
     enp0s3:
       dhcp4: no
       addresses:
-        - 192.168.2.250/24
+        - 192.168.2.222/24
       gateway4: 192.168.2.1
       nameservers:
         addresses:
@@ -38,7 +38,7 @@ chmod 600 "$CONFIG_FILE"
 netplan apply
 
 echo "Configuração de IP fixo aplicada!"
-echo "IP: 192.168.2.250/24"
+echo "IP: 192.168.2.222/24"
 echo "Gateway: 192.168.2.1"
 echo "DNS: 8.8.8.8, 8.8.4.4"
 echo "Verifique a conectividade com 'ping 8.8.8.8'"

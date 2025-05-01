@@ -3,7 +3,7 @@
 # Script para atualizar e limpar o sistema Ubuntu
 
 # Configurações
-ALLOWED_USER=${ALLOWED_USER:-"aguiar"}
+ALLOWED_USER=${ALLOWED_USER:-"root"}
 LOG_FILE="/var/log/system-update.log"
 MIN_DISK_SPACE=500  # MB
 
