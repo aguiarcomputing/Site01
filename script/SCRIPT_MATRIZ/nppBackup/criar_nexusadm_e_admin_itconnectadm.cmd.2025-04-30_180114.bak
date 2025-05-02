@@ -15,11 +15,10 @@ echo 6. Adicionar maquina ao dominio
 echo 7. Sair
 echo 8. Definir descricao do computador
 echo 9. Definir nome do computador
-echo 10. Abrir contas de usuarios
 echo ==============================================
-set /p choice="Digite a opcao (1-10): "
+set /p choice="Digite a opcao (1-9): "
 
-REM Validate input to ensure it's a number between 1 and 10
+REM Validate input to ensure it's a number between 1 and 9
 set "choice=%choice: =%"
 if "!choice!"=="1" goto MapServers
 if "!choice!"=="2" goto CheckAdmin
@@ -30,8 +29,7 @@ if "!choice!"=="6" goto JoinDomain
 if "!choice!"=="7" goto End
 if "!choice!"=="8" goto SetComputerDesc
 if "!choice!"=="9" goto SetComputerName
-if "!choice!"=="10" goto OpenUserAccounts
-echo Opcao invalida! Escolha entre 1 e 10.
+echo Opcao invalida! Escolha entre 1 e 9.
 pause >nul
 goto MainLoop
 
@@ -265,4 +263,31 @@ if !errorlevel! neq 0 (
     echo %date% %time% - Erro ao definir nome: !new_name! >> "%temp%\nexus_config.log"
 ) else (
     echo Nome do computador definido com sucesso: !new_name!
-    echo
+    echo %date% %time% - Nome definido: !new_name! >> "%temp%\nexus_config.log"
+    echo Um reinicio e necessario para aplicar a alteracao.
+)
+
+REM Prompt for reboot
+set /p reboot="Deseja reiniciar agora? (S/N): "
+if /i "!reboot!"=="S" (
+    echo Iniciando reinicio...
+    echo %date% %time% - Reinicio solicitado apos renomeacao >> "%temp%\nexus_config.log"
+    shutdown /r /t 30
+    pause
+    goto End
+)
+
+pause
+echo Configuracao concluida! Reinicie manualmente para aplicar o novo nome.
+set /p next="Pressione Enter para continuar ou 'S' para sair: "
+if /i "!next!"=="S" goto End
+goto MainLoop
+
+:End
+cls
+echo === Configuracao finalizada! ===
+echo Cabooooooooooo!
+REM Clean up mapped drives
+net use * /delete /y >nul 2>&1
+pause
+exit
