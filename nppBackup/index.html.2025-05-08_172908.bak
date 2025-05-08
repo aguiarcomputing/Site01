@@ -826,8 +826,8 @@
         </div>
         <!-- Footer End -->
 <div class="d-flex mt-3">
-    <img src="img/linux.png" alt="Linux" class="me-3" style="width: 32px; height: 32px;">
-    <img src="img/microsoft.png" alt="Microsoft" style="width: 32px; height: 32px;">
+    <img src="caminho/para/linux.png" alt="Linux" class="me-3" style="width: 32px; height: 32px;">
+    <img src="caminho/para/microsoft.png" alt="Microsoft" style="width: 32px; height: 32px;">
 </div>
 
         <!-- Back to Top -->
