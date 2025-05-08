@@ -825,10 +825,7 @@
             </div>
         </div>
         <!-- Footer End -->
-<div class="d-flex mt-3">
-    <img src="caminho/para/linux.png" alt="Linux" class="me-3" style="width: 32px; height: 32px;">
-    <img src="caminho/para/microsoft.png" alt="Microsoft" style="width: 32px; height: 32px;">
-</div>
+
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"><i class="fa fa-arrow-up text-white"></i></a>
