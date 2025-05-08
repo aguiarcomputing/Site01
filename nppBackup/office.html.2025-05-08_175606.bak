@@ -85,7 +85,7 @@
     <header class="bg-gray-800 text-white py-6">
         <div class="container mx-auto px-4">
             <h1 class="text-3xl font-bold">Ativando o Office 2019 sem Programas</h1>
-            <p class="mt-2">Um guia simples e objetivo para ativar o Office 2019 usando apenas o PowerShell</p>
+            <p class="mt-2">Um guia simples e objetivo para ativar o Office 2019 usando apenas o Prompt de Comando</p>
         </div>
     </header>
 
@@ -97,16 +97,35 @@
         </section>
 
         <section class="bg-white shadow-md rounded-lg p-6 mb-6">
-            <h2 class="text-2xl font-semibold mb-4">Passo 2: Ative o Office 2019</h2>
-            <p class="mb-4">Abra o PowerShell como Administrador. Para isso, clique no menu Iniciar, digite "PowerShell", clique com o botão direito e selecione "Executar como Administrador". Execute o seguinte comando, pressione Enter e siga as opções exibidas na tela:</p>
+            <h2 class="text-2xl font-semibold mb-4">Passo 2: Atualize o Office</h2>
+            <p class="mb-4">Após a instalação, abra o Prompt de Comando (CMD) como Administrador. Para isso, clique no menu Iniciar, digite "CMD", clique com o botão direito e selecione "Executar como Administrador". Execute os seguintes comandos, um após o outro:</p>
             <div class="code-block">
                 <code id="code1">
-irm https://get.activated.win | iex
+cd "\Program Files\Common Files\microsoft shared\ClickToRun"<br>
+OfficeC2rclient.exe /update user updatetoversion=16.0.13801.20266
                 </code>
                 <button class="copy-btn" onclick="copyCode('code1')">Copiar</button>
                 <span class="tooltip" id="tooltip-code1" aria-live="polite"></span>
             </div>
-            <p class="mt-4">Seguindo as opções na tela, seu Office 2019 será ativado sem a necessidade de programas de crack. Caso ocorra algum problema, verifique se o comando foi inserido corretamente.</p>
+        </section>
+
+        <section class="bg-white shadow-md rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-semibold mb-4">Passo 3: Ative o Office 2019</h2>
+            <p class="mb-4">Com o Prompt de Comando ainda aberto como Administrador, execute os seguintes comandos na sequência, pressionando Enter após cada um:</p>
+            <div class="code-block">
+                <code id="code2">
+cd /d %ProgramFiles%\Microsoft Office\Office16<br>
+for /f %x in ('dir /b ..\root\Licenses16\ProPlus2019VL*.xrm-ms') do cscript ospp.vbs /inslic:"..\root\Licenses16\%x"<br>
+cscript ospp.vbs /setprt:1688<br>
+cscript ospp.vbs /unpkey:6MWKP >nul<br>
+cscript ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP<br>
+cscript ospp.vbs /sethst:e8.us.to<br>
+cscript ospp.vbs /act
+                </code>
+                <button class="copy-btn" onclick="copyCode('code2')">Copiar</button>
+                <span class="tooltip" id="tooltip-code2" aria-live="polite"></span>
+            </div>
+            <p class="mt-4">Seguindo esses passos, seu Office 2019 será ativado sem a necessidade de programas de crack. Caso ocorra alguma variação, verifique se todos os comandos foram inseridos corretamente.</p>
         </section>
 
         <section class="bg-white shadow-md rounded-lg p-6 mb-6">
