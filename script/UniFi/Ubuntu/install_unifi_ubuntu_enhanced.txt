@@ -1,0 +1,92 @@
+```bash
+#!/bin/bash
+
+# Script to install and configure UniFi Controller on Ubuntu 24.04
+
+# Exit on any error
+set -e
+
+# Ensure script is run as root
+if [ "$(id -u)" -ne 0 ]; then
+    echo "This script must be run as root. Use sudo or switch to root user."
+    exit 1
+fi
+
+echo "Starting UniFi Controller installation on Ubuntu..."
+
+# Step 1: Update Ubuntu
+echo "Updating Ubuntu..."
+apt update && apt upgrade -y
+
+# Step 2: Install Java
+echo "Installing Java..."
+apt install openjdk-17-jre-headless -y
+
+# Verify Java version
+java -version
+
+# Prevent Java from updating
+echo "Holding Java version to prevent updates..."
+apt-mark hold openjdk-17-jre-headless
+
+# Step 3: Install Libssl 1.1 for MongoDB
+echo "Installing Libssl 1.1..."
+LIBSSL_URL="http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb"
+LIBSSL_DEB="libssl1.1_1.1.1f-1ubuntu2_amd64.deb"
+if ! wget "$LIBSSL_URL" -O "$LIBSSL_DEB"; then
+    echo "Failed to download libssl1.1. Check the URL or network connectivity."
+    exit 1
+fi
+dpkg -i "$LIBSSL_DEB"
+rm "$LIBSSL_DEB"
+
+# Step 4: Install and add MongoDB Repository
+echo "Setting up MongoDB repository..."
+apt install gnupg-curl -y
+
+# Add MongoDB 4.4 repository
+MONGODB_KEY_URL="https://pgp.mongodb.com/server-4.4.asc"
+if ! curl -fsSL "$MONGODB_KEY_URL" | gpg --dearmor | tee /usr/share/keyrings/mongodb-org-server-4.4-archive-keyring.gpg >/dev/null; then
+    echo "Failed to download MongoDB GPG key."
+    exit 1
+fi
+echo 'deb [arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-org-server-4.4-archive-keyring.gpg] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse' | tee /etc/apt/sources.list.d/mongodb-org-4.4.list >/dev/null
+
+# Update and install MongoDB
+apt update -y
+apt install mongodb-org-server -y
+
+# Check MongoDB service status
+echo "Checking MongoDB service status..."
+systemctl status mongod --no-pager
+
+# Step 5: Install and add UniFi Repository
+echo "Setting up UniFi repository..."
+UNIFI_KEY_URL="https://dl.ui.com/unifi/unifi-repo.gpg"
+if ! curl -fsSL "$UNIFI_KEY_URL" | tee /usr/share/keyrings/ubiquiti-archive-keyring.gpg >/dev/null; then
+    echo "Failed to download UniFi GPG key."
+    exit 1
+fi
+echo 'deb [signed-by=/usr/share/keyrings/ubiquiti-archive-keyring.gpg] https://www.ui.com/downloads/unifi/debian stable ubiquiti' | tee /etc/apt/sources.list.d/100-ubnt-unifi.list >/dev/null
+
+# Update and install UniFi
+apt update -y
+apt install unifi -y
+
+# Step 6: Check UniFi service status
+echo "Checking UniFi service status..."
+systemctl status unifi --no-pager
+
+# Step 7: Check if port 8443 is open
+echo "Installing net-tools and checking port 8443..."
+apt install net-tools -y
+if netstat -tnl | grep -q ":8443 "; then
+    echo "Port 8443 is open."
+else
+    echo "Port 8443 is not open. Check UniFi service status."
+    exit 1
+fi
+
+echo "UniFi Controller installation complete!"
+echo "Access the UniFi Controller at: https://$(hostname -I | awk '{print $1}'):8443"
+```
