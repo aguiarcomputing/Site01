@@ -1,0 +1,5 @@
+DAR PERMISSÃO NO SCRIPT.
+
+# # nano setup_screenfetch.sh
+# chmod +x setup_screenfetch.sh
+# ./

@@ -1,0 +1,293 @@
+@echo off
+setlocal EnableDelayedExpansion
+
+:MainLoop
+cls
+echo ==============================================
+echo         MENU DE CONFIGURACAO NEXUS
+echo ==============================================
+echo 1. Mapear servidores (ADFS01)
+echo 2. Verificar permissao de Administrador
+echo 3. Habilitar execucao de scripts PowerShell
+echo 4. Criar/modificar usuarios ITC e NEXUS
+echo 5. Instalar programas padroes
+echo 6. Adicionar maquina ao dominio
+echo 7. Sair
+echo 8. Definir descricao do computador
+echo 9. Definir nome do computador
+echo ==============================================
+set /p choice="Digite a opcao (1-9): "
+
+REM Validate input to ensure it's a number between 1 and 9
+set "choice=%choice: =%"
+if "!choice!"=="1" goto MapServers
+if "!choice!"=="2" goto CheckAdmin
+if "!choice!"=="3" goto EnableScripts
+if "!choice!"=="4" goto CreateUsers
+if "!choice!"=="5" goto InstallApps
+if "!choice!"=="6" goto JoinDomain
+if "!choice!"=="7" goto End
+if "!choice!"=="8" goto SetComputerDesc
+if "!choice!"=="9" goto SetComputerName
+echo Opcao invalida! Escolha entre 1 e 9.
+pause >nul
+goto MainLoop
+
+:MapServers
+cls
+echo === Mapeando servidor ADFS01 ===
+echo Conectando a \\172.17.0.251...
+net use \\172.17.0.251 /USER:nexus Nexus@1
+if !errorlevel! neq 0 (
+    echo Erro ao conectar a \\172.17.0.251!
+) else (
+    echo Conectado com sucesso!
+)
+pause
+
+echo Conectando a \\nxs-srv-adfs01.nexus.local...
+net use \\nxs-srv-adfs01.nexus.local /USER:nexus Nexus@1
+if !errorlevel! neq 0 (
+    echo Erro ao conectar a \\nxs-srv-adfs01.nexus.local!
+) else (
+    echo Conectado com sucesso!
+)
+pause
+
+echo Conectando a \\172.17.0.252...
+net use \\172.17.0.252 /USER:nexus Nexus@1
+if !errorlevel! neq 0 (
+    echo Erro ao conectar a \\172.17.0.252!
+) else (
+    echo Conectado com sucesso!
+)
+pause
+
+echo Conectando a \\172.17.0.252\dados_rede$...
+net use \\172.17.0.252\dados_rede$ /USER:nexus Nexus@1
+if !errorlevel! neq 0 (
+    echo Erro ao conectar a \\172.17.0.252\dados_rede$!
+) else (
+    echo Conectado com sucesso!
+)
+pause
+
+echo Mapeamento de servidores concluido!
+set /p next="Pressione Enter para continuar ou 'S' para sair: "
+if /i "!next!"=="S" goto End
+goto MainLoop
+
+:CheckAdmin
+cls
+echo === Verificando permissao de Administrador ===
+net session >nul 2>&1
+if !errorlevel! neq 0 (
+    echo Solicitando permissoes de Administrador...
+    powershell -Command "Start-Process cmd -ArgumentList '/c %~fnx0' -Verb RunAs"
+    exit
+) else (
+    echo Permissoes de Administrador confirmadas!
+)
+pause
+echo Verificacao concluida!
+set /p next="Pressione Enter para continuar ou 'S' para sair: "
+if /i "!next!"=="S" goto End
+goto MainLoop
+
+:EnableScripts
+cls
+echo === Habilitando execucao de scripts PowerShell ===
+echo Verificando e configurando politica de execucao...
+
+REM Check if the PowerShell script exists
+if not exist "%~dp0habilitar_exec_scripts_user.ps1" (
+    echo Erro: Script habilitar_exec_scripts_user.ps1 nao encontrado!
+    echo %date% %time% - Erro: Script habilitar_exec_scripts_user.ps1 nao encontrado >> "%temp%\nexus_config.log"
+    pause
+    goto MainLoop
+)
+
+REM Run the PowerShell script and log output
+powershell -ExecutionPolicy Bypass -NoProfile -File "%~dp0habilitar_exec_scripts_user.ps1" > "%temp%\ps_enable_scripts.log" 2>&1
+if !errorlevel! neq 0 (
+    echo Aviso: Nao foi possivel alterar a politica de execucao, mas a operacao pode ter sido bem-sucedida.
+    echo %date% %time% - Aviso: Erro ao executar habilitar_exec_scripts_user.ps1, verifique %temp%\ps_enable_scripts.log >> "%temp%\nexus_config.log"
+    echo Detalhes do erro em %temp%\ps_enable_scripts.log
+) else (
+    echo Politica de execucao configurada com sucesso!
+    echo %date% %time% - Politica de execucao configurada com sucesso >> "%temp%\nexus_config.log"
+)
+pause
+echo Configuracao concluida!
+set /p next="Pressione Enter para continuar ou 'S' para sair: "
+if /i "!next!"=="S" goto End
+goto MainLoop
+
+:CreateUsers
+cls
+echo === Criando/modificando usuarios ITC e NEXUS ===
+powershell -ExecutionPolicy Bypass -NoProfile -File "%~dp0nexusadm_itconnectadm.ps1"
+if !errorlevel! neq 0 (
+    echo Erro ao executar o script nexusadm_itconnectadm.ps1!
+) else (
+    echo Usuarios criados/modificados com sucesso!
+)
+pause
+echo Configuracao concluida!
+set /p next="Pressione Enter para continuar ou 'S' para sair: "
+if /i "!next!"=="S" goto End
+goto MainLoop
+
+:InstallApps
+cls
+echo === Instalando programas padroes ===
+powershell -ExecutionPolicy Bypass -NoProfile -File "%~dp0nexus_install-apps-rede.ps1"
+if !errorlevel! neq 0 (
+    echo Erro ao executar o script nexus_install-apps-rede.ps1!
+) else (
+    echo Programas instalados com sucesso!
+)
+pause
+echo Instalacao concluida!
+set /p next="Pressione Enter para continuar ou 'S' para sair: "
+if /i "!next!"=="S" goto End
+goto MainLoop
+
+:JoinDomain
+cls
+echo === Adicionando maquina ao dominio ===
+powershell -ExecutionPolicy Bypass -NoProfile -File "%~dp0AddHost-Dominio.ps1"
+if !errorlevel! neq 0 (
+    echo Erro ao executar o script AddHost-Dominio.ps1!
+) else (
+    echo Maquina adicionada ao dominio com sucesso!
+)
+pause
+echo Configuracao concluida!
+set /p next="Pressione Enter para continuar ou 'S' para sair: "
+if /i "!next!"=="S" goto End
+goto MainLoop
+
+:SetComputerDesc
+cls
+echo === Definindo descricao do computador ===
+REM Check for admin privileges
+net session >nul 2>&1
+if !errorlevel! neq 0 (
+    echo Esta operacao requer permissoes de Administrador!
+    echo Solicitando elevacao...
+    powershell -Command "Start-Process cmd -ArgumentList '/c %~fnx0' -Verb RunAs"
+    exit
+)
+
+REM Prompt for description
+set /p desc="Digite a descricao do computador (max 255 caracteres, ou 'C' para cancelar): "
+if /i "!desc!"=="C" (
+    echo Operacao cancelada.
+    pause
+    goto MainLoop
+)
+
+REM Validate description length
+set "desc=!desc:~0,255!"
+if "!desc!"=="" (
+    echo Descricao invalida! A descricao nao pode ser vazia.
+    pause
+    goto MainLoop
+)
+
+REM Log the action
+echo %date% %time% - Definindo descricao do computador: !desc! >> "%temp%\nexus_config.log"
+
+REM Set the description using registry
+reg add "HKLM\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" /v srvcomment /t REG_SZ /d "!desc!" /f >nul 2>&1
+if !errorlevel! neq 0 (
+    echo Erro ao definir a descricao do computador!
+    echo %date% %time% - Erro ao definir descricao: !desc! >> "%temp%\nexus_config.log"
+) else (
+    echo Descricao definida com sucesso: !desc!
+    echo %date% %time% - Descricao definida: !desc! >> "%temp%\nexus_config.log"
+)
+
+pause
+echo Configuracao concluida!
+set /p next="Pressione Enter para continuar ou 'S' para sair: "
+if /i "!next!"=="S" goto End
+goto MainLoop
+
+:SetComputerName
+cls
+echo === Definindo nome do computador ===
+REM Check for admin privileges
+net session >nul 2>&1
+if !errorlevel! neq 0 (
+    echo Esta operacao requer permissoes de Administrador!
+    echo Solicitando elevacao...
+    powershell -Command "Start-Process cmd -ArgumentList '/c %~fnx0' -Verb RunAs"
+    exit
+)
+
+REM Display current computer name
+for /f "tokens=2 delims==" %%A in ('wmic computersystem get name /value') do set "current_name=%%A"
+echo Nome atual do computador: !current_name!
+
+REM Prompt for new computer name
+set /p new_name="Digite o novo nome do computador (max 15 caracteres, ou 'C' para cancelar): "
+if /i "!new_name!"=="C" (
+    echo Operacao cancelada.
+    pause
+    goto MainLoop
+)
+
+REM Validate computer name
+set "new_name=!new_name:~0,15!"
+if "!new_name!"=="" (
+    echo Nome invalido! O nome nao pode ser vazio.
+    pause
+    goto MainLoop
+)
+echo !new_name! | findstr /R "[^a-zA-Z0-9-]" >nul
+if !errorlevel! equ 0 (
+    echo Nome invalido! Use apenas letras, numeros e hifens.
+    pause
+    goto MainLoop
+)
+
+REM Log the action
+echo %date% %time% - Definindo nome do computador: !new_name! >> "%temp%\nexus_config.log"
+
+REM Set the computer name using wmic
+wmic computersystem where name="%COMPUTERNAME%" call rename name="!new_name!" >nul 2>&1
+if !errorlevel! neq 0 (
+    echo Erro ao definir o nome do computador! Verifique se o nome ja esta em uso ou se ha permissoes suficientes.
+    echo %date% %time% - Erro ao definir nome: !new_name! >> "%temp%\nexus_config.log"
+) else (
+    echo Nome do computador definido com sucesso: !new_name!
+    echo %date% %time% - Nome definido: !new_name! >> "%temp%\nexus_config.log"
+    echo Um reinicio e necessario para aplicar a alteracao.
+)
+
+REM Prompt for reboot
+set /p reboot="Deseja reiniciar agora? (S/N): "
+if /i "!reboot!"=="S" (
+    echo Iniciando reinicio...
+    echo %date% %time% - Reinicio solicitado apos renomeacao >> "%temp%\nexus_config.log"
+    shutdown /r /t 30
+    pause
+    goto End
+)
+
+pause
+echo Configuracao concluida! Reinicie manualmente para aplicar o novo nome.
+set /p next="Pressione Enter para continuar ou 'S' para sair: "
+if /i "!next!"=="S" goto End
+goto MainLoop
+
+:End
+cls
+echo === Configuracao finalizada! ===
+echo Cabooooooooooo!
+REM Clean up mapped drives
+net use * /delete /y >nul 2>&1
+pause
+exit

@@ -1,0 +1,17 @@
+Teste do Script
+Para garantir que o script funcione corretamente, teste-o em um ambiente controlado (como uma máquina virtual com Ubuntu 
+20.04, 22.04 ou 24.04). Siga estas etapas:
+
+Salve o script como docker-manager.sh.
+
+Dê permissão de execução: chmod +x docker-manager.sh.
+
+Execute o script: sudo ./docker-manager.sh.
+
+Teste os dois fluxos:
+
+Instalação do Docker em um sistema limpo.
+
+Remoção do Docker e reinstalação.
+
+Verifique os logs em /tmp/docker-install.log se ocorrerem erros.
