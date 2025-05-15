@@ -128,16 +128,6 @@
 
     <main class="container mx-auto px-4 py-8">
         <section class="bg-white shadow-md rounded-lg p-6 mb-6">
-		
-        <section class="bg-white shadow-md rounded-lg p-6 mb-6">
-            <h2 class="text-2xl font-semibold mb-4">Explore ainda mais os benefícios do Microsoft 365</h2> 
-			<h2 class="text-2xl font-semibold mb-4">Passo 1: Você pode escolher qual versão do Pacote office que você gostaria de utilizar.</h2>
-            <p class="mb-4">Se você ainda não possui o Pacote Office, faça o download diretamente do site oficial da Microsoft. Todos os links listados abaixo são originais da Microsoft com licença de Varejo e canal de atualização atual.</p>
-            <a href="https://officecdn.microsoft.com/db/39168d7e-077b-48e7-872c-b232c3e72675/media/pt-br/ProfessionalRetail.img" target="_blank" class="text-blue-600 hover:underline">Baixar Microsoft Office Profissional 2013</a>			
-            <p class="mb-4">Aplicativos Incluídos, (Access, Excel, OneNote, Outlook, PowerPoint, Publisher, Word)</p>
-   
-        
-		</section>		
             <h2 class="text-2xl font-semibold mb-4">Passo a Passo: Ativar o Windows 11 (Versão PRO)</h2>
             <p class="mb-4">Siga estas etapas para ativar seu Windows 11 sem precisar instalar nenhum programa:</p>
             <ol class="list-decimal list-inside mb-4">
