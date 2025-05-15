@@ -84,8 +84,8 @@
 <body>
     <header class="bg-gray-800 text-white py-6">
         <div class="container mx-auto px-4">
-            <h1 class="text-3xl font-bold">Ativando o Office sem Programas</h1>
-            <p class="mt-2">Um guia simples e objetivo para ativar o pacote Office usando apenas o PowerShell. Todos os links listados abaixo são originais da Microsoft com licença de Varejo e canal de atualização atual.</p>
+            <h1 class="text-3xl font-bold">Ativando o Office 2019 sem Programas</h1>
+            <p class="mt-2">Um guia simples e objetivo para ativar o Office 2019 usando apenas o PowerShell</p>
         </div>
     </header>
 
