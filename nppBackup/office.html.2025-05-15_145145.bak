@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ativando Pacote Office Sem Programas</title>
+    <title>Ativando Office 2019 sem Programas</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         body {
@@ -109,7 +109,7 @@
 		</section>
 
         <section class="bg-white shadow-md rounded-lg p-6 mb-6">
-            <h2 class="text-2xl font-semibold mb-4">Passo 2: Ative o pacote Office para qualquer versão.</h2>
+            <h2 class="text-2xl font-semibold mb-4">Passo 2: Ative o Office 2019</h2>
             <p class="mb-4">Abra o PowerShell como Administrador. Para isso, clique no menu Iniciar, digite "PowerShell", clique com o botão direito e selecione "Executar como Administrador". Execute o seguinte comando, pressione Enter e siga as opções exibidas na tela:</p>
             <div class="code-block">
                 <code id="code1">
@@ -118,7 +118,7 @@ irm https://get.activated.win | iex
                 <button class="copy-btn" onclick="copyCode('code1')">Copiar</button>
                 <span class="tooltip" id="tooltip-code1" aria-live="polite"></span>
             </div>
-            <p class="mt-4">Seguindo as opções na tela, seu pacote Office será ativado sem a necessidade de programas de crack. Caso ocorra algum problema, verifique se o comando foi inserido corretamente.</p>
+            <p class="mt-4">Seguindo as opções na tela, seu Office 2019 será ativado sem a necessidade de programas de crack. Caso ocorra algum problema, verifique se o comando foi inserido corretamente.</p>
         </section>
 
         <section class="bg-white shadow-md rounded-lg p-6 mb-6">
@@ -134,8 +134,8 @@ irm https://get.activated.win | iex
             <div class="flex items-center justify-center mb-4">
                 <img src="https://www.microsoft.com/favicon.ico" alt="Windows 11 Logo" class="windows-logo">
                 <div>
-                    <p>Bem-vindo ao Pacote Office da Microsoft!</p>
-                    <p>© 2025 Guia de Ativação do Pacote Office. Todos os direitos reservados.</p>
+                    <p>Bem-vindo ao Office 2019!</p>
+                    <p>© 2025 Guia de Ativação do Office 2019. Todos os direitos reservados.</p>
                 </div>
             </div>
             <p class="text-2xl font-semibold italic text-yellow-600">Agradecemos sua parceria! 😊</p>
