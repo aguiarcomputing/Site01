@@ -222,8 +222,8 @@
                     <div class="card">
                         <img src="img/office2019-news-1.jpg" class="card-img-top" alt="Notícia de Software">
                         <div class="card-body">
-                            <h5 class="card-title">ATIVANDO PACOTE OFFICE SEM NENHUM PROGRAMA</h5>
-                            <p class="card-text">Antes de mais nada, se você ainda não possui o pacote Office, baixe-o diretamente do site oficial da Microsoft.</p>
+                            <h5 class="card-title">ATIVANDO OFFICE 2019 SEM NENHUM PROGRAMA</h5>
+                            <p class="card-text">Antes de mais nada, se você ainda não possui o Office 2019, baixe-o diretamente do site oficial da Microsoft.</p>
                             <a href="office.html" class="btn btn-primary">Leia Mais</a>
                         </div>
                     </div>
