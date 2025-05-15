@@ -93,6 +93,7 @@
         <section class="bg-white shadow-md rounded-lg p-6 mb-6">
             <h2 class="text-2xl font-semibold mb-4">Passo 1: Você pode escolher qual versão de office gostaria de utilizar.</h2> 
 			<h2 class="text-2xl font-semibold mb-4">Office 2013, Office 2016, Office 2019, Office 2021, Office 2024, Microsoft 365</h2>
+            <a href="https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/O365ProPlusRetail.img" target="_blank" class="text-blue-600 hover:underline">Baixar Microsoft 365</a>		
             <p class="mb-4">Se você ainda não possui o Office 2013, faça o download diretamente do site oficial da Microsoft:</p>
             <a href="https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/O365ProPlusRetail.img" target="_blank" class="text-blue-600 hover:underline">Baixar Microsoft 365</a>			
             <p class="mb-4">Se você ainda não possui o Office 2016, faça o download diretamente do site oficial da Microsoft:</p>
