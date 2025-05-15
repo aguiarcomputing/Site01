@@ -94,17 +94,17 @@
             <h2 class="text-2xl font-semibold mb-4">Passo 1: Você pode escolher qual versão do Pacote office que você gostaria de utilizar.</h2> 
 			<h2 class="text-2xl font-semibold mb-4">Português (Brasil) [pt-BR] ( Office 2013, Office 2016, Office 2019, Office 2021, Office 2024, Microsoft 365 )</h2>
             <p class="mb-4">Se você ainda não possui o Pacote Office, faça o download diretamente do site oficial da Microsoft. Todos os links listados abaixo são originais da Microsoft com licença de Varejo e canal de atualização atual.</p>
-            <a href="https://officecdn.microsoft.com/db/39168d7e-077b-48e7-872c-b232c3e72675/media/en-us/ProfessionalRetail.img" target="_blank" class="text-blue-600 hover:underline">Baixar Microsoft Office Pro Plus 2013</a>			
+            <a href="https://officecdn.microsoft.com/db/39168d7e-077b-48e7-872c-b232c3e72675/media/en-us/ProfessionalRetail.img" target="_blank" class="text-blue-600 hover:underline">Baixar Office 2013</a>			
             <p class="mb-4">-</p>
-            <a href="https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/ProfessionalRetail.img" target="_blank" class="text-blue-600 hover:underline">Baixar Microsoft Office Pro Plus 2016</a>
+            <a href="https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/ProfessionalRetail.img" target="_blank" class="text-blue-600 hover:underline">Baixar Office 2016</a>
             <p class="mb-4">-</p>
-            <a href="https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/Professional2019Retail.img" target="_blank" class="text-blue-600 hover:underline">Baixar Microsoft Office Pro Plus 2019</a>			
+            <a href="https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/Professional2019Retail.img" target="_blank" class="text-blue-600 hover:underline">Baixar Office 2019</a>			
             <p class="mb-4">-</p>
-            <a href="https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/ProPlus2021Retail.img" target="_blank" class="text-blue-600 hover:underline">Baixar Microsoft Office Pro Plus 2021</a>			
+            <a href="https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/ProPlus2021Retail.img" target="_blank" class="text-blue-600 hover:underline">Baixar Office 2021</a>			
             <p class="mb-4">-</p>
-            <a href="https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/ProPlus2024Retail.img" target="_blank" class="text-blue-600 hover:underline">Baixar Microsoft Office Pro Plus 2024</a>
+            <a href="https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/ProPlus2024Retail.img" target="_blank" class="text-blue-600 hover:underline">Baixar Office 2024</a>
 			<p class="mb-4">-</p>
-            <a href="https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/O365ProPlusRetail.img" target="_blank" class="text-blue-600 hover:underline">Baixar Microsoft Office Pro Plus 365</a>
+            <a href="https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/O365ProPlusRetail.img" target="_blank" class="text-blue-600 hover:underline">Baixar Microsoft 365</a>
                 
 		</section>
 
