@@ -92,11 +92,11 @@
     <main class="container mx-auto px-4 py-8">
         <section class="bg-white shadow-md rounded-lg p-6 mb-6">
             <h2 class="text-2xl font-semibold mb-4">Passo 1: Baixe o Office 2019</h2>
-			<h2 class="text-2xl font-semibold mb-4">Passo 2: Baixe o Microsoft 365</h2>
+			<h2 class="text-2xl font-semibold mb-4">Passo 1: Baixe o Microsoft 365</h2>
             <p class="mb-4">Se você ainda não possui o Office 2019, faça o download diretamente do site oficial da Microsoft:</p>
             <a href="https://officecdn.microsoft.com/db/492350F6-3A01-4F97-B9C0-C7C6DDF67D60/media/pt-BR/ProPlus2019Retail.img" target="_blank" class="text-blue-600 hover:underline">Baixar Office 2019</a>
 			<p class="mb-4">Se você ainda não possui o Microsoft 365, faça o download diretamente do site oficial da Microsoft:</p>
-            <a href="https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/O365ProPlusRetail.img" target="_blank" class="text-blue-600 hover:underline">Baixar Microsoft 365</a>
+            <a href="https://officecdn.microsoft.com/db/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/en-us/O365ProPlusRetail.img" target="_blank" class="text-blue-600 hover:underline">Baixar Office 2019</a>
                 
 		</section>
 
