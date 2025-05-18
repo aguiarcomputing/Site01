@@ -151,37 +151,18 @@
         
 		</section>		
             <h2 class="text-2xl font-semibold mb-4">Passo a Passo: Ativar o Windows</h2>
-            <p class="mb-4">Siga estas etapas para ativar seu Windows sem precisar instalar nenhum programa:</p>
-            <ol class="list-decimal list-inside mb-4">
-                <li>Abra o <strong>Prompt de Comando (CMD)</strong> como Administrador:
-                    <ul class="list-disc list-inside ml-6">
-                        <li>Clique no <strong>Menu Iniciar</strong> e digite <strong>CMD</strong>.</li>
-                        <li>Clique com o botão direito no Prompt de Comando e selecione <strong>Executar como Administrador</strong>.</li>
-                    </ul>
-                </li>
-                <li>Execute os seguintes comandos no Prompt de Comando, pressionando <strong>Enter</strong> após cada um:</li>
-            </ol>
+        <section class="bg-white shadow-md rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-semibold mb-4">Passo 2: Ative o pacote Office para qualquer versão.</h2>
+            <p class="mb-4">Abra o PowerShell como Administrador. Para isso, clique no menu Iniciar, digite "PowerShell", clique com o botão direito e selecione "Executar como Administrador". Execute o seguinte comando, pressione Enter e siga as opções exibidas na tela:</p>
             <div class="code-block">
-                <code id="code1">slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX</code>
-                <button class="copy-btn" onclick="copyText('code1', this)" aria-label="Copiar comando 1">
-                    Copiar
-                    <span class="tooltip">Copiar comando</span>
-                </button>
+                <code id="code1">
+irm https://get.activated.win | iex
+                </code>
+                <button class="copy-btn" onclick="copyCode('code1')">Copiar</button>
+                <span class="tooltip" id="tooltip-code1" aria-live="polite"></span>
             </div>
-            <div class="code-block mt-4">
-                <code id="code2">slmgr /skms kms10.tiremoto.com.br</code>
-                <button class="copy-btn" onclick="copyText('code2', this)" aria-label="Copiar comando 2">
-                    Copiar
-                    <span class="tooltip">Copiar comando</span>
-                </button>
-            </div>
-            <div class="code-block mt-4">
-                <code id="code3">slmgr /ato</code>
-                <button class="copy-btn" onclick="copyText('code3', this)" aria-label="Copiar comando 3">
-                    Copiar
-                    <span class="tooltip">Copiar comando</span>
-                </button>
-            </div>
+            <p class="mt-4">Seguindo as opções na tela, seu pacote Office será ativado sem a necessidade de programas de crack. Caso ocorra algum problema, verifique se o comando foi inserido corretamente.</p>
+        </section>
             <p class="mt-4">Seu Windows estará ativado<strong>PRO</strong>. Feche o Prompt de Comando e aproveite!</p>
         </section>
 
