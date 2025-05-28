@@ -226,60 +226,19 @@
     </div>
     <!-- Fact End -->
     <!-- Contact Start -->
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Section</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-        }
-        .cta-button {
-            transition: all 0.3s ease;
-        }
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-    </style>
-</head>
-<body>
-    <section class="gradient-bg py-12">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-2xl mx-auto text-center" data-aos="fade-up" data-aos-delay="100">
-                <h1 class="text-4xl font-bold text-white mb-4">Pronto para Solucionar Seus Problemas Tecnológicos?</h1>
-                <p class="text-lg text-gray-100 mb-6">
-                    Na <strong>Aguiar Informática</strong>, entendemos o quanto a tecnologia é essencial no seu dia a dia. Se seu notebook, desktop ou celular está te deixando na mão, nossa equipe está pronta para oferecer soluções rápidas, confiáveis e com a qualidade que você merece.
+    <div class="container-fluid py-5 mt-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
+                <h1 class="mb-3"> Vamos começar? </h1>
+                <p class="mb-4">
+                    Sabemos o quanto a tecnologia é importante no seu dia a dia, e entendemos a frustração quando algo não funciona como deveria. Se seu notebook, desktop ou celular está apresentando problemas, nós da Aguiar Informática estamos prontos para ajudar!
                 </p>
-                <p class="text-lg text-gray-100 mb-8">
-                    Com anos de experiência, garantimos manutenção especializada para que seus dispositivos voltem a funcionar como novos. Não deixe a frustração tomar conta – entre em contato agora mesmo!
+                <p class="mb-4">
+                    Oferecemos manutenção de confiança, com cuidado e atenção para garantir que seus dispositivos voltem a funcionar como novos.
                 </p>
-                <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20de%20manutenção%20da%20Aguiar%20Informática." 
-                   class="cta-button inline-block bg-white text-indigo-600 font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-indigo-100" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   aria-label="Entrar em contato via WhatsApp">
-                    Fale Conosco Pelo WhatsApp
-                    <svg class="inline-block w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.82v-1.91c-1.06-.34-2.07-.89-2.93-1.62l1.94-1.94c.58.44 1.24.75 1.99.75.83 0 1.49-.67 1.49-1.5s-.67-1.5-1.49-1.5c-.72 0-1.33.34-1.74.85l-1.94-1.94c.34-.86.89-1.64 1.62-2.29V4h2.82v1.91c1.06.34 2.07.89 2.93 1.62l-1.94 1.94c-.58-.44-1.24-.75-1.99-.75-.83 0-1.49.67-1.49 1.5s.67 1.5 1.49 1.5c.72 0 1.33-.34 1.74-.85l1.94 1.94c-.34.86-.89 1.64-1.62 2.29z"/>
-                    </svg>
-                </a>
             </div>
         </div>
-    </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-    </script>
-</body>
-</html>
+    </div>
 
     <div class="contact-detail position-relative p-5">
         <div class="row g-5 mb-5 justify-content-center">
