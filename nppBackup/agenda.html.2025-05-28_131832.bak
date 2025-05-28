@@ -10,7 +10,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-  <div id="root" className="min-h-screen bg-gray-100"></div>
+  <div id="root" class="min-h-screen bg-gray-100"></div>
 
   <script type="text/babel">
     const { useState, useEffect } = React;
@@ -44,31 +44,15 @@
       const [successMessage, setSuccessMessage] = useState("");
 
       useEffect(() => {
-        fetchAppointments();
+        const storedAppointments = JSON.parse(localStorage.getItem("appointments") || "[]");
+        setAppointments(storedAppointments);
       }, []);
-
-      const fetchAppointments = async () => {
-        try {
-          const response = await fetch('http://localhost:3000/api/appointments');
-          const data = await response.json();
-          setAppointments(data);
-        } catch (error) {
-          console.error('Erro ao buscar agendamentos:', error);
-        }
-      };
-
-      const formatPhone = (value) => {
-        const cleaned = value.replace(/\D/g, '');
-        if (cleaned.length <= 2) return cleaned;
-        if (cleaned.length <= 7) return `(${cleaned.slice(0, 2)}) ${cleaned.slice(2)}`;
-        return `(${cleaned.slice(0, 2)}) ${cleaned.slice(2, 7)}-${cleaned.slice(7, 11)}`;
-      };
 
       const validateForm = () => {
         const newErrors = {};
         if (!formData.name) newErrors.name = "Nome é obrigatório";
         if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Email inválido";
-        if (!formData.phone || formData.phone.replace(/\D/g, '').length < 10) newErrors.phone = "Telefone inválido";
+        if (!formData.phone) newErrors.phone = "Telefone é obrigatório";
         if (!formData.service) newErrors.service = "Selecione um serviço";
         if (!formData.date) newErrors.date = "Selecione uma data";
         if (!formData.time) newErrors.time = "Selecione um horário";
@@ -76,54 +60,22 @@
         return Object.keys(newErrors).length === 0;
       };
 
-      const handleSubmit = async (e) => {
+      const handleSubmit = (e) => {
         e.preventDefault();
         if (validateForm()) {
-          try {
-            const response = await fetch('http://localhost:3000/api/appointments', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(formData),
-            });
-            if (response.ok) {
-              setSuccessMessage("Agendamento realizado com sucesso!");
-              setFormData({ name: "", email: "", phone: "", service: "", date: "", time: "" });
-              setErrors({});
-              fetchAppointments();
-              setTimeout(() => setSuccessMessage(""), 3000);
-            } else {
-              setErrors({ form: "Erro ao salvar agendamento" });
-            }
-          } catch (error) {
-            setErrors({ form: "Erro ao conectar com o servidor" });
-          }
-        }
-      };
-
-      const handleDelete = async (id) => {
-        try {
-          const response = await fetch(`http://localhost:3000/api/appointments/${id}`, {
-            method: 'DELETE',
-          });
-          if (response.ok) {
-            fetchAppointments();
-            setSuccessMessage("Agendamento cancelado com sucesso!");
-            setTimeout(() => setSuccessMessage(""), 3000);
-          } else {
-            setErrors({ form: "Erro ao cancelar agendamento" });
-          }
-        } catch (error) {
-          setErrors({ form: "Erro ao conectar com o servidor" });
+          const newAppointment = { ...formData, id: Date.now() };
+          const updatedAppointments = [...appointments, newAppointment];
+          setAppointments(updatedAppointments);
+          localStorage.setItem("appointments", JSON.stringify(updatedAppointments));
+          setSuccessMessage("Agendamento realizado com sucesso!");
+          setFormData({ name: "", email: "", phone: "", service: "", date: "", time: "" });
+          setErrors({});
+          setTimeout(() => setSuccessMessage(""), 3000);
         }
       };
 
       const handleChange = (e) => {
-        const { name, value } = e.target;
-        if (name === 'phone') {
-          setFormData({ ...formData, phone: formatPhone(value) });
-        } else {
-          setFormData({ ...formData, [name]: value });
-        }
+        setFormData({ ...formData, [e.target.name]: e.target.value });
       };
 
       return (
@@ -138,11 +90,6 @@
             {successMessage && (
               <div className="bg-green-100 text-green-700 p-2 rounded mb-4">
                 {successMessage}
-              </div>
-            )}
-            {errors.form && (
-              <div className="bg-red-100 text-red-700 p-2 rounded mb-4">
-                {errors.form}
               </div>
             )}
             <form onSubmit={handleSubmit}>
@@ -176,8 +123,6 @@
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full p-2 border rounded"
-                  placeholder="(XX) XXXXX-XXXX"
-                  maxLength="15"
                 />
                 {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
               </div>
@@ -248,21 +193,13 @@
             ) : (
               <ul className="space-y-4">
                 {appointments.map((appt) => (
-                  <li key={appt._id} className="bg-white p-4 rounded shadow flex justify-between items-center">
-                    <div>
-                      <p><strong>Nome:</strong> {appt.name}</p>
-                      <p><strong>Email:</strong> {appt.email}</p>
-                      <p><strong>Telefone:</strong> {appt.phone}</p>
-                      <p><strong>Serviço:</strong> {appt.service}</p>
-                      <p><strong>Data:</strong> {new Date(appt.date).toLocaleDateString("pt-BR")}</p>
-                      <p><strong>Horário:</strong> {appt.time}</p>
-                    </div>
-                    <button
-                      onClick={() => handleDelete(appt._id)}
-                      className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700"
-                    >
-                      Cancelar
-                    </button>
+                  <li key={appt.id} className="bg-white p-4 rounded shadow">
+                    <p><strong>Nome:</strong> {appt.name}</p>
+                    <p><strong>Email:</strong> {appt.email}</p>
+                    <p><strong>Telefone:</strong> {appt.phone}</p>
+                    <p><strong>Serviço:</strong> {appt.service}</p>
+                    <p><strong>Data:</strong> {new Date(appt.date).toLocaleDateString("pt-BR")}</p>
+                    <p><strong>Horário:</strong> {appt.time}</p>
                   </li>
                 ))}
               </ul>
