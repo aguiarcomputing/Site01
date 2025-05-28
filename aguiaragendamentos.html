@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamentos de TI | Controle de Serviços</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for animations and additional styling */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .sidebar {
+            transition: all 0.3s ease;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <div class="sidebar bg-blue-800 text-white w-64 flex-shrink-0 hidden md:block">
+            <div class="p-4 border-b border-blue-700">
+                <h1 class="text-2xl font-bold flex items-center">
+                    <i class="fas fa-laptop-code mr-2"></i>
+                    <span>TI Agendamentos</span>
+                </h1>
+                <p class="text-blue-200 text-sm mt-1">Controle de serviços técnicos</p>
+            </div>
+            <nav class="p-4">
+                <ul>
+                    <li class="mb-2">
+                        <a href="#" class="flex items-center p-2 rounded hover:bg-blue-700 transition" id="dashboard-link">
+                            <i class="fas fa-tachometer-alt mr-3"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="#" class="flex items-center p-2 rounded bg-blue-700 hover:bg-blue-600 transition" id="agendamentos-link">
+                            <i class="fas fa-calendar-alt mr-3"></i>
+                            Agendamentos
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="#" class="flex items-center p-2 rounded hover:bg-blue-700 transition" id="tecnicos-link">
+                            <i class="fas fa-users-cog mr-3"></i>
+                            Técnicos
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="#" class="flex items-center p-2 rounded hover:bg-blue-700 transition" id="clientes-link">
+                            <i class="fas fa-building mr-3"></i>
+                            Clientes
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="#" class="flex items-center p-2 rounded hover:bg-blue-700 transition" id="relatorios-link">
+                            <i class="fas fa-chart-bar mr-3"></i>
+                            Relatórios
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="#" class="flex items-center p-2 rounded hover:bg-blue-700 transition" id="config-link">
+                            <i class="fas fa-cog mr-3"></i>
+                            Configurações
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="absolute bottom-0 w-full p-4 border-t border-blue-700">
+                <div class="flex items-center">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="w-10 h-10 rounded-full mr-3">
+                    <div>
+                        <p class="font-medium">Admin</p>
+                        <p class="text-blue-200 text-xs">Administrador</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile sidebar toggle -->
+        <div class="md:hidden fixed bottom-4 right-4 z-50">
+            <button id="sidebar-toggle" class="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile sidebar (hidden by default) -->
+        <div id="mobile-sidebar" class="sidebar fixed inset-0 bg-blue-800 text-white z-40 w-64 transform -translate-x-full md:hidden">
+            <div class="p-4 border-b border-blue-700 flex justify-between items-center">
+                <h1 class="text-2xl font-bold flex items-center">
+                    <i class="fas fa-laptop-code mr-2"></i>
+                    <span>TI Agendamentos</span>
+                </h1>
+                <button id="close-sidebar" class="text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="p-4">
+                <ul>
+                    <li class="mb-2">
+                        <a href="#" class="flex items-center p-2 rounded hover:bg-blue-700 transition">
+                            <i class="fas fa-tachometer-alt mr-3"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="#" class="flex items-center p-2 rounded bg-blue-700 hover:bg-blue-600 transition">
+                            <i class="fas fa-calendar-alt mr-3"></i>
+                            Agendamentos
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="#" class="flex items-center p-2 rounded hover:bg-blue-700 transition">
+                            <i class="fas fa-users-cog mr-3"></i>
+                            Técnicos
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="#" class="flex items-center p-2 rounded hover:bg-blue-700 transition">
+                            <i class="fas fa-building mr-3"></i>
+                            Clientes
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="#" class="flex items-center p-2 rounded hover:bg-blue-700 transition">
+                            <i class="fas fa-chart-bar mr-3"></i>
+                            Relatórios
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="#" class="flex items-center p-2 rounded hover:bg-blue-700 transition">
+                            <i class="fas fa-cog mr-3"></i>
+                            Configurações
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main content -->
+        <div class="flex-1 overflow-auto">
+            <!-- Top navbar -->
+            <header class="bg-white shadow-sm p-4 flex justify-between items-center">
+                <div class="flex items-center">
+                    <h2 class="text-xl font-semibold text-gray-800">
+                        <i class="fas fa-calendar-alt text-blue-600 mr-2"></i>
+                        Agendamentos
+                    </h2>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <button class="p-2 rounded-full hover:bg-gray-100">
+                            <i class="fas fa-bell text-gray-600"></i>
+                            <span class="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-500"></span>
+                        </button>
+                    </div>
+                    <div class="relative">
+                        <button class="p-2 rounded-full hover:bg-gray-100">
+                            <i class="fas fa-envelope text-gray-600"></i>
+                            <span class="absolute top-0 right-0 h-2 w-2 rounded-full bg-blue-500"></span>
+                        </button>
+                    </div>
+                    <div class="hidden md:flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="w-8 h-8 rounded-full mr-2">
+                        <span class="text-gray-700">Admin</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main content area -->
+            <main class="p-4 md:p-6">
+                <!-- Stats cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                    <div class="bg-white rounded-lg shadow p-4 card-hover transition fade-in">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-blue-100 text-blue-600 mr-4">
+                                <i class="fas fa-calendar-check text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500">Agendamentos Hoje</p>
+                                <h3 class="text-2xl font-bold">12</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow p-4 card-hover transition fade-in">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-green-100 text-green-600 mr-4">
+                                <i class="fas fa-check-circle text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500">Concluídos</p>
+                                <h3 class="text-2xl font-bold">8</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow p-4 card-hover transition fade-in">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-yellow-100 text-yellow-600 mr-4">
+                                <i class="fas fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500">Pendentes</p>
+                                <h3 class="text-2xl font-bold">3</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow p-4 card-hover transition fade-in">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-red-100 text-red-600 mr-4">
+                                <i class="fas fa-times-circle text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500">Cancelados</p>
+                                <h3 class="text-2xl font-bold">1</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actions and calendar -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+                    <div class="lg:col-span-2">
+                        <div class="bg-white rounded-lg shadow overflow-hidden fade-in">
+                            <div class="p-4 border-b flex justify-between items-center">
+                                <h3 class="font-semibold text-gray-800">Próximos Agendamentos</h3>
+                                <div class="flex space-x-2">
+                                    <button class="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-sm">
+                                        <i class="fas fa-plus mr-1"></i> Novo
+                                    </button>
+                                    <button class="px-3 py-1 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition text-sm">
+                                        <i class="fas fa-filter mr-1"></i> Filtrar
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full divide-y divide-gray-200">
+                                    <thead class="bg-gray-50">
+                                        <tr>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Cliente</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Serviço</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Técnico</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Data/Hora</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="bg-white divide-y divide-gray-200">
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="flex items-center">
+                                                    <div class="flex-shrink-0 h-10 w-10">
+                                                        <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+                                                    </div>
+                                                    <div class="ml-4">
+                                                        <div class="text-sm font-medium text-gray-900">Empresa ABC</div>
+                                                        <div class="text-sm text-gray-500">contato@empresaabc.com</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="text-sm text-gray-900">Manutenção de servidores</div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="flex items-center">
+                                                    <div class="flex-shrink-0 h-8 w-8">
+                                                        <img class="h-8 w-8 rounded-full" src="https://randomuser.me/api/portraits/men/75.jpg" alt="">
+                                                    </div>
+                                                    <div class="ml-2">
+                                                        <div class="text-sm font-medium text-gray-900">Carlos Silva</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="text-sm text-gray-900">15/06/2023</div>
+                                                <div class="text-sm text-gray-500">09:00 - 11:00</div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                    Confirmado
+                                                </span>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                <button class="text-blue-600 hover:text-blue-900 mr-2"><i class="fas fa-edit"></i></button>
+                                                <button class="text-red-600 hover:text-red-900"><i class="fas fa-trash-alt"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="flex items-center">
+                                                    <div class="flex-shrink-0 h-10 w-10">
+                                                        <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                                                    </div>
+                                                    <div class="ml-4">
+                                                        <div class="text-sm font-medium text-gray-900">Loja XYZ</div>
+                                                        <div class="text-sm text-gray-500">ti@xyz.com.br</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="text-sm text-gray-900">Instalação de rede</div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="flex items-center">
+                                                    <div class="flex-shrink-0 h-8 w-8">
+                                                        <img class="h-8 w-8 rounded-full" src="https://randomuser.me/api/portraits/women/65.jpg" alt="">
+                                                    </div>
+                                                    <div class="ml-2">
+                                                        <div class="text-sm font-medium text-gray-900">Ana Oliveira</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="text-sm text-gray-900">15/06/2023</div>
+                                                <div class="text-sm text-gray-500">14:00 - 16:00</div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                                    Pendente
+                                                </span>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                <button class="text-blue-600 hover:text-blue-900 mr-2"><i class="fas fa-edit"></i></button>
+                                                <button class="text-red-600 hover:text-red-900"><i class="fas fa-trash-alt"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="flex items-center">
+                                                    <div class="flex-shrink-0 h-10 w-10">
+                                                        <img class="h-10 w-10 rounded-full" src="https://randomuser.me/api/portraits/women/33.jpg" alt="">
+                                                    </div>
+                                                    <div class="ml-4">
+                                                        <div class="text-sm font-medium text-gray-900">Escola Modelo</div>
+                                                        <div class="text-sm text-gray-500">suporte@escolamodelo.edu</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="text-sm text-gray-900">Atualização de software</div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="flex items-center">
+                                                    <div class="flex-shrink-0 h-8 w-8">
+                                                        <img class="h-8 w-8 rounded-full" src="https://randomuser.me/api/portraits/men/22.jpg" alt="">
+                                                    </div>
+                                                    <div class="ml-2">
+                                                        <div class="text-sm font-medium text-gray-900">Pedro Santos</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <div class="text-sm text-gray-900">16/06/2023</div>
+                                                <div class="text-sm text-gray-500">10:00 - 12:00</div>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap">
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
+                                                    Agendado
+                                                </span>
+                                            </td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                <button class="text-blue-600 hover:text-blue-900 mr-2"><i class="fas fa-edit"></i></button>
+                                                <button class="text-red-600 hover:text-red-900"><i class="fas fa-trash-alt"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="bg-gray-50 px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
+                                <div class="flex-1 flex justify-between sm:hidden">
+                                    <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                        Anterior
+                                    </a>
+                                    <a href="#" class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                        Próximo
+                                    </a>
+                                </div>
+                                <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                                    <div>
+                                        <p class="text-sm text-gray-700">
+                                            Mostrando
+                                            <span class="font-medium">1</span>
+                                            a
+                                            <span class="font-medium">3</span>
+                                            de
+                                            <span class="font-medium">12</span>
+                                            resultados
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                                            <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                                <span class="sr-only">Anterior</span>
+                                                <i class="fas fa-chevron-left"></i>
+                                            </a>
+                                            <a href="#" aria-current="page" class="z-10 bg-blue-50 border-blue-500 text-blue-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                                1
+                                            </a>
+                                            <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                                2
+                                            </a>
+                                            <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                                3
+                                            </a>
+                                            <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                                <span class="sr-only">Próximo</span>
+                                                <i class="fas fa-chevron-right"></i>
+                                            </a>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-1">
+                        <div class="bg-white rounded-lg shadow overflow-hidden fade-in">
+                            <div class="p-4 border-b">
+                                <h3 class="font-semibold text-gray-800">Calendário</h3>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center justify-between mb-4">
+                                    <h4 class="text-lg font-semibold text-gray-800">Junho 2023</h4>
+                                    <div class="flex space-x-2">
+                                        <button class="p-1 rounded hover:bg-gray-100">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <button class="p-1 rounded hover:bg-gray-100">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-7 gap-1 mb-2">
+                                    <div class="text-center text-xs font-medium text-gray-500">Dom</div>
+                                    <div class="text-center text-xs font-medium text-gray-500">Seg</div>
+                                    <div class="text-center text-xs font-medium text-gray-500">Ter</div>
+                                    <div class="text-center text-xs font-medium text-gray-500">Qua</div>
+                                    <div class="text-center text-xs font-medium text-gray-500">Qui</div>
+                                    <div class="text-center text-xs font-medium text-gray-500">Sex</div>
+                                    <div class="text-center text-xs font-medium text-gray-500">Sáb</div>
+                                </div>
+                                <div class="grid grid-cols-7 gap-1">
+                                    <div class="h-8 text-center text-sm text-gray-400">28</div>
+                                    <div class="h-8 text-center text-sm text-gray-400">29</div>
+                                    <div class="h-8 text-center text-sm text-gray-400">30</div>
+                                    <div class="h-8 text-center text-sm text-gray-400">31</div>
+                                    <div class="h-8 text-center text-sm">1</div>
+                                    <div class="h-8 text-center text-sm">2</div>
+                                    <div class="h-8 text-center text-sm">3</div>
+                                    <div class="h-8 text-center text-sm">4</div>
+                                    <div class="h-8 text-center text-sm">5</div>
+                                    <div class="h-8 text-center text-sm">6</div>
+                                    <div class="h-8 text-center text-sm">7</div>
+                                    <div class="h-8 text-center text-sm">8</div>
+                                    <div class="h-8 text-center text-sm">9</div>
+                                    <div class="h-8 text-center text-sm">10</div>
+                                    <div class="h-8 text-center text-sm">11</div>
+                                    <div class="h-8 text-center text-sm">12</div>
+                                    <div class="h-8 text-center text-sm">13</div>
+                                    <div class="h-8 text-center text-sm">14</div>
+                                    <div class="h-8 text-center text-sm bg-blue-100 rounded-full font-medium">15</div>
+                                    <div class="h-8 text-center text-sm bg-blue-50 rounded-full">16</div>
+                                    <div class="h-8 text-center text-sm">17</div>
+                                    <div class="h-8 text-center text-sm">18</div>
+                                    <div class="h-8 text-center text-sm">19</div>
+                                    <div class="h-8 text-center text-sm">20</div>
+                                    <div class="h-8 text-center text-sm">21</div>
+                                    <div class="h-8 text-center text-sm">22</div>
+                                    <div class="h-8 text-center text-sm">23</div>
+                                    <div class="h-8 text-center text-sm">24</div>
+                                    <div class="h-8 text-center text-sm">25</div>
+                                    <div class="h-8 text-center text-sm">26</div>
+                                    <div class="h-8 text-center text-sm">27</div>
+                                    <div class="h-8 text-center text-sm">28</div>
+                                    <div class="h-8 text-center text-sm">29</div>
+                                    <div class="h-8 text-center text-sm">30</div>
+                                    <div class="h-8 text-center text-sm text-gray-400">1</div>
+                                    <div class="h-8 text-center text-sm text-gray-400">2</div>
+                                    <div class="h-8 text-center text-sm text-gray-400">3</div>
+                                    <div class="h-8 text-center text-sm text-gray-400">4</div>
+                                    <div class="h-8 text-center text-sm text-gray-400">5</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow overflow-hidden mt-4 fade-in">
+                            <div class="p-4 border-b">
+                                <h3 class="font-semibold text-gray-800">Tarefas Pendentes</h3>
+                            </div>
+                            <div class="p-4">
+                                <div class="space-y-4">
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 pt-1">
+                                            <input type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="text-sm font-medium text-gray-900">Enviar relatório mensal</p>
+                                            <p class="text-sm text-gray-500">Prazo: 18/06/2023</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 pt-1">
+                                            <input type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="text-sm font-medium text-gray-900">Agendar reunião com cliente</p>
+                                            <p class="text-sm text-gray-500">Prioridade: Alta</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 pt-1">
+                                            <input type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="text-sm font-medium text-gray-900">Atualizar base de clientes</p>
+                                            <p class="text-sm text-gray-500">Prazo: 20/06/2023</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded transition">
+                                        Ver todas as tarefas
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal de novo agendamento (hidden by default) -->
+    <div id="new-appointment-modal" class="fixed inset-0 overflow-y-auto z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 sm:mx-0 sm:h-10 sm:w-10">
+                            <i class="fas fa-calendar-plus text-blue-600"></i>
+                        </div>
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900">Novo Agendamento</h3>
+                            <div class="mt-2">
+                                <form>
+                                    <div class="mb-4">
+                                        <label class="block text-gray-700 text-sm font-bold mb-2" for="client">
+                                            Cliente
+                                        </label>
+                                        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="client">
+                                            <option>Selecione um cliente</option>
+                                            <option>Empresa ABC</option>
+                                            <option>Loja XYZ</option>
+                                            <option>Escola Modelo</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="block text-gray-700 text-sm font-bold mb-2" for="service">
+                                            Serviço
+                                        </label>
+                                        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="service">
+                                            <option>Selecione um serviço</option>
+                                            <option>Manutenção de servidores</option>
+                                            <option>Instalação de rede</option>
+                                            <option>Atualização de software</option>
+                                            <option>Suporte técnico</option>
+                                        </select>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-4 mb-4">
+                                        <div>
+                                            <label class="block text-gray-700 text-sm font-bold mb-2" for="date">
+                                                Data
+                                            </label>
+                                            <input type="date" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="date">
+                                        </div>
+                                        <div>
+                                            <label class="block text-gray-700 text-sm font-bold mb-2" for="time">
+                                                Hora
+                                            </label>
+                                            <input type="time" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="time">
+                                        </div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="block text-gray-700 text-sm font-bold mb-2" for="technician">
+                                            Técnico
+                                        </label>
+                                        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="technician">
+                                            <option>Selecione um técnico</option>
+                                            <option>Carlos Silva</option>
+                                            <option>Ana Oliveira</option>
+                                            <option>Pedro Santos</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="block text-gray-700 text-sm font-bold mb-2" for="notes">
+                                            Observações
+                                        </label>
+                                        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="notes" rows="3"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">
+                        Salvar
+                    </button>
+                    <button type="button" id="cancel-new-appointment" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile sidebar toggle
+        document.getElementById('sidebar-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-sidebar').classList.remove('-translate-x-full');
+        });
+
+        document.getElementById('close-sidebar').addEventListener('click', function() {
+            document.getElementById('mobile-sidebar').classList.add('-translate-x-full');
+        });
+
+        // Modal handling
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Novo')) {
+                button.addEventListener('click', function() {
+                    document.getElementById('new-appointment-modal').classList.remove('hidden');
+                });
+            }
+        });
+
+        document.getElementById('cancel-new-appointment').addEventListener('click', function() {
+            document.getElementById('new-appointment-modal').classList.add('hidden');
+        });
+
+        // Sample data for demonstration
+        const appointments = [
+            {
+                id: 1,
+                client: "Empresa ABC",
+                service: "Manutenção de servidores",
+                technician: "Carlos Silva",
+                date: "15/06/2023",
+                time: "09:00 - 11:00",
+                status: "Confirmado"
+            },
+            {
+                id: 2,
+                client: "Loja XYZ",
+                service: "Instalação de rede",
+                technician: "Ana Oliveira",
+                date: "15/06/2023",
+                time: "14:00 - 16:00",
+                status: "Pendente"
+            },
+            {
+                id: 3,
+                client: "Escola Modelo",
+                service: "Atualização de software",
+                technician: "Pedro Santos",
+                date: "16/06/2023",
+                time: "10:00 - 12:00",
+                status: "Agendado"
+            }
+        ];
+
+        // You could add more functionality here to handle the appointments data
+        // For example, filtering, sorting, or CRUD operations
+    </script>
+</body>
+</html>
