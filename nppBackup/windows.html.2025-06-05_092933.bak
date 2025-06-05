@@ -141,7 +141,7 @@
             <h2 class="text-2xl font-semibold mb-4">Explore ainda mais os benefícios do Windows da Microsoft</h2> 
             <h2 class="text-2xl font-semibold mb-4">Criar a mídia de instalação do Windows 10</h2>
             <p class="mb-4">Para começar, primeiro você precisará ter uma licença para instalar o Windows 10. Em seguida, você poderá baixar e executar a ferramenta de criação de mídia. Para obter mais informações sobre como usar a ferramenta, veja as instruções abaixo.</p>
-            <a href="https://go.microsoft.com/fwlink/?LinkId=2265055" target="_blank" class="text-blue-600 hover:underline">Baixar Agora</a>			
+            <a href="https://go.microsoft.com/fwlink/?LinkId=2265055" target="_blank" class="text-blue-600 hover:underline">Baixar agora</a>			
             <p class="mb-4">Criar a mídia de instalação do Windows 10</p>
             <h2 class="text-2xl font-semibold mb-4">Baixar o Windows 10 Enterprise</h2>
             <p class="mb-4">Baixar Windows 10 ISO de uma fonte oficial garante uma instalação segura e sem problemas. Seguindo as etapas corretas, você pode configurar o Windows 10 rapidamente e sem complicações.</p>
@@ -150,10 +150,10 @@
             <a href="https://go.microsoft.com/fwlink/p/?LinkID=2208844&clcid=0x416&culture=pt-br&country=BR" target="_blank" class="text-blue-600 hover:underline">Baixar Windows 10 Enterprise de 64 Bits Em PT-BR</a>			            
             <p class="mb-4">Escolha entre 32-bit e 64-bit.</p>
             <h2 class="text-2xl font-semibold mb-4">Criar mídia de instalação do Windows 11</h2>
-            <p class="mb-4">Se você quiser realizar uma reinstalação ou uma instalação limpa do Windows 11 em um PC novo ou usado, use essa opção para baixar a ferramenta de criação de mídia para criar um pen drive ou DVD inicializável.
+            <p class="mb-4">e você quiser realizar uma reinstalação ou uma instalação limpa do Windows 11 em um PC novo ou usado, use essa opção para baixar a ferramenta de criação de mídia para criar um pen drive ou DVD inicializável.
 
 Observação: a ferramenta de criação de mídia do Windows 11 não pode ser usada para criar mídia de instalação de PCs baseados em Arm; ela só pode criar mídia para processadores x64.</p>
-            <a href="https://go.microsoft.com/fwlink/?linkid=2156295" target="_blank" class="text-blue-600 hover:underline">Baixar Agora</a>			
+            <a href="https://go.microsoft.com/fwlink/?linkid=2156295" target="_blank" class="text-blue-600 hover:underline">Site oficial da Microsoft. Baixar arquivo ISO Windows 11 2024</a>			
             <p class="mb-4">Escolha entre 32-bit e 64-bit.</p>			
         </section>		
         <h2 class="text-2xl font-semibold mb-4">Passo a Passo: Ativar o Windows</h2>
