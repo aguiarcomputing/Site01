@@ -154,7 +154,7 @@
 
 Observação: a ferramenta de criação de mídia do Windows 11 não pode ser usada para criar mídia de instalação de PCs baseados em Arm; ela só pode criar mídia para processadores x64.</p>
             <a href="https://go.microsoft.com/fwlink/?linkid=2156295" target="_blank" class="text-blue-600 hover:underline">Baixar Agora</a>			
-            <p class="mb-4">Para começar, você precisa de uma licença para instalar o Windows 11 ou ter um dispositivo com Windows 10 qualificado para uma atualização para o Windows 11.</p>			
+            <p class="mb-4">Escolha entre 32-bit e 64-bit.</p>			
         </section>		
         <h2 class="text-2xl font-semibold mb-4">Passo a Passo: Ativar o Windows</h2>
         <section class="bg-white shadow-md rounded-lg p-6 mb-6">
