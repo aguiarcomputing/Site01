@@ -129,19 +129,15 @@
 </head>
 <body>
     <button style="background-color: blue; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;" onclick="window.location.href='ms-settings:activation?activationSource=SMC-Article-12440'">Verifique sua edição do Windows em Configurações</button>
-<header class="bg-gray-800 dark:bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Ativando o Windows sem Programas</h1>
-            <p class="mt-3 text-lg sm:text-xl text-gray-300">Um guia simples e objetivo para ativar o seu Windows usando apenas o Prompt de Comando</p>
-            
-            <section class="mt-6">
-                <h2 class="text-xl sm:text-2xl font-semibold text-yellow-400">Aviso Importante: Fim do Suporte ao Windows 10</h2>
-                <p class="mt-3 text-base sm:text-lg text-gray-200">O suporte ao Windows 10 terminará em <strong>14 de outubro de 2025</strong>. Após essa data, a Microsoft não fornecerá mais atualizações gratuitas de software pelo Windows Update, assistência técnica ou correções de segurança para o Windows 10. Seu computador ainda funcionará, mas recomendamos a migração para o Windows 11.</p>
-            </section>
+    <header class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl font-bold">Ativando o Windows sem Programas</h1>
+            <p class="mt-2">Um guia simples e objetivo para ativar o seu Windows usando apenas o Prompt de Comando</p>
+			
+			    <title>Aviso Importante: Fim do Suporte ao Windows 10</title>
+			<p class="mt-2">O suporte ao Windows 10 terminará em outubro de 2025 Após 14 de outubro de 2025, a Microsoft não fornecerá mais atualizações gratuitas de software do Windows Update, assistência técnica ou correções de segurança para Windows 10. Seu computador ainda funcionará, mas recomendamos mudar para o Windows 11.</p>
         </div>
     </header>
-</body>
-</html>
 
     <main class="container mx-auto px-4 py-8">
         <section class="bg-white shadow-md rounded-lg p-6 mb-6">
