@@ -133,9 +133,6 @@
         <div class="container mx-auto px-4">
             <h1 class="text-3xl font-bold">Ativando o Windows sem Programas</h1>
             <p class="mt-2">Um guia simples e objetivo para ativar o seu Windows usando apenas o Prompt de Comando</p>
-			<p class="mt-2">O suporte ao Windows 10 terminará em outubro de 2025
-
-Após 14 de outubro de 2025, a Microsoft não fornecerá mais atualizações gratuitas de software do Windows Update, assistência técnica ou correções de segurança para Windows 10. Seu computador ainda funcionará, mas recomendamos mudar para o Windows 11.</p>
         </div>
     </header>
 
