@@ -215,14 +215,13 @@
             <h2 class="text-2xl font-semibold mb-4">Baixar o Windows 10 Enterprise</h2>
             <p class="mb-4">Baixar Windows 10 ISO de uma fonte oficial garante uma instalação segura e sem problemas. Seguindo as etapas corretas, você pode configurar o Windows 10 rapidamente e sem complicações.</p>
             <button class="activation-btn" onclick="window.location.href='https://go.microsoft.com/fwlink/p/?LinkID=2209060&clcid=0x416&culture=pt-br&country=BR'">
-                <span>Baixar Agora</span>
+                <span>Baixar Agora 32-BITS</span>
             </button>
-            <p class="mb-4">32-bit</p>
             <p></p>
             <button class="activation-btn" onclick="window.location.href='https://go.microsoft.com/fwlink/p/?LinkID=2208844&clcid=0x416&culture=pt-br&country=BR'">
                 <span>Baixar Agora 64 Bits</span>
             </button>
-            <p class="mb-4">64-bit.</p>
+            <p class="mb-4">Escolha entre 32-bit e 64-bit.</p>
             <h2 class="text-2xl font-semibold mb-4">Criar mídia de instalação do Windows 11</h2>
             <p class="mb-4">Se você quiser realizar uma reinstalação ou uma instalação limpa do Windows 11 em um PC novo ou usado, use essa opção para baixar a ferramenta de criação de mídia para criar um pen drive ou DVD inicializável.
 
