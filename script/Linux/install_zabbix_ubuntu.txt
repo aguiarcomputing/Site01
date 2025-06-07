@@ -1,0 +1,130 @@
+#!/bin/bash
+
+# Script para instalação do Zabbix 7.2 no Ubuntu Server 24.04 com MySQL e Apache
+# Este script instala o Zabbix Server, Frontend e Agent, valida cada etapa e configura o ambiente
+
+# Função para verificar erro e sair se necessário
+check_error() {
+    if [ $? -ne 0 ]; then
+        echo "Erro: $1"
+        exit 1
+    fi
+}
+
+# Função para validar se um serviço está ativo
+check_service() {
+    local service_name=$1
+    if systemctl is-active --quiet "$service_name"; then
+        echo "Serviço $service_name está ativo."
+    else
+        echo "Erro: Serviço $service_name não está ativo!"
+        exit 1
+    fi
+}
+
+# Definir variáveis
+ZABBIX_VERSION="7.2"
+UBUNTU_VERSION="24.04"
+MYSQL_PASSWORD="Zabbix@123456" # Altere para uma senha segura
+ZABBIX_DB_USER="zabbix"
+ZABBIX_DB_NAME="zabbix"
+TIMEZONE="America/Sao_Paulo"
+
+echo "Iniciando instalação do Zabbix $ZABBIX_VERSION no Ubuntu $UBUNTU_VERSION..."
+
+# Passo 1: Atualizar o sistema
+echo "Atualizando pacotes do sistema..."
+sudo apt update && sudo apt upgrade -y
+check_error "Falha ao atualizar pacotes do sistema."
+
+# Passo 2: Instalar dependências básicas
+echo "Instalando dependências básicas..."
+sudo apt install -y wget gnupg software-properties-common
+check_error "Falha ao instalar dependências básicas."
+
+# Passo 3: Adicionar repositório do Zabbix
+echo "Adicionando repositório do Zabbix $ZABBIX_VERSION..."
+wget https://repo.zabbix.com/zabbix/7.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_7.2-1+ubuntu24.04_all.deb
+check_error "Falha ao baixar o repositório do Zabbix."
+sudo dpkg -i zabbix-release_7.2-1+ubuntu24.04_all.deb
+check_error "Falha ao instalar o repositório do Zabbix."
+sudo apt update
+check_error "Falha ao atualizar lista de pacotes após adicionar repositório."
+
+# Passo 4: Instalar Zabbix Server, Frontend, Agent e pacotes relacionados
+echo "Instalando Zabbix Server, Frontend, Agent e dependências..."
+sudo apt install -y zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-sql-scripts zabbix-agent
+check_error "Falha ao instalar pacotes do Zabbix."
+
+# Passo 5: Instalar e configurar MySQL
+echo "Instalando MySQL Server..."
+sudo apt install -y mysql-server
+check_error "Falha ao instalar MySQL Server."
+check_service "mysql"
+
+# Passo 6: Criar banco de dados e usuário para o Zabbix
+echo "Configurando banco de dados do Zabbix..."
+sudo mysql -e "CREATE DATABASE $ZABBIX_DB_NAME CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;"
+check_error "Falha ao criar banco de dados."
+sudo mysql -e "CREATE USER '$ZABBIX_DB_USER'@'localhost' IDENTIFIED BY '$MYSQL_PASSWORD';"
+check_error "Falha ao criar usuário do banco de dados."
+sudo mysql -e "GRANT ALL PRIVILEGES ON $ZABBIX_DB_NAME.* TO '$ZABBIX_DB_USER'@'localhost';"
+check_error "Falha ao conceder privilégios ao usuário do banco."
+sudo mysql -e "FLUSH PRIVILEGES;"
+check_error "Falha ao atualizar privilégios."
+
+# Passo 7: Importar esquema do banco de dados
+echo "Importando esquema do banco de dados do Zabbix..."
+sudo zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -u$ZABBIX_DB_USER -p$MYSQL_PASSWORD $ZABBIX_DB_NAME
+check_error "Falha ao importar esquema do banco de dados."
+
+# Passo 8: Configurar senha do banco no arquivo de configuração do Zabbix Server
+echo "Configurando arquivo zabbix_server.conf..."
+sudo sed -i "s/# DBPassword=/DBPassword=$MYSQL_PASSWORD/" /etc/zabbix/zabbix_server.conf
+check_error "Falha ao configurar senha no zabbix_server.conf."
+sudo sed -i "s/# DBHost=localhost/DBHost=localhost/" /etc/zabbix/zabbix_server.conf
+sudo sed -i "s/# DBName=zabbix/DBName=$ZABBIX_DB_NAME/" /etc/zabbix/zabbix_server.conf
+sudo sed -i "s/# DBUser=zabbix/DBUser=$ZABBIX_DB_USER/" /etc/zabbix/zabbix_server.conf
+check_error "Falha ao configurar parâmetros do banco no zabbix_server.conf."
+
+# Passo 9: Configurar timezone no frontend do Zabbix
+echo "Configurando timezone do frontend do Zabbix..."
+sudo sed -i "s/# php_value date.timezone.*/php_value date.timezone $TIMEZONE/" /etc/zabbix/apache.conf
+check_error "Falha ao configurar timezone no apache.conf."
+
+# Passo 10: Iniciar e habilitar serviços
+echo "Iniciando e habilitando serviços Zabbix e Apache..."
+sudo systemctl start zabbix-server zabbix-agent apache2
+check_error "Falha ao iniciar serviços."
+sudo systemctl enable zabbix-server zabbix-agent apache2
+check_error "Falha ao habilitar serviços para inicialização automática."
+
+# Passo 11: Validar serviços
+echo "Validando serviços..."
+check_service "zabbix-server"
+check_service "zabbix-agent"
+check_service "apache2"
+
+# Passo 12: Configurar firewall (se ativo)
+if command -v ufw >/dev/null; then
+    echo "Configurando firewall (UFW)..."
+    sudo ufw allow 80/tcp
+    sudo ufw allow 10051/tcp
+    check_error "Falha ao configurar regras do firewall."
+    echo "Regras do firewall configuradas para HTTP (80) e Zabbix (10051)."
+fi
+
+# Passo 13: Informações para acesso ao frontend
+echo "Instalação concluída com sucesso!"
+echo "Acesse o frontend do Zabbix em: http://$(hostname -I | awk '{print $1}')/zabbix"
+echo "Usuário padrão: Admin"
+echo "Senha padrão: zabbix"
+echo "Lembre-se de alterar a senha padrão após o primeiro login."
+echo "Para finalizar a configuração, siga os passos no frontend do Zabbix."
+
+# Passo 14: Limpar arquivos temporários
+echo "Limpando arquivos temporários..."
+rm -f zabbix-release_7.2-1+ubuntu24.04_all.deb
+check_error "Falha ao limpar arquivos temporários."
+
+echo "Script finalizado. Zabbix $ZABBIX_VERSION instalado e configurado com sucesso!"
