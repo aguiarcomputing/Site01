@@ -202,11 +202,10 @@
         </div>
     </header>
 	
-			<h2 class="text-2xl font-semibold mb-4"></h2>	
-			<h2 class="text-2xl font-semibold mb-4">Verifique sua edição do Windows em Configurações</h2>
-			<button class="activation-btn" onclick="window.location.href='ms-settings:activation?activationSource=SMC-Article-12440'">
-			<span>Clique Aqui</span>
-			</button>
+	<h2 class="text-2xl font-semibold mb-4">Verifique sua edição do Windows em Configurações</h2>
+    <button class="activation-btn" onclick="window.location.href='ms-settings:activation?activationSource=SMC-Article-12440'">
+        <span>Clique Aqui</span>
+    </button>
 	
     <main class="container mx-auto px-4 py-8">
         <section class="bg-white shadow-md rounded-lg p-6 mb-6">
@@ -214,7 +213,7 @@
             <h2 class="text-2xl font-semibold mb-4">Criar a mídia de instalação do Windows 10</h2>
             <p class="mb-4">Para começar, primeiro você precisará ter uma licença para instalar o Windows 10. Em seguida, você poderá baixar e executar a ferramenta de criação de mídia. Para obter mais informações sobre como usar a ferramenta, veja as instruções abaixo.</p>
             <button class="activation-btn" onclick="window.location.href='https://go.microsoft.com/fwlink/?LinkId=2265055'">
-            <span>Baixar Agora</span>
+                <span>Baixar Agora</span>
             </button>
             <p class="mb-4">Criar a mídia de instalação do Windows 10</p>
             <h2 class="text-2xl font-semibold mb-4">Baixar o Windows 10 Enterprise</h2>
