@@ -202,9 +202,8 @@
         </div>
     </header>
 	
-	<h2 class="text-2xl font-semibold mb-4">Verifique sua edição do Windows em Configurações</h2>
     <button class="activation-btn" onclick="window.location.href='ms-settings:activation?activationSource=SMC-Article-12440'">
-        <span>Clique Aqui</span>
+        <span>Verifique sua edição do Windows em Configurações</span>
     </button>
 	
     <main class="container mx-auto px-4 py-8">
