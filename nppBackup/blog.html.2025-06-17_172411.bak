@@ -305,7 +305,7 @@
         <div class="container py-5">
             <div class="text-center mx-auto pb-5 wow fadeIn section-title" data-wow-delay=".3s" style="max-width: 800px;">
                 <h5 class="text-primary">Nossos Scripts</h5>
-                <h1>Scripts Práticos para Servidores Windows e Servidores Linux</h1>
+                <h1>Scripts Práticos para Windows e Linux</h1>
                 <p class="text-muted">Explore nossa coleção de scripts otimizados para gerenciamento de servidores Windows e Linux, desenvolvidos com boas práticas para facilitar sua administração de TI.</p>
             </div>
 
