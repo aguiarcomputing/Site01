@@ -8,3 +8,7 @@ https://br.crucial.com/store/systemscanner
 
 lenovo
 https://apps.microsoft.com/detail/9WZDNCRFJ4MV?launch=true&mode=full&hl=pt-br&gl=br&ocid=bingwebsearch
+
+AMD
+https://www.amd.com/pt/support/download/drivers.html
+
