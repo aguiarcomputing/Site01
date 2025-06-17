@@ -84,7 +84,7 @@
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Suporte TI</a>
                                 <div class="dropdown-menu rounded">
-                                    <a href="blog.html" class="dropdown-item">Nosso Script</a>
+                                    <a href="blog.html" class="dropdown-item">Nosso Blog</a>
                                     <a href="team.html" class="dropdown-item">Nossa Equipe</a>
                                     <a href="testimonial.html" class="dropdown-item">Avaliações</a>
                                     <a href="hardware.html" class="dropdown-item">Hardware</a>
