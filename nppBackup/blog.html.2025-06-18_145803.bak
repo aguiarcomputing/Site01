@@ -330,55 +330,43 @@
                                 <p class="text-muted mb-4">Este é um script em lote bem estruturado do Windows que recupera e exibe informações de memória usando o comando wmic , com saída formatada e uma opção para copiar os resultados para a área de transferência..</p>
                                 <p Class="text-muted mb-4"> Detalhes da memória (capacidade, fabricante, número da peça e velocidade)</p>
 								<pre><code class="language-powershell">
-@echo off
-setlocal EnableDelayedExpansion
+# Script para monitoramento de uso de disco em servidores Windows
+# Autor: Aguiar Informática
+# Data: 17/06/2025
 
-:: Configura cores para exibição (verde para cabeçalho, ciano para informações da empresa, amarelo para resultados)
-color 0a
-cls
+# Função para verificar espaço em disco
+function Get-DiskUsage {
+    param (
+        [Parameter(Mandatory=$true)]
+        [string]$ComputerName = $env:COMPUTERNAME
+    )
 
-:: Exibe informações da empresa de forma profissional
-echo.
-echo [1;36m==================================================[0m
-echo [1;36m         AGUIAR INFORMATICA - IT Solutions         [0m
-echo [1;36m==================================================[0m
-echo.
-echo [1;33mTelefone: (48) 9 9189-0567[0m
-echo [1;33mSite: https://www.aguiarinformatica.com.br/[0m
-echo [1;33mE-mail: suporte@aguiarinformatica.com.br[0m
-echo.
-echo [1;36m--------------------------------------------------[0m
-echo.
+    try {
+        # Obtém informações dos discos
+        $disks = Get-WmiObject -Class Win32_LogicalDisk -ComputerName $ComputerName -Filter "DriveType=3" -ErrorAction Stop
 
-:: Executa o comando WMIC e salva a saída em um arquivo temporário
-echo [1;32mCOLETANDO INFORMACOES DA MEMORIA...[0m
-wmic memorychip get Capacity, Manufacturer, PartNumber, Speed > "%temp%\memory_info.txt"
+        foreach ($disk in $disks) {
+            $freeSpaceGB = [math]::Round($disk.FreeSpace / 1GB, 2)
+            $totalSpaceGB = [math]::Round($disk.Size / 1GB, 2)
+            $usedPercent = [math]::Round((($disk.Size - $disk.FreeSpace) / $disk.Size) * 100, 2)
 
-:: Exibe o conteúdo do arquivo temporário com formatação
-echo.
-echo [1;33mINFORMACOES da MEMORIA:[0m
-echo.
-type "%temp%\memory_info.txt"
-echo.
+            Write-Host "Disco: $($disk.DeviceID)"
+            Write-Host "Espaço Total: $totalSpaceGB GB"
+            Write-Host "Espaço Livre: $freeSpaceGB GB"
+            Write-Host "Uso: $usedPercent%"
 
-:: Pergunta ao usuário se deseja copiar o resultado para a área de transferência
-set /p copy_choice=[1;32mDESEJA COPIAR AS INFORMACOES PARA A AREA DE TRANSFERENCIA? (S/N): [0m
-if /i "!copy_choice!"=="S" (
-    clip < "%temp%\memory_info.txt"
-    echo.
-    echo [1;32mINFORMACOES COPIADAS PARA A AREA DE TRANSFERENCIA![0m
-)
+            if ($usedPercent -gt 80) {
+                Write-Warning "Alerta: Disco $($disk.DeviceID) com uso acima de 80%!"
+            }
+        }
+    }
+    catch {
+        Write-Error "Erro ao obter informações do disco: $_"
+    }
+}
 
-:: Remove o arquivo temporário
-del "%temp%\memory_info.txt"
-
-echo.
-echo [1;36m--------------------------------------------------[0m
-echo [1;36mOBRIGADO POR UTILIZAR SERVICOS DA AGUIAR INFORMATICA![0m
-echo.
-
-pause
-endlocal
+# Executa a função
+Get-DiskUsage
                                 </code></pre>
                                 <p><strong>Instruções:</strong> Salve como <code>disk_usage.ps1</code> e execute no PowerShell com privilégios administrativos usando <code>.\disk_usage.ps1</code>.</p>
                                 <div class="d-flex justify-content-between mt-4">
