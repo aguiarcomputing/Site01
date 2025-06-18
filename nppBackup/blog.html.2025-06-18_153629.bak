@@ -413,7 +413,7 @@ echo.
 pause
 endlocal
                                 </code></pre>
-                                <p><strong>Instruções:</strong> O arquivo final é salvo como : <code>MemoryInfo.txt</code> ele vai abrir na sua área de trabalho.</p>
+                                <p><strong>Instruções:</strong> O arquivo final é salvo como : <code>MemoryInfo.txt</code> ele vai abrir na sua área de trabalho.</code>MemoryInfo.txt</p>
                                 <div class="d-flex justify-content-between mt-4">
                                     <a href="#" class="btn btn-primary">Download Script</a>
                                     <div>
