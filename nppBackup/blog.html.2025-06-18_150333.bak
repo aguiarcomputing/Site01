@@ -380,7 +380,7 @@ echo.
 pause
 endlocal
                                 </code></pre>
-                                <p><strong>Instruções:</strong> Salve como <code>Informação_da_Minha_Memória.bat</code> e execute no PowerShell com privilégios administrativos usando <code>.\disk_usage.ps1</code>.</p>
+                                <p><strong>Instruções:</strong> Salve como <code>disk_usage.ps1</code> e execute no PowerShell com privilégios administrativos usando <code>.\disk_usage.ps1</code>.</p>
                                 <div class="d-flex justify-content-between mt-4">
                                     <a href="#" class="btn btn-primary">Download Script</a>
                                     <div>
