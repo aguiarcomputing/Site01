@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrir CMD</title>
+</head>
+<body>
+    <h1>Abrir Prompt de Comando</h1>
+    <p>Clique no link abaixo para tentar abrir o Prompt de Comando do Windows:</p>
+    <a href="cmd://">Abrir CMD</a>
+    <p><strong>Nota:</strong> Este link pode não funcionar em todos os navegadores devido a restrições de segurança.</p>
+</body>
+</html>

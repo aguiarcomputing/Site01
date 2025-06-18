@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Informações da Memória</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #output {
+            white-space: pre-wrap;
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Informações da Memória do Sistema</h2>
+    <button onclick="GetMemoryInfo()">Obter Informações</button>
+    <pre id="output">Clique no botão para obter as informações da memória.</pre>
+
+    <script language="VBScript">
+        Sub GetMemoryInfo()
+            On Error Resume Next
+            Dim WShell, tempPath, command, fso, file, content
+            Set WShell = CreateObject("WScript.Shell")
+            tempPath = WShell.ExpandEnvironmentStrings("%temp%")
+            command = "cmd.exe /c wmic memorychip get Capacity, Manufacturer, PartNumber, Speed > """ & tempPath & "\memory_info.txt"""
+
+            WShell.Run command, 0, True
+
+            Set fso = CreateObject("Scripting.FileSystemObject")
+            Set file = fso.OpenTextFile(tempPath & "\memory_info.txt", 1)
+            content = file.ReadAll()
+            file.Close()
+
+            If Err.Number = 0 Then
+                Document.GetElementById("output").innerText = content
+            Else
+                Document.GetElementById("output").innerText = "Erro: " & Err.Description & vbCrLf & "Este script requer o Internet Explorer e permissões para ActiveX."
+            End If
+        End Sub
+    </script>
+</body>
+</html>

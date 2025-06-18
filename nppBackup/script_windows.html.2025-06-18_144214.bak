@@ -305,7 +305,7 @@
         <div class="container py-5">
             <div class="text-center mx-auto pb-5 wow fadeIn section-title" data-wow-delay=".3s" style="max-width: 800px;">
                 <h5 class="text-primary">Nossos Scripts</h5>
-                <h1>Scripts Práticos para Servidores Windows e Servidores Linux</h1>
+                <h1>Scripts Práticos para Windows e Linux</h1>
                 <p class="text-muted">Explore nossa coleção de scripts otimizados para gerenciamento de servidores Windows e Linux, desenvolvidos com boas práticas para facilitar sua administração de TI.</p>
             </div>
 
@@ -327,9 +327,8 @@
                         <div class="col-12 wow fadeIn" data-wow-delay=".3s">
                             <div class="blog-item position-relative bg-light rounded p-4">
                                 <h3>Script PowerShell para Monitoramento de Disco</h3>
-                                <p class="text-muted mb-4">Este é um script em lote bem estruturado do Windows que recupera e exibe informações de memória usando o comando wmic , com saída formatada e uma opção para copiar os resultados para a área de transferência..</p>
-                                <p Class="text-muted mb-4"> Detalhes da memória (capacidade, fabricante, número da peça e velocidade)</p>
-								<pre><code class="language-powershell">
+                                <p class="text-muted mb-4">Este script PowerShell verifica o uso de disco em servidores Windows, exibindo alertas se o espaço livre estiver abaixo de 20%. Ele segue boas práticas com comentários e tratamento de erros.</p>
+                                <pre><code class="language-powershell">
 # Script para monitoramento de uso de disco em servidores Windows
 # Autor: Aguiar Informática
 # Data: 17/06/2025

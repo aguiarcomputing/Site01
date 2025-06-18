@@ -1,0 +1,31 @@
+Procedimento para migração de perfil local para perfil de domínio:
+
+# Esse procedimento é para perfis de usuários no qual tem muito tempo sem formatar a maquina.
+
+
+1. Copiar essa pasta dos scripts para alguma pasta dentro do C:\ da máquina
+
+2. Abra o "script 1" para permitir execução de scripts no Powershell:
+> 1_habilitar_exec_scripts_user_OK.txt
+
+Copie o comando, abra o POWERSHELL ISE COMO ADMINISTRADOR, cole na parte branca e execute.
+
+3. Abra o "script 2" que irá renomear o usuário administrador para itconnectadm, 
+copiar as pastas do perfil local atual para C:\Migra e colocar a maquina no domínio e reiniciar a maquina.
+> 2_script_useradmin_copia_dominio.txt
+
+4. Ao Reiniciar a máquina, acesse com o usuário do domínio, o qual será transferido o perfil.
+
+5. Clique para editar o "script 3" para permitir execução de scripts no Powershell:
+> 3_habilitar_exec_scripts_user.txt
+
+Copie o comando, abra o POWERSHELL ISE COMO ADMINISTRADOR, cole na parte branca e execute.
+
+6. Abra o "script 4", que irá copiar os dados da pasta C:\Migra para o perfil do domínio.
+> 4_volta_dados_perfil_dominio.txt
+
+Copie o comando, abra o POWERSHELL ISE COMO ADMINISTRADOR e cole na parte branca e execute.
+
+
+Espere terminar e valide com o usuário.
+

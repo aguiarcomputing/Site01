@@ -1,0 +1,56 @@
+NXS-SRV-ADFS01
+NXS-PC-001 Não está no domínio
+NXS-PC-002 Não está no domínio
+NXS-PC-003 Não está no domínio
+NXS-PC-004 Não está no domínio
+NXS-PC-005 Não está no domínio
+NXS-PC-006 Não está no domínio
+NXS-PC-07
+NXS-PC-008 Não está no domínio
+NXS-PC-09
+NXS-PC-10
+NXS-PC-11
+NXS-PC-012 Não está no domínio
+NXS-PC-13
+NXS-PC-14
+NXS-PC-015 Não está no domínio
+NXS-PC-016 Não está no domínio
+NXS-PC-017 Não está no domínio
+NXS-PC-018 Não está no domínio
+NXS-PC-019 Não está no domínio
+NXS-PC-020 Não está no domínio
+NXS-PC-018
+NXS-PC-018
+NXS-PC-018
+NXS-PC-018
+NXS-PC-018
+
+
+itconnectadm
+96PO08as!@)(%
+
+nexus
+Nexus@1
+
+nexusadm
+Nexu$@098
+
+control userpasswords2
+sysdm.cpl
+
+172.17.0.251		NEXUS.local
+172.17.0.252		nxs-srv-adfs02
+
+NXS-SRV-ADFS02.NEXUS.local
+
+- IPCONFIG /flushdns
+
+Usuário: NEXUS\ItConnectADM
+Senha: 96PO08as
+
+PROPRIEDADE REDE VPN - SERVIDOR DNS PREFERENCIAL: 172.17.0.252 - DNS
+IPV6 Desmarcar
+
+
+
+
