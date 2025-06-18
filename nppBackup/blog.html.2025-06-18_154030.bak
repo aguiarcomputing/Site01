@@ -326,7 +326,7 @@
                     <div class="row g-5">
                         <div class="col-12 wow fadeIn" data-wow-delay=".3s">
                             <div class="blog-item position-relative bg-light rounded p-4">
-                                <h3>Script Para Coletar a informação de Memória (capacidade, fabricante, número da peça e velocidade)</h3>
+                                <h3>Script Para Coletar a informação Memória (capacidade, fabricante, número da peça e velocidade)</h3>
                                 <p class="text-muted mb-4">Este é um script em lote bem estruturado do Windows que coleta informações de memória usando o WMIC, salva-as em um arquivo na área de trabalho e oferece opções para copiar a saída para a área de transferência e abri-la no Bloco de Notas</p>
                                 <p Class="text-muted mb-4"> Detalhes da memória (capacidade, fabricante, número da peça e velocidade)</p>
 								<pre><code class="language-powershell">
