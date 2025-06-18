@@ -380,7 +380,7 @@ echo.
 pause
 endlocal
                                 </code></pre>
-                                <p><strong>Instruções:</strong> Salve como <code>Informação_Da_Minha_Memória.bat</code> e execute no Windows.</code>.</p>
+                                <p><strong>Instruções:</strong> Salve como <code>Informação_Da_Minha_Memória.bat</code> e execute no Windows. <code>.\Informação_Da_Minha_Memória.bat</code>.</p>
                                 <div class="d-flex justify-content-between mt-4">
                                     <a href="#" class="btn btn-primary">Download Script</a>
                                     <div>

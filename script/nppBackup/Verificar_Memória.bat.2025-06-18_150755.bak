@@ -1,11 +1,11 @@
 @echo off
 setlocal EnableDelayedExpansion
 
-:: Configura cores para exibição
+:: Configura cores para exibição (verde para cabeçalho, ciano para informações da empresa, amarelo para resultados)
 color 0a
 cls
 
-:: Exibe informações da empresa
+:: Exibe informações da empresa de forma profissional
 echo.
 echo [1;36m==================================================[0m
 echo [1;36m         AGUIAR INFORMATICA - IT Solutions         [0m
@@ -18,42 +18,27 @@ echo.
 echo [1;36m--------------------------------------------------[0m
 echo.
 
-:: Cria um arquivo temporário único
-set "tempfile=%temp%\memory_info_%random%.txt"
-
-:: Executa o comando WMIC e verifica erros
+:: Executa o comando WMIC e salva a saída em um arquivo temporário
 echo [1;32mCOLETANDO INFORMACOES DA MEMORIA...[0m
-wmic memorychip get Capacity, Manufacturer, PartNumber, Speed > "!tempfile!" || (
-    echo [1;31mERRO: FALHA AO COLETAR INFORMACOES DA MEMORIA![0m
-    pause
-    exit /b 1
-)
+wmic memorychip get Capacity, Manufacturer, PartNumber, Speed > "%temp%\memory_info.txt"
 
-:: Exibe o conteúdo do arquivo temporário
+:: Exibe o conteúdo do arquivo temporário com formatação
 echo.
-echo [1;33mINFORMACOES DA MEMORIA:[0m
+echo [1;33mINFORMACOES da MEMORIA:[0m
 echo.
-type "!tempfile!"
+type "%temp%\memory_info.txt"
 echo.
 
-:: Pergunta ao usuário se deseja copiar o resultado
-:prompt
+:: Pergunta ao usuário se deseja copiar o resultado para a área de transferência
 set /p copy_choice=[1;32mDESEJA COPIAR AS INFORMACOES PARA A AREA DE TRANSFERENCIA? (S/N): [0m
 if /i "!copy_choice!"=="S" (
-    clip < "!tempfile!" && (
-        echo [1;32mINFORMACOES COPIADAS PARA A AREA DE TRANSFERENCIA![0m
-    ) || (
-        echo [1;31mERRO AO COPIAR PARA A AREA DE TRANSFERENCIA![0m
-    )
-) else if /i "!copy_choice!"=="N" (
+    clip < "%temp%\memory_info.txt"
     echo.
-) else (
-    echo [1;31mENTRADA INVALIDA! POR FAVOR, DIGITE S OU N.[0m
-    goto prompt
+    echo [1;32mINFORMACOES COPIADAS PARA A AREA DE TRANSFERENCIA![0m
 )
 
 :: Remove o arquivo temporário
-del "!tempfile!"
+del "%temp%\memory_info.txt"
 
 echo.
 echo [1;36m--------------------------------------------------[0m
