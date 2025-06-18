@@ -457,7 +457,7 @@ echo.
 pause
 endlocal
                                 </code></pre>
-                                <p><strong>Instruções:</strong> Depois que você executar o "SystemInfo.bat" O arquivo final é salvo como : <code> SystemInfo.bat </code> na sua área de trabalho.</p>
+                                <p><strong>Instruções:</strong> Depois que você executar o "MemoryInfo.bat" O arquivo final é salvo como : <code> SystemInfo.txt </code> na sua área de trabalho.</p>
                                 <div class="d-flex justify-content-between mt-4">
                                     <a href="#" class="btn btn-primary">Download Script</a>
                                     <div>
