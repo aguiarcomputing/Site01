@@ -333,11 +333,11 @@
 @echo off
 setlocal EnableDelayedExpansion
 
-:: Configura cores para exibição
+:: Configura cores para exibição (verde para cabeçalho, ciano para informações da empresa, amarelo para resultados)
 color 0a
 cls
 
-:: Exibe informações da empresa
+:: Exibe informações da empresa de forma profissional
 echo.
 echo [1;36m==================================================[0m
 echo [1;36m         AGUIAR INFORMATICA - IT Solutions         [0m
@@ -350,60 +350,27 @@ echo.
 echo [1;36m--------------------------------------------------[0m
 echo.
 
-:: Define o caminho para o arquivo na área de trabalho
-set "outputfile=%USERPROFILE%\Desktop\MemoryInfo.txt"
-
 :: Executa o comando WMIC e salva a saída em um arquivo temporário
 echo [1;32mCOLETANDO INFORMACOES DA MEMORIA...[0m
-wmic memorychip get Capacity, Manufacturer, PartNumber, Speed > "%temp%\memory_info.txt" || (
-    echo [1;31mERRO: FALHA AO COLETAR INFORMACOES DA MEMORIA![0m
-    pause
-    exit /b 1
-)
+wmic memorychip get Capacity, Manufacturer, PartNumber, Speed > "%temp%\memory_info.txt"
 
-:: Adiciona cabeçalho da empresa ao arquivo final
-echo AGUIAR INFORMATICA - IT Solutions > "!outputfile!"
-echo ================================================== >> "!outputfile!"
-echo Telefone: (48) 9 9189-0567 >> "!outputfile!"
-echo Site: https://www.aguiarinformatica.com.br/ >> "!outputfile!"
-echo E-mail: suporte@aguiarinformatica.com.br >> "!outputfile!"
-echo. >> "!outputfile!"
-echo INFORMACOES DA MEMORIA: >> "!outputfile!"
-echo. >> "!outputfile!"
-
-:: Copia o conteúdo do arquivo temporário para o arquivo final
-type "%temp%\memory_info.txt" >> "!outputfile!"
-
-:: Exibe o conteúdo do arquivo temporário na tela
+:: Exibe o conteúdo do arquivo temporário com formatação
 echo.
-echo [1;33mINFORMACOES DA MEMORIA:[0m
+echo [1;33mINFORMACOES da MEMORIA:[0m
 echo.
 type "%temp%\memory_info.txt"
 echo.
 
 :: Pergunta ao usuário se deseja copiar o resultado para a área de transferência
-:prompt
 set /p copy_choice=[1;32mDESEJA COPIAR AS INFORMACOES PARA A AREA DE TRANSFERENCIA? (S/N): [0m
 if /i "!copy_choice!"=="S" (
-    clip < "%temp%\memory_info.txt" && (
-        echo [1;32mINFORMACOES COPIADAS PARA A AREA DE TRANSFERENCIA![0m
-    ) || (
-        echo [1;31mERRO AO COPIAR PARA A AREA DE TRANSFERENCIA![0m
-    )
-) else if /i "!copy_choice!"=="N" (
+    clip < "%temp%\memory_info.txt"
     echo.
-) else (
-    echo [1;31mENTRADA INVALIDA! POR FAVOR, DIGITE S OU N.[0m
-    goto prompt
+    echo [1;32mINFORMACOES COPIADAS PARA A AREA DE TRANSFERENCIA![0m
 )
 
 :: Remove o arquivo temporário
 del "%temp%\memory_info.txt"
-
-:: Abre o arquivo no Bloco de Notas
-echo.
-echo [1;32mABRINDO INFORMACOES NO BLOCO DE NOTAS...[0m
-start notepad "!outputfile!"
 
 echo.
 echo [1;36m--------------------------------------------------[0m
@@ -413,7 +380,7 @@ echo.
 pause
 endlocal
                                 </code></pre>
-                                <p><strong>Instruções:</strong> Salve como <code>Informação_Da_Minha_Memória.bat</code> e execute no Windows.</code></p>
+                                <p><strong>Instruções:</strong> Salve como <code>Informação_Da_Minha_Memória.bat</code> e execute no Windows.</code>.</p>
                                 <div class="d-flex justify-content-between mt-4">
                                     <a href="#" class="btn btn-primary">Download Script</a>
                                     <div>
