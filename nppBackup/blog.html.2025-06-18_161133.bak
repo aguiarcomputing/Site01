@@ -117,7 +117,6 @@
             border-radius: 8px;
             overflow-x: auto;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: relative;
         }
 
         code {
@@ -145,330 +144,6 @@
 
         .blog-coment a:hover {
             color: #007bff !important;
-        }
-
-        .copy-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.9em;
-        }
-
-        .copy-button:hover {
-            background-color: #0056b3;
-        }
-
-        @media (max-width: 768px) {
-            .whatsapp-button {
-                width: 50px;
-                height: 50px;
-            }
-            .whatsapp-button img {
-                width: 25px;
-                height: 25px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/5548991890567" class="whatsapp-button" target="_blank" title="WhatsApp Online">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </a>
-
-    <!-- Spinner Start -->
-    <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" role="status"></div>
-    </div>
-    <!-- Spinner End -->
-
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-dark py-2 d-none d-md-flex">
-        <div class="container">
-            <div class="d-flex justify-content-between topbar">
-                <div class="top-info">
-                    <small class="me-3 text-white-50">
-                        <a href="https://www.google.com/search?q=aguiar+inform%C3%A1tica+-+assist%C3%AAncia+t%C3%A9cnica+no+condom%C3%ADnio.+s%C3%A3o+jos%C3%A9+endere%C3%A7o">
-                            <i class="fas fa-map-marker-alt me-2 text-secondary"></i>
-                        </a>R. Lourival Luiz Gomes, 116 - Areias, São José - SC, 88113-835
-                    </small>
-                    <small class="me-3 text-white-50">
-                        <a href="mailto:suporte@aguiarinformatica.com.br">
-                            <i class="fas fa-envelope me-2 text-secondary"></i>
-                        </a>suporte@aguiarinformatica.com.br
-                    </small>
-                </div>
-                <div id="note" class="text-secondary d-none d-xl-flex">
-                    <small>Nota: Nós ajudamos você a expandir seu negócio</small>
-                </div>
-                <div class="top-link">
-                    <a href="https://www.facebook.com/lojaaguiarcomputing/" class="bg-light btn btn-sm-square rounded-circle"><i class="fab fa-facebook-f text-primary"></i></a>
-                    <a href="#" class="bg-light btn btn-sm-square rounded-circle"><i class="fab fa-twitter text-primary"></i></a>
-                    <a href="https://www.instagram.com/aguiarcomputing/" class="bg-light btn btn-sm-square rounded-circle"><i class="fab fa-instagram text-primary"></i></a>
-                    <a href="https://www.linkedin.com/in/leandro-aguiar-18a28792/" class="bg-light btn btn-sm-square rounded-circle me-0"><i class="fab fa-linkedin-in text-primary"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Topbar End -->
-
-    <!-- Navbar Start -->
-    <div class="container-fluid bg-primary">
-        <div class="container">
-            <nav class="navbar navbar-dark navbar-expand-lg py-0">
-                <a href="index.html" class="navbar-brand">
-                    <h3 class="text-white fw-bold d-block">Aguiar<span class="text-secondary">Informática</span></h3>
-                </a>
-                <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto mx-xl-auto p-0">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">Sobre</a>
-                        <a href="service.html" class="nav-item nav-link">Serviços</a>
-                        <a href="project.html" class="nav-item nav-link">Projetos</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Suporte TI</a>
-                            <div class="dropdown-menu rounded">
-                                <a href="blog.html" class="dropdown-item active">Nosso script</a>
-                                <a href="team.html" class="dropdown-item">Nossa equipe</a>
-                                <a href="testimonial.html" class="dropdown-item">Depoimento</a>
-                                <a href="hardware.html" class="dropdown-item">Hardware</a>
-                                <a href="software.html" class="dropdown-item">Software</a>
-                            </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link">Contato</a>
-                    </div>
-                </div>
-                <div class="d-none d-xl-flex flex-shrink-0">
-                    <div id="phone-tada" class="d-flex align-items-center justify-content-center me-4">
-                        <a href="https://wa.me/5548991890567" class="position-relative animated tada infinite">
-                            <i class="fa fa-phone-alt text-white fa-2x"></i>
-                            <div class="position-absolute" style="top: -7px; left: 20px;">
-                                <span><i class="fa fa-comment-dots text-secondary"></i></span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="d-flex flex-column pe-4 border-end">
-                        <span class="text-white-50">Tem alguma dúvida?</span>
-                        <span class="text-secondary">Chamar: (48) 9 9189-0567</span>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-center ms-4">
-                        <a href="https://wa.me/5548991890567"><i class="bi bi-whatsapp text-white fa-2x"></i></a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
-    <!-- Navbar End -->
-
-    <!--Glenn    <!-- Page Header Start -->
-    <div class="container-fluid page-header py-5">
-        <div class="container text-center py-5">
-            <h1 class="display-2 text-white mb-4 animated slideInDown">Nossos Scripts</h1>
-            <nav aria-label="breadcrumb animated slideInDown">
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Páginas</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Scripts</li>
-                </ol>
-            </nav>
-        </div>
-    </div>
-    <!-- Page Header End -->
-
-    <!-- Fact Start -->
-    <div class="container-fluid bg-secondary py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-delay=".1s">
-                    <div class="d-flex counter">
-                        <h1 class="me-3 text-primary counter-value">18</h1>
-                        <h5 class="text-white mt-1">Anos de Excelência em TI間に
-
-System: You are Grok 3 built by xAI.
-
-To save the Windows script as `MemoryInfo.bat`, follow these steps:
-
-1. Copy the script from the code block below.
-2. Paste it into a text editor like Notepad.
-3. Save the file with the name `MemoryInfo.bat` (ensure the file type is set to "All Files" and not "Text Document" to preserve the `.bat` extension).
-
-Below is the modified HTML code with a "Copy" button added to the Windows script section:
-
-<xaiArtifact artifact_id="236f13bf-a139-46e0-9597-02cedca98365" artifact_version_id="0d89abd9-b52f-43f2-9b28-243af4cab364" title="index.html" contentType="text/html">
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="utf-8">
-    <title>Aguiar Informática - Soluções Completas em TI</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Assistência técnica, TI, Windows, Linux, servidores, scripts">
-    <meta name="description" content="Soluções completas em TI, incluindo scripts para Windows e Linux, assistência técnica e suporte para servidores.">
-
-    <!-- Favicons -->
-    <link rel="icon" href="flaticon.ico" type="image/x-icon">
-    <link rel="icon" sizes="192x192" href="favicon-192x192.png">
-    <link rel="icon" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" sizes="16x16" href="favicon-16x16.png">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Prism.js for Syntax Highlighting -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-
-    <!-- Custom Styles -->
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-        }
-
-        .whatsapp-button {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #25d366;
-            color: white;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            text-decoration: none;
-            transition: transform 0.3s, background-color 0.3s;
-        }
-
-        .whatsapp-button:hover {
-            background-color: #1ebc57;
-            transform: scale(1.1);
-        }
-
-        .whatsapp-button img {
-            width: 30px;
-            height: 30px;
-        }
-
-        .section-title {
-            margin-bottom: 3rem;
-        }
-
-        .section-title h5 {
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 600;
-        }
-
-        .section-title h1 {
-            font-family: 'Saira', sans-serif;
-            font-weight: 700;
-        }
-
-        /* Tabbed Interface */
-        .nav-tabs {
-            border-bottom: 2px solid #007bff;
-            margin-bottom: 2rem;
-        }
-
-        .nav-tabs .nav-link {
-            border: none;
-            border-radius: 0;
-            padding: 0.75rem 1.5rem;
-            font-weight: 500;
-            color: #495057;
-            transition: all 0.3s;
-        }
-
-        .nav-tabs .nav-link.active {
-            background-color: #007bff;
-            color: white;
-        }
-
-        .nav-tabs .nav-link:hover {
-            background-color: #e9ecef;
-        }
-
-        /* Code Block Styling */
-        pre {
-            background-color: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            overflow-x: auto;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-
-        code {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.9em;
-        }
-
-        .blog-item {
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .blog-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .blog-content p {
-            font-size: 1rem;
-            color: #6c757d;
-        }
-
-        .blog-coment a {
-            transition: color 0.3s;
-        }
-
-        .blog-coment a:hover {
-            color: #007bff !important;
-        }
-
-        .copy-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.9em;
-        }
-
-        .copy-button:hover {
-            background-color: #0056b3;
         }
 
         @media (max-width: 768px) {
@@ -653,8 +328,8 @@ Below is the modified HTML code with a "Copy" button added to the Windows script
                             <div class="blog-item position-relative bg-light rounded p-4">
                                 <h3>Script Para Coletar a informação de Memória (capacidade, fabricante, número da peça e velocidade)</h3>
                                 <p class="text-muted mb-4">Este é um script em lote bem estruturado do Windows que coleta informações de memória usando o WMIC, salva-as em um arquivo na área de trabalho e oferece opções para copiar a saída para a área de transferência e abri-la no Bloco de Notas</p>
-                                <p class="text-muted mb-4"> Detalhes da memória (capacidade, fabricante, número da peça e velocidade)</p>
-                                <pre><code class="language-powershell" id="windows-script">
+                                <p Class="text-muted mb-4"> Detalhes da memória (capacidade, fabricante, número da peça e velocidade)</p>
+								<pre><code class="language-powershell">
 @echo off
 setlocal EnableDelayedExpansion
 
@@ -737,7 +412,7 @@ echo.
 
 pause
 endlocal
-                                </code><button class="copy-button" onclick="copyToClipboard('windows-script')">Copiar</button></pre>
+                                </code></pre>
                                 <p><strong>Instruções:</strong> Depois que você executar o "MemoryInfo.bat" O arquivo final é salvo como : <code> MemoryInfo.txt </code> na sua área de trabalho.</p>
                                 <div class="d-flex justify-content-between mt-4">
                                     <a href="#" class="btn btn-primary">Download Script</a>
@@ -755,7 +430,7 @@ endlocal
                 <div class="tab-pane fade" id="linux-content" role="tabpanel" aria-labelledby="linux-tab">
                     <div class="row g-5">
                         <div class="col-12 wow fadeIn" data-wow-delay=".3s">
-                            <div class="blog-item position-relative bg-light rounded p-4">
+                            <div class epidemics="blog-item position-relative bg-light rounded p-4">
                                 <h3>Script Bash para Monitoramento de Processos</h3>
                                 <p class="text-muted mb-4">Este script Bash lista os 5 processos que mais consomem CPU em servidores Linux, com verificações de erro e formatação clara.</p>
                                 <pre><code class="language-bash">
@@ -876,19 +551,6 @@ check_processes
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-
-    <!-- Copy to Clipboard Script -->
-    <script>
-        function copyToClipboard(elementId) {
-            const codeElement = document.getElementById(elementId);
-            const text = codeElement.innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                alert('Código copiado para a área de transferência!');
-            }).catch(err => {
-                alert('Erro ao copiar o código: ' + err);
-            });
-        }
-    </script>
 </body>
 
 </html>
