@@ -1,1 +1,0 @@
-powershell -ExecutionPolicy Bypass -File "C:\Script\BloquearRoblox.ps1"
