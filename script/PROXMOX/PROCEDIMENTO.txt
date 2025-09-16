@@ -50,3 +50,9 @@ Ative 2FA: GUI > User > [seu-user] > Two Factor > Enable TOTP (use app como Auth
 
 GUI Segura: Acesse só via HTTPS (padrão). Mude senha root no GUI se fraca.
 
+
+Script para Implementar Regras de Firewall
+Abaixo está um script para configurar regras de firewall no nível do datacenter e da VM TrueNAS. Ele assume que sua rede confiável é 192.168.150.0/24 e que o TrueNAS usa portas 80/443 (web) e 2049 (NFS, se aplicável). Ajuste IPs/portas conforme necessário.
+
+
+
