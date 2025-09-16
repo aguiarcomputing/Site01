@@ -1,0 +1,31 @@
+1. Atualizações e Manutenção Básica (Segurança: Patches Regulares)
+
+Sempre comece atualizando o sistema para mitigar vulnerabilidades conhecidas.
+
+apt update && apt full-upgrade -y
+reboot
+
+Ative atualizações automáticas de segurança (sem reboot automático para evitar downtime em produção):
+
+apt install unattended-upgrades
+dpkg-reconfigure unattended-upgrades  # Selecione "Yes" para atualizações de segurança
+
+3. Segurança de Rede e Firewall
+
+Firewall Proxmox: Ative globalmente no GUI (Datacenter > Firewall > Options > Enable: Yes). Crie regras:
+
+Permita apenas portas essenciais: 22 (SSH), 8006 (GUI), 3128 (SPICE).
+Para VM TrueNAS: Permita 80/443 (web), 111/2049 (NFS se usado).
+CLI exemplo: pve-firewall enable --table in (entrada) e pve-firewall compile para testar.
+
+
+Rede Segura: Use VLANs se possível (ex.: bridge vmbr0 para management, vmbr1 para VMs). Desabilite IPv6 se não usado: Edite /etc/default/grub com ipv6.disable=1 e update-grub.
+Fail2Ban: Instale para bloquear brute-force: apt install fail2ban. Edite /etc/fail2ban/jail.local:
+
+[sshd]
+enabled = true
+[proxmox]
+enabled = true
+
+Reinicie: systemctl restart fail2ban.
+
