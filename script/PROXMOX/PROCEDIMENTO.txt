@@ -29,3 +29,24 @@ enabled = true
 
 Reinicie: systemctl restart fail2ban.
 
+4. Autenticação e Acesso (Evite Root Direto)
+
+SSH Seguro: Desabilite login root por senha. Gere chaves: ssh-keygen no cliente, copie com ssh-copy-id root@seu-ip.
+
+filezilla sftp://192.168.150.158 salvar chaves.
+
+Edite /etc/ssh/sshd_config: PermitRootLogin prohibit-password e PasswordAuthentication no. Reinicie: systemctl restart ssh.
+
+
+Usuários Proxmox: Crie usuário não-root: No GUI (Datacenter > Permissions > Add > User), adicione "pveadmin" com realm PAM, senha forte. Atribua roles (ex.: PVEVMAdmin para VMs).
+
+Crie Grupo Proxmox: Datacenter > Grupos > Criar
+
+Dar Permissões para Grupo Proxmox: Datacenter > Grupos > Criar
+
+
+Ative 2FA: GUI > User > [seu-user] > Two Factor > Enable TOTP (use app como Authy).
+
+
+GUI Segura: Acesse só via HTTPS (padrão). Mude senha root no GUI se fraca.
+
