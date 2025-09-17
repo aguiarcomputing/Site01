@@ -1,3 +1,11 @@
+DESATIVAR "ENTERPRISE.PROXMOX.COM/DBIAN/PVE"
+
+PVE > ATUALIZAÇÕES > DEB 1 E DEB 2
+
+ATUALIZAÇÕES > ATUALIZAR.
+
+----------------------------------------
+
 1. Atualizações e Manutenção Básica (Segurança: Patches Regulares)
 
 Sempre comece atualizando o sistema para mitigar vulnerabilidades conhecidas.
