@@ -62,5 +62,39 @@ GUI Segura: Acesse só via HTTPS (padrão). Mude senha root no GUI se fraca.
 Script para Implementar Regras de Firewall
 Abaixo está um script para configurar regras de firewall no nível do datacenter e da VM TrueNAS. Ele assume que sua rede confiável é 192.168.150.0/24 e que o TrueNAS usa portas 80/443 (web) e 2049 (NFS, se aplicável). Ajuste IPs/portas conforme necessário.
 
+ACRONIS
+
+Passo 1: Preparação no Proxmox VE
+
+Acesse o shell do Proxmox (via SSH ou console web: root@seu-host:~#).
+Atualize o sistema:
+
+apt update && apt full-upgrade -y
+reboot
+
+Isso garante que o kernel (geralmente 6.8+ na VE 8.3.0) esteja pronto. Se houver problemas com headers do kernel (comum em instalações agent-based), instale:
+
+apt install pve-headers-$(uname -r) build-essential gcc make perl
+
+No shell do Proxmox, instale o agente:
+
+Baixe o pacote (substitua pela URL do seu download da Acronis):
+wget https://dl.acronis.com/u/abc/agent.rpm  # Ou .deb se disponível
+
+Para RPM (Proxmox é Debian-based, mas Acronis suporta via alien ou rpm):
+dpkg -i agent.deb
+apt install -f -y  # Corrige dependências
+
+
+Instale o plugin Proxmox:
+Durante a instalação, o agente detectará o Proxmox e instalará o add-on automaticamente. Se não, execute:
+/opt/acronis/agent/bin/acronis_register  # Registre com sua conta Acronis
+
+Forneça o token/ID da Acronis gerado no console web.
+
+Reinicie o serviço:
+systemctl restart acronis_agent
+reboot  # Pode ser necessário para compilar módulos kernel
+
 
 
