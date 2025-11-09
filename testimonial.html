@@ -1,103 +1,97 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
     <head>
         <meta charset="utf-8">
-        <title> AguiarInformática - TI Soluções completas em TI </title>
+        <title>Avaliações no Google - Aguiar Informática</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
-
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap" rel="stylesheet"> 
-
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Saira:wght@500;600;700&display=swap" rel="stylesheet">
         <!-- Icon Font Stylesheet -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
         <!-- Libraries Stylesheet -->
         <link href="lib/animate/animate.min.css" rel="stylesheet">
         <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
         <!-- Customized Bootstrap Stylesheet -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
-
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
-		
-		<!-- Favicon padrão -->
-		<link rel="icon" href="flaticon.ico" type="image/x-icon">
-    
-		<!-- Favicon para dispositivos móveis -->
-		<link rel="icon" sizes="192x192" href="favicon-192x192.png">
-		<link rel="icon" sizes="32x32" href="favicon-32x32.png">
-		<link rel="icon" sizes="16x16" href="favicon-16x16.png">		
+        <!-- Favicon padrão -->
+        <link rel="icon" href="flaticon.ico" type="image/x-icon">
+        <!-- Favicon para dispositivos móveis -->
+        <link rel="icon" sizes="192x192" href="favicon-192x192.png">
+        <link rel="icon" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" sizes="16x16" href="favicon-16x16.png">
+        <!-- Estilo do botão WhatsApp -->
+        <style>
+            .whatsapp-button {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background-color: #25d366;
+                color: white;
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+                z-index: 1000;
+                text-decoration: none;
+                animation: heartbeat 2.5s infinite;
+            }
+            .whatsapp-button:hover {
+                background-color: #1ebc57;
+            }
+            .whatsapp-button img {
+                width: 30px;
+                height: 30px;
+            }
+            @keyframes heartbeat {
+                0% { transform: scale(1); }
+                25% { transform: scale(1.1); }
+                50% { transform: scale(1); }
+                75% { transform: scale(1.1); }
+                100% { transform: scale(1); }
+            }
+            /* Botão Google Avaliações */
+            .google-review-btn {
+                display: inline-block;
+                background: #1a73e8;
+                color: white;
+                padding: 15px 30px;
+                border-radius: 50px;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.3s;
+                margin-top: 20px;
+            }
+            .google-review-btn:hover {
+                background: #1557b0;
+                transform: scale(1.05);
+            }
+        </style>
     </head>
-		<!-- Botão de WhatsApp no Cabeçalho -->
-    <title>Botão de WhatsApp no Cabeçalho</title>
-    <style>
-        /* Estilo do botão no cabeçalho */
-        .whatsapp-button {
-            position: fixed;
-            top: 20px; /* Mantém o botão no topo */
-            right: 20px; /* Posiciona o botão à direita */
-            background-color: #25d366;
-            color: white;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            z-index: 1000;
-            text-decoration: none;
-            animation: heartbeat 2.5s infinite;
-        }
-
-        .whatsapp-button:hover {
-            background-color: #1ebc57;
-        }
-
-        .whatsapp-button img {
-            width: 30px;
-            height: 30px;
-        }
-
-        @keyframes heartbeat {
-            0% {
-                transform: scale(1);
-            }
-            25% {
-                transform: scale(1.1);
-            }
-            50% {
-                transform: scale(1);
-            }
-            75% {
-                transform: scale(1.1);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-    </style>
-	</head>
-<body>
-    <!-- Botão de WhatsApp no Cabeçalho -->
-    <a href="https://wa.me/5548991890567" class="whatsapp-button" target="_blank" title="WhatsApp Online">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </a>
     <body>
+        <!-- Botão de WhatsApp -->
+        <a href="https://wa.me/5548991890567" class="whatsapp-button" target="_blank" title="WhatsApp Online">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+
         <!-- Spinner Start -->
         <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-grow text-primary" role="status"></div>
         </div>
-<!-- Spinner End -->
-<!-- Topbar Start -->
+        <!-- Spinner End -->
+
+        <!-- Topbar Start -->
         <div class="container-fluid bg-dark py-2 d-none d-md-flex">
             <div class="container">
                 <div class="d-flex justify-content-between topbar">
@@ -115,8 +109,9 @@
                 </div>
             </div>
         </div>
-<!-- Topbar End -->
-<!-- Navbar Start -->
+        <!-- Topbar End -->
+
+        <!-- Navbar Start -->
         <div class="container-fluid bg-primary">
             <div class="container">
                 <nav class="navbar navbar-dark navbar-expand-lg py-0">
@@ -139,7 +134,7 @@
                                     <a href="team.html" class="dropdown-item">Nossa equipe</a>
                                     <a href="testimonial.html" class="dropdown-item active">Depoimento</a>
                                     <a href="hardware.html" class="dropdown-item">Hardware</a>
-									<a href="software.html" class="dropdown-item">Software</a>
+                                    <a href="software.html" class="dropdown-item">Software</a>
                                 </div>
                             </div>
                             <a href="contact.html" class="nav-item nav-link">Contato</a>
@@ -165,8 +160,9 @@
                 </nav>
             </div>
         </div>
-<!-- Navbar End -->      
-<!-- Page Header Start -->
+        <!-- Navbar End -->
+
+        <!-- Page Header Start -->
         <div class="container-fluid page-header py-5">
             <div class="container text-center py-5">
                 <h1 class="display-2 text-white mb-4 animated slideInDown">Depoimento</h1>
@@ -179,8 +175,9 @@
                 </nav>
             </div>
         </div>
-<!-- Page Header End -->
-<!-- Fact Start -->
+        <!-- Page Header End -->
+
+        <!-- Fact Start -->
         <div class="container-fluid bg-secondary py-5">
             <div class="container">
                 <div class="row">
@@ -211,13 +208,18 @@
                 </div>
             </div>
         </div>
-<!-- Fact End -->
-<!-- Testimonial Start -->
+        <!-- Fact End -->
+
+        <!-- Testimonial Start -->
         <div class="container-fluid testimonial py-5 my-5">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
                     <h5 class="text-primary">AVALIAÇÕES NO GOOGLE</h5>
-                    <h1>Nosso cliente dizendo!</h1>
+                    <h1>Nossos clientes dizendo!</h1>
+                    <a href="https://search.google.com/local/writereview?placeid=ChIJlYbJ1X2_3JQRJ-yXPGsN0rE" target="_blank" class="google-review-btn">
+                        ⭐ Deixe sua avaliação no Google (30 seg)
+                    </a>
+                    <p class="mt-3"><strong>Primeiros 10 avaliadores ganham 10% OFF!</strong> 🎁</p>
                 </div>
                 <div class="owl-carousel testimonial-carousel wow fadeIn" data-wow-delay=".5s">
                     <div class="testimonial-item border p-4">
@@ -308,8 +310,9 @@
             </div>
         </div>
         <!-- Testimonial End -->
+
         <!-- Footer Start -->
-         <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
+        <div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
             <div class="container pt-5 pb-4">
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-6">
@@ -359,15 +362,16 @@
                         <span class="text-light"><a href="#" class="text-secondary"><i class="fas fa-copyright text-secondary me-2"></i>AguiarInformática</a>, Todos os direitos reservados.</span>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                         <span class="text-light"> Projetado por <a href="https://htmlcodex.com" class="text-secondary"> HTML Codex </a> Distribuído por <a href="https://themewagon.com"> AguiarInformática </a></span>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Footer End -->
+
         <!-- Back to Top -->
-        <a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"><i class="fa fa-arrow-up text-white"></i></a>        
+        <a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"><i class="fa fa-arrow-up text-white"></i></a>
+
         <!-- JavaScript Libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
