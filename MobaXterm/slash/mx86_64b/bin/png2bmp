@@ -1,0 +1,22 @@
+#!/bin/zsh.exe
+
+if [ -z "$2" ]; then
+  echo "Usage: $0 <source_file.png> <dest_file.bmp>"
+else
+  if [ -d "$1" ]; then
+    for i in `ls "$1"/*.png`; do
+      $0 "$i" "$2"
+    done
+  elif [ -e "$1" ]; then
+    if [ -d "$2" ]; then
+      Bmp="$1"
+      Bmp="${Bmp##*/}"
+      Bmp="${Bmp%.png}.bmp"
+      Bmp="$2/$Bmp"
+    else
+      Bmp="$2"
+    fi
+    builtin echo "$0 \"`toybox convpath -w "$1"`\" \"`toybox convpath -w "$Bmp"`\""
+    /bin/MobaBox.exe MobaSendMsg MobaXterm "png2bmp|`toybox convpath -w "$1"`|`toybox convpath -w "$Bmp"`"
+  fi
+fi

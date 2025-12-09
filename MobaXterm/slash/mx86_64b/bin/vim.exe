@@ -1,0 +1,7 @@
+#!/bin/zsh.exe
+
+if [ -e "/usr/share/vim.tar" ]; then
+  /bin/toybox.exe tar -C /usr/share -xf /usr/share/vim.tar
+  /bin/toybox.exe rm -f /usr/share/vim.tar
+fi
+/bin/_vim.exe "$@"
