@@ -1,0 +1,82 @@
+2458
+TT         PID  PPID     ELAPSED COMMAND
+?            1     0       17:26 /sbin/init
+?            2     0       17:26 [kthreadd]
+?            3     2       17:26 [ksoftirqd/0]
+?            5     2       17:26 [kworker/0:0H]
+?            6     2       17:26 [kworker/u2:0]
+?            7     2       17:26 [rcu_sched]
+?            8     2       17:26 [rcu_bh]
+?            9     2       17:26 [migration/0]
+?           10     2       17:26 [watchdog/0]
+?           11     2       17:26 [khelper]
+?           12     2       17:26 [kdevtmpfs]
+?           13     2       17:26 [netns]
+?           14     2       17:26 [khungtaskd]
+?           15     2       17:26 [writeback]
+?           16     2       17:26 [ksmd]
+?           17     2       17:26 [khugepaged]
+?           18     2       17:26 [crypto]
+?           19     2       17:26 [kintegrityd]
+?           20     2       17:26 [bioset]
+?           21     2       17:26 [kblockd]
+?           23     2       17:26 [kswapd0]
+?           24     2       17:26 [vmstat]
+?           25     2       17:26 [fsnotify_mark]
+?           31     2       17:26 [kthrotld]
+?           32     2       17:26 [ipv6_addrconf]
+?           33     2       17:26 [deferwq]
+?           34     2       17:26 [kworker/u2:1]
+?           67     2       17:26 [khubd]
+?           68     2       17:26 [ata_sff]
+?           69     2       17:26 [scsi_eh_0]
+?           70     2       17:26 [scsi_tmf_0]
+?           71     2       17:26 [scsi_eh_1]
+?           72     2       17:26 [scsi_tmf_1]
+?           74     2       17:26 [kpsmoused]
+?           78     2       17:26 [scsi_eh_2]
+?           79     2       17:26 [scsi_tmf_2]
+?           85     2       17:26 [kworker/0:1H]
+?          105     2       17:26 [jbd2/sda1-8]
+?          106     2       17:26 [ext4-rsv-conver]
+?          136     2       17:26 [kauditd]
+?          142     1       17:26 /lib/systemd/systemd-udevd
+?          146     1       17:25 /lib/systemd/systemd-journald
+?          163     2       17:25 [ttm_swap]
+?          166     2       17:25 [vballoon]
+?          378     1       17:24 dhclient -v -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases eth0
+?          453     1       17:24 /sbin/rpcbind -w
+?          462     1       17:24 /sbin/rpc.statd
+?          467     2       17:24 [rpciod]
+?          469     2       17:24 [nfsiod]
+?          476     1       17:24 /usr/sbin/rpc.idmapd
+?          477     1       17:24 avahi-daemon: running [debian.local]
+?          478     1       17:24 /usr/sbin/cron -f
+?          479     1       17:24 /usr/sbin/atd -f
+?          480     1       17:24 /usr/sbin/rsyslogd -n
+?          482     1       17:24 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+?          484   477       17:24 avahi-daemon: chroot helper
+?          485     1       17:24 /lib/systemd/systemd-logind
+?          487     1       17:24 /usr/sbin/acpid
+tty1       491     1       17:24 /bin/login --
+?          743     1       17:24 /usr/sbin/exim4 -bd -q30m
+tty1       750   491       14:31 -bash
+?          761     2       12:24 [kworker/0:0]
+tty1       765   750       10:03 su -
+tty1       766   765       09:47 -su
+?         1300     1       08:09 /usr/sbin/sshd -D
+?         1305     2       07:23 [kworker/0:2]
+?         1321  1300       03:17 sshd: itconnectadm [priv]
+?         1323  1321       03:06 sshd: itconnectadm@pts/0
+?         1324  1300       03:06 sshd: itconnectadm [priv]
+pts/0     1326  1323       03:06 -bash
+?         1337  1324       03:05 sshd: itconnectadm@notty
+?         1338  1337       03:05 /usr/lib/openssh/sftp-server
+?         1339  1323       03:05 bash -c while true; do sleep 1;head -v -n 8 /proc/meminfo; head -v -n 2 /proc/stat /proc/version /proc/uptime /proc/loadavg /proc/sys/fs/file-nr /proc/sys/kernel/hostname; tail -v -n 32 /proc/net/dev;echo '==> /proc/df <==';df -l;echo '==> /proc/who <==';who;echo '==> /proc/end <==';echo '##Moba##'; done
+?         1595     2       02:22 [kworker/0:1]
+tty1      2010   766       01:13 pico /etc/ssh/sshd_config
+?         2456  1339       00:00 sleep 1
+pts/0     2457  1326       00:00 pico /etc/ssh/sshd_config
+?         2458  1337       00:00 bash -c echo $$;ps -eo tty,pid,ppid,etime,args
+?         2459  2458       00:00 ps -eo tty,pid,ppid,etime,args
+

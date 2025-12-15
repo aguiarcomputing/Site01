@@ -33,44 +33,44 @@ ddxProcessArgument - screen - Found Valid ``@Monitor'' = 1 arg
 (==) Setting XLOCALEDIR path to XLOCALEDIR=D:\Site01\Site01\MobaXterm\slash\mx86_64b\usr\share\X11\locale
 (==) Logfile set to "D:\Site01\Site01\MobaXterm\slash\mx86_64b\var\log\xwin\XWin.0.log"
 (==) Setting XKB path to D:\Site01\Site01\MobaXterm\slash\mx86_64b\usr\share\X11\xkb
-[451585.375] winUpdateDpi - primary monitor native DPI x 96 y 96
-[451585.375] winDetectSupportedEngines - RemoteSession: no
-[451585.421] winDetectSupportedEngines - DirectDraw4 installed, allowing ShadowDDNL
-[451585.421] winDetectSupportedEngines - Returning, supported engines 00000005
-[451585.421] winSetEngine - Multi Window or Rootless => ShadowGDI
-[451585.421] winScreenInit - Using Windows display depth of 32 bits per pixel
-[451585.437] winAllocateFBShadowGDI - Creating DIB with width: 1931 height: 1944 depth: 32
-[451585.437] winFinishScreenInitFB - Masks: 00ff0000 0000ff00 000000ff
-[451585.437] winInitVisualsShadowGDI - Masks 00ff0000 0000ff00 000000ff BPRGB 8 d 24 bpp 32
-[451585.437] (II) IGLX: Loaded and initialized swrast
-[451585.437] (II) GLX: Initialized DRISWRAST GL provider for screen 0
-[451585.484] (II) [XKB]  "D:\Site01\Site01\MobaXterm\slash\mx86_64b\var\log\xwin\xkb_a14912" file successfully created.
-[451585.484] (II) [XKB]  Launching xkbcomp.exe with the following command:
-[451585.484] (II) [XKB]  "D:\Site01\Site01\MobaXterm\slash\mx86_64b\bin\xkbcomp_w32.exe" -w 1 "-RD:\Site01\Site01\MobaXterm\slash\mx86_64b\usr\share\X11\xkb" -xkm "D:\Site01\Site01\MobaXterm\slash\mx86_64b\var\log\xwin\xkb_a14912" -em1 "The XKEYBOARD keymap compiler (xkbcomp) reports:" -emp "> " -eml "Errors from xkbcomp are not fatal to the X server" "D:\Site01\Site01\MobaXterm\slash\mx86_64b\var\log\xwin\server-0.xkm"
-[451585.484] (II) [XKB]  LaunchXkbComp(II) :  succeeded
-[451648.765] (II) [XKB]  Successfully created keyboard mapping file "D:\Site01\Site01\MobaXterm\slash\mx86_64b\var\log\xwin\xkb_a14912"
-[451648.765] winPointerWarpCursor - Discarding first warp: 965 972
-[451648.765] (--) 8 mouse buttons found
-[451648.765] (--) Setting autorepeat to delay=500, rate=31
-[451648.765] (--) Windows keyboard layout: "00010416" (00010416) "Portuguese (Brazilian ABNT2)", type 7
-[451648.765] (--) Found matching XKB configuration "Portuguese (Brazil,ABNT2)"
-[451648.765] (--) Model = "abnt2" Layout = "br" Variant = "none" Options = "none"
-[451648.765] Rules = "base" Model = "abnt2" Layout = "br" Variant = "none" Options = "none"
-[451648.781] (II) [XKB]  "D:\Site01\Site01\MobaXterm\slash\mx86_64b\var\log\xwin\xkb_a14912" file successfully created.
-[451648.781] (II) [XKB]  Launching xkbcomp.exe with the following command:
-[451648.781] (II) [XKB]  "D:\Site01\Site01\MobaXterm\slash\mx86_64b\bin\xkbcomp_w32.exe" -w 1 "-RD:\Site01\Site01\MobaXterm\slash\mx86_64b\usr\share\X11\xkb" -xkm "D:\Site01\Site01\MobaXterm\slash\mx86_64b\var\log\xwin\xkb_a14912" -em1 "The XKEYBOARD keymap compiler (xkbcomp) reports:" -emp "> " -eml "Errors from xkbcomp are not fatal to the X server" "D:\Site01\Site01\MobaXterm\slash\mx86_64b\var\log\xwin\server-0.xkm"
-[451648.781] (II) [XKB]  LaunchXkbComp(II) :  succeeded
-[451648.828] (II) [XKB]  Successfully created keyboard mapping file "D:\Site01\Site01\MobaXterm\slash\mx86_64b\var\log\xwin\xkb_a14912"
-[451648.843] winInitMultiWindowWM - DISPLAY=127.0.0.1:0.0
-[451648.843] winMultiWindowXMsgProc - DISPLAY=127.0.0.1:0.0
-[451648.843] winWindowProc - WM_EXITSIZEMOVE
-[451648.843] winMultiWindowXMsgProc - xcb_connect() returned and successfully opened the display.
-[451648.843] winProcEstablishConnection - winInitClipboard returned.
-[451648.843] winClipboardThreadProc - DISPLAY=127.0.0.1:0.0
-[451648.843] winInitMultiWindowWM - xcb_connect () returned and successfully opened the display.
-[451648.843] Using Composite redirection
-[451648.843] winClipboardProc - xcb_connect () returned and successfully opened the display.
-[455514.718] winWindowProc - WM_DISPLAYCHANGE - new width: 1536 new height: 864 new bpp: 32
-[455514.718] winWindowProc - RemoteSession: no
-[455514.718] winUpdateDpi - primary monitor native DPI x 96 y 96
-[455515.062] winAllocateFBShadowGDI - Creating DIB with width: 1536 height: 864 depth: 32
+[513590.546] winUpdateDpi - primary monitor native DPI x 96 y 96
+[513590.562] winDetectSupportedEngines - RemoteSession: no
+[513590.593] winDetectSupportedEngines - DirectDraw4 installed, allowing ShadowDDNL
+[513590.593] winDetectSupportedEngines - Returning, supported engines 00000005
+[513590.593] winSetEngine - Multi Window or Rootless => ShadowGDI
+[513590.593] winScreenInit - Using Windows display depth of 32 bits per pixel
+[513590.609] winAllocateFBShadowGDI - Creating DIB with width: 1931 height: 1944 depth: 32
+[513590.609] winFinishScreenInitFB - Masks: 00ff0000 0000ff00 000000ff
+[513590.609] winInitVisualsShadowGDI - Masks 00ff0000 0000ff00 000000ff BPRGB 8 d 24 bpp 32
+[513590.734] (II) IGLX: Loaded and initialized swrast
+[513590.734] (II) GLX: Initialized DRISWRAST GL provider for screen 0
+[513590.859] (II) [XKB]  "D:\Site01\Site01\MobaXterm\slash\mx86_64b\var\log\xwin\xkb_a14700" file successfully created.
+[513590.859] (II) [XKB]  Launching xkbcomp.exe with the following command:
+[513590.859] (II) [XKB]  "D:\Site01\Site01\MobaXterm\slash\mx86_64b\bin\xkbcomp_w32.exe" -w 1 "-RD:\Site01\Site01\MobaXterm\slash\mx86_64b\usr\share\X11\xkb" -xkm "D:\Site01\Site01\MobaXterm\slash\mx86_64b\var\log\xwin\xkb_a14700" -em1 "The XKEYBOARD keymap compiler (xkbcomp) reports:" -emp "> " -eml "Errors from xkbcomp are not fatal to the X server" "D:\Site01\Site01\MobaXterm\slash\mx86_64b\var\log\xwin\server-0.xkm"
+[513590.859] (II) [XKB]  LaunchXkbComp(II) :  succeeded
+[513655.812] (II) [XKB]  Successfully created keyboard mapping file "D:\Site01\Site01\MobaXterm\slash\mx86_64b\var\log\xwin\xkb_a14700"
+[513655.859] winPointerWarpCursor - Discarding first warp: 965 972
+[513655.859] (--) 8 mouse buttons found
+[513655.859] (--) Setting autorepeat to delay=500, rate=31
+[513655.859] (--) Windows keyboard layout: "00000416" (00000416) "Portuguese (Brazilian ABNT)", type 7
+[513655.859] (--) Found matching XKB configuration "Portuguese (Brazil,ABNT)"
+[513655.859] (--) Model = "pc105" Layout = "br" Variant = "none" Options = "none"
+[513655.859] Rules = "base" Model = "pc105" Layout = "br" Variant = "none" Options = "none"
+[513655.859] (II) [XKB]  "D:\Site01\Site01\MobaXterm\slash\mx86_64b\var\log\xwin\xkb_a14700" file successfully created.
+[513655.859] (II) [XKB]  Launching xkbcomp.exe with the following command:
+[513655.859] (II) [XKB]  "D:\Site01\Site01\MobaXterm\slash\mx86_64b\bin\xkbcomp_w32.exe" -w 1 "-RD:\Site01\Site01\MobaXterm\slash\mx86_64b\usr\share\X11\xkb" -xkm "D:\Site01\Site01\MobaXterm\slash\mx86_64b\var\log\xwin\xkb_a14700" -em1 "The XKEYBOARD keymap compiler (xkbcomp) reports:" -emp "> " -eml "Errors from xkbcomp are not fatal to the X server" "D:\Site01\Site01\MobaXterm\slash\mx86_64b\var\log\xwin\server-0.xkm"
+[513655.859] (II) [XKB]  LaunchXkbComp(II) :  succeeded
+[513655.984] (II) [XKB]  Successfully created keyboard mapping file "D:\Site01\Site01\MobaXterm\slash\mx86_64b\var\log\xwin\xkb_a14700"
+[513656.062] winInitMultiWindowWM - DISPLAY=127.0.0.1:0.0
+[513656.062] winMultiWindowXMsgProc - DISPLAY=127.0.0.1:0.0
+[513656.062] winWindowProc - WM_EXITSIZEMOVE
+[513656.062] winInitMultiWindowWM - xcb_connect () returned and successfully opened the display.
+[513656.062] winProcEstablishConnection - winInitClipboard returned.
+[513656.062] winClipboardThreadProc - DISPLAY=127.0.0.1:0.0
+[513656.062] winMultiWindowXMsgProc - xcb_connect() returned and successfully opened the display.
+[513656.062] winClipboardProc - xcb_connect () returned and successfully opened the display.
+[513656.062] Using Composite redirection
+[594715.593] winWindowProc - WM_DISPLAYCHANGE - new width: 1536 new height: 864 new bpp: 32
+[594715.640] winWindowProc - RemoteSession: no
+[594715.687] winUpdateDpi - primary monitor native DPI x 96 y 96
+[594715.765] winAllocateFBShadowGDI - Creating DIB with width: 1931 height: 1944 depth: 32
