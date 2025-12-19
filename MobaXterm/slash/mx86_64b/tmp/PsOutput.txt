@@ -1,82 +1,132 @@
-2458
-TT         PID  PPID     ELAPSED COMMAND
-?            1     0       17:26 /sbin/init
-?            2     0       17:26 [kthreadd]
-?            3     2       17:26 [ksoftirqd/0]
-?            5     2       17:26 [kworker/0:0H]
-?            6     2       17:26 [kworker/u2:0]
-?            7     2       17:26 [rcu_sched]
-?            8     2       17:26 [rcu_bh]
-?            9     2       17:26 [migration/0]
-?           10     2       17:26 [watchdog/0]
-?           11     2       17:26 [khelper]
-?           12     2       17:26 [kdevtmpfs]
-?           13     2       17:26 [netns]
-?           14     2       17:26 [khungtaskd]
-?           15     2       17:26 [writeback]
-?           16     2       17:26 [ksmd]
-?           17     2       17:26 [khugepaged]
-?           18     2       17:26 [crypto]
-?           19     2       17:26 [kintegrityd]
-?           20     2       17:26 [bioset]
-?           21     2       17:26 [kblockd]
-?           23     2       17:26 [kswapd0]
-?           24     2       17:26 [vmstat]
-?           25     2       17:26 [fsnotify_mark]
-?           31     2       17:26 [kthrotld]
-?           32     2       17:26 [ipv6_addrconf]
-?           33     2       17:26 [deferwq]
-?           34     2       17:26 [kworker/u2:1]
-?           67     2       17:26 [khubd]
-?           68     2       17:26 [ata_sff]
-?           69     2       17:26 [scsi_eh_0]
-?           70     2       17:26 [scsi_tmf_0]
-?           71     2       17:26 [scsi_eh_1]
-?           72     2       17:26 [scsi_tmf_1]
-?           74     2       17:26 [kpsmoused]
-?           78     2       17:26 [scsi_eh_2]
-?           79     2       17:26 [scsi_tmf_2]
-?           85     2       17:26 [kworker/0:1H]
-?          105     2       17:26 [jbd2/sda1-8]
-?          106     2       17:26 [ext4-rsv-conver]
-?          136     2       17:26 [kauditd]
-?          142     1       17:26 /lib/systemd/systemd-udevd
-?          146     1       17:25 /lib/systemd/systemd-journald
-?          163     2       17:25 [ttm_swap]
-?          166     2       17:25 [vballoon]
-?          378     1       17:24 dhclient -v -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases eth0
-?          453     1       17:24 /sbin/rpcbind -w
-?          462     1       17:24 /sbin/rpc.statd
-?          467     2       17:24 [rpciod]
-?          469     2       17:24 [nfsiod]
-?          476     1       17:24 /usr/sbin/rpc.idmapd
-?          477     1       17:24 avahi-daemon: running [debian.local]
-?          478     1       17:24 /usr/sbin/cron -f
-?          479     1       17:24 /usr/sbin/atd -f
-?          480     1       17:24 /usr/sbin/rsyslogd -n
-?          482     1       17:24 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
-?          484   477       17:24 avahi-daemon: chroot helper
-?          485     1       17:24 /lib/systemd/systemd-logind
-?          487     1       17:24 /usr/sbin/acpid
-tty1       491     1       17:24 /bin/login --
-?          743     1       17:24 /usr/sbin/exim4 -bd -q30m
-tty1       750   491       14:31 -bash
-?          761     2       12:24 [kworker/0:0]
-tty1       765   750       10:03 su -
-tty1       766   765       09:47 -su
-?         1300     1       08:09 /usr/sbin/sshd -D
-?         1305     2       07:23 [kworker/0:2]
-?         1321  1300       03:17 sshd: itconnectadm [priv]
-?         1323  1321       03:06 sshd: itconnectadm@pts/0
-?         1324  1300       03:06 sshd: itconnectadm [priv]
-pts/0     1326  1323       03:06 -bash
-?         1337  1324       03:05 sshd: itconnectadm@notty
-?         1338  1337       03:05 /usr/lib/openssh/sftp-server
-?         1339  1323       03:05 bash -c while true; do sleep 1;head -v -n 8 /proc/meminfo; head -v -n 2 /proc/stat /proc/version /proc/uptime /proc/loadavg /proc/sys/fs/file-nr /proc/sys/kernel/hostname; tail -v -n 32 /proc/net/dev;echo '==> /proc/df <==';df -l;echo '==> /proc/who <==';who;echo '==> /proc/end <==';echo '##Moba##'; done
-?         1595     2       02:22 [kworker/0:1]
-tty1      2010   766       01:13 pico /etc/ssh/sshd_config
-?         2456  1339       00:00 sleep 1
-pts/0     2457  1326       00:00 pico /etc/ssh/sshd_config
-?         2458  1337       00:00 bash -c echo $$;ps -eo tty,pid,ppid,etime,args
-?         2459  2458       00:00 ps -eo tty,pid,ppid,etime,args
+____                            _           _
+| __ )  ___ _ __ ___      __   _(_)_ __   __| | ___
+|  _ \ / _ \ '_ ` _ \ ____\ \ / / | '_ \ / _` |/ _ \
+| |_) |  __/ | | | | |_____\ V /| | | | | (_| | (_) |
+|____/ \___|_| |_| |_|      \_/ |_|_| |_|\__,_|\___/
+
+____  _            _ _              ____        _
+|  _ \(_)_ __ _   _| (_)_ __ _   _  | __ )  __ _| |__  _   _
+| |_) | | '__| | | | | | '__| | | | |  _ \ / _` | '_ \| | | |
+|  __/| | |  | |_| | | | |  | |_| | | |_) | (_| | |_) | |_| |
+|_|   |_|_|   \__,_|_|_|_|   \__,_| |____/ \__,_|_.__/ \__, |
+|___/
+🚀 Olá!
+📅 Data: sex 19 dez 2025 11:30:56 -03
+⏱  Uptime: up 35 minutes
+💾 Memória livre: 33Mi / 464Mi
+🌐 IP Local: 192.168.150.226
+----------------------------------------
+13654
+TT           PID    PPID     ELAPSED COMMAND
+?              1       0       35:27 /sbin/init
+?              2       0       35:27 [kthreadd]
+?              3       2       35:27 [pool_workqueue_release]
+?              4       2       35:27 [kworker/R-kvfree_rcu_reclaim]
+?              5       2       35:27 [kworker/R-rcu_gp]
+?              6       2       35:27 [kworker/R-sync_wq]
+?              7       2       35:27 [kworker/R-slub_flushwq]
+?              8       2       35:27 [kworker/R-netns]
+?             10       2       35:27 [kworker/0:1-events_freezable_pwr_efficient]
+?             11       2       35:27 [kworker/0:0H-events_highpri]
+?             13       2       35:27 [kworker/R-mm_percpu_wq]
+?             14       2       35:27 [rcu_tasks_kthread]
+?             15       2       35:27 [rcu_tasks_rude_kthread]
+?             16       2       35:27 [rcu_tasks_trace_kthread]
+?             17       2       35:27 [ksoftirqd/0]
+?             18       2       35:27 [rcu_preempt]
+?             19       2       35:27 [rcu_exp_par_gp_kthread_worker/0]
+?             20       2       35:27 [rcu_exp_gp_kthread_worker]
+?             21       2       35:27 [migration/0]
+?             22       2       35:27 [idle_inject/0]
+?             23       2       35:27 [cpuhp/0]
+?             25       2       35:27 [kdevtmpfs]
+?             26       2       35:27 [kworker/R-inet_frag_wq]
+?             27       2       35:27 [kauditd]
+?             28       2       35:27 [khungtaskd]
+?             30       2       35:27 [oom_reaper]
+?             32       2       35:27 [kworker/R-writeback]
+?             33       2       35:27 [kcompactd0]
+?             34       2       35:27 [ksmd]
+?             35       2       35:27 [kworker/R-kintegrityd]
+?             36       2       35:27 [kworker/R-kblockd]
+?             37       2       35:27 [kworker/R-blkcg_punt_bio]
+?             38       2       35:27 [irq/9-acpi]
+?             39       2       35:27 [kworker/R-tpm_dev_wq]
+?             40       2       35:27 [kworker/R-edac-poller]
+?             41       2       35:27 [kworker/R-devfreq_wq]
+?             42       2       35:27 [kworker/R-quota_events_unbound]
+?             43       2       35:27 [kworker/0:1H-kblockd]
+?             44       2       35:27 [kswapd0]
+?             51       2       35:27 [kworker/R-kthrotld]
+?             55       2       35:27 [kworker/R-acpi_thermal_pm]
+?             56       2       35:27 [kworker/R-mld]
+?             57       2       35:27 [kworker/R-ipv6_addrconf]
+?             62       2       35:27 [kworker/R-kstrp]
+?             64       2       35:27 [kworker/u5:0]
+?             93       2       35:27 [kworker/u4:3-flush-8:0]
+?             96       2       35:27 [kworker/u4:4-flush-8:0]
+?            166       2       35:26 [kworker/0:2-events]
+?            168       2       35:26 [scsi_eh_0]
+?            169       2       35:26 [kworker/R-scsi_tmf_0]
+?            171       2       35:26 [kworker/R-ata_sff]
+?            172       2       35:26 [scsi_eh_1]
+?            173       2       35:26 [kworker/R-scsi_tmf_1]
+?            174       2       35:26 [scsi_eh_2]
+?            175       2       35:26 [kworker/R-scsi_tmf_2]
+?            178       2       35:25 [kworker/R-ttm]
+?            211       2       35:25 [jbd2/sda1-8]
+?            212       2       35:25 [kworker/R-ext4-rsv-conversion]
+?            262       1       35:24 /usr/lib/systemd/systemd-journald
+?            280       1       35:23 /usr/lib/systemd/systemd-timesyncd
+?            305       1       35:23 /usr/lib/systemd/systemd-udevd
+?            314       2       35:23 [psimon]
+?            408       2       35:22 [kworker/R-cryptd]
+?            547       1       35:22 /usr/sbin/cron -f
+?            548       1       35:22 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+?            564       1       35:22 /usr/lib/systemd/systemd-logind
+?            568       1       35:22 dhcpcd: ens18 [ip4] [ip6]
+?            570     568       35:22 dhcpcd: [privileged proxy] ens18 [ip4] [ip6]
+?            573     568       35:22 dhcpcd: [network proxy] ens18 [ip4] [ip6]
+?            574     568       35:22 dhcpcd: [control proxy] ens18 [ip4] [ip6]
+?            606       1       35:21 login -- root
+?            609       1       35:21 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+?            611       2       35:21 [kworker/R-cfg80211]
+?            624     570       35:21 dhcpcd: [BPF ARP] ens18 192.168.150.226
+?            626     570       35:20 dhcpcd: [DHCP6 proxy] fe80::8ffc:9e38:886:7d07
+?            645     570       35:18 dhcpcd: [DHCP6 proxy] 2804:25ec:8000:0:e788:1ba7:889c:9535
+?            681     570       35:16 dhcpcd: [BOOTP proxy] 192.168.150.226
+?            692       2       34:42 [psimon]
+?            694       1       34:42 /usr/lib/systemd/systemd --user
+?            696     694       34:42 (sd-pam)
+?            701       2       34:42 [psimon]
+tty1         706     606       34:42 -bash
+tty1         748     706       34:32 sudo su -
+pts/0        750     748       34:08 sudo su -
+pts/0        751     750       34:08 su -
+pts/0        753     751       34:08 -bash
+?            816     570       33:31 dhcpcd: [DHCP6 proxy] fdd9:3343:1ce6:3a47:be24:11ff:fe53:c075
+?            832     570       33:30 dhcpcd: [DHCP6 proxy] fdd9:3343:1ce6:3a47:6cd0:e7e9:28bc:d6ed
+?            833     609       33:18 sshd-session: root [priv]
+?            856     833       33:15 sshd-session: root@pts/1
+pts/1        857     856       33:15 -bash
+pts/1        959     857       33:10 sudo su -
+pts/2       1121     959       32:46 sudo su -
+pts/2       1122    1121       32:46 su -
+pts/2       1124    1122       32:46 -bash
+?           3692     570       26:04 dhcpcd: [DHCP6 proxy] 2804:25ec:8000:0:be24:11ff:fe53:c075
+?          10594       2       07:29 [kworker/u4:0-ipv6_addrconf]
+?          12866       2       01:30 [kworker/0:0]
+pts/2      12929    1124       01:21 /bin/bash ./CyberProtect_AgentForLinux_x86_64.bin
+pts/2      12948   12929       01:21 /root/CyberProtect_AgentForLinux_x86_64.bin inst --packages-bundle ./CyberProtect_AgentForLinux_x86_64.bin
+?          13490     609       00:11 sshd-session: root [priv]
+?          13497     609       00:08 sshd-session: root [priv]
+?          13503   13490       00:08 sshd-session: root@pts/3
+pts/3      13504   13503       00:08 -bash
+?          13514   13503       00:08 bash -c while true; do sleep 1;head -v -n 8 /proc/meminfo; head -v -n 2 /proc/stat /proc/version /proc/uptime /proc/loadavg /proc/sys/fs/file-nr /proc/sys/kernel/hostname; tail -v -n 32 /proc/net/dev;echo '==> /proc/df <==';df -l;echo '==> /proc/who <==';who;echo '==> /proc/end <==';echo '##Moba##'; done
+?          13525   13497       00:07 sshd-session: root@notty
+?          13526   13525       00:07 /usr/lib/openssh/sftp-server
+?          13634       2       00:04 [kworker/u4:1-flush-8:0]
+pts/3      13653   13504       00:01 sudo su -
+?          13654   13525       00:01 ps -eo tty,pid,ppid,etime,args
+?          13664   13514       00:00 sleep 1
 
