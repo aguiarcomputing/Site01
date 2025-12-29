@@ -70,3 +70,12 @@ ddxProcessArgument - screen - Found Valid ``@Monitor'' = 1 arg
 [1917349.140] winClipboardThreadProc - DISPLAY=127.0.0.1:0.0
 [1917349.140] winClipboardProc - xcb_connect () returned and successfully opened the display.
 [1917349.140] Using Composite redirection
+[1923926.765] winWindowProc - WM_DISPLAYCHANGE - new width: 1536 new height: 864 new bpp: 32
+[1923926.765] winWindowProc - RemoteSession: no
+[1923926.781] winUpdateDpi - primary monitor native DPI x 96 y 96
+[1923926.906] winAllocateFBShadowGDI - Creating DIB with width: 1536 height: 864 depth: 32
+[1924162.468] winDeinitMultiWindowWM - Noting shutdown in progress
+[1924162.500] winClipboardProc - winClipboardFlushWindowsMessageQueue trapped WM_QUIT message, exiting main loop.
+[1924162.906] winMultiWindowXMsgProc - Fatal error 1 on xcb connection
+[1924162.984] winDeinitMultiWindowWM - Noting shutdown in progress
+[1924162.984] (II) Server terminated successfully (0). Closing log file.
