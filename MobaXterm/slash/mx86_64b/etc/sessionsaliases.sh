@@ -37,3 +37,6 @@ function painel-email_locaweb_com_br_Chrome_() {
 function _172_16_2_71() {
 "/home/mobaxterm/LauncherFolder/MobaXterm_Personal_25.3.exe" -bookmark2 "#91#4%172.16.2.71%8006%[Leandro ADM SISTEMAS]%0%0%0%0%-1%0%0%-1%%%%%0%0%%-1%%-1%-1%0%-1%0%-1%0%0%0%0%#MobaFont%10%0%0%-1%15%236,236,236%30,30,30%180,180,192%0%-1%0%%xterm%-1%0%_Std_Colors_0_%80%24%0%1%-1%<none>%%0%0%-1%0%#0# #-1"
 }
+function _169_57_220_8() {
+"/home/mobaxterm/LauncherFolder/MobaXterm_Personal_25.3.exe" -bookmark2 " #109#0%169.57.220.8%2522%%%-1%-1%%%%%0%-1%0%%%-1%-1%0%0%%1080%%0%0%1%%0%%%%0%-1%-1%0%%#MobaFont%10%0%0%-1%15%236,236,236%30,30,30%180,180,192%0%-1%0%%xterm%-1%0%_Std_Colors_0_%80%24%0%1%-1%<none>%%0%0%-1%0%#0# #-1"
+}

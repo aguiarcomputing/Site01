@@ -93,3 +93,11 @@ ddxProcessArgument - screen - Found Valid ``@Monitor'' = 1 arg
 [2173007.031] winWindowProc - RemoteSession: no
 [2173007.031] winUpdateDpi - primary monitor native DPI x 96 y 96
 [2173007.031] winAllocateFBShadowGDI - Creating DIB with width: 1931 height: 1944 depth: 32
+[2249527.656] winWindowProc - WM_DISPLAYCHANGE - new width: 1536 new height: 864 new bpp: 32
+[2249527.687] winWindowProc - RemoteSession: no
+[2249527.703] winUpdateDpi - primary monitor native DPI x 96 y 96
+[2249527.765] winAllocateFBShadowGDI - Creating DIB with width: 1536 height: 864 depth: 32
+[2254864.843] winWindowProc - WM_DISPLAYCHANGE - new width: 1536 new height: 864 new bpp: 32
+[2254864.843] winWindowProc - RemoteSession: no
+[2254864.843] winUpdateDpi - primary monitor native DPI x 96 y 96
+[2254865.578] winAllocateFBShadowGDI - Creating DIB with width: 1931 height: 1944 depth: 32
