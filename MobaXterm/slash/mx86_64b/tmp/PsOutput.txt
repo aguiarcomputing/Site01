@@ -1,0 +1,218 @@
+3411
+TT           PID    PPID     ELAPSED COMMAND
+?              1       0       08:29 /sbin/init
+?              2       0       08:29 [kthreadd]
+?              3       2       08:29 [pool_workqueue_release]
+?              4       2       08:29 [kworker/R-rcu_gp]
+?              5       2       08:29 [kworker/R-sync_wq]
+?              6       2       08:29 [kworker/R-kvfree_rcu_reclaim]
+?              7       2       08:29 [kworker/R-slub_flushwq]
+?              8       2       08:29 [kworker/R-netns]
+?             10       2       08:29 [kworker/0:0H-events_highpri]
+?             11       2       08:29 [kworker/0:1-cgroup_offline]
+?             12       2       08:29 [kworker/u16:0-events_unbound]
+?             13       2       08:29 [kworker/R-mm_percpu_wq]
+?             14       2       08:29 [ksoftirqd/0]
+?             15       2       08:29 [rcu_preempt]
+?             16       2       08:29 [rcu_exp_par_gp_kthread_worker/0]
+?             17       2       08:29 [rcu_exp_gp_kthread_worker]
+?             18       2       08:29 [migration/0]
+?             19       2       08:29 [idle_inject/0]
+?             20       2       08:29 [cpuhp/0]
+?             21       2       08:29 [cpuhp/1]
+?             22       2       08:29 [idle_inject/1]
+?             23       2       08:29 [migration/1]
+?             24       2       08:29 [ksoftirqd/1]
+?             26       2       08:29 [kworker/1:0H-events_highpri]
+?             27       2       08:29 [cpuhp/2]
+?             28       2       08:29 [idle_inject/2]
+?             29       2       08:29 [migration/2]
+?             30       2       08:29 [ksoftirqd/2]
+?             32       2       08:29 [kworker/2:0H-events_highpri]
+?             33       2       08:29 [cpuhp/3]
+?             34       2       08:29 [idle_inject/3]
+?             35       2       08:29 [migration/3]
+?             36       2       08:29 [ksoftirqd/3]
+?             38       2       08:29 [kworker/3:0H-events_highpri]
+?             39       2       08:29 [kdevtmpfs]
+?             40       2       08:29 [kworker/R-inet_frag_wq]
+?             41       2       08:29 [rcu_tasks_kthread]
+?             42       2       08:29 [rcu_tasks_rude_kthread]
+?             43       2       08:29 [rcu_tasks_trace_kthread]
+?             44       2       08:29 [kauditd]
+?             45       2       08:29 [khungtaskd]
+?             47       2       08:29 [oom_reaper]
+?             48       2       08:29 [kworker/R-writeback]
+?             49       2       08:29 [kcompactd0]
+?             50       2       08:29 [ksmd]
+?             51       2       08:29 [khugepaged]
+?             52       2       08:29 [kworker/R-kblockd]
+?             53       2       08:29 [kworker/R-blkcg_punt_bio]
+?             54       2       08:29 [kworker/R-kintegrityd]
+?             55       2       08:29 [kworker/u16:2-events_power_efficient]
+?             56       2       08:29 [irq/9-acpi]
+?             57       2       08:29 [kworker/1:1-events]
+?             58       2       08:29 [kworker/3:1-events]
+?             59       2       08:29 [kworker/R-tpm_dev_wq]
+?             60       2       08:29 [kworker/R-ata_sff]
+?             61       2       08:29 [kworker/R-md]
+?             62       2       08:29 [kworker/R-md_bitmap]
+?             63       2       08:29 [kworker/R-edac-poller]
+?             64       2       08:29 [kworker/R-devfreq_wq]
+?             65       2       08:29 [watchdogd]
+?             66       2       08:29 [kworker/R-quota_events_unbound]
+?             67       2       08:29 [kworker/0:1H-kblockd]
+?             68       2       08:29 [kworker/2:1-events]
+?             69       2       08:29 [kswapd0]
+?             70       2       08:29 [ecryptfs-kthread]
+?             71       2       08:29 [kworker/R-kthrotld]
+?             72       2       08:29 [kworker/R-acpi_thermal_pm]
+?             73       2       08:29 [kworker/R-mld]
+?             74       2       08:29 [kworker/R-ipv6_addrconf]
+?             75       2       08:29 [kworker/R-kstrp]
+?             77       2       08:29 [kworker/u17:0-hci0]
+?             88       2       08:28 [kworker/R-charger_manager]
+?             89       2       08:28 [kworker/1:1H-kblockd]
+?            118       2       08:28 [kworker/3:1H-kblockd]
+?            121       2       08:28 [kworker/2:1H-kblockd]
+?            148       2       08:28 [kworker/0:2-events]
+?            159       2       08:28 [scsi_eh_0]
+?            160       2       08:28 [kworker/R-scsi_tmf_0]
+?            161       2       08:28 [scsi_eh_1]
+?            162       2       08:28 [kworker/R-scsi_tmf_1]
+?            163       2       08:28 [scsi_eh_2]
+?            164       2       08:28 [kworker/R-scsi_tmf_2]
+?            165       2       08:28 [scsi_eh_3]
+?            166       2       08:28 [kworker/R-scsi_tmf_3]
+?            167       2       08:28 [scsi_eh_4]
+?            168       2       08:28 [kworker/R-scsi_tmf_4]
+?            169       2       08:28 [scsi_eh_5]
+?            170       2       08:28 [kworker/R-scsi_tmf_5]
+?            172       2       08:28 [kworker/u16:4-events_power_efficient]
+?            173       2       08:28 [kworker/u16:5-kvfree_rcu_reclaim]
+?            175       2       08:28 [kworker/u16:7-events_power_efficient]
+?            176       2       08:28 [kworker/2:2-cgroup_free]
+?            179       2       08:27 [kworker/3:2-events]
+?            195       2       08:27 [kworker/R-kdmflush/252:0]
+?            196       2       08:27 [kworker/R-kdmflush/252:1]
+?            202       2       08:27 [kworker/R-dm_bufio_cache]
+?            205       2       08:27 [kworker/R-kdmflush/252:2]
+?            206       2       08:27 [kworker/R-kdmflush/252:3]
+?            230       2       08:25 [kworker/R-kdmflush/252:4]
+?            231       2       08:25 [kworker/R-kcopyd]
+?            232       2       08:25 [kworker/R-dm-thin]
+?            233       2       08:25 [kworker/R-kdmflush/252:5]
+?            257       2       08:24 [kworker/1:2-cgroup_free]
+?            272       2       08:24 [jbd2/dm-1-8]
+?            273       2       08:24 [kworker/R-ext4-rsv-conversion]
+?            303       2       08:23 [psimon]
+?            321       1       08:23 /usr/lib/systemd/systemd-journald
+?            339       2       08:23 [spl_system_task]
+?            340       2       08:23 [spl_delay_taskq]
+?            341       2       08:23 [spl_dynamic_tas]
+?            342       2       08:23 [spl_kmem_cache]
+?            363       1       08:23 /usr/lib/systemd/systemd-udevd
+?            367       1       08:23 /usr/sbin/dmeventd -f
+?            369       2       08:22 [psimon]
+?            390       2       08:22 [zvol_tq-0]
+?            409       2       08:22 [arc_prune]
+?            411       2       08:22 [arc_flush]
+?            413       2       08:22 [arc_evict]
+?            414       2       08:22 [arc_reap]
+?            415       2       08:22 [dbu_evict]
+?            418       2       08:22 [dbuf_evict]
+?            426       2       08:22 [z_vdev_file]
+?            435       2       08:22 [l2arc_feed]
+?            461       2       08:22 [irq/34-mei_me]
+?            476       2       08:22 [kworker/R-cfg80211]
+?            487       2       08:22 [irq/35-iwlwifi]
+?            491       2       08:22 [kworker/0:3-events]
+?            517       2       08:22 [kworker/u17:2-hci0]
+?            665       2       08:21 [kworker/R-ttm]
+?            672       2       08:21 [card0-crtc0]
+?            673       2       08:21 [card0-crtc1]
+?            674       2       08:21 [card0-crtc2]
+?            722       1       08:21 /usr/sbin/pvefw-logger
+?            724       1       08:21 /usr/sbin/rpcbind -f -w
+?            735       2       08:20 [kworker/R-rpciod]
+?            736       2       08:20 [kworker/R-xprtiod]
+?            745       1       08:20 /usr/sbin/blkmapd
+?            841       1       08:20 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+?            848       1       08:20 /usr/lib/x86_64-linux-gnu/pve-lxc-syscalld/pve-lxc-syscalld --system /run/pve-lxc-syscalld/socket
+?            853       1       08:20 /usr/bin/rrdcached -g
+?            856       1       08:20 /usr/sbin/smartd -n -q never
+?            857       1       08:20 /bin/bash /usr/sbin/ksmtuned
+?            859       1       08:20 /usr/lib/systemd/systemd-logind
+?            860       1       08:20 /usr/sbin/qmeventd /var/run/qmeventd.sock
+?            861       1       08:20 /usr/sbin/watchdog-mux
+?            864       1       08:20 /usr/sbin/zed -F
+?            872       1       08:20 /usr/bin/lxcfs /var/lib/lxcfs
+?            931       1       08:20 /usr/sbin/chronyd -F 1
+?            932     931       08:20 /usr/sbin/chronyd -F 1
+?            948       2       08:20 [kworker/R-tls-strp]
+?           1008       1       08:18 /usr/libexec/lxc/lxc-monitord --daemon
+tty1        1023       1       08:18 /sbin/agetty -o -- \u --noreset --noclear - linux
+?           1030       1       08:18 /usr/bin/pmxcfs
+?           1035       1       08:18 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+?           1164       1       08:18 /usr/lib/postfix/sbin/master -w
+?           1165    1164       08:18 pickup -l -t unix -u -c
+?           1166    1164       08:18 qmgr -l -t unix -u
+?           1172       1       08:17 /usr/sbin/cron -f
+?           1173       1       08:17 /usr/libexec/proxmox/proxmox-firewall start
+?           1194       1       08:16 pve-firewall
+?           1195       1       08:16 pvestatd
+?           1222       1       08:15 pvedaemon
+?           1223    1222       08:15 pvedaemon worker
+?           1224    1222       08:15 pvedaemon worker
+?           1225    1222       08:15 pvedaemon worker
+?           1232       1       08:14 pve-ha-crm
+?           1235       1       08:13 pveproxy
+?           1236    1235       08:13 pveproxy worker
+?           1237    1235       08:13 pveproxy worker
+?           1238    1235       08:13 pveproxy worker
+?           1244       1       08:12 spiceproxy
+?           1245    1244       08:12 spiceproxy worker
+?           1250       1       08:12 pve-ha-lrm
+?           1259       1       08:09 pvescheduler
+?           1512       2       07:05 [kworker/R-kdmflush/252:6]
+?           1522       1       07:04 /usr/bin/lxc-start -F -n 104
+?           1529       2       07:04 [kmmpd-dm-6]
+?           1530       2       07:04 [jbd2/dm-6-8]
+?           1531       2       07:04 [kworker/R-ext4-rsv-conversion]
+?           1541    1522       07:03 /sbin/init
+?           1628       1       07:02 /usr/bin/dtach -A /var/run/dtach/vzctlconsole104 -r winch -z lxc-console -n 104 -e -1
+pts/1       1629    1628       07:02 lxc-console -n 104 -e -1
+?           1662    1541       07:02 /lib/systemd/systemd-journald
+?           1701    1541       07:01 /usr/sbin/cron -f
+?           1703    1541       07:01 dhclient -4 -v -i -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases -I -df /var/lib/dhcp/dhclient6.eth0.leases eth0
+?           1704    1541       07:01 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+?           1707    1541       07:01 /lib/systemd/systemd-logind
+?           1715    1541       07:01 /lib/systemd/systemd-networkd
+pts/0       1769    1541       07:00 /sbin/agetty -o -p -- \u --noclear --keep-baud - 115200,38400,9600 linux
+pts/1       1770    1541       07:00 /sbin/agetty -o -p -- \u --noclear - linux
+?           1771    1541       07:00 /sbin/agetty -o -p -- \u --noclear - linux
+?           1781    1541       07:00 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+?           1909    1541       07:00 /usr/lib/postfix/sbin/master -w
+?           1910    1909       07:00 pickup -l -t unix -u -c
+?           1911    1909       07:00 qmgr -l -t unix -u
+?           2063       2       06:32 [kworker/R-kdmflush/252:7]
+?           2082       1       06:32 /usr/bin/kvm -id 105 -name CEDRO-020-CALL,debug-threads=on -no-shutdown -chardev socket,id=qmp,path=/var/run/qemu-server/105.qmp,server=on,wait=off -mon chardev=qmp,mode=control -chardev socket,id=qmp-event,path=/var/run/qmeventd.sock,reconnect-ms=5000 -mon chardev=qmp-event,mode=control -pidfile /var/run/qemu-server/105.pid -daemonize -smbios type=1,uuid=2b2cf7bf-d23e-4026-8ee8-749d10c66e4c -smp 4,sockets=2,cores=2,maxcpus=4 -nodefaults -boot menu=on,strict=on,reboot-timeout=1000,splash=/usr/share/qemu-server/bootsplash.jpg -vnc unix:/var/run/qemu-server/105.vnc,password=on -global kvm-pit.lost_tick_policy=discard -cpu qemu64,+aes,enforce,hv_ipi,hv_relaxed,hv_reset,hv_runtime,hv_spinlocks=0x1fff,hv_stimer,hv_synic,hv_time,hv_vapic,hv_vpindex,+kvm_pv_eoi,+kvm_pv_unhalt,+pni,+popcnt,+sse4.1,+sse4.2,+ssse3 -m 4096 -object {"id":"throttle-drive-ide0","limits":{},"qom-type":"throttle-group"} -object {"id":"throttle-drive-ide2","limits":{},"qom-type":"throttle-group"} -global PIIX4_PM.disable_s3=1 -global PIIX4_PM.disable_s4=1 -device pci-bridge,id=pci.1,chassis_nr=1,bus=pci.0,addr=0x1e -device pci-bridge,id=pci.2,chassis_nr=2,bus=pci.0,addr=0x1f -device pci-bridge,id=pci.3,chassis_nr=3,bus=pci.0,addr=0x5 -device vmgenid,guid=dd97bd97-01be-4bba-93ac-ca0fdf1a773a -device piix3-usb-uhci,id=uhci,bus=pci.0,addr=0x1.0x2 -device usb-tablet,id=tablet,bus=uhci.0,port=1 -device VGA,id=vga,bus=pci.0,addr=0x2,edid=off -chardev socket,path=/var/run/qemu-server/105.qga,server=on,wait=off,id=qga0 -device virtio-serial,id=qga0,bus=pci.0,addr=0x8 -device virtserialport,chardev=qga0,name=org.qemu.guest_agent.0 -device virtio-balloon-pci,id=balloon0,bus=pci.0,addr=0x3,free-page-reporting=on -iscsi initiator-name=iqn.1993-08.org.debian:01:572d4f334013 -blockdev {"detect-zeroes":"on","discard":"ignore","driver":"throttle","file":{"cache":{"direct":true,"no-flush":false},"detect-zeroes":"on","discard":"ignore","driver":"raw","file":{"aio":"io_uring","cache":{"direct":true,"no-flush":false},"detect-zeroes":"on","discard":"ignore","driver":"host_device","filename":"/dev/pve/vm-105-disk-0","node-name":"ebce270ee888bc6b34855fe4a731b0b","read-only":false},"node-name":"fbce270ee888bc6b34855fe4a731b0b","read-only":false},"node-name":"drive-ide0","read-only":false,"throttle-group":"throttle-drive-ide0"} -device ide-hd,bus=ide.0,unit=0,drive=drive-ide0,id=ide0,bootindex=100,write-cache=on -blockdev {"driver":"throttle","file":{"cache":{"direct":false,"no-flush":false},"driver":"raw","file":{"aio":"io_uring","cache":{"direct":false,"no-flush":false},"driver":"file","filename":"/var/lib/vz/template/iso/virtio-win-0.1.285.iso","node-name":"e31ef86a5309dcbc028e115502e4924","read-only":true},"node-name":"f31ef86a5309dcbc028e115502e4924","read-only":true},"node-name":"drive-ide2","read-only":true,"throttle-group":"throttle-drive-ide2"} -device ide-cd,bus=ide.1,unit=0,drive=drive-ide2,id=ide2,bootindex=101 -netdev type=tap,id=net0,ifname=tap105i0,script=/usr/libexec/qemu-server/pve-bridge,downscript=/usr/libexec/qemu-server/pve-bridgedown,vhost=on -device virtio-net-pci,mac=BC:24:11:BF:4B:05,netdev=net0,bus=pci.0,addr=0x12,id=net0,rx_queue_size=1024,tx_queue_size=256,bootindex=102,host_mtu=1500 -rtc driftfix=slew,base=localtime -machine hpet=off,type=pc-i440fx-10.1+pve0
+?           2141       2       06:31 [kvm-pit/2082]
+?           2147    1224       06:31 task UPID:pve:00000863:00002E27:695E8AAE:vncproxy:105:root@pam:
+?           2149    2147       06:31 /usr/bin/perl /usr/sbin/qm vncproxy 105
+?           2796       2       02:56 [kworker/u16:8]
+?           3285     857       00:20 sleep 60
+?           3317    1035       00:08 sshd-session: root [priv]
+?           3349    1035       00:03 sshd-session: root [priv]
+?           3351       1       00:03 /usr/lib/systemd/systemd --user
+?           3354       2       00:03 [kworker/2:0]
+?           3355    3351       00:03 (sd-pam)
+?           3361       2       00:03 [psimon]
+?           3377    3317       00:03 sshd-session: root@pts/0
+?           3383    3349       00:03 sshd-session: root@notty
+pts/0       3384    3377       00:03 -bash
+?           3385    3377       00:03 bash -c while true; do sleep 1;head -v -n 8 /proc/meminfo; head -v -n 2 /proc/stat /proc/version /proc/uptime /proc/loadavg /proc/sys/fs/file-nr /proc/sys/kernel/hostname; tail -v -n 32 /proc/net/dev;echo '==> /proc/df <==';df -l;echo '==> /proc/who <==';who;echo '==> /proc/end <==';echo '##Moba##'; done
+?           3389    3383       00:03 /usr/lib/openssh/sftp-server
+?           3409    3385       00:00 sleep 1
+?           3411    3383       00:00 ps -eo tty,pid,ppid,etime,args
+
