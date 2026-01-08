@@ -1,31 +1,45 @@
-1656
+792
 TT           PID    PPID     ELAPSED COMMAND
-?              1       0       49:01 /sbin/init
-?             50       1       48:58 /lib/systemd/systemd-journald
-?             80       1       48:58 /usr/sbin/cron -f
-?             86       1       48:58 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
-?             89       1       48:58 /lib/systemd/systemd-logind
-?             99       1       48:57 dhclient -4 -v -i -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases -I -df /var/lib/dhcp/dhclient6.eth0.leases eth0
-?            103       1       48:57 /lib/systemd/systemd-networkd
-pts/0        161       1       48:56 /sbin/agetty -o -p -- \u --noclear --keep-baud - 115200,38400,9600 linux
-pts/1        162       1       48:56 /bin/login -p --
-pts/2        163       1       48:56 /sbin/agetty -o -p -- \u --noclear - linux
-?            305       1       48:55 /usr/lib/postfix/sbin/master -w
-?            310       1       48:55 /usr/sbin/nmbd --foreground --no-process-group
-pts/1        341     162       45:52 -bash
-?            695       1       40:19 /usr/sbin/smbd --foreground --no-process-group
-?            697     695       40:19 /usr/sbin/smbd --foreground --no-process-group
-?            698     695       40:19 /usr/sbin/smbd --foreground --no-process-group
-?            970     305       10:28 pickup -l -t unix -u -c
-?            971     305       10:28 qmgr -l -t unix -u
-?           1272       1       00:57 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
-?           1337    1272       00:06 sshd: root@pts/3
-?           1339    1272 441077234-00:18:40 sshd: root@notty
-?           1342       1 441077234-00:18:40 /lib/systemd/systemd --user
-?           1343    1342 441077234-00:18:40 (sd-pam)
-pts/3       1361    1337 441077234-00:18:40 -bash
-?           1368    1339 441077234-00:18:40 /usr/lib/openssh/sftp-server
-?           1369    1337 441077234-00:18:40 bash -c while true; do sleep 1;head -v -n 8 /proc/meminfo; head -v -n 2 /proc/stat /proc/version /proc/uptime /proc/loadavg /proc/sys/fs/file-nr /proc/sys/kernel/hostname; tail -v -n 32 /proc/net/dev;echo '==> /proc/df <==';df -l;echo '==> /proc/who <==';who;echo '==> /proc/end <==';echo '##Moba##'; done
-?           1654    1369 441077234-00:17:36 sleep 1
-?           1656    1339 441077234-00:17:36 ps -eo tty,pid,ppid,etime,args
+?              1       0 441077233-03:22:08 /sbin/init
+?             49       1 441077233-03:22:08 /lib/systemd/systemd-journald
+?             91       1 441077233-03:22:08 dhclient -4 -v -i -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases -I -df /var/lib/dhcp/dhclient6.eth0.leases eth0
+?             96       1 441077233-03:22:08 /lib/systemd/systemd-networkd
+?             97       1 441077233-03:22:08 /usr/lib/Acronis/Schedule/schedul2-bin
+?             98       1 441077233-03:22:08 /usr/sbin/cron -f
+?            100       1 441077233-03:22:08 /usr/lib/Acronis/CPS/cyber-protect-service
+?            102       1 441077233-03:22:08 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+?            107       1 441077233-03:22:08 /lib/systemd/systemd-logind
+?            244       1 441077233-03:22:08 //opt/acronis/aakore run
+?            245       1 441077233-03:22:08 /usr/lib/Acronis/BackupAndRecovery/mms
+pts/0        261       1 441077233-03:22:08 /sbin/agetty -o -p -- \u --noclear --keep-baud - 115200,38400,9600 linux
+pts/1        263       1 441077233-03:22:08 /sbin/agetty -o -p -- \u --noclear - linux
+pts/2        265       1 441077233-03:22:08 /sbin/agetty -o -p -- \u --noclear - linux
+?            273       1 441077233-03:22:08 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+?            286       1 441077233-03:22:08 /usr/sbin/nmbd --foreground --no-process-group
+?            342     244 441077233-03:22:08 /opt/acronis/bin/grpm-sync-unit run
+?            345     244 441077233-03:22:08 /opt/acronis/bin/private-cloud-proxy --config private-cloud-proxy.yml
+?            347       1 441077233-03:22:08 /usr/sbin/smbd --foreground --no-process-group
+?            350     244 441077233-03:22:08 /opt/acronis/bin/feedback-collector -config config.yaml
+?            353     244 441077233-03:22:08 /opt/acronis/bin/task-manager --config task-manager.yaml
+?            354     244 441077233-03:22:08 /opt/acronis/bin/adp-agent -e
+?            355     244 441077233-03:22:08 /opt/acronis/bin/cred-store --aakore-control
+?            356     244 441077233-03:22:08 /opt/acronis/bin/siem-connector agent-unit --config siem-connector.yml
+?            357     244 441077233-03:22:08 /opt/acronis/bin/updater -e
+?            361     244 441077233-03:22:08 /opt/acronis/bin/acp-update-controller -e --update-controller
+?            487     347 441077233-03:22:08 /usr/sbin/smbd --foreground --no-process-group
+?            488     347 441077233-03:22:08 /usr/sbin/smbd --foreground --no-process-group
+?            559       1 441077233-03:22:08 /usr/lib/postfix/sbin/master -w
+?            560     559 441077233-03:22:08 pickup -l -t unix -u -c
+?            561     559 441077233-03:22:08 qmgr -l -t unix -u
+?            676     273 441077233-03:22:08 sshd: root@pts/3
+?            705     273 441077233-03:21:36 sshd: root@notty
+?            706       1 441077233-03:21:36 /lib/systemd/systemd --user
+?            707     706 441077233-03:21:36 (sd-pam)
+pts/3        726     676 441077233-03:21:36 -bash
+?            729     676 441077233-03:21:36 bash -c while true; do sleep 1;head -v -n 8 /proc/meminfo; head -v -n 2 /proc/stat /proc/version /proc/uptime /proc/loadavg /proc/sys/fs/file-nr /proc/sys/kernel/hostname; tail -v -n 32 /proc/net/dev;echo '==> /proc/df <==';df -l;echo '==> /proc/who <==';who;echo '==> /proc/end <==';echo '##Moba##'; done
+?            735     705 441077233-03:21:36 /usr/lib/openssh/sftp-server
+?            784     729 441077233-03:21:36 sleep 1
+pts/3        785     726 441077233-03:21:36 /bin/bash ./CyberProtect_AgentForLinux_x86_64.bin
+pts/3        791     785 441077233-03:21:36 dd if=./CyberProtect_AgentForLinux_x86_64.bin of=/root/CyberProtect_AgentForLinux_x86_64.bin.inst bs=4096 count=4996 skip=1
+?            792     705 441077233-03:21:36 ps -eo tty,pid,ppid,etime,args
 
