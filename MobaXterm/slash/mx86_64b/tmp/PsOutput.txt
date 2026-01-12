@@ -1,0 +1,45 @@
+1286
+TT           PID    PPID     ELAPSED COMMAND
+?              1       0 441077228-23:49:20 /sbin/init
+?             54       1 441077228-23:49:20 /lib/systemd/systemd-journald
+?             88       1 441077228-23:49:20 dhclient -4 -v -i -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases -I -df /var/lib/dhcp/dhclient6.eth0.leases eth0
+?             92       1 441077228-23:49:20 /lib/systemd/systemd-networkd
+?             97       1 441077228-23:49:20 /usr/lib/Acronis/Schedule/schedul2-bin
+?             98       1 441077228-23:49:20 /usr/sbin/cron -f
+?             99       1 441077228-23:49:20 /usr/lib/Acronis/CPS/cyber-protect-service
+?            101       1 441077228-23:49:20 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+?            106       1 441077228-23:49:20 /lib/systemd/systemd-logind
+?            209       1 441077228-23:49:20 //opt/acronis/aakore run
+?            210       1 441077228-23:49:20 /usr/lib/Acronis/BackupAndRecovery/mms
+pts/0        229       1 441077228-23:49:20 /sbin/agetty -o -p -- \u --noclear --keep-baud - 115200,38400,9600 linux
+pts/2        235       1 441077228-23:49:20 /sbin/agetty -o -p -- \u --noclear - linux
+?            290       1 441077228-23:49:20 /usr/sbin/nmbd --foreground --no-process-group
+?            348       1 441077228-23:49:20 /usr/sbin/smbd --foreground --no-process-group
+?            357     209 441077228-23:49:20 /opt/acronis/bin/acp-update-controller -e --update-controller
+?            360     209 441077228-23:49:20 /opt/acronis/bin/adp-agent -e
+?            361     209 441077228-23:49:20 /opt/acronis/bin/updater -e
+?            363     209 441077228-23:49:20 /opt/acronis/bin/cred-store --aakore-control
+?            366     209 441077228-23:49:20 /opt/acronis/bin/grpm-sync-unit run
+?            368     209 441077228-23:49:20 /opt/acronis/bin/private-cloud-proxy --config private-cloud-proxy.yml
+?            369     209 441077228-23:49:20 /opt/acronis/bin/task-manager --config task-manager.yaml
+?            373     209 441077228-23:49:20 /opt/acronis/bin/feedback-collector -config config.yaml
+?            376     209 441077228-23:49:20 /opt/acronis/bin/siem-connector agent-unit --config siem-connector.yml
+?            459     348 441077228-23:49:20 /usr/sbin/smbd --foreground --no-process-group
+?            461     348 441077228-23:49:20 /usr/sbin/smbd --foreground --no-process-group
+?            562       1 441077228-23:49:20 /usr/lib/postfix/sbin/master -w
+pts/1        757       1 441077228-23:45:36 /bin/login -p --
+pts/1        764     757 441077228-23:45:04 -bash
+?            776     348 441077228-23:44:32 /usr/sbin/smbd --foreground --no-process-group
+?           1197     562 441077228-23:37:04 pickup -l -t unix -u -c
+?           1198     562 441077228-23:37:04 qmgr -l -t unix -u
+?           1216       1 441077228-23:36:00 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+?           1217    1216 441077228-23:36:00 sshd: root@pts/3
+?           1223    1216 441077228-23:34:56 sshd: root@notty
+?           1226       1 441077228-23:34:56 /lib/systemd/systemd --user
+?           1227    1226 441077228-23:34:56 (sd-pam)
+pts/3       1245    1217 441077228-23:34:56 -bash
+?           1247    1217 441077228-23:34:56 bash -c while true; do sleep 1;head -v -n 8 /proc/meminfo; head -v -n 2 /proc/stat /proc/version /proc/uptime /proc/loadavg /proc/sys/fs/file-nr /proc/sys/kernel/hostname; tail -v -n 32 /proc/net/dev;echo '==> /proc/df <==';df -l;echo '==> /proc/who <==';who;echo '==> /proc/end <==';echo '##Moba##'; done
+?           1254    1223 441077228-23:34:56 /usr/lib/openssh/sftp-server
+?           1284    1247 441077228-23:34:56 sleep 1
+?           1286    1223 441077228-23:34:56 ps -eo tty,pid,ppid,etime,args
+
