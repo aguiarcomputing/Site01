@@ -70,3 +70,5 @@ ddxProcessArgument - screen - Found Valid ``@Monitor'' = 1 arg
 [  1235.687] winClipboardProc - xcb_connect () returned and successfully opened the display.
 [  1235.687] Using Composite redirection
 [  1238.031] winWindowProc - WM_EXITSIZEMOVE
+[173715.656] winDeinitMultiWindowWM - Noting shutdown in progress
+[173715.750] winClipboardProc - winClipboardFlushWindowsMessageQueue trapped WM_QUIT message, exiting main loop.
