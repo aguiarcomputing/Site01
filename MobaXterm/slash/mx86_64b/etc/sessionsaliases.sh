@@ -13,6 +13,9 @@ function CLI-CEDRO-CITRINO_-_138_122_65_34420() {
 function _192_168_6_249_leandro_INTUS_() {
 "/home/mobaxterm/LauncherFolder/MobaXterm_Personal_25.3.exe" -bookmark2 "#91#4%192.168.6.249%3389%[leandro INTUS]%0%0%0%0%-1%0%0%-1%%%%%0%0%%-1%%-1%-1%0%-1%0%-1%0%0%0%0%#MobaFont%10%0%0%-1%15%236,236,236%30,30,30%180,180,192%0%-1%0%%xterm%-1%0%_Std_Colors_0_%80%24%0%1%-1%<none>%%0%0%-1%0%#0# #-1"
 }
+function _192_168_150_200() {
+"/home/mobaxterm/LauncherFolder/MobaXterm_Personal_25.3.exe" -bookmark2 " #109#0%192.168.150.200%22%%%-1%-1%%%%%0%-1%0%%%-1%-1%0%0%%1080%%0%0%1%%0%%%%0%-1%-1%0%%#MobaFont%10%0%0%-1%15%236,236,236%30,30,30%180,180,192%0%-1%0%%xterm%-1%0%_Std_Colors_0_%80%24%0%1%-1%<none>%%0%0%-1%0%#0# #-1"
+}
 function BACKUPLOCAL-KHRONOS() {
 "/home/mobaxterm/LauncherFolder/MobaXterm_Personal_25.3.exe" -bookmark2 "#76#11%https://172.16.2.33:8006/__DIEZE__v1:0:__EQUAL__lxc%-1%-1%-1%-1%-1%-1%-1%0%0%0%-1%-1%0%-1%0%-1%0%%#MobaFont%10%0%0%-1%15%236,236,236%30,30,30%180,180,192%0%-1%0%%xterm%-1%0%_Std_Colors_0_%80%24%0%1%-1%<none>%%0%0%-1%0%#0# #-1"
 }
