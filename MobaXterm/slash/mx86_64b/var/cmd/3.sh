@@ -2,7 +2,7 @@
 m="start"
 while [ "$m" = "start" ] || [ "$m" = "r" ] || [ "$m" = "R" ]; do
   [ "$m" != "start" ] && builtin echo -e "\n\n\n\n\e[31mRECONNECTING, PLEASE WAIT...\e[0m\n\n\n\n"
-  ssh "192.168.150.154" -l PleaseAskMe -p 22 -Y -o ForwardX11Trusted=yes -o ForwardX11=yes  -C -o Compression=yes  -Z  -j 
+  ssh "192.168.150.220" -l PleaseAskMe -p 22 -Y -o ForwardX11Trusted=yes -o ForwardX11=yes  -C -o Compression=yes  -Z  -j 
   i0=0
   s0=""
   while [ "$i0" -lt "${COLUMNS:-80}" ]; do
