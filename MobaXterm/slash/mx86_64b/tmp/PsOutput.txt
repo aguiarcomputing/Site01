@@ -1,0 +1,149 @@
+____                            _           _
+| __ )  ___ _ __ ___      __   _(_)_ __   __| | ___
+|  _ \ / _ \ '_ ` _ \ ____\ \ / / | '_ \ / _` |/ _ \
+| |_) |  __/ | | | | |_____\ V /| | | | | (_| | (_) |
+|____/ \___|_| |_| |_|      \_/ |_|_| |_|\__,_|\___/
+
+____  _            _ _              ____        _
+|  _ \(_)_ __ _   _| (_)_ __ _   _  | __ )  __ _| |__  _   _
+| |_) | | '__| | | | | | '__| | | | |  _ \ / _` | '_ \| | | |
+|  __/| | |  | |_| | | | |  | |_| | | |_) | (_| | |_) | |_| |
+|_|   |_|_|   \__,_|_|_|_|   \__,_| |____/ \__,_|_.__/ \__, |
+|___/
+🚀 Olá!
+📅 Data: sex 16 jan 2026 08:53:40 -03
+⏱  Uptime: up 1 day, 15 hours, 22 minutes
+💾 Memória livre: 167Mi / 967Mi
+🌐 IP Local: 192.168.150.220
+----------------------------------------
+97108
+TT           PID    PPID     ELAPSED COMMAND
+?              1       0  1-15:22:12 /sbin/init
+?              2       0  1-15:22:12 [kthreadd]
+?              3       2  1-15:22:12 [pool_workqueue_release]
+?              4       2  1-15:22:12 [kworker/R-kvfree_rcu_reclaim]
+?              5       2  1-15:22:12 [kworker/R-rcu_gp]
+?              6       2  1-15:22:12 [kworker/R-sync_wq]
+?              7       2  1-15:22:12 [kworker/R-slub_flushwq]
+?              8       2  1-15:22:12 [kworker/R-netns]
+?             11       2  1-15:22:12 [kworker/0:0H-events_highpri]
+?             13       2  1-15:22:12 [kworker/R-mm_percpu_wq]
+?             14       2  1-15:22:12 [rcu_tasks_kthread]
+?             15       2  1-15:22:12 [rcu_tasks_rude_kthread]
+?             16       2  1-15:22:12 [rcu_tasks_trace_kthread]
+?             17       2  1-15:22:12 [ksoftirqd/0]
+?             18       2  1-15:22:12 [rcu_preempt]
+?             19       2  1-15:22:12 [rcu_exp_par_gp_kthread_worker/0]
+?             20       2  1-15:22:12 [rcu_exp_gp_kthread_worker]
+?             21       2  1-15:22:12 [migration/0]
+?             22       2  1-15:22:12 [idle_inject/0]
+?             23       2  1-15:22:12 [cpuhp/0]
+?             25       2  1-15:22:12 [kdevtmpfs]
+?             26       2  1-15:22:12 [kworker/R-inet_frag_wq]
+?             27       2  1-15:22:12 [kauditd]
+?             28       2  1-15:22:12 [khungtaskd]
+?             30       2  1-15:22:12 [oom_reaper]
+?             32       2  1-15:22:12 [kworker/R-writeback]
+?             33       2  1-15:22:12 [kcompactd0]
+?             34       2  1-15:22:12 [ksmd]
+?             35       2  1-15:22:12 [khugepaged]
+?             36       2  1-15:22:12 [kworker/R-kintegrityd]
+?             37       2  1-15:22:12 [kworker/R-kblockd]
+?             38       2  1-15:22:12 [kworker/R-blkcg_punt_bio]
+?             39       2  1-15:22:12 [irq/9-acpi]
+?             40       2  1-15:22:11 [kworker/R-tpm_dev_wq]
+?             41       2  1-15:22:11 [kworker/R-edac-poller]
+?             42       2  1-15:22:11 [kworker/R-devfreq_wq]
+?             43       2  1-15:22:11 [kworker/R-quota_events_unbound]
+?             44       2  1-15:22:11 [kworker/0:1H-kblockd]
+?             45       2  1-15:22:11 [kswapd0]
+?             52       2  1-15:22:11 [kworker/R-kthrotld]
+?             56       2  1-15:22:11 [kworker/R-acpi_thermal_pm]
+?             57       2  1-15:22:11 [kworker/R-mld]
+?             58       2  1-15:22:11 [kworker/R-ipv6_addrconf]
+?             63       2  1-15:22:11 [kworker/R-kstrp]
+?             65       2  1-15:22:11 [kworker/u5:0]
+?            171       2  1-15:22:10 [scsi_eh_0]
+?            172       2  1-15:22:10 [kworker/R-scsi_tmf_0]
+?            174       2  1-15:22:10 [kworker/R-ata_sff]
+?            175       2  1-15:22:10 [scsi_eh_1]
+?            176       2  1-15:22:10 [kworker/R-scsi_tmf_1]
+?            177       2  1-15:22:10 [scsi_eh_2]
+?            178       2  1-15:22:10 [kworker/R-scsi_tmf_2]
+?            181       2  1-15:22:10 [kworker/R-ttm]
+?            214       2  1-15:22:10 [jbd2/sda1-8]
+?            215       2  1-15:22:10 [kworker/R-ext4-rsv-conversion]
+?            265       1  1-15:22:09 /usr/lib/systemd/systemd-journald
+?            302       1  1-15:22:08 /usr/lib/systemd/systemd-timesyncd
+?            307       1  1-15:22:08 /usr/lib/systemd/systemd-udevd
+?            316       2  1-15:22:08 [psimon]
+?            365       2  1-15:22:07 [kworker/R-cryptd]
+?            558       1  1-15:22:07 /usr/sbin/cron -f
+?            560       1  1-15:22:07 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+?            580       1  1-15:22:07 /usr/sbin/qemu-ga
+?            585       1  1-15:22:07 dhcpcd: ens18 [ip4] [ip6]
+?            586     585  1-15:22:07 dhcpcd: [privileged proxy] ens18 [ip4] [ip6]
+?            588     585  1-15:22:07 dhcpcd: [network proxy] ens18 [ip4] [ip6]
+?            589     585  1-15:22:07 dhcpcd: [control proxy] ens18 [ip4] [ip6]
+?            591       1  1-15:22:07 /usr/lib/systemd/systemd-logind
+?            653       2  1-15:22:06 [kworker/R-cfg80211]
+?            918       1  1-15:22:05 /usr/sbin/exim4 -bdf -q30m
+?            974     586  1-15:22:05 dhcpcd: [DHCP6 proxy] fe80::3d69:26af:9416:528e
+?           1145     586  1-15:22:03 dhcpcd: [BPF ARP] ens18 192.168.150.220
+?           1171     586  1-15:22:02 dhcpcd: [DHCP6 proxy] 2804:25ec:8000:0:7dc6:714c:504:b93a
+?           1202       2  1-15:22:01 [snapapid]
+?           1411     586  1-15:21:59 dhcpcd: [BOOTP proxy] 192.168.150.220
+?           1455     586  1-15:21:54 dhcpcd: [DHCP6 proxy] 2804:25ec:8000:0:be24:11ff:fe15:cd79
+?           3579       1  1-15:16:54 /usr/lib/Acronis/CPS/cyber-protect-service
+?           6576       1  1-15:09:38 //opt/acronis/aakore run
+?           6591    6576  1-15:09:38 /opt/acronis/bin/feedback-collector -config config.yaml
+?           6595    6576  1-15:09:38 /opt/acronis/bin/adp-agent -e
+?           6596    6576  1-15:09:38 /opt/acronis/bin/private-cloud-proxy --config private-cloud-proxy.yml
+?           6597    6576  1-15:09:38 /opt/acronis/bin/siem-connector agent-unit --config siem-connector.yml
+?           6599    6576  1-15:09:38 /opt/acronis/bin/grpm-sync-unit run
+?           6600    6576  1-15:09:38 /opt/acronis/bin/task-manager --config task-manager.yaml
+?           6601    6576  1-15:09:38 /opt/acronis/bin/acp-update-controller -e --update-controller
+?           6602    6576  1-15:09:38 /opt/acronis/bin/cyber-desktop-service --service
+?           6603    6576  1-15:09:38 /opt/acronis/bin/updater -e
+?           6606    6576  1-15:09:38 /opt/acronis/bin/cred-store --aakore-control
+?           6913       1  1-15:09:21 /usr/lib/Acronis/BackupAndRecovery/mms
+?           6938       1  1-15:09:21 /usr/lib/Acronis/Schedule/schedul2-bin
+?          17552     586  1-11:08:03 dhcpcd: [DHCP6 proxy] fdd9:3343:1ce6:3a47:be24:11ff:fe15:cd79
+?          93144       2    01:08:13 [kworker/u4:3-flush-8:0]
+?          93518       2       57:58 [kworker/0:1-ata_sff]
+?          94041       1       44:23 login -- root
+?          94056       1       44:15 /usr/lib/systemd/systemd --user
+?          94057       2       44:15 [psimon]
+?          94059   94056       44:15 (sd-pam)
+?          94064       2       44:15 [psimon]
+tty1       94069   94041       44:15 -bash
+tty1       94200   94069       41:29 sudo su
+pts/0      94213   94200       41:05 sudo su
+pts/0      94214   94213       41:05 su
+pts/0      94216   94214       41:05 bash
+?          94974       2       33:57 [kworker/0:0-events]
+?          95479       2       28:55 [kworker/R-cifsiod]
+?          95480       2       28:55 [kworker/R-smb3decryptd]
+?          95481       2       28:55 [kworker/R-cifsfileinfoput]
+?          95482       2       28:55 [kworker/R-cifsoplockd]
+?          95483       2       28:55 [kworker/R-deferredclose]
+?          95484       2       28:55 [kworker/R-serverclose]
+?          95485       2       28:55 [kworker/R-cfid_put_wq]
+?          95486       2       28:55 [kworker/R-cifs-dfscache]
+?          95664       2       28:46 [kworker/u4:1-flush-8:0]
+?          95667       2       28:46 [kworker/u4:6-kvfree_rcu_reclaim]
+pts/0      96743   94216       04:44 su -
+pts/0      96745   96743       04:44 -bash
+?          96802       2       04:11 [kworker/u4:0-flush-8:0]
+?          96840       1       02:55 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+?          96844       2       02:49 [kworker/0:2]
+?          96934   96840       00:24 sshd-session: root [priv]
+?          96944   96840       00:09 sshd-session: root [priv]
+?          96950   96934       00:09 sshd-session: root@pts/1
+pts/1      96951   96950       00:09 -bash
+?          96967   96944       00:09 sshd-session: root@notty
+?          96968   96950       00:09 bash -c while true; do sleep 1;head -v -n 8 /proc/meminfo; head -v -n 2 /proc/stat /proc/version /proc/uptime /proc/loadavg /proc/sys/fs/file-nr /proc/sys/kernel/hostname; tail -v -n 32 /proc/net/dev;echo '==> /proc/df <==';df -l;echo '==> /proc/who <==';who;echo '==> /proc/end <==';echo '##Moba##'; done
+?          96973   96967       00:09 /usr/lib/openssh/sftp-server
+?          97108   96967       00:01 ps -eo tty,pid,ppid,etime,args
+?          97123   96968       00:00 sleep 1
+
