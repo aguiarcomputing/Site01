@@ -70,3 +70,15 @@ ddxProcessArgument - screen - Found Valid ``@Monitor'' = 1 arg
 [175698.828] winMultiWindowXMsgProc - xcb_connect() returned and successfully opened the display.
 [175698.828] winClipboardProc - xcb_connect () returned and successfully opened the display.
 [175698.828] Using Composite redirection
+[206386.593] winWindowProc - WM_DISPLAYCHANGE - new width: 1920 new height: 1080 new bpp: 32
+[206386.640] winWindowProc - RemoteSession: no
+[206386.687] winUpdateDpi - primary monitor native DPI x 96 y 96
+[206386.890] winAllocateFBShadowGDI - Creating DIB with width: 1920 height: 1080 depth: 32
+[428421.515] winWindowProc - WM_DISPLAYCHANGE - new width: 1536 new height: 864 new bpp: 32
+[428421.515] winWindowProc - RemoteSession: no
+[428421.625] winUpdateDpi - primary monitor native DPI x 96 y 96
+[428421.890] winAllocateFBShadowGDI - Creating DIB with width: 1536 height: 864 depth: 32
+[428613.656] winWindowProc - WM_DISPLAYCHANGE - new width: 1536 new height: 864 new bpp: 32
+[428614.015] winWindowProc - RemoteSession: no
+[428614.015] winUpdateDpi - primary monitor native DPI x 96 y 96
+[428614.046] winAllocateFBShadowGDI - Creating DIB with width: 1931 height: 1944 depth: 32
