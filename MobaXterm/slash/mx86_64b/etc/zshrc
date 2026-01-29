@@ -1,5 +1,0 @@
-if [ "$SHELL" != "/bin/zsh.exe" ]; then
-  export SHELL="/bin/zsh.exe"
-  export FIRSTTIME=true
-  . /etc/profile
-fi
