@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamento de Serviços - Águia Informática</title>
+  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/babel@7.22.5/standalone/babel.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div id="root" className="min-h-screen bg-gray-100"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    const services = [
+      { id: 1, name: "Manutenção de Hardware", price: 150.00 },
+      { id: 2, name: "Formatação e Instalação de Sistema", price: 100.00 },
+      { id: 3, name: "Remoção de Vírus", price: 80.00 },
+      { id: 4, name: "Configuração de Rede", price: 120.00 },
+    ];
+
+    const availableDates = [
+      "2025-06-01", "2025-06-02", "2025-06-03", "2025-06-04", "2025-06-05"
+    ];
+
+    const availableTimes = [
+      "09:00", "10:00", "11:00", "14:00", "15:00", "16:00"
+    ];
+
+    function App() {
+      const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        date: "",
+        time: "",
+      });
+      const [appointments, setAppointments] = useState([]);
+      const [errors, setErrors] = useState({});
+      const [successMessage, setSuccessMessage] = useState("");
+
+      useEffect(() => {
+        fetchAppointments();
+      }, []);
+
+      const fetchAppointments = async () => {
+        try {
+          const response = await fetch('http://localhost:3000/api/appointments');
+          const data = await response.json();
+          setAppointments(data);
+        } catch (error) {
+          console.error('Erro ao buscar agendamentos:', error);
+        }
+      };
+
+      const formatPhone = (value) => {
+        const cleaned = value.replace(/\D/g, '');
+        if (cleaned.length <= 2) return cleaned;
+        if (cleaned.length <= 7) return `(${cleaned.slice(0, 2)}) ${cleaned.slice(2)}`;
+        return `(${cleaned.slice(0, 2)}) ${cleaned.slice(2, 7)}-${cleaned.slice(7, 11)}`;
+      };
+
+      const validateForm = () => {
+        const newErrors = {};
+        if (!formData.name) newErrors.name = "Nome é obrigatório";
+        if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Email inválido";
+        if (!formData.phone || formData.phone.replace(/\D/g, '').length < 10) newErrors.phone = "Telefone inválido";
+        if (!formData.service) newErrors.service = "Selecione um serviço";
+        if (!formData.date) newErrors.date = "Selecione uma data";
+        if (!formData.time) newErrors.time = "Selecione um horário";
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+      };
+
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (validateForm()) {
+          try {
+            const response = await fetch('http://localhost:3000/api/appointments', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(formData),
+            });
+            if (response.ok) {
+              setSuccessMessage("Agendamento realizado com sucesso!");
+              setFormData({ name: "", email: "", phone: "", service: "", date: "", time: "" });
+              setErrors({});
+              fetchAppointments();
+              setTimeout(() => setSuccessMessage(""), 3000);
+            } else {
+              setErrors({ form: "Erro ao salvar agendamento" });
+            }
+          } catch (error) {
+            setErrors({ form: "Erro ao conectar com o servidor" });
+          }
+        }
+      };
+
+      const handleDelete = async (id) => {
+        try {
+          const response = await fetch(`http://localhost:3000/api/appointments/${id}`, {
+            method: 'DELETE',
+          });
+          if (response.ok) {
+            fetchAppointments();
+            setSuccessMessage("Agendamento cancelado com sucesso!");
+            setTimeout(() => setSuccessMessage(""), 3000);
+          } else {
+            setErrors({ form: "Erro ao cancelar agendamento" });
+          }
+        } catch (error) {
+          setErrors({ form: "Erro ao conectar com o servidor" });
+        }
+      };
+
+      const handleChange = (e) => {
+        const { name, value } = e.target;
+        if (name === 'phone') {
+          setFormData({ ...formData, phone: formatPhone(value) });
+        } else {
+          setFormData({ ...formData, [name]: value });
+        }
+      };
+
+      return (
+        <div className="container mx-auto p-4">
+          <header className="text-center mb-8">
+            <h1 className="text-3xl font-bold text-blue-600">Águia Informática</h1>
+            <p className="text-lg text-gray-600">Agendamento de Serviços de Manutenção</p>
+          </header>
+
+          <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+            <h2 className="text-xl font-semibold mb-4">Formulário de Agendamento</h2>
+            {successMessage && (
+              <div className="bg-green-100 text-green-700 p-2 rounded mb-4">
+                {successMessage}
+              </div>
+            )}
+            {errors.form && (
+              <div className="bg-red-100 text-red-700 p-2 rounded mb-4">
+                {errors.form}
+              </div>
+            )}
+            <form onSubmit={handleSubmit}>
+              <div className="mb-4">
+                <label className="block text-gray-700">Nome</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full p-2 border rounded"
+                />
+                {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full p-2 border rounded"
+                />
+                {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700">Telefone</label>
+                <input
+                  type="text"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full p-2 border rounded"
+                  placeholder="(XX) XXXXX-XXXX"
+                  maxLength="15"
+                />
+                {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700">Serviço</label>
+                <select
+                  name="service"
+                  value={formData.service}
+                  onChange={handleChange}
+                  className="w-full p-2 border rounded"
+                >
+                  <option value="">Selecione um serviço</option>
+                  {services.map((service) => (
+                    <option key={service.id} value={service.name}>
+                      {service.name} - R${service.price.toFixed(2)}
+                    </option>
+                  ))}
+                </select>
+                {errors.service && <p className="text-red-500 text-sm">{errors.service}</p>}
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700">Data</label>
+                <select
+                  name="date"
+                  value={formData.date}
+                  onChange={handleChange}
+                  className="w-full p-2 border rounded"
+                >
+                  <option value="">Selecione uma data</option>
+                  {availableDates.map((date) => (
+                    <option key={date} value={date}>
+                      {new Date(date).toLocaleDateString("pt-BR")}
+                    </option>
+                  ))}
+                </select>
+                {errors.date && <p className="text-red-500 text-sm">{errors.date}</p>}
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700">Horário</label>
+                <select
+                  name="time"
+                  value={formData.time}
+                  onChange={handleChange}
+                  className="w-full p-2 border rounded"
+                >
+                  <option value="">Selecione um horário</option>
+                  {availableTimes.map((time) => (
+                    <option key={time} value={time}>
+                      {time}
+                    </option>
+                  ))}
+                </select>
+                {errors.time && <p className="text-red-500 text-sm">{errors.time}</p>}
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700"
+              >
+                Agendar
+              </button>
+            </form>
+          </div>
+
+          <div className="mt-8 max-w-2xl mx-auto">
+            <h2 className="text-xl font-semibold mb-4">Agendamentos Realizados</h2>
+            {appointments.length === 0 ? (
+              <p className="text-gray-600">Nenhum agendamento realizado.</p>
+            ) : (
+              <ul className="space-y-4">
+                {appointments.map((appt) => (
+                  <li key={appt._id} className="bg-white p-4 rounded shadow flex justify-between items-center">
+                    <div>
+                      <p><strong>Nome:</strong> {appt.name}</p>
+                      <p><strong>Email:</strong> {appt.email}</p>
+                      <p><strong>Telefone:</strong> {appt.phone}</p>
+                      <p><strong>Serviço:</strong> {appt.service}</p>
+                      <p><strong>Data:</strong> {new Date(appt.date).toLocaleDateString("pt-BR")}</p>
+                      <p><strong>Horário:</strong> {appt.time}</p>
+                    </div>
+                    <button
+                      onClick={() => handleDelete(appt._id)}
+                      className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700"
+                    >
+                      Cancelar
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.render(<App />, document.getElementById("root"));
+  </script>
+</body>
+</html>

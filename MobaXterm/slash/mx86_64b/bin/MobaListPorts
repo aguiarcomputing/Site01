@@ -1,0 +1,3 @@
+#!/bin/zsh.exe
+MyArgs=(); for i in "$@"; do MyArgs+=( "`/bin/toybox.exe convpath -w "$i" 2>/dev/null`" ); done
+/bin/MobaBox.exe MobaSendMsg MobaXterm -listports "${MyArgs[@]}"
