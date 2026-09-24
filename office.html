@@ -20,7 +20,8 @@
             --secondary: #7000FF;
             --text-main: #F1F5F9;
             --text-muted: #94A3B8;
-            --accent-green: #25d366;
+            --accent-green: #10b981;
+            --green-glow: rgba(16, 185, 129, 0.4);
             --amber: #f59e0b;
             --font-main: 'Inter', sans-serif;
         }
@@ -217,6 +218,13 @@
             transform: scale(0.96);
         }
 
+        /* Estado de Botão Copiado (Verde) */
+        .btn-cta.btn-copied {
+            background: linear-gradient(135deg, #10b981, #059669) !important;
+            box-shadow: 0 4px 18px var(--green-glow) !important;
+            color: #ffffff !important;
+        }
+
         .btn-secondary {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.15);
@@ -238,10 +246,6 @@
             border-color: #fff;
         }
 
-        .btn-secondary:active {
-            transform: scale(0.96);
-        }
-
         .btn-whatsapp {
             background: var(--accent-green);
             color: #fff;
@@ -250,7 +254,7 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 0.85rem;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
@@ -259,7 +263,7 @@
 
         .btn-whatsapp:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
         }
 
         .btn-vote {
@@ -310,8 +314,8 @@
             top: -38px;
             left: 50%;
             transform: translateX(-50%) translateY(4px);
-            background-color: var(--primary);
-            color: #0A0F1D;
+            background-color: var(--accent-green);
+            color: #ffffff;
             font-weight: 700;
             padding: 0.25rem 0.6rem;
             border-radius: 6px;
@@ -319,7 +323,7 @@
             opacity: 0;
             transition: all 0.2s ease-in-out;
             pointer-events: none;
-            box-shadow: 0 4px 10px rgba(0, 240, 255, 0.4);
+            box-shadow: 0 4px 10px var(--green-glow);
             white-space: nowrap;
         }
 
@@ -442,12 +446,6 @@
             margin-right: auto;
             width: 100%;
         }
-
-        .flex-wrap-gap {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
     </style>
 </head>
 <body>
@@ -491,7 +489,7 @@
                     </a>
                 </div>
 
-                <!-- Item 2: Office 2024 (Ajustado) -->
+                <!-- Item 2: Office 2024 -->
                 <div class="sub-card">
                     <h3>Microsoft Office Professional Plus 2024</h3>
                     <p>Access, Excel, OneNote, Outlook, PowerPoint, Word, OneDrive.</p>
@@ -530,7 +528,7 @@
                 <div class="code-box">
                     <code id="code1">irm https://get.activated.win | iex</code>
                     <div style="position: relative; flex-shrink: 0;">
-                        <button onclick="copyCode('code1')" class="btn-cta" style="padding: 0.4rem 1rem; font-size: 0.8rem;">
+                        <button onclick="copyCode('code1', this)" class="btn-cta" style="padding: 0.4rem 1rem; font-size: 0.8rem;">
                             <i class="fa-solid fa-copy"></i> Copiar
                         </button>
                         <span class="tooltip" id="tooltip-code1" aria-live="polite"></span>
@@ -597,7 +595,7 @@
                     </div>
 
                     <div style="position: relative; margin-top: 0.25rem;">
-                        <button onclick="copyCode('cnpj')" class="btn-cta">
+                        <button onclick="copyCode('cnpj', this)" class="btn-cta">
                             <i class="fa-solid fa-copy"></i> Copiar CNPJ
                         </button>
                         <span class="tooltip" id="tooltip-cnpj" aria-live="polite"></span>
@@ -620,23 +618,33 @@
 
     <!-- Scripts de Funcionalidade -->
     <script>
-        function copyCode(id) {
+        function copyCode(id, btnElement) {
             const element = document.getElementById(id);
-            const tooltip = document.getElementById(`tooltip-${id}`);
             const text = element.innerText || element.textContent;
             
+            const handleSuccess = () => {
+                if (btnElement) {
+                    const originalContent = btnElement.innerHTML;
+                    btnElement.classList.add('btn-copied');
+                    btnElement.innerHTML = '<i class="fa-solid fa-check"></i> Copiado!';
+                    
+                    setTimeout(() => {
+                        btnElement.classList.remove('btn-copied');
+                        btnElement.innerHTML = originalContent;
+                    }, 2000);
+                }
+            };
+
             if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(text).then(() => {
-                    showTooltip(tooltip, 'Copiado!');
-                }).catch(() => {
-                    fallbackCopy(text, tooltip);
+                navigator.clipboard.writeText(text).then(handleSuccess).catch(() => {
+                    fallbackCopy(text, btnElement);
                 });
             } else {
-                fallbackCopy(text, tooltip);
+                fallbackCopy(text, btnElement);
             }
         }
 
-        function fallbackCopy(text, tooltip) {
+        function fallbackCopy(text, btnElement) {
             const textArea = document.createElement("textarea");
             textArea.value = text;
             textArea.style.position = "fixed";
@@ -647,19 +655,20 @@
 
             try {
                 const successful = document.execCommand('copy');
-                showTooltip(tooltip, successful ? 'Copiado!' : 'Erro ao copiar');
+                if (successful && btnElement) {
+                    const originalContent = btnElement.innerHTML;
+                    btnElement.classList.add('btn-copied');
+                    btnElement.innerHTML = '<i class="fa-solid fa-check"></i> Copiado!';
+                    
+                    setTimeout(() => {
+                        btnElement.classList.remove('btn-copied');
+                        btnElement.innerHTML = originalContent;
+                    }, 2000);
+                }
             } catch (err) {
-                showTooltip(tooltip, 'Erro ao copiar');
+                console.error('Erro ao copiar', err);
             }
             document.body.removeChild(textArea);
-        }
-
-        function showTooltip(tooltip, message) {
-            tooltip.innerText = message;
-            tooltip.classList.add('show');
-            setTimeout(() => {
-                tooltip.classList.remove('show');
-            }, 2000);
         }
 
         document.addEventListener("DOMContentLoaded", () => {
