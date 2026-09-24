@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ativando Pacote Office Sem Programas</title>
+    <title>Ativador e Guia Oficial do Pacote Office</title>
+    <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -12,187 +15,209 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            background-color: #f3f4f6;
+            background-color: #0f172a;
         }
-        main, header, footer {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(5px);
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
         .code-block {
-            background-color: #1f2937;
-            color: #e5e7eb;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            overflow-x: auto;
-            position: relative;
-        }
-        .copy-btn {
-            background-color: #3b82f6;
-            color: white;
-            padding: 0.25rem 0.5rem;
-            border-radius: 0.25rem;
-            font-size: 0.75rem;
-            cursor: pointer;
-            transition: background-color 0.2s;
-            border: none;
-        }
-        .code-block .copy-btn {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-        }
-        .copy-btn:hover {
-            background-color: #2563eb;
+            background-color: #0f172a;
+            color: #38bdf8;
+            font-family: monospace;
         }
         .tooltip {
             position: absolute;
-            background-color: #1e40af;
+            background-color: #2563eb;
             color: white;
-            padding: 0.25rem 0.5rem;
+            padding: 0.2rem 0.5rem;
             border-radius: 0.25rem;
             font-size: 0.75rem;
             opacity: 0;
             transition: opacity 0.3s ease-in-out;
             pointer-events: none;
         }
-        .code-block .tooltip {
-            top: 0.5rem;
-            right: 4rem;
-        }
-        .cnpj-container .copy-btn {
-            margin-left: 0.5rem;
-        }
-        .cnpj-container .tooltip {
-            top: -1.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-        }
         .tooltip.show {
             opacity: 1;
         }
-        .cnpj-container {
-            position: relative;
-            display: inline-block;
-        }
-        footer .windows-logo {
-            max-width: 50px;
-            height: auto;
-            margin-right: 1rem;
-        }
     </style>
 </head>
-<body>
-    <header class="bg-gray-800 text-white py-6">
-        <div class="container mx-auto px-4">
-            <h1 class="text-3xl font-bold">Ativando o Office sem Programas</h1>
-            <p class="mt-2">Um guia simples e objetivo para ativar o pacote Office usando apenas o PowerShell. Todos os links listados abaixo são originais da Microsoft e canal de atualização atual.</p>
+<body class="min-h-screen flex flex-col justify-between text-gray-800">
+
+    <!-- Header -->
+    <header class="glass-panel border-b border-white/20 sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <span class="bg-blue-600 text-white font-bold p-2 rounded-lg text-lg">Office</span>
+                <div>
+                    <h1 class="text-xl font-bold text-gray-900">Guia de Instalação e Ativação</h1>
+                    <p class="text-xs text-gray-600">Links diretos e oficiais da Microsoft</p>
+                </div>
+            </div>
+            <nav class="mt-3 md:mt-0 flex space-x-4 text-sm font-medium">
+                <a href="#downloads" class="text-gray-700 hover:text-blue-600 transition">Downloads</a>
+                <a href="#ativacao" class="text-gray-700 hover:text-blue-600 transition">Ativação</a>
+                <a href="#apoio" class="text-gray-700 hover:text-blue-600 transition">Apoie</a>
+            </nav>
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-8">
-        <section class="bg-white shadow-md rounded-lg p-6 mb-6">
-            <h2 class="text-2xl font-semibold mb-4">Explore ainda mais os benefícios do Microsoft 365</h2> 
-            <h2 class="text-2xl font-semibold mb-4">Passo 1: Você pode escolher qual versão do Pacote office que você gostaria de utilizar.</h2>
-            <p class="mb-4">Se você ainda não possui o Pacote Office, faça o download diretamente do site oficial da Microsoft. Todos os links listados abaixo são originais da Microsoft.</p>  
-            <p class="mb-4">Aplicativos Incluídos, (Access, Excel, Lync, OneNote, Outlook, PowerPoint, Publisher, Word, OneDrive)</p>
-            <a href="https://c2rsetup.officeapps.live.com/c2r/download.aspx?ProductreleaseID=Professional2021Retail&platform=x64&language=pt-br&version=O16GA" target="_blank" class="text-blue-600 hover:underline">Baixar Microsoft Office Professional Plus 2021</a>         
-            <p class="mb-4">Aplicativos Incluídos, (Acesso, Excel, OneNote, Outlook, PowerPoint, Word, OneDrive)</p>
-            <a href="https://c2rsetup.officeapps.live.com/c2r/download.aspx?ProductreleaseID=ProPlus2024Retail&platform=x64&language=pt-br&version=O16GA" target="_blank" class="text-blue-600 hover:underline">Baixar Microsoft Office Professional Plus 2024</a>
-            <p class="mb-4">Aplicativos Incluídos, (Acesso, Excel, OneNote, Outlook, PowerPoint, Word, OneDrive)</p>
-            <a href="https://c2rsetup.officeapps.live.com/c2r/download.aspx?ProductreleaseID=O365ProPlusRetail&platform=x64&language=pt-br&version=O16GA" target="_blank" class="text-blue-600 hover:underline">Baixar Microsoft 365 / Sub </a>
-            <p class="mb-4">Aplicativos Incluídos, (Access, Excel, Lync, OneNote, Outlook, PowerPoint, Publisher, Word, OneDrive)</p>        
-        </section>
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 max-w-4xl space-y-6">
 
-        <section class="bg-white shadow-md rounded-lg p-6 mb-6">
-            <h2 class="text-2xl font-semibold mb-4">Passo 2: Ative o pacote Office para qualquer versão</h2>
-            <p class="mb-4">Abra o PowerShell como Administrador. Para isso, clique no menu Iniciar, digite "PowerShell", clique com o botão direito e selecione "Executar como administrador". Execute o comando abaixo, pressione Enter e siga as opções exibidas na tela:</p>
-            <div class="code-block">
-                <code id="code1">
-irm https://get.activated.win | iex
-                </code>
-                <button class="copy-btn" onclick="copyCode('code1')" aria-label="Copiar comando">Copiar <span class="tooltip" id="tooltip-code1" aria-live="polite"></span></button>
+        <!-- Alerta Informativo -->
+        <div class="glass-panel border-l-4 border-blue-600 p-4 rounded-r-lg shadow-sm">
+            <p class="text-sm text-gray-700">
+                <strong>Nota:</strong> Certifique-se de desativar temporariamente o antivírus ou o Windows Defender caso o script de ativação seja bloqueado por falso positivo. Todos os links de download abaixo são apontados diretamente para os servidores oficiais da Microsoft.
+            </p>
+        </div>
+
+        <!-- Seção 1: Downloads -->
+        <section id="downloads" class="glass-panel shadow-lg rounded-2xl p-6 md:p-8 transition hover:shadow-xl">
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center font-bold">1</div>
+                <h2 class="text-2xl font-bold text-gray-900">Escolha a sua versão do Pacote Office</h2>
             </div>
-            <p class="mt-4">Selecione a opção <span style="background-color: #e6f3ff; color: #1a73e8; font-weight: bold; padding: 2px 6px; border-radius: 4px;">[5] Online KMS - Windows/Escritório</span>.</p>
-            <p class="mt-4">Em seguida, selecione a opção <span style="background-color: #e6f3ff; color: #1a73e8; font-weight: bold; padding: 2px 6px; border-radius: 4px;">[2] Ativar - Office [Todos]</span>.</p>
-            <p class="mt-4">Siga as instruções exibidas na tela para ativar o Microsoft Office. Caso ocorra algum erro, verifique se o comando foi digitado corretamente e se você possui conexão com a internet.</p>
+            <p class="text-gray-600 mb-6 text-sm">Se você ainda não possui o pacote instalado, selecione uma das opções oficiais abaixo para baixar o instalador:</p>
+
+            <div class="space-y-4">
+                <!-- Office 2021 -->
+                <div class="border border-gray-200 p-4 rounded-xl hover:border-blue-400 transition bg-white/50">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Microsoft Office Professional Plus 2021</h3>
+                            <p class="text-xs text-gray-500 mt-1">Access, Excel, OneNote, Outlook, PowerPoint, Publisher, Word, OneDrive</p>
+                        </div>
+                        <a href="https://c2rsetup.officeapps.live.com/c2r/download.aspx?ProductreleaseID=Professional2021Retail&platform=x64&language=pt-br&version=O16GA" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded-lg font-medium transition shadow-sm whitespace-nowrap">
+                            Baixar 2021
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Office 2024 -->
+                <div class="border border-gray-200 p-4 rounded-xl hover:border-blue-400 transition bg-white/50">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Microsoft Office Professional Plus 2024</h3>
+                            <p class="text-xs text-gray-500 mt-1">Access, Excel, OneNote, Outlook, PowerPoint, Word, OneDrive</p>
+                        </div>
+                        <a href="https://c2rsetup.officeapps.live.com/c2r/download.aspx?ProductreleaseID=ProPlus2024Retail&platform=x64&language=pt-br&version=O16GA" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded-lg font-medium transition shadow-sm whitespace-nowrap">
+                            Baixar 2024
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Microsoft 365 -->
+                <div class="border border-gray-200 p-4 rounded-xl hover:border-blue-400 transition bg-white/50">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Microsoft 365 (Versão Recente)</h3>
+                            <p class="text-xs text-gray-500 mt-1">Access, Excel, OneNote, Outlook, PowerPoint, Word, OneDrive</p>
+                        </div>
+                        <a href="https://c2rsetup.officeapps.live.com/c2r/download.aspx?ProductreleaseID=O365ProPlusRetail&platform=x64&language=pt-br&version=O16GA" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-2 rounded-lg font-medium transition shadow-sm whitespace-nowrap">
+                            Baixar M365
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- NOVA SEÇÃO: Interatividade (WhatsApp e Avaliação Gostei/Não Gostei) -->
-        <section class="bg-white shadow-md rounded-lg p-6 mb-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <!-- Seção 2: Ativação -->
+        <section id="ativacao" class="glass-panel shadow-lg rounded-2xl p-6 md:p-8 transition hover:shadow-xl">
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center font-bold">2</div>
+                <h2 class="text-2xl font-bold text-gray-900">Ativação via PowerShell</h2>
+            </div>
+            
+            <ol class="list-decimal list-inside space-y-3 text-gray-700 text-sm mb-6">
+                <li>Abra o menu <strong>Iniciar</strong> do Windows.</li>
+                <li>Digite <strong>PowerShell</strong>, clique com o botão direito e escolha <strong class="text-gray-900">Executar como Administrador</strong>.</li>
+                <li>Copie e cole o comando abaixo no terminal e pressione <kbd class="bg-gray-200 px-2 py-1 rounded text-xs">Enter</kbd>:</li>
+            </ol>
+
+            <div class="code-block p-4 rounded-xl relative shadow-inner mb-6">
+                <code id="code1" class="block text-sm overflow-x-auto">irm https://get.activated.win | iex</code>
+                <button class="absolute top-3 right-3 bg-blue-600 hover:bg-blue-700 text-white text-xs px-3 py-1.5 rounded transition font-medium" onclick="copyCode('code1')" aria-label="Copiar comando">
+                    Copiar
+                </button>
+                <span class="tooltip" id="tooltip-code1"></span>
+            </div>
+
+            <div class="bg-blue-50 border border-blue-100 p-4 rounded-xl space-y-2 text-sm">
+                <p class="font-semibold text-blue-900">Instruções no menu que aparecer:</p>
+                <p class="text-blue-800">1. Selecione a opção <span class="bg-white px-2 py-0.5 rounded border border-blue-200 font-mono text-xs font-bold">[5] Online KMS - Windows/Escritório</span>.</p>
+                <p class="text-blue-800">2. Em seguida, selecione <span class="bg-white px-2 py-0.5 rounded border border-blue-200 font-mono text-xs font-bold">[2] Ativar - Office [Todos]</span>.</p>
+            </div>
+        </section>
+
+        <!-- Seção 3: Avaliação e Feedback -->
+        <section class="glass-panel shadow-lg rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4">
             <div>
-                <h3 class="text-xl font-semibold text-gray-800">Este tutorial funcionou para você?</h3>
-                <p class="text-sm text-gray-600 mt-1">Deixe sua avaliação ou avise-nos caso encontre algum erro.</p>
+                <h3 class="text-lg font-bold text-gray-900">Este tutorial foi útil para você?</h3>
+                <p class="text-xs text-gray-600 mt-1">Ajude-nos a melhorar avaliando abaixo ou reportando qualquer imprecisão.</p>
             </div>
             
             <div class="flex items-center gap-3">
-                <!-- Botão Gostei -->
-                <button onclick="vote('like')" id="btn-like" class="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg border border-gray-300 transition">
-                    👍 <span id="count-like">0</span>
+                <button onclick="vote('like')" id="btn-like" class="flex items-center gap-2 bg-white/80 hover:bg-white text-gray-700 px-4 py-2 rounded-xl border border-gray-200 transition text-sm shadow-sm">
+                    👍 <span id="count-like">124</span>
                 </button>
 
-                <!-- Botão Não Gostei -->
-                <button onclick="vote('dislike')" id="btn-dislike" class="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg border border-gray-300 transition">
-                    👎 <span id="count-dislike">0</span>
+                <button onclick="vote('dislike')" id="btn-dislike" class="flex items-center gap-2 bg-white/80 hover:bg-white text-gray-700 px-4 py-2 rounded-xl border border-gray-200 transition text-sm shadow-sm">
+                    👎 <span id="count-dislike">3</span>
                 </button>
 
-                <!-- Botão WhatsApp para Erros -->
-                <a href="https://wa.me/55SEUNUMEROAQUI?text=Olá!%20Encontrei%20um%20erro%20no%20tutorial%20de%20ativação%20do%20Office:" target="_blank" class="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-medium transition shadow-sm">
-                    💬 Reportar Erro
+                <a href="https://wa.me/5511999999999?text=Olá!%20Encontrei%20um%20erro%20no%20tutorial%20de%20ativação%20do%20Office:" target="_blank" class="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-xl text-sm font-medium transition shadow-sm">
+                    💬 Suporte
                 </a>
             </div>
         </section>
 
-        <section class="bg-white shadow-md rounded-lg p-6 mb-6">
-            <h2 class="text-2xl font-semibold mb-4">Apoie o Projeto!</h2>
-            <p class="mb-4">Faça uma doação de <strong>R$ 5,00</strong> via PIX.</p>
-            <p class="mb-4">Chave PIX (CNPJ): <span class="cnpj-container"><strong id="cnpj">36.167.729/0001-02</strong> <button class="copy-btn" onclick="copyCode('cnpj')">Copiar</button><span class="tooltip" id="tooltip-cnpj" aria-live="polite"></span></span></p>
-            <p class="mb-4 text-sm">Sua doação é segura, realizada diretamente via PIX para nossa empresa registrada.</p>
+        <!-- Seção 4: Apoio / Doação -->
+        <section id="apoio" class="glass-panel shadow-lg rounded-2xl p-6 md:p-8 text-center">
+            <h2 class="text-xl font-bold text-gray-900 mb-2">Apoie este projeto</h2>
+            <p class="text-sm text-gray-600 mb-4">Se este guia te ajudou, considere apoiar com uma contribuição via PIX de R$ 5,00:</p>
+            
+            <div class="inline-flex items-center bg-white/80 border border-gray-200 px-4 py-2 rounded-xl relative shadow-sm">
+                <span class="text-xs text-gray-500 mr-2">CNPJ:</span>
+                <strong id="cnpj" class="font-mono text-gray-900 text-sm">36.167.729/0001-02</strong>
+                <button class="ml-3 bg-blue-600 hover:bg-blue-700 text-white text-xs px-2.5 py-1 rounded transition" onclick="copyCode('cnpj')">Copiar</button>
+                <span class="tooltip" id="tooltip-cnpj"></span>
+            </div>
         </section>
+
     </main>
 
-    <footer class="bg-gray-800 text-white py-6">
-        <div class="container mx-auto px-4 text-center">
-            <div class="flex items-center justify-center mb-4">
-                <img src="https://www.microsoft.com/favicon.ico" alt="Windows 11 Logo" class="windows-logo">
-                <div>
-                    <p>© Microsoft 2025</p>
-                    <p>Guia de Ativação do Pacote Office. Todos os direitos reservados.</p>
-                </div>
-            </div>
-            <p class="text-2xl font-semibold italic text-yellow-600">Agradecemos sua parceria! 😊</p>
+    <!-- Footer -->
+    <footer class="glass-panel border-t border-white/20 mt-12 py-6 text-center text-xs text-gray-600">
+        <div class="container mx-auto px-4 space-y-2">
+            <p>© 2026 Guia de Ativação do Pacote Office. Todos os direitos reservados.</p>
+            <p class="text-yellow-700 font-medium italic">Agradecemos sua visita! 😊</p>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script>
         function copyCode(id) {
             const element = document.getElementById(id);
             const tooltip = document.getElementById(`tooltip-${id}`);
             const text = element.innerText;
+            
             navigator.clipboard.writeText(text).then(() => {
                 tooltip.innerText = 'Copiado!';
                 tooltip.classList.add('show');
                 setTimeout(() => {
                     tooltip.classList.remove('show');
-                    tooltip.innerText = '';
                 }, 2000);
             }).catch(err => {
                 console.error('Erro ao copiar: ', err);
-                tooltip.innerText = 'Erro ao copiar';
-                tooltip.classList.add('show');
-                setTimeout(() => {
-                    tooltip.classList.remove('show');
-                    tooltip.innerText = '';
-                }, 2000);
             });
         }
 
-        // Sistema de Votação (Gostei / Não Gostei)
         document.addEventListener("DOMContentLoaded", () => {
-            // Carrega os votos salvos ou define 0
             document.getElementById('count-like').innerText = localStorage.getItem('tutorial_likes') || 124;
             document.getElementById('count-dislike').innerText = localStorage.getItem('tutorial_dislikes') || 3;
 
-            // Verifica se o usuário já votou nesta sessão
             if (localStorage.getItem('user_voted')) {
                 disableVotingButtons();
             }
@@ -221,8 +246,8 @@ irm https://get.activated.win | iex
         function disableVotingButtons() {
             const btnLike = document.getElementById('btn-like');
             const btnDislike = document.getElementById('btn-dislike');
-            btnLike.classList.add('opacity-75', 'cursor-not-allowed');
-            btnDislike.classList.add('opacity-75', 'cursor-not-allowed');
+            btnLike.classList.add('opacity-50', 'cursor-not-allowed');
+            btnDislike.classList.add('opacity-50', 'cursor-not-allowed');
             btnLike.title = "Você já avaliou este tutorial!";
             btnDislike.title = "Você já avaliou este tutorial!";
         }
