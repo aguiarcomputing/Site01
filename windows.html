@@ -1,71 +1,77 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ativar o Windows sem Programas</title>
+    <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Google Fonts Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-image: url('https://www.microsoft.com/en-us/windows/r/images/wallpaper/Windows11_Bloom_Dark.jpg');
-            background-size: cover;
-            background-position: center;
+            background-color: #090d16;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(14, 165, 233, 0.1) 0px, transparent 50%);
             background-attachment: fixed;
-            background-color: #0f172a;
         }
         .glass-panel {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
         .code-block {
-            background-color: #0f172a;
+            background-color: #030712;
             color: #38bdf8;
             font-family: monospace;
             padding: 1rem;
-            border-radius: 0.5rem;
+            border-radius: 0.75rem;
             overflow-x: auto;
             position: relative;
+            border: 1px solid rgba(56, 189, 248, 0.2);
         }
         .copy-btn {
-            background-color: #3b82f6;
+            background-color: #2563eb;
             color: white;
-            padding: 0.35rem 0.75rem;
-            border-radius: 0.375rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 0.5rem;
             font-size: 0.75rem;
             cursor: pointer;
             transition: all 0.2s ease;
             border: none;
             position: relative;
             font-weight: 500;
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
         }
         .copy-btn:hover {
-            background-color: #2563eb;
-            transform: scale(1.05);
+            background-color: #1d4ed8;
+            transform: translateY(-1px);
         }
         .copy-btn:active {
-            transform: scale(0.95);
+            transform: translateY(0);
         }
         .copy-btn.copied {
-            background-color: #10b981 !important;
+            background-color: #059669 !important;
         }
         .copy-btn .tooltip {
             visibility: hidden;
             background-color: #1f2937;
             color: #fff;
             text-align: center;
-            border-radius: 0.25rem;
+            border-radius: 0.375rem;
             padding: 0.25rem 0.5rem;
             position: absolute;
             z-index: 10;
-            bottom: 125%;
+            bottom: 130%;
             left: 50%;
             transform: translateX(-50%);
             font-size: 0.75rem;
             opacity: 0;
             transition: opacity 0.2s;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
         }
         .copy-btn:hover .tooltip {
             visibility: visible;
@@ -91,27 +97,28 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(31, 41, 55, 0.8);
             color: white;
-            border: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 0.5rem 0.75rem;
             cursor: pointer;
             z-index: 10;
-            border-radius: 0.375rem;
+            border-radius: 0.5rem;
             transition: background-color 0.2s;
         }
         .carousel-btn.prev { left: 5px; }
         .carousel-btn.next { right: 5px; }
-        .carousel-btn:hover { background-color: rgba(0, 0, 0, 0.8); }
+        .carousel-btn:hover { background-color: rgba(37, 99, 235, 0.8); }
         .windows-logo {
-            max-width: 45px;
+            max-width: 40px;
             height: auto;
             margin-right: 1rem;
+            filter: brightness(0) invert(1);
         }
         .highlight-option {
-            background-color: #eff6ff;
-            color: #1d4ed8;
-            border: 1px solid #bfdbfe;
+            background-color: rgba(30, 58, 138, 0.4);
+            color: #93c5fd;
+            border: 1px solid rgba(59, 130, 246, 0.3);
             padding: 0.2rem 0.5rem;
             border-radius: 0.375rem;
             font-weight: 600;
@@ -125,31 +132,31 @@
             font-size: 0.95rem;
             font-weight: 600;
             color: white;
-            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
             border: none;
-            border-radius: 0.5rem;
+            border-radius: 0.75rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
             text-transform: uppercase;
             letter-spacing: 0.025em;
         }
         .activation-btn:hover {
-            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            background: linear-gradient(135deg, #1d4ed8, #1e40af);
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
         }
     </style>
 </head>
-<body class="flex flex-col min-h-screen text-gray-800">
+<body class="flex flex-col min-h-screen text-gray-100">
 
-    <header class="bg-gray-900 text-white py-8 shadow-md">
+    <header class="glass-panel sticky top-0 z-50 border-b border-gray-800 py-6 shadow-lg">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Ativando o Windows sem Programas</h1>
-            <p class="mt-2 text-base sm:text-lg text-gray-300">Guia prático e objetivo para ativação via linha de comando</p>
+            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">Ativando o Windows sem Programas</h1>
+            <p class="mt-2 text-base sm:text-lg text-gray-400">Guia prático e objetivo para ativação via linha de comando</p>
             
-            <div class="mt-6 bg-gray-800/80 border-l-4 border-yellow-500 p-4 rounded-r-lg">
-                <h2 class="text-lg font-semibold text-yellow-400">Aviso Importante: Fim do Suporte ao Windows 10</h2>
+            <div class="mt-6 bg-gray-900/60 border-l-4 border-amber-500 p-4 rounded-r-xl border border-gray-800">
+                <h2 class="text-lg font-semibold text-amber-400">Aviso Importante: Fim do Suporte ao Windows 10</h2>
                 <p class="mt-1 text-sm text-gray-300">O suporte oficial ao Windows 10 encerrou em outubro de 2025. Recomendamos a migração para o Windows 11 para manter seu sistema atualizado e seguro.</p>
             </div>
         </div>
@@ -158,53 +165,53 @@
     <main class="container mx-auto px-4 py-8 max-w-4xl space-y-6 flex-grow">
         
         <!-- Verificação de Edição -->
-        <div class="glass-panel shadow-md rounded-xl p-6 text-center">
-            <h2 class="text-xl font-semibold mb-2 text-gray-900">Verifique sua edição do Windows nas Configurações</h2>
-            <p class="text-sm text-gray-600 mb-4">Confira qual versão do sistema está instalada na sua máquina antes de continuar.</p>
+        <div class="glass-panel shadow-xl rounded-2xl p-6 text-center border border-gray-800">
+            <h2 class="text-xl font-semibold mb-2 text-white">Verifique sua edição do Windows nas Configurações</h2>
+            <p class="text-sm text-gray-400 mb-4">Confira qual versão do sistema está instalada na sua máquina antes de continuar.</p>
             <button class="activation-btn" onclick="window.location.href='ms-settings:activation?activationSource=SMC-Article-12440'">
                 <span>Abrir Configurações do Windows</span>
             </button>
         </div>
 
         <!-- Downloads Oficiais -->
-        <section class="glass-panel shadow-md rounded-xl p-6 space-y-6">
-            <h2 class="text-2xl font-bold text-gray-900 border-b pb-3">Ferramentas e Downloads Oficiais</h2>
+        <section class="glass-panel shadow-xl rounded-2xl p-6 space-y-6 border border-gray-800">
+            <h2 class="text-2xl font-bold text-white border-b border-gray-800 pb-3">Ferramentas e Downloads Oficiais</h2>
             
             <div class="space-y-4">
-                <div class="p-4 bg-white/60 rounded-lg border border-gray-200">
-                    <h3 class="font-semibold text-gray-900">Criar Mídia de Instalação (Windows 10)</h3>
-                    <p class="text-sm text-gray-600 my-2">Baixe e execute a ferramenta oficial para criar um pen drive ou atualizar o sistema.</p>
-                    <button class="activation-btn text-xs py-2 px-4" onclick="window.location.href='https://go.microsoft.com/fwlink/?LinkId=2265055'">Baixar Ferramenta</button>
+                <div class="p-4 bg-gray-900/40 rounded-xl border border-gray-800/80 hover:border-blue-500/40 transition">
+                    <h3 class="font-semibold text-white">Criar Mídia de Instalação (Windows 10)</h3>
+                    <p class="text-sm text-gray-400 my-2">Baixe e execute a ferramenta oficial para criar um pen drive ou atualizar o sistema.</p>
+                    <button class="activation-btn text-xs py-2 px-4 shadow-none" onclick="window.location.href='https://go.microsoft.com/fwlink/?LinkId=2265055'">Baixar Ferramenta</button>
                 </div>
 
-                <div class="p-4 bg-white/60 rounded-lg border border-gray-200">
-                    <h3 class="font-semibold text-gray-900">Imagens ISO do Windows 10</h3>
-                    <p class="text-sm text-gray-600 my-2">Baixe diretamente dos servidores da Microsoft em arquiteturas compatíveis:</p>
+                <div class="p-4 bg-gray-900/40 rounded-xl border border-gray-800/80 hover:border-blue-500/40 transition">
+                    <h3 class="font-semibold text-white">Imagens ISO do Windows 10</h3>
+                    <p class="text-sm text-gray-400 my-2">Baixe diretamente dos servidores da Microsoft em arquiteturas compatíveis:</p>
                     <div class="flex flex-wrap gap-3">
-                        <button class="activation-btn text-xs py-2 px-3" onclick="window.location.href='https://go.microsoft.com/fwlink/p/?LinkID=2208844&clcid=0x416&culture=pt-br&country=BR'">ISO 64-bit</button>
-                        <button class="activation-btn text-xs py-2 px-3 bg-gray-600" onclick="window.location.href='https://go.microsoft.com/fwlink/p/?LinkID=2209060&clcid=0x416&culture=pt-br&country=BR'">ISO 32-bit</button>
+                        <button class="activation-btn text-xs py-2 px-3 shadow-none" onclick="window.location.href='https://go.microsoft.com/fwlink/p/?LinkID=2208844&clcid=0x416&culture=pt-br&country=BR'">ISO 64-bit</button>
+                        <button class="activation-btn text-xs py-2 px-3 bg-gray-700 shadow-none hover:bg-gray-600" onclick="window.location.href='https://go.microsoft.com/fwlink/p/?LinkID=2209060&clcid=0x416&culture=pt-br&country=BR'">ISO 32-bit</button>
                     </div>
                 </div>
 
-                <div class="p-4 bg-white/60 rounded-lg border border-gray-200">
-                    <h3 class="font-semibold text-gray-900">Criar Mídia de Instalação (Windows 11)</h3>
-                    <p class="text-sm text-gray-600 my-2">Ferramenta oficial para instalação limpa ou atualização para o Windows 11 (processadores x64).</p>
-                    <button class="activation-btn text-xs py-2 px-4" onclick="window.location.href='https://go.microsoft.com/fwlink/?linkid=2156295'">Baixar Windows 11</button>
+                <div class="p-4 bg-gray-900/40 rounded-xl border border-gray-800/80 hover:border-blue-500/40 transition">
+                    <h3 class="font-semibold text-white">Criar Mídia de Instalação (Windows 11)</h3>
+                    <p class="text-sm text-gray-400 my-2">Ferramenta oficial para instalação limpa ou atualização para o Windows 11 (processadores x64).</p>
+                    <button class="activation-btn text-xs py-2 px-4 shadow-none" onclick="window.location.href='https://go.microsoft.com/fwlink/?linkid=2156295'">Baixar Windows 11</button>
                 </div>
             </div>
         </section>
 
         <!-- Passo a Passo de Ativação -->
-        <section class="glass-panel shadow-md rounded-xl p-6">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Passo a Passo: Ativar o Windows</h2>
-            <p class="text-sm text-gray-700 mb-4">Abra o PowerShell como Administrador (clique no menu Iniciar, digite "PowerShell", botão direito e selecione <em>Executar como Administrador</em>). Execute o comando abaixo:</p>
+        <section class="glass-panel shadow-xl rounded-2xl p-6 border border-gray-800">
+            <h2 class="text-2xl font-bold text-white mb-4">Passo a Passo: Ativar o Windows</h2>
+            <p class="text-sm text-gray-300 mb-4">Abra o PowerShell como Administrador (clique no menu Iniciar, digite "PowerShell", botão direito e selecione <em>Executar como Administrador</em>). Execute o comando abaixo:</p>
             
-            <div class="code-block flex items-center justify-between mb-4">
+            <div class="code-block flex items-center justify-between mb-4 shadow-inner">
                 <code id="code1" class="text-sm">irm https://get.activated.win | iex</code>
                 <button class="copy-btn ml-2" onclick="copyText('code1', this)" aria-label="Copiar comando">Copiar <span class="tooltip">Copiar comando</span></button>
             </div>
 
-            <div class="space-y-2 text-sm text-gray-700 mt-4">
+            <div class="space-y-2 text-sm text-gray-300 mt-4">
                 <p>1. No menu exibido no terminal, selecione a opção <span class="highlight-option">[5] Online KMS - Windows / Office</span>.</p>
                 <p>2. Em seguida, selecione a opção <span class="highlight-option">[1] Activate - Windows</span>.</p>
                 <p class="text-gray-500 mt-2">Pronto! O processo será concluído automaticamente sem uso de softwares de terceiros.</p>
@@ -212,38 +219,38 @@
         </section>
 
         <!-- Seção de Feedback -->
-        <section class="glass-panel shadow-md rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <section class="glass-panel shadow-xl rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4 border border-gray-800">
             <div>
-                <h3 class="text-lg font-bold text-gray-900">Este tutorial funcionou para você?</h3>
-                <p class="text-xs text-gray-600 mt-0.5">Sua avaliação nos ajuda a manter o conteúdo útil.</p>
+                <h3 class="text-lg font-bold text-white">Este tutorial funcionou para você?</h3>
+                <p class="text-xs text-gray-400 mt-0.5">Sua avaliação nos ajuda a manter o conteúdo útil.</p>
             </div>
             
             <div class="flex items-center gap-3">
-                <button onclick="vote('like')" id="btn-like" class="flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg border border-gray-300 transition text-sm font-medium">
+                <button onclick="vote('like')" id="btn-like" class="flex items-center gap-2 bg-gray-900/60 hover:bg-gray-900 text-gray-300 px-4 py-2 rounded-xl border border-gray-800 transition text-sm font-medium">
                     👍 <span id="count-like">124</span>
                 </button>
-                <button onclick="vote('dislike')" id="btn-dislike" class="flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg border border-gray-300 transition text-sm font-medium">
+                <button onclick="vote('dislike')" id="btn-dislike" class="flex items-center gap-2 bg-gray-900/60 hover:bg-gray-900 text-gray-300 px-4 py-2 rounded-xl border border-gray-800 transition text-sm font-medium">
                     👎 <span id="count-dislike">3</span>
                 </button>
-                <a href="https://wa.me/5511999999999?text=Olá!%20Encontrei%20um%20erro%20no%20tutorial%20de%20ativação%20do%20Windows:" target="_blank" class="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition shadow-sm">
+                <a href="https://wa.me/5511999999999?text=Olá!%20Encontrei%20um%20erro%20no%20tutorial%20de%20ativação%20do%20Windows:" target="_blank" class="flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-xl text-sm font-medium transition shadow-lg shadow-green-600/20">
                     💬 Reportar Erro
                 </a>
             </div>
         </section>
 
         <!-- Apoie o Projeto -->
-        <section class="glass-panel shadow-md rounded-xl p-6 text-center">
-            <h2 class="text-xl font-bold text-gray-900 mb-4">Apoie o Projeto!</h2>
+        <section class="glass-panel shadow-xl rounded-2xl p-6 text-center border border-gray-800">
+            <h2 class="text-xl font-bold text-white mb-4">Apoie o Projeto!</h2>
             <div class="carousel" role="region" aria-label="Carrossel de opções de doação">
                 <div class="carousel-inner" id="carouselInner">
                     <div class="carousel-item">
-                        <p class="text-sm mb-2 text-gray-700">Faça uma doação de <strong>R$ 5,00</strong> via PIX para apoiar o mantenedor.</p>
-                        <p class="text-sm text-gray-800 mb-2">Chave PIX (CNPJ): <strong id="cnpj1" class="font-mono bg-white px-2 py-1 rounded border">36.167.729/0001-02</strong></p>
+                        <p class="text-sm mb-2 text-gray-300">Faça uma doação de <strong>R$ 5,00</strong> via PIX para apoiar o mantenedor.</p>
+                        <p class="text-sm text-gray-300 mb-2">Chave PIX (CNPJ): <strong id="cnpj1" class="font-mono bg-gray-900 px-2.5 py-1 rounded-lg border border-gray-800 text-white">36.167.729/0001-02</strong></p>
                         <button class="copy-btn mt-2" onclick="copyText('cnpj1', this)">Copiar CNPJ <span class="tooltip">Copiar CNPJ</span></button>
                     </div>
                     <div class="carousel-item">
-                        <p class="text-sm mb-2 text-gray-700">Ajude a manter este projeto ativo e gratuito!</p>
-                        <p class="text-sm text-gray-800 mb-2">Chave PIX (CNPJ): <strong id="cnpj2" class="font-mono bg-white px-2 py-1 rounded border">36.167.729/0001-02</strong></p>
+                        <p class="text-sm mb-2 text-gray-300">Ajude a manter este projeto ativo e gratuito!</p>
+                        <p class="text-sm text-gray-300 mb-2">Chave PIX (CNPJ): <strong id="cnpj2" class="font-mono bg-gray-900 px-2.5 py-1 rounded-lg border border-gray-800 text-white">36.167.729/0001-02</strong></p>
                         <button class="copy-btn mt-2" onclick="copyText('cnpj2', this)">Copiar CNPJ <span class="tooltip">Copiar CNPJ</span></button>
                     </div>
                 </div>
@@ -253,7 +260,7 @@
         </section>
     </main>
 
-    <footer class="bg-gray-900 text-white py-6 mt-12">
+    <footer class="glass-panel border-t border-gray-800 py-6 mt-12">
         <div class="container mx-auto px-4 text-center max-w-4xl">
             <div class="flex items-center justify-center mb-3">
                 <img src="https://www.microsoft.com/favicon.ico" alt="Logo Windows" class="windows-logo">
@@ -262,10 +269,11 @@
                     <p>© 2026 Todos os direitos reservados.</p>
                 </div>
             </div>
-            <p class="text-sm font-semibold italic text-yellow-400">Agradecemos sua parceria! 😊</p>
+            <p class="text-sm font-semibold italic text-amber-400">Agradecemos sua parceria! 😊</p>
         </div>
     </footer>
 
+    <!-- Scripts originais preservados -->
     <script>
         function copyText(elementId, button) {
             const element = document.getElementById(elementId);
