@@ -3,41 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia Oficial e Ativação do Windows 10 e 11</title>
-    <meta name="description" content="Guia prático para download e ativação do Windows 10 e Windows 11 utilizando ferramentas oficiais e comandos do PowerShell.">
+    <title>Ativar Windows - Guia Prático</title>
+    <meta name="description" content="Guia prático e objetivo para ativação via linha de comando e downloads oficiais do Windows.">
     
     <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Google Fonts Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #090d16;
+            background-color: #070b12;
             background-image: 
-                radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(14, 165, 233, 0.1) 0px, transparent 50%);
+                radial-gradient(at 0% 0%, rgba(14, 165, 233, 0.12) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(37, 99, 235, 0.08) 0px, transparent 50%);
             background-attachment: fixed;
-        }
-        .glass-panel {
-            background: rgba(17, 24, 39, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .code-block {
-            background-color: #030712;
-            color: #38bdf8;
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-            border: 1px solid rgba(56, 189, 248, 0.2);
         }
         .tooltip {
             position: absolute;
             top: -38px;
             left: 50%;
             transform: translateX(-50%) translateY(4px);
-            background-color: #2563eb;
+            background-color: #0284c7;
             color: white;
             padding: 0.25rem 0.6rem;
             border-radius: 0.375rem;
@@ -45,7 +33,7 @@
             opacity: 0;
             transition: all 0.2s ease-in-out;
             pointer-events: none;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
             white-space: nowrap;
         }
         .tooltip.show {
@@ -54,160 +42,166 @@
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between text-gray-100">
+<body class="min-h-screen flex flex-col justify-between text-gray-100 py-8 px-4 md:px-8">
 
-    <!-- Header -->
-    <header class="glass-panel sticky top-0 z-50 shadow-lg border-b border-gray-800">
-        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <span class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold p-2.5 rounded-xl text-lg shadow-md shadow-blue-500/20">Windows</span>
-                <div>
-                    <h1 class="text-xl font-bold text-white tracking-tight">Guia de Instalação e Ativação</h1>
-                    <p class="text-xs text-gray-400">Links diretos e oficiais da Microsoft (Windows 10 e 11)</p>
-                </div>
-            </div>
-            <nav class="mt-4 md:mt-0 flex space-x-6 text-sm font-medium">
-                <a href="#downloads" class="text-gray-300 hover:text-blue-400 transition">Downloads</a>
-                <a href="#ativacao" class="text-gray-300 hover:text-blue-400 transition">Ativação</a>
-                <a href="#apoio" class="text-gray-300 hover:text-blue-400 transition">Apoie</a>
-            </nav>
+    <!-- Header Principal -->
+    <header class="max-w-4xl mx-auto w-full mb-8">
+        <div class="flex items-center gap-3 mb-1">
+            <!-- Ícone do Windows -->
+            <svg class="w-7 h-7 text-cyan-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M0 3.449L9.75 2.1v9.451H0m0 1.05h9.75V21.9L0 20.551M10.8 1.95L24 0v11.55H10.8m0 1.05H24V24l-13.2-1.95"/>
+            </svg>
+            <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-white">
+                Ativar <span class="text-cyan-400">Windows</span>
+            </h1>
         </div>
+        <p class="text-gray-400 text-xs md:text-sm pl-1">
+            Guia prático e objetivo para ativação via linha de comando
+        </p>
     </header>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-10 max-w-4xl space-y-8">
+    <main class="max-w-4xl mx-auto w-full space-y-8">
 
-        <!-- Alerta Informativo -->
-        <div class="glass-panel border-l-4 border-amber-500 p-4 rounded-r-2xl shadow-lg relative overflow-hidden">
-            <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-amber-500/10 rounded-full blur-xl pointer-events-none"></div>
-            <p class="text-sm text-gray-300 leading-relaxed">
-                <strong class="text-amber-400">Aviso sobre o Windows 10:</strong> O suporte oficial da Microsoft para o Windows 10 encerrou em outubro de 2025. Recomendamos a atualização para o <strong class="text-white">Windows 11</strong> para garantir correções de segurança.
-            </p>
+        <!-- Banner de Aviso -->
+        <div class="bg-[#0d1322] border-l-4 border-amber-500 rounded-r-2xl p-4 md:p-5 shadow-xl border-y border-r border-slate-800/80 relative overflow-hidden">
+            <div class="flex items-start gap-3">
+                <span class="text-amber-500 text-lg leading-none mt-0.5">⚠️</span>
+                <div>
+                    <h3 class="text-amber-500 font-bold text-sm md:text-base mb-1">
+                        Aviso Importante: Fim do Suporte ao Windows 10
+                    </h3>
+                    <p class="text-gray-400 text-xs md:text-sm leading-relaxed">
+                        O suporte oficial ao Windows 10 encerrou em outubro de 2025. Recomendamos a migração para o Windows 11 para manter seu sistema atualizado e seguro.
+                    </p>
+                </div>
+            </div>
         </div>
 
-        <!-- Seção 1: Downloads -->
-        <section id="downloads" class="glass-panel shadow-xl rounded-3xl p-6 md:p-8 transition hover:border-gray-700">
-            <div class="flex items-center space-x-3 mb-6">
-                <div class="bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-xl w-10 h-10 flex items-center justify-center font-bold">1</div>
-                <h2 class="text-2xl font-bold text-white tracking-tight">Escolha a sua versão do Windows</h2>
+        <!-- Seção 1: Ferramentas e Downloads Oficiais -->
+        <section id="downloads">
+            <div class="flex items-center gap-3 mb-4">
+                <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+                <h2 class="text-xl md:text-2xl font-bold text-white tracking-tight">
+                    Ferramentas e Downloads Oficiais
+                </h2>
             </div>
-            <p class="text-gray-400 mb-6 text-sm">Selecione abaixo uma das opções oficiais hospedadas diretamente nos servidores da Microsoft:</p>
 
-            <div class="space-y-4">
-                <div class="border border-gray-800 p-4 rounded-2xl hover:border-blue-500/50 transition bg-gray-900/40">
-                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                        <div>
-                            <h3 class="font-semibold text-white">Windows 11 (Ferramenta de Criação de Mídia / ISO)</h3>
-                            <p class="text-xs text-gray-400 mt-1">Assistente de Instalação e Criador de Mídia Oficial para Windows 11 (64-bit)</p>
-                        </div>
-                        <a href="https://go.microsoft.com/fwlink/?linkid=2156295" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-500 text-white text-sm px-5 py-2.5 rounded-xl font-medium transition shadow-lg shadow-blue-600/20 whitespace-nowrap">
-                            Baixar Windows 11
+            <!-- Cartão Contentor Principal -->
+            <div class="bg-[#0b101d] border border-slate-800/90 rounded-2xl p-4 md:p-6 space-y-4 shadow-2xl">
+                
+                <!-- Item 1: Win 10 MCT -->
+                <div class="bg-[#0f172a]/70 border border-slate-800/80 rounded-xl p-4 md:p-5">
+                    <h3 class="text-white font-bold text-base mb-1">Criar Mídia de Instalação (Windows 10)</h3>
+                    <p class="text-gray-400 text-xs md:text-sm mb-4">Baixe e execute a ferramenta oficial para criar um pen drive ou atualizar o sistema.</p>
+                    <a href="https://go.microsoft.com/fwlink/?LinkId=691209" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-blue-600 hover:from-cyan-500 hover:to-blue-700 text-white text-xs md:text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg shadow-cyan-500/10 transition transform active:scale-95">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        Baixar Ferramenta
+                    </a>
+                </div>
+
+                <!-- Item 2: Win 10 ISO -->
+                <div class="bg-[#0f172a]/70 border border-slate-800/80 rounded-xl p-4 md:p-5">
+                    <h3 class="text-white font-bold text-base mb-1">Imagens ISO do Windows 10</h3>
+                    <p class="text-gray-400 text-xs md:text-sm mb-4">Baixe diretamente dos servidores da Microsoft em arquiteturas compatíveis:</p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://go.microsoft.com/fwlink/?LinkId=691209" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-blue-600 hover:from-cyan-500 hover:to-blue-700 text-white text-xs md:text-sm font-semibold px-5 py-2 rounded-full shadow-lg transition transform active:scale-95">
+                            ISO 64-bit
+                        </a>
+                        <a href="https://go.microsoft.com/fwlink/?LinkId=691209" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-slate-900/90 hover:bg-slate-800 text-gray-300 border border-slate-700/80 text-xs md:text-sm font-semibold px-5 py-2 rounded-full transition transform active:scale-95">
+                            ISO 32-bit
                         </a>
                     </div>
                 </div>
 
-                <div class="border border-gray-800 p-4 rounded-2xl hover:border-blue-500/50 transition bg-gray-900/40">
-                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                        <div>
-                            <h3 class="font-semibold text-white">Windows 10 - Ferramenta de Criação de Mídia</h3>
-                            <p class="text-xs text-gray-400 mt-1">Ferramenta oficial para criação de pendrive bootável do Windows 10</p>
-                        </div>
-                        <a href="https://go.microsoft.com/fwlink/?LinkId=691209" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-500 text-white text-sm px-5 py-2.5 rounded-xl font-medium transition shadow-lg shadow-blue-600/20 whitespace-nowrap">
-                            Baixar Ferramenta
-                        </a>
+                <!-- Item 3: Win 11 MCT -->
+                <div class="bg-[#0f172a]/70 border border-slate-800/80 rounded-xl p-4 md:p-5">
+                    <h3 class="text-white font-bold text-base mb-1">Criar Mídia de Instalação (Windows 11)</h3>
+                    <p class="text-gray-400 text-xs md:text-sm mb-4">Ferramenta oficial para instalação limpa ou atualização para o Windows 11 (processadores x64).</p>
+                    <a href="https://go.microsoft.com/fwlink/?linkid=2156295" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-blue-600 hover:from-cyan-500 hover:to-blue-700 text-white text-xs md:text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg shadow-cyan-500/10 transition transform active:scale-95">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        Baixar Windows 11
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Seção 2: Passo a Passo de Ativação -->
+        <section id="ativacao">
+            <div class="flex items-center gap-2.5 mb-4">
+                <span class="text-cyan-400 font-mono font-bold text-xl">&gt;_</span>
+                <h2 class="text-xl md:text-2xl font-bold text-white tracking-tight">
+                    Passo a Passo: Ativar o Windows
+                </h2>
+            </div>
+
+            <div class="bg-[#0b101d] border border-slate-800/90 rounded-2xl p-4 md:p-6 shadow-2xl space-y-5">
+                <ol class="list-decimal list-inside space-y-2.5 text-gray-300 text-xs md:text-sm">
+                    <li>Abra o menu <strong class="text-white">Iniciar</strong> do Windows.</li>
+                    <li>Digite <strong class="text-white">PowerShell</strong>, clique com o botão direito e escolha <strong class="text-white">Executar como Administrador</strong>.</li>
+                    <li>Copie e cole o comando abaixo no terminal e pressione <kbd class="bg-slate-800 border border-slate-700 px-2 py-0.5 rounded text-xs text-gray-300">Enter</kbd>:</li>
+                </ol>
+
+                <!-- Bloco do Comando -->
+                <div class="bg-[#030712] border border-cyan-500/30 rounded-xl p-4 flex items-center justify-between relative shadow-inner">
+                    <code id="code1" class="text-cyan-400 font-mono text-xs md:text-sm overflow-x-auto pr-3">irm https://get.activated.win | iex</code>
+                    <div class="relative shrink-0">
+                        <button onclick="copyCode('code1')" class="bg-gradient-to-r from-cyan-400 to-blue-600 hover:from-cyan-500 hover:to-blue-700 text-white text-xs font-semibold px-4 py-1.5 rounded-full shadow-md transition transform active:scale-95">
+                            Copiar
+                        </button>
+                        <span class="tooltip" id="tooltip-code1" aria-live="polite"></span>
                     </div>
                 </div>
 
-                <div class="border border-gray-800 p-4 rounded-2xl hover:border-blue-500/50 transition bg-gray-900/40">
-                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                        <div>
-                            <h3 class="font-semibold text-white">Windows 10 - Imagens ISO Oficiais</h3>
-                            <p class="text-xs text-gray-400 mt-1">Downloads diretos das imagens ISO originais (32-bit e 64-bit)</p>
-                        </div>
-                        <div class="flex gap-2">
-                            <a href="https://go.microsoft.com/fwlink/?LinkId=691209" target="_blank" rel="noopener noreferrer" class="bg-gray-800 hover:bg-gray-700 text-white text-xs px-3.5 py-2 rounded-xl font-medium transition border border-gray-700">
-                                ISO 64-bit
-                            </a>
-                            <a href="https://go.microsoft.com/fwlink/?LinkId=691209" target="_blank" rel="noopener noreferrer" class="bg-gray-800 hover:bg-gray-700 text-white text-xs px-3.5 py-2 rounded-xl font-medium transition border border-gray-700">
-                                ISO 32-bit
-                            </a>
-                        </div>
-                    </div>
+                <!-- Dicas adicionais -->
+                <div class="bg-[#0f172a]/70 border border-slate-800/80 p-4 rounded-xl space-y-1.5 text-xs md:text-sm">
+                    <p class="font-semibold text-cyan-400">Instruções no menu que aparecer:</p>
+                    <p class="text-gray-300">1. Selecione a opção <span class="bg-[#030712] px-2 py-0.5 rounded border border-slate-800 font-mono text-xs text-cyan-400 font-bold">[5] Online KMS - Windows/Office</span>.</p>
+                    <p class="text-gray-300">2. Em seguida, selecione <span class="bg-[#030712] px-2 py-0.5 rounded border border-slate-800 font-mono text-xs text-cyan-400 font-bold">[1] Ativar - Windows</span>.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Seção 2: Ativação -->
-        <section id="ativacao" class="glass-panel shadow-xl rounded-3xl p-6 md:p-8 transition hover:border-gray-700">
-            <div class="flex items-center space-x-3 mb-6">
-                <div class="bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-xl w-10 h-10 flex items-center justify-center font-bold">2</div>
-                <h2 class="text-2xl font-bold text-white tracking-tight">Ativação via PowerShell</h2>
-            </div>
-            
-            <ol class="list-decimal list-inside space-y-3 text-gray-300 text-sm mb-6">
-                <li>Abra o menu <strong class="text-white">Iniciar</strong> do Windows.</li>
-                <li>Digite <strong class="text-white">PowerShell</strong>, clique com o botão direito e escolha <strong class="text-white">Executar como Administrador</strong>.</li>
-                <li>Copie e cole o comando abaixo no terminal e pressione <kbd class="bg-gray-800 border border-gray-700 px-2.5 py-1 rounded-md text-xs text-gray-300">Enter</kbd>:</li>
-            </ol>
-
-            <div class="code-block p-4 rounded-2xl relative shadow-inner mb-6 flex justify-between items-center">
-                <code id="code1" class="block text-sm overflow-x-auto pr-2">irm https://get.activated.win | iex</code>
-                <div class="relative inline-block">
-                    <button class="bg-blue-600 hover:bg-blue-500 text-white text-xs px-3.5 py-1.5 rounded-lg transition font-medium shadow-md shadow-blue-600/20" onclick="copyCode('code1')" aria-label="Copiar comando de ativação">
-                        Copiar
-                    </button>
-                    <span class="tooltip" id="tooltip-code1" aria-live="polite"></span>
-                </div>
-            </div>
-
-            <div class="bg-blue-950/30 border border-blue-500/20 p-4 rounded-2xl space-y-2 text-sm">
-                <p class="font-semibold text-blue-300">Instruções no menu que aparecer:</p>
-                <p class="text-gray-300">1. Selecione a opção <span class="bg-gray-900 px-2.5 py-1 rounded-md border border-gray-700 font-mono text-xs font-bold text-blue-400">[5] Online KMS - Windows/Office</span>.</p>
-                <p class="text-gray-300">2. Em seguida, selecione <span class="bg-gray-900 px-2.5 py-1 rounded-md border border-gray-700 font-mono text-xs font-bold text-blue-400">[1] Ativar - Windows</span>.</p>
-            </div>
-        </section>
-
-        <!-- Seção 3: Avaliação e Feedback -->
-        <section class="glass-panel shadow-xl rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <!-- Seção 3: Feedback e Suporte -->
+        <section class="bg-[#0b101d] border border-slate-800/90 rounded-2xl p-5 md:p-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-xl">
             <div>
-                <h3 class="text-lg font-bold text-white">Este tutorial foi útil para você?</h3>
-                <p class="text-xs text-gray-400 mt-1">Ajude-nos a melhorar avaliando abaixo ou reportando qualquer dúvida.</p>
+                <h3 class="text-base font-bold text-white">Este tutorial foi útil para você?</h3>
+                <p class="text-xs text-gray-400 mt-0.5">Avalie ou entre em contacto caso precise de ajuda.</p>
             </div>
             
             <div class="flex items-center gap-3">
-                <button onclick="vote('like')" id="btn-like" class="flex items-center gap-2 bg-gray-900/60 hover:bg-gray-900 text-gray-300 hover:text-white px-4 py-2.5 rounded-xl border border-gray-800 transition text-sm shadow-sm">
-                    👍 <span id="count-like" class="font-medium">158</span>
+                <button onclick="vote('like')" id="btn-like" class="flex items-center gap-2 bg-[#0f172a] hover:bg-slate-800 text-gray-300 px-4 py-2 rounded-xl border border-slate-800 transition text-xs font-medium">
+                    👍 <span id="count-like">158</span>
                 </button>
 
-                <button onclick="vote('dislike')" id="btn-dislike" class="flex items-center gap-2 bg-gray-900/60 hover:bg-gray-900 text-gray-300 hover:text-white px-4 py-2.5 rounded-xl border border-gray-800 transition text-sm shadow-sm">
-                    👎 <span id="count-dislike" class="font-medium">2</span>
+                <button onclick="vote('dislike')" id="btn-dislike" class="flex items-center gap-2 bg-[#0f172a] hover:bg-slate-800 text-gray-300 px-4 py-2 rounded-xl border border-slate-800 transition text-xs font-medium">
+                    👎 <span id="count-dislike">2</span>
                 </button>
 
-                <a href="https://wa.me/5548991890567?text=Olá!%20Encontrei%20um%20erro%20no%20tutorial%20de%20ativação%20do%20Windows:" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white px-4 py-2.5 rounded-xl text-sm font-medium transition shadow-lg shadow-green-600/20">
+                <a href="https://wa.me/5548991890567?text=Olá!%20Encontrei%20um%20erro%20no%20tutorial%20de%20ativação%20do%20Windows:" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-xl text-xs font-semibold transition shadow-lg shadow-green-600/20">
                     💬 Suporte
                 </a>
             </div>
         </section>
 
-        <!-- Seção 4: Apoio / Doação (Igual à imagem) -->
-        <section id="apoio" class="glass-panel shadow-2xl rounded-2xl p-6 md:p-8 text-center border border-gray-800/80 max-w-3xl mx-auto">
-            <!-- Título -->
-            <div class="flex items-center justify-center gap-2 mb-4">
+        <!-- Seção 4: Apoio do Projeto (Estilo Carrossel/PIX) -->
+        <section id="apoio" class="bg-[#0b101d] border border-slate-800/90 rounded-2xl p-6 md:p-8 text-center shadow-2xl max-w-3xl mx-auto">
+            <div class="flex items-center justify-center gap-2 mb-3">
                 <span class="text-red-500 text-xl">❤️</span>
                 <h2 class="text-xl md:text-2xl font-bold text-white tracking-wide">Apoie o Projeto!</h2>
             </div>
             
-            <!-- Linha divisória -->
-            <hr class="border-gray-800/80 mb-6">
+            <hr class="border-slate-800/80 mb-6">
 
-            <!-- Conteúdo em carrossel -->
-            <div class="flex items-center justify-between gap-2 md:gap-6">
-                <!-- Botão Voltar -->
-                <button class="w-9 h-9 md:w-10 md:h-10 rounded-full bg-slate-900/90 border border-slate-700/60 text-white flex items-center justify-center hover:bg-slate-800 transition shrink-0 shadow-md" aria-label="Anterior">
+            <div class="flex items-center justify-between gap-3 md:gap-6">
+                <!-- Botão Anterior -->
+                <button class="w-9 h-9 md:w-10 md:h-10 rounded-full bg-slate-900/90 border border-slate-700/60 text-white flex items-center justify-center hover:bg-slate-800 transition shrink-0" aria-label="Anterior">
                     <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
                 </button>
 
-                <!-- Informações do PIX -->
+                <!-- Conteúdo Central PIX -->
                 <div class="flex flex-col items-center space-y-4">
                     <p class="text-gray-400 text-xs md:text-sm">
                         Faça uma doação de <strong class="text-white font-bold">R$ 5,00</strong> via PIX para apoiar o mantenedor.
@@ -215,7 +209,7 @@
 
                     <div class="flex flex-wrap items-center justify-center gap-2 text-xs md:text-sm text-gray-400">
                         <span>Chave PIX (CNPJ):</span>
-                        <strong id="cnpj" class="bg-[#030712] text-white px-3 py-1 rounded-lg border border-gray-800 font-mono text-xs md:text-sm font-bold tracking-wide">36.167.729/0001-02</strong>
+                        <strong id="cnpj" class="bg-[#030712] text-white px-3 py-1 rounded-lg border border-slate-800 font-mono text-xs md:text-sm font-bold tracking-wide">36.167.729/0001-02</strong>
                     </div>
 
                     <div class="relative pt-1">
@@ -227,8 +221,8 @@
                     </div>
                 </div>
 
-                <!-- Botão Avançar -->
-                <button class="w-9 h-9 md:w-10 md:h-10 rounded-full bg-slate-900/90 border border-slate-700/60 text-white flex items-center justify-center hover:bg-slate-800 transition shrink-0 shadow-md" aria-label="Próximo">
+                <!-- Botão Próximo -->
+                <button class="w-9 h-9 md:w-10 md:h-10 rounded-full bg-slate-900/90 border border-slate-700/60 text-white flex items-center justify-center hover:bg-slate-800 transition shrink-0" aria-label="Próximo">
                     <svg class="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
                 </button>
             </div>
@@ -236,15 +230,12 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer class="glass-panel border-t border-gray-800 mt-16 py-6 text-center text-xs text-gray-400">
-        <div class="container mx-auto px-4 space-y-1">
-            <p>© 2026 Guia de Ativação do Windows. Todos os direitos reservados.</p>
-            <p class="text-amber-400 font-medium italic">Agradecemos sua visita! 😊</p>
-        </div>
+    <!-- Rodapé -->
+    <footer class="mt-16 py-6 text-center text-xs text-gray-500 border-t border-slate-800/60 max-w-4xl mx-auto w-full">
+        <p>© 2026 Guia de Ativação do Windows. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Scripts de Funcionalidade -->
     <script>
         function copyCode(id) {
             const element = document.getElementById(id);
@@ -254,15 +245,15 @@
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(text).then(() => {
                     showTooltip(tooltip, 'Copiado!');
-                }).catch(err => {
-                    fallbackCopyTextToClipboard(text, tooltip);
+                }).catch(() => {
+                    fallbackCopy(text, tooltip);
                 });
             } else {
-                fallbackCopyTextToClipboard(text, tooltip);
+                fallbackCopy(text, tooltip);
             }
         }
 
-        function fallbackCopyTextToClipboard(text, tooltip) {
+        function fallbackCopy(text, tooltip) {
             const textArea = document.createElement("textarea");
             textArea.value = text;
             textArea.style.position = "fixed";
@@ -327,15 +318,15 @@
             
             btnLike.classList.add('opacity-50', 'cursor-not-allowed');
             btnDislike.classList.add('opacity-50', 'cursor-not-allowed');
-            
+
             if (votedType === 'like') {
-                btnLike.classList.add('border-blue-500', 'bg-blue-900/30');
+                btnLike.classList.add('border-cyan-500', 'bg-cyan-950/40');
             } else if (votedType === 'dislike') {
-                btnDislike.classList.add('border-red-500', 'bg-red-900/30');
+                btnDislike.classList.add('border-red-500', 'bg-red-950/40');
             }
 
-            btnLike.title = "Você já avaliou este tutorial!";
-            btnDislike.title = "Você já avaliou este tutorial!";
+            btnLike.title = "Já avaliou este tutorial!";
+            btnDislike.title = "Já avaliou este tutorial!";
         }
     </script>
 </body>
