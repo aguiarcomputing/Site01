@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quebrada da Carioca | Hambúrgueres, Empadões & Bolos com Ginga Carioca</title>
+    
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #100D14;
+            --bg-card: rgba(26, 21, 32, 0.82);
+            --bg-card-hover: rgba(38, 30, 48, 0.95);
+            --sunset-orange: #FF5722;
+            --sunset-yellow: #FFC107;
+            --rio-red: #E63946;
+            --copa-white: #FAF6F0;
+            --accent-green: #25D366;
+            --primary-glow: rgba(255, 87, 34, 0.35);
+            --green-glow: rgba(37, 211, 102, 0.35);
+            --font-main: 'Plus Jakarta Sans', sans-serif;
+            --font-display: 'Fredoka', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-main);
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--copa-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(255, 87, 34, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(255, 193, 7, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(230, 57, 70, 0.06) 0%, transparent 60%);
+            background-attachment: fixed;
+        }
+
+        /* Copacabana Wave Background Pattern Utility */
+        .copacabana-pattern {
+            background-color: transparent;
+            background-image: radial-gradient(#FF5722 0.75px, transparent 0.75px), radial-gradient(#FFC107 0.75px, #100D14 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            opacity: 0.15;
+        }
+
+        /* --- HEADER & NAV --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(16, 13, 20, 0.92);
+            backdrop-filter: blur(14px);
+            border-bottom: 2px solid rgba(255, 87, 34, 0.2);
+            padding: 0.85rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--sunset-orange), var(--rio-red));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 16px var(--primary-glow);
+            transform: rotate(-3deg);
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            letter-spacing: -0.3px;
+        }
+
+        .logo-text span {
+            color: var(--sunset-yellow);
+        }
+
+        .logo-subtitle {
+            display: block;
+            font-family: var(--font-main);
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--sunset-orange);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: rgba(250, 246, 240, 0.8);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 700;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--sunset-yellow);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -6px;
+            left: 0;
+            background: linear-gradient(90deg, var(--sunset-orange), var(--sunset-yellow));
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Buttons */
+        .btn-cta {
+            background: linear-gradient(135deg, var(--sunset-orange), var(--rio-red));
+            color: #FFF;
+            padding: 0.75rem 1.6rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.92rem;
+            box-shadow: 0 4px 20px var(--primary-glow);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 28px rgba(255, 87, 34, 0.55);
+            background: linear-gradient(135deg, #FF6E40, #F44336);
+        }
+
+        .btn-whatsapp-header {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            box-shadow: 0 4px 18px var(--green-glow);
+        }
+
+        .btn-whatsapp-header:hover {
+            box-shadow: 0 8px 26px rgba(37, 211, 102, 0.55);
+            background: linear-gradient(135deg, #28E16D, #14A08F);
+        }
+
+        .hero {
+            padding: 170px 5% 80px;
+            min-height: 88vh;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            align-items: center;
+            gap: 50px;
+            position: relative;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            background: rgba(255, 193, 7, 0.12);
+            border: 1px solid var(--sunset-yellow);
+            color: var(--sunset-yellow);
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 3.6rem;
+            font-family: var(--font-display);
+            line-height: 1.1;
+            margin-bottom: 22px;
+            color: #FFF;
+        }
+
+        .hero h1 .highlight-text {
+            background: linear-gradient(90deg, var(--sunset-yellow), var(--sunset-orange), var(--rio-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: rgba(250, 246, 240, 0.82);
+            font-size: 1.18rem;
+            margin-bottom: 35px;
+            max-width: 560px;
+            font-weight: 500;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            border: 2px solid rgba(255, 193, 7, 0.4);
+            padding: 0.75rem 1.6rem;
+            border-radius: 50px;
+            color: var(--copa-white);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.92rem;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 193, 7, 0.15);
+            border-color: var(--sunset-yellow);
+            color: var(--sunset-yellow);
+            transform: translateY(-2px);
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-card-featured {
+            background: var(--bg-card);
+            border: 2px solid rgba(255, 87, 34, 0.25);
+            border-radius: 28px;
+            padding: 32px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(16px);
+            width: 100%;
+            max-width: 440px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease;
+        }
+
+        .hero-card-featured:hover {
+            transform: translateY(-8px) rotate(1deg);
+            border-color: var(--sunset-orange);
+        }
+
+        .hero-card-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--rio-red), #B71C1C);
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(230, 57, 70, 0.4);
+        }
+
+        .hero-food-icon {
+            font-size: 5rem;
+            color: var(--sunset-yellow);
+            text-align: center;
+            margin: 15px 0 20px;
+            filter: drop-shadow(0 0 18px var(--primary-glow));
+        }
+
+        .hero-card-featured h3 {
+            font-size: 1.65rem;
+            font-family: var(--font-display);
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .hero-card-featured p {
+            font-size: 0.95rem;
+            color: rgba(250, 246, 240, 0.75);
+            margin-bottom: 22px;
+        }
+
+        .hero-price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 18px;
+        }
+
+        .price-label {
+            font-size: 0.8rem;
+            color: rgba(250, 246, 240, 0.6);
+            display: block;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .price-value {
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: var(--sunset-yellow);
+            font-family: var(--font-display);
+        }
+
+        .wave-divider {
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            background: transparent;
+            margin: -2px 0;
+        }
+
+        .wave-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 55px;
+        }
+
+        .wave-divider .shape-fill {
+            fill: rgba(255, 87, 34, 0.08);
+        }
+
+        .wave-divider-black svg path {
+            fill: #15111B;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            padding: 45px 5%;
+            background: rgba(21, 17, 27, 0.95);
+            border-top: 1px solid rgba(255, 87, 34, 0.15);
+            border-bottom: 1px solid rgba(255, 87, 34, 0.15);
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 22px;
+            border-radius: 20px;
+            background: rgba(30, 24, 38, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.3s;
+        }
+
+        .stat-card:hover {
+            border-color: var(--sunset-yellow);
+            transform: translateY(-4px);
+            background: rgba(30, 24, 38, 0.9);
+        }
+
+        .stat-card i {
+            font-size: 2rem;
+            color: var(--sunset-orange);
+            margin-bottom: 12px;
+        }
+
+        .stat-card h3 {
+            font-size: 2.2rem;
+            color: #FFF;
+            font-family: var(--font-display);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .stat-card p {
+            color: rgba(250, 246, 240, 0.7);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .menu-section {
+            padding: 90px 5%;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title .badge-subtitle {
+            color: var(--sunset-orange);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .section-title h2 {
+            font-size: 2.7rem;
+            font-family: var(--font-display);
+            margin-bottom: 14px;
+            color: #FFF;
+        }
+
+        .section-title h2 span {
+            color: var(--sunset-yellow);
+        }
+
+        .section-title p {
+            color: rgba(250, 246, 240, 0.75);
+            font-size: 1.1rem;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        /* Filter Tabs */
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: rgba(250, 246, 240, 0.8);
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 0.93rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .tab-btn:hover, .tab-btn.active {
+            background: linear-gradient(135deg, var(--sunset-orange), var(--rio-red));
+            color: #FFF;
+            border-color: var(--sunset-orange);
+            box-shadow: 0 4px 18px var(--primary-glow);
+        }
+
+        /* Menu Grid Cards */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(295px, 1fr));
+            gap: 32px;
+        }
+
+        .food-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 87, 34, 0.18);
+            border-radius: 24px;
+            padding: 28px;
+            transition: all 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .food-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--sunset-yellow);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
+            background: var(--bg-card-hover);
+        }
+
+        .food-badge {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: rgba(255, 193, 7, 0.18);
+            border: 1px solid var(--sunset-yellow);
+            color: var(--sunset-yellow);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .food-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .food-icon-box {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 87, 34, 0.12);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sunset-yellow);
+            font-size: 1.7rem;
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 87, 34, 0.2);
+        }
+
+        .food-card h3 {
+            font-size: 1.35rem;
+            font-family: var(--font-display);
+            color: #FFF;
+            line-height: 1.25;
+        }
+
+        .food-description {
+            color: rgba(250, 246, 240, 0.72);
+            font-size: 0.94rem;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .food-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .food-price {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--sunset-yellow);
+            font-family: var(--font-display);
+        }
+
+        .btn-order-item {
+            background: rgba(255, 87, 34, 0.15);
+            color: var(--sunset-yellow);
+            border: 1px solid var(--sunset-orange);
+            padding: 9px 18px;
+            border-radius: 20px;
+            font-size: 0.88rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .btn-order-item:hover {
+            background: var(--sunset-orange);
+            color: #FFF;
+            box-shadow: 0 4px 14px var(--primary-glow);
+        }
+
+        .story-section {
+            padding: 90px 5%;
+            background: rgba(21, 17, 27, 0.85);
+            position: relative;
+            border-top: 1px solid rgba(255, 87, 34, 0.1);
+            border-bottom: 1px solid rgba(255, 87, 34, 0.1);
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .story-content h2 {
+            font-size: 2.6rem;
+            font-family: var(--font-display);
+            margin-bottom: 20px;
+            color: #FFF;
+        }
+
+        .story-content h2 span {
+            color: var(--sunset-orange);
+        }
+
+        .story-content p {
+            color: rgba(250, 246, 240, 0.8);
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .story-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 25px;
+        }
+
+        .story-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 87, 34, 0.2);
+            padding: 16px;
+            border-radius: 16px;
+        }
+
+        .story-box i {
+            font-size: 1.5rem;
+            color: var(--sunset-yellow);
+            margin-bottom: 8px;
+        }
+
+        .story-box h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #FFF;
+            margin-bottom: 4px;
+        }
+
+        .story-box p {
+            font-size: 0.85rem;
+            margin-bottom: 0;
+            color: rgba(250, 246, 240, 0.65);
+        }
+
+        .order-section {
+            padding: 100px 5%;
+            position: relative;
+        }
+
+        .form-container {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 2px solid rgba(255, 87, 34, 0.25);
+            border-radius: 30px;
+            padding: 45px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(16px);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            font-size: 0.92rem;
+            font-weight: 700;
+            color: var(--copa-white);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-group label i {
+            color: var(--sunset-orange);
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            background: rgba(16, 13, 20, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 14px;
+            padding: 15px 18px;
+            color: #fff;
+            font-size: 0.98rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            border-color: var(--sunset-yellow);
+            box-shadow: 0 0 18px var(--primary-glow);
+        }
+
+        .form-group select option {
+            background: var(--bg-dark);
+            color: #fff;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 18px;
+            font-size: 1.1rem;
+            margin-top: 12px;
+            justify-content: center;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: #FFF;
+            box-shadow: 0 6px 22px var(--green-glow);
+        }
+
+        .btn-submit:hover {
+            background: linear-gradient(135deg, #28E16D, #14A08F);
+            box-shadow: 0 8px 28px rgba(37, 211, 102, 0.65);
+        }
+
+        /* Contacts Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+            margin-top: 60px;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 87, 34, 0.15);
+            padding: 28px;
+            border-radius: 22px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .info-card:hover {
+            border-color: var(--sunset-yellow);
+            background: rgba(255, 193, 7, 0.04);
+            transform: translateY(-4px);
+        }
+
+        .info-card i {
+            font-size: 2.2rem;
+            color: var(--sunset-orange);
+            margin-bottom: 14px;
+        }
+
+        .info-card h4 {
+            color: #fff;
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .info-card p, .info-card a {
+            color: rgba(250, 246, 240, 0.75);
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .info-card a:hover {
+            color: var(--sunset-yellow);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 5%;
+            background: rgba(10, 8, 12, 0.98);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            color: rgba(250, 246, 240, 0.65);
+            font-size: 0.9rem;
+        }
+
+        footer p span {
+            color: var(--sunset-yellow);
+            font-weight: 800;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 64px;
+            height: 64px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 34px;
+            box-shadow: 0 6px 22px rgba(37, 211, 102, 0.5);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: pulse-glow 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.12);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.7);
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+            70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 105px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--sunset-yellow), var(--sunset-orange));
+            color: #100D14;
+            padding: 14px 24px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 0.92rem;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            z-index: 10000;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 992px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 140px;
+                text-align: center;
+            }
+
+            .hero p {
+                margin: 0 auto 30px;
+            }
+
+            .hero-btns {
+                justify-content: center;
+            }
+
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+
+            .form-container {
+                padding: 28px 20px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-umbrella-beach"></i>
+            </div>
+            <div class="logo-text">
+                Quebrada <span>da Carioca</span>
+                <span class="logo-subtitle">Sabor & Ginga do Rio</span>
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#cardapio" class="active">Cardápio</a></li>
+                <li><a href="#sobre">A Quebrada</a></li>
+                <li><a href="#pedido">Fazer Pedido</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+        <a href="https://wa.me/554891980190" target="_blank" class="btn-cta btn-whatsapp-header">
+            <i class="fa-brands fa-whatsapp"></i> (48) 9198-0190
+        </a>
+    </header>
+
+    <section class="hero">
+        <div>
+            <span class="hero-tag">
+                <i class="fa-solid fa-sun"></i> Do Leme ao Pontal • Zero Caô!
+            </span>
+            <h1>O Verdadeiro Sabor da Carioca <span class="highlight-text">na Sua Mesa!</span></h1>
+            <p>Hambúrgueres suculentos, empadões com massa caseira super recheados e bolos irresistíveis. Preparados com a verdadeira ginga e tempero carioca!</p>
+            <div class="hero-btns">
+                <a href="#pedido" class="btn-cta">
+                    <i class="fa-solid fa-fire"></i> Mandar Ver no Pedido
+                </a>
+                <a href="#cardapio" class="btn-secondary">
+                    <i class="fa-solid fa-book-open"></i> Olhar o Cardápio
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="hero-card-featured">
+                <span class="hero-card-badge">Arrebenta na Fome</span>
+                <div class="hero-food-icon">
+                    <i class="fa-solid fa-burger"></i>
+                </div>
+                <h3>Burgão Carioca Raiz</h3>
+                <p>Blend artesanal de 180g, duplo cheddar cremoso, bacon bem crocante e maionese secreta temperada no pão brioche amanteigado.</p>
+                <div class="hero-price-row">
+                    <div>
+                        <span class="price-label">Na promoção por</span>
+                        <span class="price-value">R$ 34,90</span>
+                    </div>
+                    <button class="btn-order-item" onclick="selecionarItem('Burgão Carioca Raiz (R$ 34,90)', 'Hambúrgueres Artesanais')">
+                        <i class="fa-solid fa-cart-plus"></i> Eu Quero!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="wave-divider">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,-20 1200,40 L1200,120 L0,120 Z" class="shape-fill"></path>
+        </svg>
+    </div>
+
+    <section class="stats">
+        <div class="stat-card">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <h3>+5.000</h3>
+            <p>Clientes Amarrados no Sabor</p>
+        </div>
+        <div class="stat-card">
+            <i class="fa-solid fa-pepper-hot"></i>
+            <h3>100%</h3>
+            <p>Ingredientes Selecionados</p>
+        </div>
+        <div class="stat-card">
+            <i class="fa-solid fa-star"></i>
+            <h3>5.0 ★</h3>
+            <p>Avaliação da Galera</p>
+        </div>
+        <div class="stat-card">
+            <i class="fa-solid fa-bolt"></i>
+            <h3>Rápido</h3>
+            <p>Entrega Sem Caô</p>
+        </div>
+    </section>
+
+    <section class="menu-section" id="cardapio">
+        <div class="section-title">
+            <span class="badge-subtitle">Sem Enrolação</span>
+            <h2>Cardápio <span>da Quebrada</span></h2>
+            <p>Escolha seus favoritos feitos na hora com tempero de verdade para matar a sua fome!</p>
+        </div>
+
+        <div class="menu-tabs">
+            <button class="tab-btn active" onclick="filtrarCardapio('todos', this)">
+                <i class="fa-solid fa-border-all"></i> Tudo
+            </button>
+            <button class="tab-btn" onclick="filtrarCardapio('hamburgueres', this)">
+                <i class="fa-solid fa-burger"></i> Hambúrgueres
+            </button>
+            <button class="tab-btn" onclick="filtrarCardapio('empadoes', this)">
+                <i class="fa-solid fa-pie-chart"></i> Empadões
+            </button>
+            <button class="tab-btn" onclick="filtrarCardapio('bolos', this)">
+                <i class="fa-solid fa-cake-candles"></i> Bolos Caseiros
+            </button>
+            <button class="tab-btn" onclick="filtrarCardapio('porcoes', this)">
+                <i class="fa-solid fa-drumstick-bite"></i> Lanches & Porções
+            </button>
+        </div>
+
+        <div class="menu-grid" id="menuGrid">
+            
+            <!-- Hambúrguer 1 -->
+            <div class="food-card" data-category="hamburgueres">
+                <span class="food-badge">O Mais Pedido</span>
+                <div>
+                    <div class="food-header">
+                        <div class="food-icon-box"><i class="fa-solid fa-burger"></i></div>
+                        <h3>Burgão Carioca Raiz</h3>
+                    </div>
+                    <p class="food-description">180g de carne suculenta, queijo cheddar bem derretido, bacon super crocante, cebola fatiada na chapa e molho secreto da Quebrada.</p>
+                </div>
+                <div class="food-footer">
+                    <span class="food-price">R$ 34,90</span>
+                    <button class="btn-order-item" onclick="selecionarItem('Burgão Carioca Raiz', 'Hambúrgueres Artesanais')">
+                        <i class="fa-solid fa-plus"></i> Pedir Esse
+                    </button>
+                </div>
+            </div>
+
+            <!-- Hambúrguer 2 -->
+            <div class="food-card" data-category="hamburgueres">
+                <div>
+                    <div class="food-header">
+                        <div class="food-icon-box"><i class="fa-solid fa-fire-burner"></i></div>
+                        <h3>Arpoador Double Smash</h3>
+                    </div>
+                    <p class="food-description">2x Blends de 100g bem prensadinhos na chapa com crosta perfeita, duplo queijo prato derretido, picles e molho barbecue defumado.</p>
+                </div>
+                <div class="food-footer">
+                    <span class="food-price">R$ 32,90</span>
+                    <button class="btn-order-item" onclick="selecionarItem('Arpoador Double Smash', 'Hambúrgueres Artesanais')">
+                        <i class="fa-solid fa-plus"></i> Pedir Esse
+                    </button>
+                </div>
+            </div>
+
+            <!-- Empadão 1 -->
+            <div class="food-card" data-category="empadoes">
+                <span class="food-badge">Massa Derretendo</span>
+                <div>
+                    <div class="food-header">
+                        <div class="food-icon-box"><i class="fa-solid fa-bread-slice"></i></div>
+                        <h3>Empadão de Frango com Catupiry</h3>
+                    </div>
+                    <p class="food-description">Massa podre artesanal bem amanteigada recheada generosamente com frango desfiado temperado no alho, cebola e requeijão Catupiry puro.</p>
+                </div>
+                <div class="food-footer">
+                    <span class="food-price">R$ 26,00 <small style="font-size:0.75rem; color:#aaa">(Fatia)</small></span>
+                    <button class="btn-order-item" onclick="selecionarItem('Empadão de Frango com Catupiry', 'Empadões da Carioca')">
+                        <i class="fa-solid fa-plus"></i> Pedir Esse
+                    </button>
+                </div>
+            </div>
+
+            <!-- Empadão 2 -->
+            <div class="food-card" data-category="empadoes">
+                <div>
+                    <div class="food-header">
+                        <div class="food-icon-box"><i class="fa-solid fa-utensils"></i></div>
+                        <h3>Empadão de Carne Seca & Cream Cheese</h3>
+                    </div>
+                    <p class="food-description">Carne seca desfiada e temperada no estilo carioca com cheiro-verde fresco e camada bem farta de cream cheese cremoso.</p>
+                </div>
+                <div class="food-footer">
+                    <span class="food-price">R$ 28,00 <small style="font-size:0.75rem; color:#aaa">(Fatia)</small></span>
+                    <button class="btn-order-item" onclick="selecionarItem('Empadão de Carne Seca & Cream Cheese', 'Empadões da Carioca')">
+                        <i class="fa-solid fa-plus"></i> Pedir Esse
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bolo 1 -->
+            <div class="food-card" data-category="bolos">
+                <span class="food-badge">Dormir Agradecido</span>
+                <div>
+                    <div class="food-header">
+                        <div class="food-icon-box"><i class="fa-solid fa-cake-candles"></i></div>
+                        <h3>Bolo Vulcão Ninho com Nutella</h3>
+                    </div>
+                    <p class="food-description">Massa fofinha de baunilha coberta com piscina de brigadeiro de Leite Ninho e finalizada com muita Nutella de verdade.</p>
+                </div>
+                <div class="food-footer">
+                    <span class="food-price">R$ 18,00 <small style="font-size:0.75rem; color:#aaa">(Fatia)</small></span>
+                    <button class="btn-order-item" onclick="selecionarItem('Bolo Vulcão Ninho com Nutella', 'Bolos Caseiros')">
+                        <i class="fa-solid fa-plus"></i> Pedir Esse
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bolo 2 -->
+            <div class="food-card" data-category="bolos">
+                <div>
+                    <div class="food-header">
+                        <div class="food-icon-box"><i class="fa-solid fa-cookie"></i></div>
+                        <h3>Bolo de Cenoura Carioca</h3>
+                    </div>
+                    <p class="food-description">Massa super fofinha de cenoura com aquela cascudinha e calda bem generosa de brigadeiro 50% cacau.</p>
+                </div>
+                <div class="food-footer">
+                    <span class="food-price">R$ 14,00 <small style="font-size:0.75rem; color:#aaa">(Fatia)</small></span>
+                    <button class="btn-order-item" onclick="selecionarItem('Bolo de Cenoura Carioca', 'Bolos Caseiros')">
+                        <i class="fa-solid fa-plus"></i> Pedir Esse
+                    </button>
+                </div>
+            </div>
+
+            <!-- Porção 1 -->
+            <div class="food-card" data-category="porcoes">
+                <div>
+                    <div class="food-header">
+                        <div class="food-icon-box"><i class="fa-solid fa-bowl-food"></i></div>
+                        <h3>Batata Copacabana Suprema</h3>
+                    </div>
+                    <p class="food-description">Porção de batatas fofinhas por dentro e crocantes por fora, cobertas com melt de cheddar quentinho e farofa de bacon.</p>
+                </div>
+                <div class="food-footer">
+                    <span class="food-price">R$ 24,90</span>
+                    <button class="btn-order-item" onclick="selecionarItem('Batata Copacabana Suprema', 'Lanches & Porções')">
+                        <i class="fa-solid fa-plus"></i> Pedir Esse
+                    </button>
+                </div>
+            </div>
+
+            <!-- Porção 2 -->
+            <div class="food-card" data-category="porcoes">
+                <div>
+                    <div class="food-header">
+                        <div class="food-icon-box"><i class="fa-solid fa-drumstick-bite"></i></div>
+                        <h3>Coxinha de Frango sem Massa (6 un)</h3>
+                    </div>
+                    <p class="food-description">A verdadeira coxinha sem massa! Recheio farto de frango temperadinho e frito até dourar. Puro sabor.</p>
+                </div>
+                <div class="food-footer">
+                    <span class="food-price">R$ 19,90</span>
+                    <button class="btn-order-item" onclick="selecionarItem('Coxinha sem Massa (6 un)', 'Lanches & Porções')">
+                        <i class="fa-solid fa-plus"></i> Pedir Esse
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="story-section" id="sobre">
+        <div class="story-grid">
+            <div class="story-content">
+                <h2>A Nossa <span>Quebrada</span></h2>
+                <p>A <strong>Quebrada da Carioca</strong> nasceu da paixão por comida bem feita, farta e cheia de personalidade. Trazemos o clima acolhedor, a alegria e a ginga inconfundível do Rio de Janeiro direto para o seu prato.</p>
+                <p>A gente não economiza no recheio e nem no carinho. Seja um burgão suculento, um empadão derretendo na boca ou aquele bolo quentinho de vó, tudo aqui é feito para fazer você sorrir a cada mordida!</p>
+                
+                <div class="story-highlights">
+                    <div class="story-box">
+                        <i class="fa-solid fa-heart"></i>
+                        <h4>Feito com Amor</h4>
+                        <p>Receitas artesanais exclusivas</p>
+                    </div>
+                    <div class="story-box">
+                        <i class="fa-solid fa-face-smile-beam"></i>
+                        <h4>Atendimento Fera</h4>
+                        <p>Respeito e rapidez sempre</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="hero-card-featured" style="transform: rotate(-2deg); border-color: var(--sunset-yellow);">
+                    <div style="text-align: center; padding: 20px 0;">
+                        <i class="fa-solid fa-icons" style="font-size: 4rem; color: var(--sunset-orange); margin-bottom: 15px;"></i>
+                        <h3 style="font-size: 1.8rem;">Ginga & Tempero</h3>
+                        <p style="margin-top: 10px;">Aqui o padrão é alto e a fome não tem vez!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="wave-divider wave-divider-black">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,-20 1200,40 L1200,120 L0,120 Z" class="shape-fill"></path>
+        </svg>
+    </div>
+
+    <section class="order-section" id="pedido">
+        <div class="section-title">
+            <span class="badge-subtitle">Facilidade Total</span>
+            <h2>Faça Seu Pedido no <span>WhatsApp</span></h2>
+            <p>Preencha abaixo e receba um atendimento no capricho direto no seu Zap!</p>
+        </div>
+
+        <div class="form-container">
+            <form id="formPedido" onsubmit="enviarPedidoWhatsApp(event)">
+                <div class="form-grid">
+                    
+                    <div class="form-group">
+                        <label for="nome"><i class="fa-solid fa-user"></i> Seu Nome</label>
+                        <input type="text" id="nome" placeholder="Ex: Rodrigo Silva" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="whatsapp"><i class="fa-brands fa-whatsapp"></i> Seu WhatsApp</label>
+                        <input type="tel" id="whatsapp" placeholder="(48) 99999-9999" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="categoriaProduto"><i class="fa-solid fa-utensils"></i> Categoria Principal</label>
+                        <select id="categoriaProduto" required>
+                            <option value="" disabled selected>Selecione uma opção...</option>
+                            <option value="Hambúrgueres Artesanais">Hambúrgueres Artesanais</option>
+                            <option value="Empadões da Carioca">Empadões da Carioca</option>
+                            <option value="Bolos Caseiros">Bolos Caseiros & Sobremesas</option>
+                            <option value="Lanches & Porções">Lanches & Porções</option>
+                            <option value="Encomenda Especial">Encomenda Especial / Aniversários</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipoEntrega"><i class="fa-solid fa-truck-ramp-box"></i> Como Quer Receber?</label>
+                        <select id="tipoEntrega" onchange="toggleEnderecoField()" required>
+                            <option value="Delivery">Delivery (Mandar entregar no meu endereço)</option>
+                            <option value="Retirada no Balcão">Retirada (Vou buscar na Quebrada)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width" id="enderecoGroup">
+                        <label for="endereco"><i class="fa-solid fa-location-dot"></i> Endereço Completo</label>
+                        <input type="text" id="endereco" placeholder="Rua, Número, Bairro, Ap / Bloco e Ponto de Referência">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="detalhes"><i class="fa-solid fa-comment-dots"></i> Detalhes dos Itens & Observações</label>
+                        <textarea id="detalhes" rows="4" placeholder="Ex: 1x Burgão Carioca Raiz + 1x Batata Copacabana + 1x Fatia de Bolo de Cenoura. Por favor, mandar maionese extra!" required></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <button type="submit" class="btn-cta btn-submit">
+                            <i class="fa-brands fa-whatsapp"></i> Mudar Pedido para o WhatsApp
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+        <div class="info-grid" id="contato">
+            <div class="info-card">
+                <i class="fa-solid fa-phone"></i>
+                <h4>Telefone & WhatsApp</h4>
+                <p><a href="https://wa.me/554891980190" target="_blank">+55 48 9198-0190</a></p>
+            </div>
+            <div class="info-card">
+                <i class="fa-solid fa-envelope"></i>
+                <h4>E-mail de Contato</h4>
+                <p><a href="mailto:quebradadacarioca@gmail.com">quebradadacarioca@gmail.com</a></p>
+            </div>
+            <div class="info-card">
+                <i class="fa-solid fa-clock"></i>
+                <h4>Horário da Quebrada</h4>
+                <p>Terça a Domingo: 18h00 às 23h30<br>Delivery & Retirada</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 <span>Quebrada da Carioca</span>. Todos os direitos reservados. Feito com a verdadeira ginga e sabor do Rio!</p>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/554891980190" class="whatsapp-float" target="_blank" title="Falar no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toastNotification">
+        <i class="fa-solid fa-circle-check"></i> Item adicionado ao pedido!
+    </div>
+
+    <script>
+        // Filter Menu Categories
+        function filtrarCardapio(categoria, elementoBtn) {
+            const cards = document.querySelectorAll('.food-card');
+            const btns = document.querySelectorAll('.tab-btn');
+
+            btns.forEach(btn => btn.classList.remove('active'));
+            elementoBtn.classList.add('active');
+
+            cards.forEach(card => {
+                if (categoria === 'todos' || card.getAttribute('data-category') === categoria) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Toggle Address Input visibility based on delivery selection
+        function toggleEnderecoField() {
+            const tipoEntrega = document.getElementById('tipoEntrega').value;
+            const enderecoGroup = document.getElementById('enderecoGroup');
+            const enderecoInput = document.getElementById('endereco');
+
+            if (tipoEntrega === 'Delivery') {
+                enderecoGroup.style.display = 'flex';
+                enderecoInput.setAttribute('required', 'true');
+            } else {
+                enderecoGroup.style.display = 'none';
+                enderecoInput.removeAttribute('required');
+            }
+        }
+
+        // Auto select item and append to textarea form
+        function selecionarItem(nomeItem, categoria) {
+            const selectCategoria = document.getElementById('categoriaProduto');
+            const textareaDetalhes = document.getElementById('detalhes');
+
+            // Select category in dropdown
+            if (categoria) {
+                for (let i = 0; i < selectCategoria.options.length; i++) {
+                    if (selectCategoria.options[i].value === categoria) {
+                        selectCategoria.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+
+            // Append item text
+            if (textareaDetalhes.value.trim() === "") {
+                textareaDetalhes.value = `Gostaria de pedir: ${nomeItem}`;
+            } else {
+                textareaDetalhes.value += `\n- ${nomeItem}`;
+            }
+
+            // Trigger notification toast
+            showToast(`"${nomeItem}" adicionado ao seu pedido!`);
+
+            // Smooth scroll to order section
+            document.getElementById('pedido').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Display toast popup
+        function showToast(message) {
+            const toast = document.getElementById('toastNotification');
+            toast.innerHTML = `<i class="fa-solid fa-circle-check"></i> ${message}`;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3200);
+        }
+
+        // Send order formatted directly to WhatsApp (+55 48 9198-0190)
+        function enviarPedidoWhatsApp(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const categoria = document.getElementById('categoriaProduto').value;
+            const tipoEntrega = document.getElementById('tipoEntrega').value;
+            const endereco = document.getElementById('endereco').value;
+            const detalhes = document.getElementById('detalhes').value;
+
+            const numeroDestino = "554891980190";
+
+            let mensagem = `*🍔 PEDIDO - QUEBRADA DA CARIOCA*%0A%0A`;
+            mensagem += `👤 *Cliente:* ${encodeURIComponent(nome)}%0A`;
+            mensagem += `📱 *Contato:* ${encodeURIComponent(whatsapp)}%0A`;
+            mensagem += `🍽️ *Categoria Principal:* ${encodeURIComponent(categoria)}%0A`;
+            mensagem += `🛵 *Entrega:* ${encodeURIComponent(tipoEntrega)}%0A`;
+
+            if (tipoEntrega === 'Delivery' && endereco) {
+                mensagem += `📍 *Endereço:* ${encodeURIComponent(endereco)}%0A`;
+            }
+
+            mensagem += `%0A📝 *Itens do Pedido & Obs:*%0A${encodeURIComponent(detalhes)}%0A%0A_Enviado pelo site Quebrada da Carioca_`;
+
+            window.open(`https://wa.me/${numeroDestino}?text=${mensagem}`, '_blank');
+        }
+    </script>
+</body>
+</html>
