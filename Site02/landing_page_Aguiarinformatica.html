@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aguiar Informática | Soluções em TI & Suporte Especializado</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #0A0F1D;
+            --bg-card: rgba(19, 27, 46, 0.7);
+            --primary: #00F0FF;
+            --primary-glow: rgba(0, 240, 255, 0.3);
+            --secondary: #7000FF;
+            --text-main: #F1F5F9;
+            --text-muted: #94A3B8;
+            --accent: #10B981;
+            --font-main: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-main);
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 15, 29, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span { color: var(--primary); }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--primary); }
+
+        .btn-cta {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #fff;
+            padding: 0.7rem 1.4rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px var(--primary-glow);
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 240, 255, 0.5);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 160px 5% 80px;
+            min-height: 80vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
+            background: radial-gradient(circle at 10% 20%, rgba(112, 0, 255, 0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 80%, rgba(0, 240, 255, 0.15) 0%, transparent 40%);
+        }
+
+        .hero-tag {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(90deg, var(--primary), #A855F7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.7rem 1.4rem;
+            border-radius: 50px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: #fff;
+        }
+
+        /* --- STATS BAR --- */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 40px 5%;
+            background: rgba(255, 255, 255, 0.02);
+            border-y: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-card h3 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .stat-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* --- SERVICES SECTION --- */
+        .services {
+            padding: 100px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .section-title p { color: var(--text-muted); }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 30px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.1);
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 240, 255, 0.1);
+            color: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        /* --- FORM SECTION --- */
+        .budget-section {
+            padding: 80px 5%;
+            background: rgba(255, 255, 255, 0.01);
+            position: relative;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-group label i {
+            color: var(--primary);
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            background: rgba(10, 15, 29, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 14px 16px;
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 12px var(--primary-glow);
+        }
+
+        .form-group select option {
+            background: var(--bg-dark);
+            color: #fff;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 16px;
+            font-size: 1.05rem;
+            margin-top: 10px;
+            justify-content: center;
+        }
+
+        /* --- CONTACT INFO --- */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .info-card i {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        /* --- FLOATING WHATSAPP BUTTON --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- RESPONSIVIDADE (MOBILE) --- */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 130px;
+                text-align: center;
+            }
+
+            .hero h1 { font-size: 2.2rem; }
+            .hero-btns { justify-content: center; }
+
+            .form-container {
+                padding: 25px 20px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Nav -->
+    <header>
+        <a href="#" class="logo">
+            <i class="fa-solid fa-microchip"></i> Aguiar<span>Informática</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#orcamento">Solicitar Orçamento</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+        <a href="https://wa.me/5548991890567" target="_blank" class="btn-cta">
+            <i class="fa-brands fa-whatsapp"></i> (48) 99189-0567
+        </a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div>
+            <span class="hero-tag"><i class="fa-solid fa-shield-halved"></i> 18 Anos de Excelência em TI</span>
+            <h1>Soluções de TI Inteligentes para <span>Sua Empresa e Residência</span></h1>
+            <p>Manutenção preditiva, montagem de alta performance e suporte técnico especializado na Grande Florianópolis. Concentre-se no seu negócio, cuidamos do resto.</p>
+            <div class="hero-btns">
+                <a href="#orcamento" class="btn-cta">Pedir Orçamento</a>
+                <a href="#servicos" class="btn-secondary">Conhecer Serviços</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estatísticas -->
+    <section class="stats">
+        <div class="stat-card">
+            <h3>18+</h3>
+            <p>Anos no Mercado</p>
+        </div>
+        <div class="stat-card">
+            <h3>25+</h3>
+            <p>Empresas Atendidas</p>
+        </div>
+        <div class="stat-card">
+            <h3>5 ★</h3>
+            <p>Avaliações no Google</p>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section class="services" id="servicos">
+        <div class="section-title">
+            <h2>Nossos Serviços</h2>
+            <p>Soluções tecnológicas sob medida para resolver seus problemas de infraestrutura e hardware.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-gamepad"></i></div>
+                <h3>Montagem & Upgrade Gamer</h3>
+                <p>Montagem personalizada com peças selecionadas para garantir máxima compatibilidade e desempenho extremo.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-headset"></i></div>
+                <h3>Suporte Remoto & Consultoria</h3>
+                <p>Resolução rápida de problemas de software, redes Wi-Fi e otimização via acesso seguro AnyDesk/TeamViewer.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-database"></i></div>
+                <h3>Recuperação de Dados</h3>
+                <p>Recuperação profissional de arquivos deletados ou unidades danificadas/formatadas com total privacidade.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-laptop-medical"></i></div>
+                <h3>Formatação & Limpeza</h3>
+                <p>Formatação limpa com Windows 10/11 ou Linux, backup seguro dos seus dados e remoção completa de vírus.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulário Interativo de Orçamento -->
+    <section class="budget-section" id="orcamento">
+        <div class="section-title">
+            <h2>Solicitação de Orçamento Técnico</h2>
+            <p>Informe os detalhes do seu equipamento e do serviço necessário abaixo.</p>
+        </div>
+
+        <div class="form-container">
+            <form id="formOrcamento" onsubmit="enviarWhatsApp(event)">
+                <div class="form-grid">
+                    
+                    <div class="form-group">
+                        <label for="nome"><i class="fa-solid fa-user"></i> Seu Nome Completo</label>
+                        <input type="text" id="nome" placeholder="Ex: Maria Silva" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp / Telefone</label>
+                        <input type="tel" id="whatsapp" placeholder="(48) 99999-9999" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipoEquipamento"><i class="fa-solid fa-desktop"></i> Equipamento</label>
+                        <select id="tipoEquipamento" required>
+                            <option value="" disabled selected>Selecione o equipamento...</option>
+                            <option value="Notebook">Notebook</option>
+                            <option value="PC Desktop / Gamer">PC Desktop / Gamer</option>
+                            <option value="Servidor / Rede">Servidor / Equipamento de Rede</option>
+                            <option value="Outro">Outro Equipamento</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipoServico"><i class="fa-solid fa-wrench"></i> Serviço Desejado</label>
+                        <select id="tipoServico" required>
+                            <option value="" disabled selected>Selecione o serviço...</option>
+                            <option value="Formatação e Limpeza">Formatação e Limpeza Técnica</option>
+                            <option value="Montagem ou Upgrade (RAM/SSD/Placa)">Montagem / Upgrade de Peças</option>
+                            <option value="Recuperação de Dados">Recuperação de Arquivos/Dados</option>
+                            <option value="Suporte Remoto / Rede">Suporte Remoto ou Redes Wi-Fi</option>
+                            <option value="Consultoria Empresarial">Consultoria TI para Empresa</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="descricao"><i class="fa-solid fa-comment-dots"></i> Descreva o Problema ou Necessidade</label>
+                        <textarea id="descricao" rows="4" placeholder="Ex: O notebook está lento e esquentando muito. Gostaria de colocar um SSD e formatar..." required></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <button type="submit" class="btn-cta btn-submit">
+                            <i class="fa-brands fa-whatsapp"></i> Enviar Solicitação para o WhatsApp
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+        <!-- Dados de Contato -->
+        <div class="info-grid" id="contato">
+            <div class="info-card">
+                <i class="fa-solid fa-location-dot"></i>
+                <h4>Endereço</h4>
+                <p>R. Lourival Luiz Gomes, 116 - Areias, São José - SC</p>
+            </div>
+            <div class="info-card">
+                <i class="fa-solid fa-phone"></i>
+                <h4>Atendimento Direto</h4>
+                <p>(48) 9 9189-0567</p>
+            </div>
+            <div class="info-card">
+                <i class="fa-solid fa-envelope"></i>
+                <h4>E-mail</h4>
+                <p>suporte@aguiarinformatica.com.br</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5548991890567" class="whatsapp-float" target="_blank" title="Atendimento Via WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Script de envio no WhatsApp -->
+    <script>
+        function enviarWhatsApp(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const whatsapp = document.getElementById('whatsapp').value;
+            const equipamento = document.getElementById('tipoEquipamento').value;
+            const servico = document.getElementById('tipoServico').value;
+            const descricao = document.getElementById('descricao').value;
+
+            const numeroDestino = "5548991890567";
+
+            const mensagem = `*Solicitação de Orçamento - Aguiar Informática*%0A%0A` +
+                `👤 *Nome:* ${nome}%0A` +
+                `📱 *Contato:* ${whatsapp}%0A` +
+                `💻 *Equipamento:* ${equipamento}%0A` +
+                `🛠️ *Serviço:* ${servico}%0A` +
+                `📝 *Descrição:* ${descricao}`;
+
+            window.open(`https://wa.me/${5548991890567}?text=${mensagem}`, '_blank');
+        }
+    </script>
+</body>
+</html>
